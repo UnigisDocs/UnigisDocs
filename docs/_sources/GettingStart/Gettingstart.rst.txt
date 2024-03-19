@@ -3,9 +3,7 @@ Getting Started
 
 .. container:: justified-text
 
-   Este es un ejemplo de texto justificado en reStructuredText.
-   Puedes utilizar la alineación `:align: justify` para justificar
-   el texto en todas las direcciones.
+(descripción por documento con objetivo y alcance)
 
 .. toctree::
    :maxdepth: 1
