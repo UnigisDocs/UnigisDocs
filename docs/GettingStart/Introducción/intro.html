@@ -1,0 +1,399 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="Circuito Operativo" href="../CircuitoOp/Circuito.html" /><link rel="prev" title="Getting Started" href="../Gettingstart.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Introducción - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Gettingstart.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruteo/Ruteo.html">Planeación de Rutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="introduccion">
+<h1>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h1>
+<section id="bienvenido-a-unigis">
+<h2>Bienvenido a UNIGIS<a class="headerlink" href="#bienvenido-a-unigis" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>UNIGIS es una plataforma TMS innovadora con todas las aplicaciones para lograr una distribución y gestión del transporte inteligente, eficiente y colaborativa entre proveedores y clientes. Asegura una reducción de los costos operativos logísticos gracias a sus procesos y herramientas que incorporan las últimas tecnologías como, IOT (Internet of Things), Artificial Intelligence, Machine Learning, Cloud services y Big Data. También mejora el nivel de servicio a los clientes con la visibilidad en tiempo real de los indicadores clave del negocio que permiten actuar en forma rápida y proactiva a los desafíos cotidianos.</p>
+<p>Desarrollamos soluciones logísticas con la aplicando la última tecnología informática, flexibles y confiables para superar los desafíos del mercado global. Como en los siguientes países: Argentina, Chile, Brasil, Colombia, México, Estados Unidos y España.</p>
+</div>
+<a class="reference external image-reference" href="_self"><img alt="../../_images/mapa.png" class="align-right" src="../../_images/mapa.png" style="width: 200px; height: 200px;" /></a>
+<ul class="simple">
+<li><p>Especialistas en distribución y transporte.</p></li>
+<li><p>Respaldo con +20 años de experiencia.</p></li>
+<li><p>+300 empresas líderes confían hoy en UNIGIS.</p></li>
+<li><p>Soporte local con 6 filiales propias.</p></li>
+<li><p>Modelo de negocios SaaS en plataforma cloud.</p></li>
+<li><p>Equipo de profesionales expertos en logística.</p></li>
+<li><p>Innovación UNIGIS labs:: IA ML, Iot, big data, cloud.</p></li>
+</ul>
+</section>
+<section id="recursos-y-soporte">
+<h2>Recursos y Soporte<a class="headerlink" href="#recursos-y-soporte" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Durante tu inducción, recibirás acceso a una variedad de recursos y herramientas que te ayudarán a integrarte en nuestro equipo y a familiarizarte con nuestros procesos y procedimientos. No dudes en comunicarte con nuestro equipo si tienes alguna pregunta o necesitas apoyo adicional.</p>
+<p>¡Una vez más, bienvenido(a) a <em>UNIGIS</em>! Estamos emocionados de tener la oportunidad de trabajar juntos y esperamos que tu tiempo con nosotros sea gratificante y exitoso.</p>
+</div>
+</section>
+<section id="que-es-un-tms-transportation-management-system">
+<h2>¿Que es un TMS (Transportation Management System)?<a class="headerlink" href="#que-es-un-tms-transportation-management-system" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Un TMS (Transportation Management System) es un Sistema de información que: planifica, recoge, procesa, almacena y distribuye información relacionada con las actividades de transporte.
+Dentro de los sistemas para gestión del transporte existen cinco modelos logísticos y se catalogan de la siguiente manera: 1PL, 2PL, 3PL, 4PL y 5PL.</p>
+</div>
+<dl>
+<dt>1PL</dt><dd><p>Proveedor &gt; Mercado</p>
+<p>Corresponde a el nivel más básico del modelo logístico lo que corresponde a que el proveedor es el encargado de entregar a su mercado el producto con sus propios recursos.</p>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="../../_images/1PL.png"><img alt="../../_images/1PL.png" class="align-center" src="../../_images/1PL.png" style="width: 200px; height: 90px;" /></a>
+<dl>
+<dt>2PL</dt><dd><p>Transporte</p>
+<p>Corresponde a un actor tercero que se enfoca en la ejecución del transporte entre el proveedor y el mercado, durante el proceso de entrega se controla la ejecución de recolección hasta la entrega y todos los factores que intervienen dentro de la misma</p>
+</dd>
+</dl>
+<img alt="../../_images/2PL.png" class="align-center" src="../../_images/2PL.png" />
+<dl>
+<dt>3PL</dt><dd><p>Almacén + Logística + Transporte</p>
+<p>Dentro del 3PL se expande el alcance de la operación del transporte para esto se debe automatizar el proceso correspondiente a la logística como administración de pedidos, rutas con mucha inteligencia, gestión de recursos (insumos, retornables, etc.) y visibilidad track and trade (estatus de envío).</p>
+</dd>
+</dl>
+<img alt="../../_images/3PL.png" class="align-center" src="../../_images/3PL.png" />
+<dl>
+<dt>4PL</dt><dd><p>Almacén + Logística + Especialidad + Transporte</p>
+<p>Dentro de este nivel se comienza a abarcar situaciones complejas que requiere de planificación avanzada para las reglas de negocio de cada mercado como entender circuitos E-commerce, viajes al interior con troncales y Cross dock, viajes especiales, por ejemplo: contenedores, almacén frio, ruteo con inteligencia y automatización, la visibilidad track and trace es más específica.</p>
+</dd>
+</dl>
+<img alt="../../_images/4PL.png" class="align-center" src="../../_images/4PL.png" />
+<dl>
+<dt>5PL</dt><dd><p>Planifica + almacén + Logística + Especialidad + Transporte + Post Venta</p>
+<p>Dentro de este nivel se trabaja con situaciones globales con la planificación y administración de viajes multimodales como necesidades del producto, documentación, monedas, temas aduanales, zonas horarias y rutas de diferentes países (terrestres, marítimas y/o aéreas).</p>
+</dd>
+</dl>
+<img alt="../../_images/5PL.png" class="align-center" src="../../_images/5PL.png" />
+</section>
+<section id="que-empresa-necesita-un-tms">
+<h2>¿Qué empresa necesita un TMS?<a class="headerlink" href="#que-empresa-necesita-un-tms" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Toda empresa que tenga necesidad de mover productos propios, que se dedique a prestar servicios de transporte y las empresas especializadas en servicios de logística.</p>
+</div>
+<ul class="simple">
+<li><p>Dador de Carga. Empresas que tienen necesidad de enviar sus productos a clientes o centros de distribución para tercerizar el proceso de transporte con empresas de logística especializadas (LPS). Por ejemplo: SODIMAC, BURGER KING, NIKE, PHILIPS.</p></li>
+</ul>
+<img alt="../../_images/dador.png" class="align-center" src="../../_images/dador.png" />
+<ul class="simple">
+<li><p>Productores / Revendedores (hacen sus propias entregas). Empresas que quieren abarcar el ciclo completo de su producto desde la fabricación y/o venta hasta la entrega de este al cliente final o a sus distribuidores. Empresas con producto que disponen con su propia flotilla.</p></li>
+</ul>
+<img alt="../../_images/productores.png" class="align-center" src="../../_images/productores.png" />
+<ul class="simple">
+<li><p>Proveedores de Servicios Logísticos (LPS). Empresas que se dedican a proveer servicios de transporte para productos, muchas de ellas agregan valor adicional en el proceso logístico ofreciendo servicios adicionales como: Seguimiento satelital, almacenaje, cross dock, preparación de entregas, kitting, programación de entregas, gestión de turnos, gestión de re-entregas, entre otros servicios especializados.</p></li>
+</ul>
+<img alt="../../_images/LPS.png" class="align-center" src="../../_images/LPS.png" />
+</section>
+<section id="solucion-integral-unigis-tms">
+<h2>Solución Integral UNIGIS TMS<a class="headerlink" href="#solucion-integral-unigis-tms" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>UNIGIS TMS tiene presente que no todas las empresas aplican los mismos procesos, los mismos circuitos, todas tienen diferentes necesidades y/o expectativas una en mayor o en menor tamaño.</p>
+<p>Por lo tanto, UNIGIS TMS es una plataforma web adaptativa para cada modelo de negocio que soporta todas las operaciones de transporte que requiere un operador logístico internacional (4PL / 3PL), un courrier, un retailer, una compañía de consumo masivo, servicios, industrial o de cualquier otra actividad comercial, hasta un portal de E-commerce.</p>
+<p>La solución cuenta con una gran variedad de módulos:</p>
+</div>
+<a class="reference external image-reference" href="_self"><img alt="../../_images/SI.png" class="align-right" src="../../_images/SI.png" style="width: 250px; height: 250px;" /></a>
+<ul class="simple">
+<li><p>Administración de Pedidos.</p></li>
+<li><p>Planeación de Distribución.</p></li>
+<li><p>Portal de Transporte.</p></li>
+<li><p>Yard Management.</p></li>
+<li><p>Monitoreo Logístico.</p></li>
+<li><p>Control de Entregas.</p></li>
+<li><p>Gestión de Transporte.</p></li>
+<li><p>Dashboards and E-Commerce.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../CircuitoOp/Circuito.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Circuito Operativo</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Gettingstart.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Getting Started</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introducción</a><ul>
+<li><a class="reference internal" href="#bienvenido-a-unigis">Bienvenido a UNIGIS</a></li>
+<li><a class="reference internal" href="#recursos-y-soporte">Recursos y Soporte</a></li>
+<li><a class="reference internal" href="#que-es-un-tms-transportation-management-system">¿Que es un TMS (Transportation Management System)?</a></li>
+<li><a class="reference internal" href="#que-empresa-necesita-un-tms">¿Qué empresa necesita un TMS?</a></li>
+<li><a class="reference internal" href="#solucion-integral-unigis-tms">Solución Integral UNIGIS TMS</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

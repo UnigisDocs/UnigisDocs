@@ -1,0 +1,474 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="Gestión de Viajes" href="../Gesti%C3%B3nviajes/Gviajes.html" /><link rel="prev" title="Administración de Pedidos" href="../Admpedidos/Adminp.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Planeación de Rutas - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Gettingstart.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Planeación de Rutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="planeacion-de-rutas">
+<h1>Planeación de Rutas<a class="headerlink" href="#planeacion-de-rutas" title="Link to this heading">#</a></h1>
+<section id="ruteo">
+<h2>Ruteo<a class="headerlink" href="#ruteo" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Resulta útil determinar la naturaleza de planificar una ruta antes de decidir que tipos de planificación utilizar para lograr la optimización de las paradas, es útil conocer entre los dos métodos principales de planificación de rutas: fijas y dinámicas.</p>
+<ul class="simple">
+<li><p>Rutas Fijas. Cada ruta tiene un conjunto especifico de paradas en un orden especifico no dispuesto a cambiar, garantizando que los destinatarios siempre recibirán su producto/carga en la hora especificada y a menudo por el mismo conductor.</p></li>
+<li><p>Rutas Dinámicas. Esta el otro extremo en esta todos los puntos de entrega/recolección son planificadas en la ruta mas optima, teniendo en cuenta las restricciones de horario, distancia y optimización de carga, generalmente los destinos son visitados por diferentes vehículos/conductores. Este tipo de ruta busca aprovechar de la mejor forma el tiempo entre las distancias recorridas y el tipo de vehículo.</p></li>
+</ul>
+</div>
+<img alt="../../_images/ruteo.png" class="align-center" src="../../_images/ruteo.png" />
+</section>
+<section id="modulo-de-ruteo">
+<h2>Módulo de Ruteo<a class="headerlink" href="#modulo-de-ruteo" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>La planificación de las rutas se refiere al proceso de selección de entregas, producto, transporte y otros factores que puedan influir en la distribución para crear una ruta adecuada. El módulo de “Routing” dentro de UNIGIS TMS tiene la capacidad de planificar, diseñar y optimizar todas las rutas de logísticas en base a reglas de negocio y parámetros configurables necesarias para que de forma automática pueda reducir tiempos de planeación, tiempos en ruta y tiempos de entrega.</p>
+<p>Considera todo tipo de variables conocidas por zonas específicas al momento de planear una orden como los horarios de entrega, tipos de vehículos, dimensiones del pedido, rutas optimizadas, depósitos, longitud y latitud, datos logisticos, ventanas horarias, entre otras variables.</p>
+<p>Se puede acceder al Ruteo (Routing) en todas las soluciones de UNIGIS TMS, dentro de la versión Web de UNIGIS TMS se visualiza en la pantalla Home.</p>
+<p>La orden especifica los datos generales para la entrega del pedido, como que se tiene que realizar, a donde se tiene que ir, en que horario y que ítems contiene el pedido. Es un proceso que viene del administrador de pedidos.</p>
+<ul class="simple">
+<li><p>Gestión del Transporte que realiza la distribución</p></li>
+<li><p>Geo codificador de direcciones con normalizador</p></li>
+<li><p>Planeación óptima de rutas de distribución</p></li>
+<li><p>Optimización del cubicaje de los vehículos</p></li>
+<li><p>Reglas de negocio configurables por operación, transporte, volumetría, tipo de producto, ventanas horarias y más</p></li>
+<li><p>Restricciones geográficas y de circulación con el tráfico</p></li>
+<li><p>Entrega y recolección de mercadería, logística inversa</p></li>
+<li><p>Mapas digitales mundiales</p></li>
+</ul>
+</div>
+</section>
+<section id="entidades">
+<h2>Entidades<a class="headerlink" href="#entidades" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Planificar una solicitud de transporte dispone con la previa creación de una estructura base, configuración y catálogos involucrados en la transacción de datos para una nueva orden ruta. Es necesario realizar la configuración de las entidades relacionadas a los flujos de trabajo jornada, orden y rutas para iniciar con la operación.</p>
+</div>
+<img alt="../../_images/entidades1.png" class="align-center" src="../../_images/entidades1.png" />
+<div class="justified-text docutils container">
+<p>Establecido el pedido o solicitud de transporte esto se pueden referenciar la cantidad de órdenes necesarias. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. En la planificación no se planifica hacia un vehículo, si no con un tipo de vehículo disponible en un depósito correspondiente a una operación para las características especificas que presentan la ruta, jornada y orden para cumplir con su objetivo el domicilio orden.</p>
+</div>
+<img alt="../../_images/entidadruteo.png" class="align-center" src="../../_images/entidadruteo.png" />
+</section>
+<section id="configuracion-de-datos-generales">
+<h2>Configuración de Datos generales<a class="headerlink" href="#configuracion-de-datos-generales" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Catálogos que considerar antes de empezar a planificar una ruta</p>
+<ul class="simple">
+<li><p>Depósitos. Es el centro de distribución donde parte o regresan los vehículos, área de influencia. El depósito cuenta con una zona de ruteo preferente. Datos generales del depósito, cercanía, dirección, parámetros horarios, carga, parámetros internacionales, jurisdicción. planificar por tipo de depósito y producto.</p></li>
+<li><p>Tipos de vehículos. Cada tipo de vehículo dispone con ciertas características para peso, carga, especificaciones de vehículo, velocidad máxima o mínima para la configuración de alertas, cantidad de la flota de vehículos, dimensiones de carga, tiempos de inactividad, momento más optima, Alertas de velocidad máxima. Recursos disponibles</p></li>
+<li><p>Tipo de Jornada. Agrupador de ordenes utilizadas para planificar en el momento, guía de operación. Planificar ordenes para una jornada del día. Para fijas o dinámicas. Descripción, tipo de operación, filtro de ordenes clasificar a un tipo de operaciones a considerar dentro de la jornada, segmentar jornada con tipos de jornada, jornada por tipo de jornada.</p></li>
+<li><p>Muelles. Por tipo de vehículo- muelle. Deposito asignado, descripción, horarios de operación, tipo de muelle, días permitidos. Restricción por tipo de vehículo para cada muelle. La asignación y disponibilidad.</p></li>
+<li><p>Zonas de planificación. Geo referencia. Área de influencia zona metropolitana dibujar una zona de propiedad para ruteo. Por órdenes para planificar. Las zonas son una entidad fundamental no solo delimitan las zonas de ruteo si no que se pueden contar con restricciones por zonas por tipos de vehículos, por condiciones, horarios, peso o volumen por área. Zona de ruteo por operación o tipo de jornada. Prioridad de zonas. Geo editor, zonas de peligro zonas de depósitos, zonas de ruteo, factor importante.</p></li>
+<li><p>Escenarios de planificación.  condiciones</p></li>
+<li><p>Ordenes geo codificadas. Propiedades a función en la zona de la que se encuentren respetando los parámetros.</p></li>
+</ul>
+</div>
+</section>
+<section id="principales-datos-de-la-orden">
+<h2>Principales Datos de la Orden<a class="headerlink" href="#principales-datos-de-la-orden" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Un pedio realiza las ordenes de entrega para completar una jornada, La orden especifica que es lo que se tiene que realizar. (donde, como, hora,)
+Principales datos que deben de disponer una orden de entrega.
+- Delivery note. (Referencia de Entrega)
+- Descripción.
+- Dirección.
+- Variables de peso, volumen, bultos, palets.
+- Horarios.
+- Tiempos de espera.
+- Tipo de entrega.</p>
+<p>Todos los datos son indispensables para la construcción de la ruta.</p>
+</div>
+<img alt="../../_images/datosorden.png" class="align-center" src="../../_images/datosorden.png" />
+<div class="justified-text docutils container">
+<p>Para que la orden sea considerada para planificar tiene que estar dentro del horario efectivo de la ruta según las entidades que intervienen.</p>
+<p>El centro de distribución tiene que estar disponible dentro del horario efectivo de la ruta, el vehículo debe de pertenecer al tipo de deposito disponible y dentro de la franja horaria de la distribución y coincidir los horarios del domicilio orden para llegar a su entrega.</p>
+<p>A considerar tiempos de embarque, traslados, etc.</p>
+</div>
+<img alt="../../_images/datosorden1.png" class="align-center" src="../../_images/datosorden1.png" />
+<div class="justified-text docutils container">
+<p>La configuración de datos generales para órdenes se centra en los escenarios, los cuales son responsables de la distribución de productos o mercancías desde ciertos depósitos hasta su usuario final. Dentro de estos modelos, se consideran variables como clientes, demanda y las posibles rutas, las cuales desempeñan un papel importante en la gestión logística.</p>
+<p>Se busca optimizar la salida de vehículos dependiendo de la ubicación del depósito, teniendo en cuenta aspectos como la disposición lineal por calles. Se incluyen datos generales, la consolidación de escenarios y la identificación de posibles barreras áreas.</p>
+</div>
+<img alt="../../_images/conf1.png" class="align-center" src="../../_images/conf1.png" />
+</section>
+<section id="consolidacion">
+<h2>Consolidación<a class="headerlink" href="#consolidacion" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Para optimizar la entrega de varias órdenes en un mismo domicilio, se busca consolidarlas en una sola parada. Esto implica agrupar las órdenes en una misma ubicación geográfica o parada, dentro de un radio de influencia determinado.</p>
+<p>En el caso de entregas verticales, donde se realizan diferentes entregas en la misma calle, se busca también consolidarlas en un radio de influencia para optimizar tanto la parada del vehículo como el tiempo del conductor. Por ejemplo, en el caso de entregas de servicios de agua, se considera la cercanía, la ubicación exacta o un radio de influencia dentro de una distancia preestablecida.</p>
+<p>Además, se promedian los tiempos de espera y se establece un máximo tiempo de espera para garantizar una gestión eficiente de la entrega de las órdenes.</p>
+</div>
+<img alt="../../_images/conso.png" class="align-center" src="../../_images/conso.png" />
+</section>
+<section id="escenarios">
+<h2>Escenarios<a class="headerlink" href="#escenarios" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Se permite crear diferentes escenarios a medida de la planificación de una operación con las condiciones presentadas al Domicio orden, por ejemplo, un escenario para temporada baja, para turno nocturno, por vehículos, por zonas de riesgo, etc.</p>
+<p>Dependiendo la cantidad de órdenes y jornadas a asignar.</p>
+</div>
+<img alt="../../_images/escenario.png" class="align-center" src="../../_images/escenario.png" />
+<div class="justified-text docutils container">
+<p>El radio de densidad o influencia de las órdenes busca optimizar matemáticamente la cantidad de kilómetros recorridos y la cantidad de productos entregados, garantizando que las rutas no se dispersen geográficamente y se planifiquen de manera óptima sin superposiciones. Se utiliza el concepto de baricentro para determinar la ubicación central, y se establece una distancia máxima entre cada orden para evitar la dispersión y optimizar la eficiencia logística.</p>
+</div>
+<img alt="../../_images/radio.png" class="align-center" src="../../_images/radio.png" />
+<p>Parámetros generales</p>
+<div class="justified-text docutils container">
+<p>Inicio de rutas: Preferencia de selección del baricentro para empezar a construir la ruta, por selección de semilla. Según la conveniencia o mandatorio para iniciar las paradas preferentemente de inicio de ruta.</p>
+<p>Priorizar por:</p>
+<ul class="simple">
+<li><p>Grupos: Buscando la idea de no generar solapamiento entre rutas, autoclustering, grupo de rutas</p></li>
+<li><p>Vehículos: Reutilización de tipo de vehículos, preferencias por tipo de vehículo. Porcentaje de cargas. Volumetría. Depósitos automáticos. Optimización de vehículos. Permitir a los vehículos múltiples depósitos.</p></li>
+<li><p>Horarios: Deposito, salida, vehículos, ordenes, ventanas de simulación. Por intervalos ampliar fn. La selección del resultado optimo validar cual es la mejor. evalúa todos los parámetros mejorar detalles de la planificación particulares dentro de la ruta a otra.</p></li>
+</ul>
+</div>
+<dl class="simple">
+<dt>Parámetros avanzados</dt><dd><p>Priorizar construcción de ruta, restricciones. Primera orden, concurrencia, ruteo por calles. Contorno avanzado algoritmo que permite un contorno más especifico por área.</p>
+</dd>
+<dt>Optimización</dt><dd><p>Parámetro una vez generado la ruta se valida por una optimización de su preferencia.</p>
+</dd>
+</dl>
+</section>
+<section id="barreras-areas">
+<h2>Barreras/Áreas<a class="headerlink" href="#barreras-areas" title="Link to this heading">#</a></h2>
+<img alt="../../_images/barreras.png" class="align-center" src="../../_images/barreras.png" />
+<div class="justified-text docutils container">
+<p>Las barreras se refieren a obstáculos o limitaciones que pueden afectar el proceso de gestión de transporte. Estas barreras pueden incluir:</p>
+<ul class="simple">
+<li><p>Limitaciones legales o regulatorias que afectan las operaciones de transporte, como restricciones de peso, horarios de conducción y descanso, y regulaciones de emisiones.</p></li>
+<li><p>Limitaciones de infraestructura, como carreteras en mal estado, puentes con restricciones de altura o capacidad, y restricciones de acceso a ciertas áreas.</p></li>
+<li><p>Barreras tecnológicas, como la falta de integración entre sistemas de gestión, problemas de conectividad en ruta, y limitaciones de seguimiento y monitoreo en tiempo real.</p></li>
+<li><p>Obstáculos operativos, como retrasos en el procesamiento de órdenes, falta de visibilidad de la cadena de suministro, y dificultades para coordinar las actividades de carga y descarga.</p></li>
+<li><p>Barreras comerciales, como aranceles, impuestos y tarifas, así como restricciones de importación y exportación que pueden afectar el flujo de mercancías a través de las fronteras</p></li>
+</ul>
+<p>Dentro de UNIGIS TMS se pueden establecer áreas a las diferentes secciones o aspectos que son gestionados y controlados dentro del sistema. Estas áreas pueden incluir:</p>
+<ul class="simple">
+<li><p>Gestión de flotas: Que se encarga de controlar y administrar los vehículos de transporte, incluyendo su asignación, mantenimiento, y seguimiento en tiempo real.</p></li>
+<li><p>Planificación de rutas: Que consiste en determinar las rutas óptimas para las entregas, teniendo en cuenta factores como la distancia, el tráfico, y las restricciones de carga.</p></li>
+<li><p>Gestión de órdenes: Que se encarga de procesar y gestionar todas las órdenes de transporte, desde la recepción hasta la entrega final.</p></li>
+<li><p>Seguimiento y monitoreo: Que implica el seguimiento en tiempo real de los vehículos y las órdenes, para garantizar su cumplimiento y detectar posibles problemas o retrasos.</p></li>
+<li><p>Gestión de documentos: Que incluye la administración y almacenamiento de todos los documentos relacionados con las operaciones de transporte, como facturas, documentos de transporte, y certificados de seguridad.</p></li>
+</ul>
+<p>Estas áreas son fundamentales para el funcionamiento eficiente y efectivo, ya que permiten gestionar todos los aspectos relacionados con la logística y el transporte de manera integrada y coordinada.</p>
+</div>
+</section>
+<section id="crear-rutas">
+<h2>Crear Rutas<a class="headerlink" href="#crear-rutas" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El producto ofrece diversas soluciones para la creación y gestión de pedidos, accesibles a través del administrador de pedidos web, el portal colaborativo B2B (Business-To-Business), UNIGIS FLEET o mediante Web Service. Estas soluciones están diseñadas para recopilar los datos necesarios sobre los servicios solicitados. A continuación, se detallan:</p>
+<ol class="arabic simple">
+<li><p>Administrador de Pedidos Versión Web: Permite la gestión de pedidos a través de una interfaz web accesible.</p></li>
+<li><p>Portal Colaborativo B2B: Proporciona una plataforma para la interacción y gestión de pedidos entre empresas.</p></li>
+<li><p>UNIGIS FLEET: Ofrece funcionalidades específicas para la gestión de pedidos dentro del entorno UNIGIS.</p></li>
+<li><p>Web Service: Permite la integración del sistema de pedidos con otros sistemas a través de servicios web.</p></li>
+</ol>
+<p>En cuanto a la captura de datos, estas soluciones incluyen campos para recopilar la información necesaria sobre el servicio solicitado. Estos campos pueden ser personalizados según los requerimientos del usuario.
+En el contexto de UNIGIS TMS, se destaca el módulo «Routing», una herramienta fundamental para la planificación de rutas. Este módulo permite la planificación automática o manual de rutas, así como la gestión de la aprobación de pedidos dentro de un período establecido para la recolección y entrega.
+Algunos aspectos importantes del módulo «Routing» son:</p>
+<p>Configuración por jornadas de recolección/entrega, donde un día puede contener múltiples jornadas.</p>
+<ul class="simple">
+<li><p>Visualización de datos relevantes de la jornada, como el número de órdenes y los clientes correspondientes para planificar la ruta.</p></li>
+<li><p>Posibilidad de crear nuevas jornadas para la planificación de rutas adicionales.</p></li>
+</ul>
+<p>Este módulo proporciona una visión integral de las actividades de recolección y entrega, facilitando la optimización de las operaciones logísticas dentro de UNIGIS TMS.</p>
+</div>
+<img alt="../../_images/crear.png" class="align-center" src="../../_images/crear.png" />
+<div class="justified-text docutils container">
+<p>Antes de crear una nueva ruta se puede estableces parámetros entendidas como reglas de negocios para la jornada seleccionada, como lo son: marcar zonas, escenarios, horarios, tipo de vehículos autorizados, radio máximo, recolecciones, optimización, etc. Todo esto de manera visual dentro del mapa de geolocalización.</p>
+</div>
+<img alt="../../_images/rutas.png" class="align-center" src="../../_images/rutas.png" />
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../Gesti%C3%B3nviajes/Gviajes.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Gestión de Viajes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Admpedidos/Adminp.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Administración de Pedidos</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Planeación de Rutas</a><ul>
+<li><a class="reference internal" href="#ruteo">Ruteo</a></li>
+<li><a class="reference internal" href="#modulo-de-ruteo">Módulo de Ruteo</a></li>
+<li><a class="reference internal" href="#entidades">Entidades</a></li>
+<li><a class="reference internal" href="#configuracion-de-datos-generales">Configuración de Datos generales</a></li>
+<li><a class="reference internal" href="#principales-datos-de-la-orden">Principales Datos de la Orden</a></li>
+<li><a class="reference internal" href="#consolidacion">Consolidación</a></li>
+<li><a class="reference internal" href="#escenarios">Escenarios</a></li>
+<li><a class="reference internal" href="#barreras-areas">Barreras/Áreas</a></li>
+<li><a class="reference internal" href="#crear-rutas">Crear Rutas</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

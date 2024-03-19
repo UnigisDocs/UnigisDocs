@@ -8,4 +8,4 @@ UNIGIS DOCS
 .. toctree::
    :maxdepth: 1
 
-   start/Gettingstart.rst
+   GettingStart/Gettingstart.rst
