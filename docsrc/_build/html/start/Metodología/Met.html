@@ -1,0 +1,589 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="Arquitectura Funcional y Técnica" href="../Arq/Arq.html" /><link rel="prev" title="Circuito Operativo" href="../CircuitoOp/Circuito.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Metodología de Implementación - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Gettingstart.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruteo/Ruteo.html">Planeación de Rutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="metodologia-de-implementacion">
+<h1>Metodología de Implementación<a class="headerlink" href="#metodologia-de-implementacion" title="Link to this heading">#</a></h1>
+<div class="justified-text docutils container">
+<p>El proceso del producto se compone por tres metodologías que se aplican a un tercio de la capacidad del equipo, ¿Qué significa a un tercio de capacidad? se refiere a que al inicio de la planeación el equipo toma en cuenta las actividades que se planean al inicio del periodo, las actividades de del día a día y reserva, y actividades que se planean trimestralmente esto entraría dentro del objetivo del producto.</p>
+<p>Las metodologías que se aplican a lo largo del proceso de trabajo son las siguientes:</p>
+</div>
+<img alt="../../_images/met.png" class="align-center" src="../../_images/met.png" />
+<p><strong>Scrum adaptado</strong></p>
+<div class="justified-text docutils container">
+<p>El inicio del Sprint se selecciona el avance de trabajo correspondiente al plan de producto que se desea entregar en la duración del periodo, la duración es de dos semanas con releases semanales, es decir, la finalización del plan de trabajo está compuesta por dos releases (versiones) dichas versiones son de tipo BETA que se compilan a una versión final, esto permite al equipo atender de manera ágil los defectos del producto.</p>
+<p>Se realizan Dailys Meetings todos los días a las 9:30 am con una duración promedio de 30 minutos, dentro de los Dailys se presentan las siguientes preguntas por cada miembro del scrum team.</p>
+<ul class="simple">
+<li><p>¿Qué hice ayer?</p></li>
+<li><p>¿Qué voy a hacer hoy?</p></li>
+<li><p>¿Identifique algún bloqueo?</p></li>
+<li><p>¿Qué puedo aportar? (Adaptación UNIGIS desde modelo “we say we listen”).</p></li>
+</ul>
+<p>Dentro de los Dailys Meeting no se discuten temas por fuera de la agenda, no es un reporte de avances, los líderes responden de la misma manera.</p>
+</div>
+<p><strong>Kanban: agile al agile</strong></p>
+<div class="justified-text docutils container">
+<p>La implementación de Kanban dentro de la metodología UNIGIS nos ayuda con la planeación dinámica día a día, es decir, esto permite una mejor colaboración con la gestión visual de tareas. Dentro de las tareas que pueden existir en el Backlog del Kanban puede haber incidencias urgentes (soportes nivel 3), defectos detectados por QA y respuestas ágiles a los cambios de alcance o nuevos requerimientos que se encuentran fuera de la planeación del sprint.</p>
+<p>La gestión diaria de las tareas se realiza por medio de Jira software en donde se encuentran todos los proyectos vigentes que intervienen en el proceso de desarrollo esto permite identificar de manera útil las tareas que tiene el equipo para entregar el trabajo de manera ágil y sobre todo controlada.</p>
+</div>
+<div class="table-wrapper docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">kanban</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>TO DO</p></th>
+<th class="head"><p>IN PROGRESS</p></th>
+<th class="head"><p>DONE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Safe 4 Scrum Master 4 (SSM)</strong></p>
+<div class="justified-text docutils container">
+<p>Scaled Agile Framework® (SAFe®) es un ambiente de trabajo que sigue patrones y flujo de trabajo los cuales funcionan para implementar prácticas ágiles a un nivel de escalamiento empresarial. El marco constituye un cúmulo de conocimientos que incluye instrucciones estructuradas sobre las funciones y responsabilidades, la forma de planificar y gestionar el trabajo, los valores que hay que defender. Es decir, dentro de UNIGIS se promueve la coherencia, la colaboración y la gestión a través de un gran número de equipos agiles, pero todos siguiendo el mismo objetivo del producto.</p>
+<p>La duración de este método de trabajo tiene una duración de 3 meses y tiene como resultado una versión mayor dentro del producto.</p>
+</div>
+<section id="versiones">
+<h2>Versiones<a class="headerlink" href="#versiones" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>La numeración de las versiones de los incrementos de software nos permite expresar de forma normalizada las modificaciones existentes entre las distintas versiones, indicando los cambios que se han producido entre una versión y la siguiente, las publicaciones dentro de la metodología de trabajo se realizan de dos maneras:</p>
+<ol class="arabic simple">
+<li><p><strong>LTS (Long Term Support)</strong></p></li>
+</ol>
+<p>Una LTS o una implementación estándar es la que se implementan los clientes dentro de producción con una publicación de cada 3 meses y tienen un soporte de optimización durante 12 meses, es decir, durante un año se tienen cuatro versiones que se optimizan durante 12 meses.</p>
+<p>Esto nos permite disponer con:</p>
+<ul class="simple">
+<li><p>Versiones estables.</p></li>
+<li><p>No se desarrollan nuevo features standares durante esa versión, solo se atienden bug-fixing.</p></li>
+<li><p>Permite desarrollos sobre customs, se atienden las necesidades de acuerdo con el cliente, pero sin cambiar el producto estándar.</p></li>
+<li><p>Extensas pruebas de calidad por el área de QA Test.</p></li>
+<li><p>El esquema de soporte incluye liberaciones cada 2 semanas en modo Branch, esto permite atender de manera adecuada los errores que la versión presenten sin regresiones.</p></li>
+</ul>
+</div>
+<div class="table-wrapper docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Nomenclatura LTS</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Versión Mayor</p></th>
+<th class="head"><p>Versión LTS</p></th>
+<th class="head"><p>Interacción LTS</p></th>
+<th class="head"><p>Hot Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="justified-text docutils container">
+<p><em>Versión Mayor</em>. La versión mayor o principal en la que se encuentra el producto, este representa la versión más representativa y es actualizada cuando presenta cambio no retro compatibles, es decir, cuando se cambia la funcionalidad del software o ya no es compatible con funcionalidades anteriores.</p>
+<p><em>Versión LTS</em>. Indica el número de LTS que se encuentra, es decir, son medianas funcionalidades o nuevas compatibles con la versión mayor. Esta solo será en múltiplos de 10.</p>
+<p><em>Interacción LTS</em>. Indica que hubo una liberación de bug fixing sobre la misma versión, es decir, la versión ya cuenta con una actualización de errores o nuevas características, esto sin modificar la funcionalidad existente.</p>
+<p><em>Hot Fix</em>. Se hace referencia a hot fix cuando hablamos a arreglos de urgencia o parche rápido, generalmente se usa este funcionamiento para arreglos de urgencia que no pueden esperar un ciclo de bug fixing y debe ser resuelto lo antes posible. Para el desarrollador, un hotfix implica que el cambio ha sido creado rápidamente y fuera de los procesos normales de desarrollo y pruebas.</p>
+<p>Por ejemplo: 10.230.02.0-LTS</p>
+<p>Se entiende la versión principal recibio una actualización importante de versión LTS.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Versión Mayor</p></th>
+<th class="head"><p>Versión LTS</p></th>
+<th class="head"><p>Interacción LTS</p></th>
+<th class="head"><p>Hot Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>230</p></td>
+<td><p>00</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Se entiende la versión principal y la versión LTS recibio una actualización y correccioón de funcionalidades sobre la misma versión.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Versión Mayor</p></th>
+<th class="head"><p>Versión LTS</p></th>
+<th class="head"><p>Interacción LTS</p></th>
+<th class="head"><p>Hot Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>230</p></td>
+<td><p>01</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Desarrollo: Beta</strong></p></li>
+</ol>
+<p>Una versión de tipo Beta se refiere a versiones de prueba o versión preliminar del producto, incluyen todos los avances que tiene el producto semanalmente, se integran: ciclos de QA smoke test y unit test automatizados para detectar regresiones sobre las características principales y Bug fixing, estas versiones se realizan de manera ágil. Las versiones Beta pueden ir a producción sin esperar la próxima versión LTS solo sí se cumple con todas las pruebas completas en el ambiente de cada cliente.</p>
+</div>
+<div class="table-wrapper docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Nomenclatura BETA</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Versión Mayor</p></th>
+<th class="head"><p>Versión Menor</p></th>
+<th class="head"><p>Hot Feature</p></th>
+<th class="head"><p>Hot Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="justified-text docutils container">
+<p><em>Versión Mayor</em>. La versión mayor o principal en la que se encuentra el producto, este representa la versión más representativa y es actualizada cuando presenta cambio no retro compatibles, es decir, cuando se cambia la funcionalidad del software o ya no es compatible con funcionalidades anteriores.</p>
+<p><em>Versión menor</em>. A diferencia de las versiones LTS esta se Indica con números incrementables, es decir, que se está actualizando. Esta será un consecutivo de la LTS en la que se está atendiendo semanalmente hasta llegar a la nueva LTS.</p>
+<p><em>Hot Feature</em>. Indica que hubo una liberación intermedia de bug fixing no puede esperar el ciclo del sprint. Se entiende como Hot Feature a una característica o solución urgentes.</p>
+<p><em>Hot Fix</em>. Se reserva para arreglos de urgencia que no pueden esperar un ciclo de bug fixing y debe ser resuelto lo antes posible.</p>
+<p>Por ejemplo: 10.221.00.0-LTS</p>
+<p>Se entiende la versión mayor recibio una actualización beta dentro de la misma LTS.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Versión Mayor</p></th>
+<th class="head"><p>Versión Menor</p></th>
+<th class="head"><p>Hot Feature</p></th>
+<th class="head"><p>Hot Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>231</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Versión Mayor</p></th>
+<th class="head"><p>Versión Menor</p></th>
+<th class="head"><p>Hot Feature</p></th>
+<th class="head"><p>Hot Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>232</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="soporte">
+<h2>Soporte<a class="headerlink" href="#soporte" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p><strong>Visión</strong></p>
+<p>Lograr un servicio de Soporte Técnico a los clientes que se asegure el uso y la adopción de UNIGIS como parte critica de sus procesos de negocios aportando los beneficios esperados. Generar usuarios fieles de UNIGIS TMS.
+Objetivos del Servicio</p>
+<p><strong>Pilares fundamentales</strong></p>
+<ul class="simple">
+<li><p>Colaboración y Sinergia: Trabajo en equipo en todas las áreas internas para dar la mejor atención y la más rápida respuesta a las consulta y problemas a los clientes con el uso de UNIGIS.</p></li>
+<li><p>Estandarizar Procesos: Unificar procesos y criterios para la atención y apoyo a los clientes UNIGIS brindando un servicio homogéneo con calidad y escalable en toda la región y países que se requiera.</p></li>
+<li><p>Base de Conocimiento: Con la información UNIGIS disponible, las consultas y respuestas a los clientes crear una base de conocimientos (KB) que permita el auto consulta y soporte, generar mayor autonomía en el equipo de soporte y servicios, facilitar la capacitación interna y externa. centralizar y generar conocimiento.</p></li>
+<li><p>Medirnos SLA / SLO: Compromiso con el servicio al cliente, asegurando los tiempos de respuesta de resolución.</p></li>
+<li><p>Soporte Proactivo (24x7x365): Implementar un equipo regional de soporte para amplia la franja horaria de atención a clientes. Detección temprana preventiva de errores y riesgos con el monitoreo activa 7/24 y alertas en el ambiente de UNIGIS CLOUD y on premise. Guardias pasivos con escalamientos para soporte fuera de horario.</p></li>
+</ul>
+<p><strong>Niveles de Soporte</strong></p>
+<p>El nivel 1 es donde el equipo de soporte interviene por primera vez. Quienes trabajan en este nivel muchas veces no tienen conocimientos profundos sobre el producto o servicio que ofrecen, en cambio, saben resolver problemas básicos buscando información dentro de una base de datos. Es importante que este personal tenga cualidades como facilidad de palabra, paciencia, empatía y capacidad de comprender el problema del cliente, incluso si la explicación no es muy clara. Otra característica clave es la capacidad para determinar cuándo escalar la situación al siguiente nivel de atención. Las tareas del soporte básico varían según el producto, entre ellas:</p>
+<ul class="simple">
+<li><p>Crear de tickets.</p></li>
+<li><p>Restablecer de contraseña.</p></li>
+<li><p>Revisar el rendimiento de la red.</p></li>
+<li><p>Ayudar a los usuarios en el uso de software y hardware.</p></li>
+</ul>
+<p>El nivel 2 atiende problemas más complejos, por lo que su conocimiento de la parte mecánica, las herramientas y el software que componen el producto es mayor. Generalmente, se deriva a este personal los problemas que no pudieron resolverse en el primer nivel de atención. Estas son algunas de sus funciones:</p>
+<ul class="simple">
+<li><p>Revisar los tickets no resueltos en el nivel 1.</p></li>
+<li><p>Identificar las soluciones que ya se probaron.</p></li>
+<li><p>Evaluar el problema.</p></li>
+<li><p>Hablar con el cliente para conocer más detalles del problema.</p></li>
+<li><p>Proponer nuevas soluciones.</p></li>
+<li><p>Derivar al siguiente nivel si estas soluciones no funcionan.</p></li>
+</ul>
+<p>El nivel 3 se conforma por profesionales que, además de conocer a fondo los productos y servicios, también tienen profundos conocimientos técnicos. Generalmente se encargan de revisar a fondo redes, códigos y estructuras y hacen reparaciones clave para la integridad de los sistemas. Algunas de sus principales funciones son las siguientes:</p>
+<ul class="simple">
+<li><p>Analizar problemas de código, arquitectura o hardware.</p></li>
+<li><p>Revisar sistemas, dar mantenimiento y hacer reparaciones.</p></li>
+<li><p>Atender los tickets no resueltos del nivel 1 y 2.</p></li>
+</ul>
+<p><strong>Jira Service Desk</strong></p>
+<p>Acceso al servicio de soporte mediante un formulario de Alta de cliente al servicio UNIGIS Service Desk.</p>
+<p>Formulario donde se completan los datos del cliente implementando de producción que accede al servicio de UNIGIS Service Desk. Se establece un usuario y una contraseña genérica para acceder al sistema UNIGIS SD y se solicita que se el interlocutor / key user quien centraliza, usa y registra las solicitudes. El cliente acepta (firma) las condiciones de uso del servicio, esencialmente acepta el SLA de UNIGIS. Si la cliente esta on premise debe aceptar un acceso remoto permanente para poder dar soporte y cumplir con el SLA. Este documente está pendiente de definición con la dirección.</p>
+</div>
+<div class="justified-text acceso al servicio unigis service desk el equipo de completar un proyecto que pasa entrega la documentacion completa del cliente para pasar a produccion y acceder entre ellas modulos contratados cantidad licencias flujos definidos integraciones key users cuenta contactos si es on premise se debe indicar los datos conexion toda esta necesaria poder brindar soporte tecnico adecuada define en conjunto con equipos producto-desarrollo docutils container">
+<p>Acceso al servicio UNIGIS Service Desk</p>
+<p>El equipo de servicio UNIGIS al completar un proyecto que pasa al servicio UNIGIS Service Desk, entrega la documentación completa del cliente para pasar a producción y acceder al servicio, entre ellas módulos contratados y cantidad de licencias, flujos definidos, integraciones, key users de la cuenta y contactos. Si el cliente es on premise se debe indicar los datos de conexión. Toda esta documentación necesaria para poder brindar un soporte técnico adecuada se define en conjunto con los equipos de servicio y producto/desarrollo de UNIGIS.</p>
+<ul class="simple">
+<li><p>Es una herramienta personalizable.</p></li>
+<li><p>Soporta administración de cambios y problemas.</p></li>
+<li><p>Integración nativa con Jira Software y Confluence.</p></li>
+<li><p>Soporta multi idiomas.</p></li>
+<li><p>Admite el uso de plugins para incorporar nuevas funcionalidades.</p></li>
+</ul>
+<p>Al iniciar sesión dentro de jira service desk el usuario puede visualizar la siguiente pantalla en donde se encuentra dos tipos de solicitudes:</p>
+</div>
+<img alt="../../_images/jirasd.png" class="align-center" src="../../_images/jirasd.png" />
+<dl class="simple">
+<dt>Consulta de Soporte</dt><dd><p>Para el formato de solicitud de consulta de soporte se realiza cuando el usuario presenta alguna duda o consulta sobre el funcionamiento de UNIGIS.</p>
+</dd>
+</dl>
+<img alt="../../_images/consulta.png" class="align-center" src="../../_images/consulta.png" />
+<p>Consultas generales acerca del funcionamiento del sistema o temas relacionados con el uso de este. Incluye todos los temas que no requiera una modificación directa sobre los productos UNIGIS.</p>
+<p>Proceso:</p>
+<img alt="../../_images/consultaproceso.png" class="align-center" src="../../_images/consultaproceso.png" />
+<dl class="simple">
+<dt>Reportar problema</dt><dd><p>Para el formato de reporte de problema se realiza cuando el usuario presenta algún problema con el producto y debe de capturar todos los datos para su resolución.</p>
+</dd>
+</dl>
+<img alt="../../_images/reporte.png" class="align-center" src="../../_images/reporte.png" />
+<p>Reporte de errores detectados en UNIGIS. Alguna funcionalidad incluida no cumple correctamente con su propósito y se requiere corrección, es cuando se realiza el levantamiento de una incidencia para su análisis y seguimiento.</p>
+<p>Proceso:</p>
+<img alt="../../_images/procesoreporte.png" class="align-center" src="../../_images/procesoreporte.png" />
+<dl class="simple">
+<dt>Solicitudes</dt><dd><p>Dentro de Jira Service Desk el usuario puede ver el listado de sus solicitudes y el estado en la que se encuentran para su gestión.</p>
+</dd>
+</dl>
+<img alt="../../_images/solicitud.png" class="align-center" src="../../_images/solicitud.png" />
+<p>Cambios programados requeridos por una nueva funcionalidad, ajustes o resolución de un problema UNIGIS. Los cambios pueden ser requeridos por el consultor o líder de proyecto, pero no por el cliente, el cambio a diferencia del problema pasa por un esquema de aprobaciones. Ejemplo: Actualizaciones del sistema.</p>
+<p>Proceso:</p>
+<img alt="../../_images/cambiosproceso.png" class="align-center" src="../../_images/cambiosproceso.png" />
+</section>
+<section id="sla-y-slo">
+<h2>SLA Y SLO<a class="headerlink" href="#sla-y-slo" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Como objetivo inicial los tiempos del SLO son sensiblemente menores a los definidos en el SLA, estos son 50% menor aproximadamente, teniendo como meta el compromiso con el servicio y el 100% de cumplimiento de SLA.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>SLA</dt><dd><p>Impacto. Sin disponibilidad de la plataforma UNIGIS (Máximo) – Operación afectada severamente (Alto) – La solución UNIGIS está funcionando con impedimento (Medio) – No afecta la operación en producción (Bajo).</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Categoría de cliente. Definición comercial.
+Tipo de solicitud. La solicitud recibida está vinculada a la resolución de un problema o es una consulta.
+Problema &gt; Consulta</p>
+<p>Tiempo de respuesta. Es el tiempo que transcurre entre la recepción de la solicitud y la asignación al especialista para comenzar con el tratamiento de esta y la respectiva notificación al cliente.</p>
+<p>Tiempo de Resolución. Es el tiempo entre que se recibe la solicitud y se diagnostica y el especialista da por resuelta la solicitud de servicio.</p>
+</div></blockquote>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../Arq/Arq.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Arquitectura Funcional y Técnica</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../CircuitoOp/Circuito.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Circuito Operativo</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Metodología de Implementación</a><ul>
+<li><a class="reference internal" href="#versiones">Versiones</a></li>
+<li><a class="reference internal" href="#soporte">Soporte</a></li>
+<li><a class="reference internal" href="#sla-y-slo">SLA Y SLO</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

@@ -1,0 +1,452 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="Metodología de Implementación" href="../Metodolog%C3%ADa/Met.html" /><link rel="prev" title="Introducción" href="../Introducci%C3%B3n/intro.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Circuito Operativo - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Gettingstart.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruteo/Ruteo.html">Planeación de Rutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="circuito-operativo">
+<h1>Circuito Operativo<a class="headerlink" href="#circuito-operativo" title="Link to this heading">#</a></h1>
+<div class="justified-text docutils container">
+<p>UNIGIS TMS ofrece una amplia gama de circuitos operativos que se adaptan a las necesidades y el tipo de negocio de cada usuario. Estos circuitos pueden variar desde simples rutas punto a punto hasta circuitos operativos más complejos. En UNIGIS TMS, cada circuito es completamente configurable, lo que permite a los usuarios ajustarlos según sus requisitos específicos.</p>
+<p>Un circuito operativo describe un flujo de operaciones punto a punto desde la entrada de datos hasta la entrega final. Aquí se proporciona un ejemplo muy estándar abarcando partes principales de la solución UNIGIS TMS:</p>
+</div>
+<img alt="../../_images/cop.png" class="align-center" src="../../_images/cop.png" />
+<section id="assignment-light-assignment-dark-administracion-de-pedidos-y-ordenes">
+<h2><span class="material-symbols-outlined">
+assignment
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ assignment
+</span> Administración de Pedidos y Órdenes<a class="headerlink" href="#assignment-light-assignment-dark-administracion-de-pedidos-y-ordenes" title="Link to this heading">#</a></h2>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"><script>
+  if (document.documentElement.classList.contains('theme-dark')) {
+    document.querySelector('.light-mode-icon').style.display = 'none';
+    document.querySelector('.dark-mode-icon').style.display = 'inline';
+  } else {
+    document.querySelector('.light-mode-icon').style.display = 'inline';
+    document.querySelector('.dark-mode-icon').style.display = 'none';
+  }
+</script><div class="justified-text docutils container">
+<p>Dentro de UNIGIS TMS cuenta con una herramienta para la gestión de pedidos, automatiza todo el proceso de gestión de pedidos. Permite gestionar la información de inventario, depósitos, ventas y clientes en un solo lugar, para que puedas acceder fácilmente a todos estos datos desde cualquier lugar y en cualquier momento.</p>
+<p>Order Management tiene la capacidad de integrar y gestionar todos los pedidos de venta de diferentes portales colaborativos (ERP, CRM, WMS, entre otros) que utiliza una empresa para delivery y pedidos. Los administra en un sistema centralizado que permite ajustar las fechas de entrega comprometidas, realizar particiones y consolidaciones, geo codificar y normalizar las direcciones, hasta generar las órdenes de entrega, trabajo o servicio, que requiere la logística de distribución</p>
+</div>
+</section>
+<section id="location-on-light-location-on-dark-planeacion-y-transporte-routing">
+<h2><span class="material-symbols-outlined">
+location_on
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ location_on
+</span> Planeación y Transporte (Routing)<a class="headerlink" href="#location-on-light-location-on-dark-planeacion-y-transporte-routing" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Dentro de UNIGIS TMS se encuentra el módulo “Routing”, una herramienta de planeación de rutas de forma automática o manual y todo lo correspondiente para la aprobación de un pedido dentro de una jornada establecida de recolección y entregas.</p>
+<p>Dentro del módulo de “Routing” se configura por jornadas de recolección/entrega, dentro de un día se pueden tener varias jornadas, se entienden como tipo de jornadas de planeación. Se puede visualizar datos importantes de la jornada, como el número de órdenes y los clientes correspondientes que contienen para planificar la ruta, de igual manera nos permite crear una nueva jornada.</p>
+<p>Cuenta con la funcionalidad de por cada jornada el usuario pueda planificar rutas de entrega/recolección.
+Se visualiza la opción “Planeación” con la jornada previamente seleccionada.</p>
+<p>Dentro de la planificación se pueden visualizar datos importantes como direcciones de la orden, vehículos, horarios, etc. para la geo codificación de la ruta.</p>
+</div>
+</section>
+<section id="desktop-windows-light-desktop-windows-dark-tendering">
+<h2><span class="material-symbols-outlined">
+desktop_windows
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ desktop_windows
+</span> Tendering<a class="headerlink" href="#desktop-windows-light-desktop-windows-dark-tendering" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>UNIGIS TMS contiene un portal del transporte que permite publicar a tus transportistas terceros previamente registrados las rutas que deseas cubrir para que acepten la oferta y asignen el vehículo que necesitas. Permite conocer la mejor rentabilidad de servicio en los viajes según su categoría.</p>
+<p>Las empresas de transporte o conductores pueden acceder al portal de transporte y visualizar la oferta en tiempo real de las rutas publicadas por el dador de carga, este a su vez puede visualizar la oferta para la optimización de las rutas de transporte, en base a evaluaciones (tender) control de rutas planificadas y optimizadas (routing) y reducción de kilómetros y uso de vehículos con comunicación en tiempo real con empresas transportistas si parte de la flota o el total se encuentra tercerizado a través del portal del transporte.</p>
+</div>
+<img alt="../../_images/transp.png" class="align-center" src="../../_images/transp.png" />
+<div class="justified-text docutils container">
+<p>Al seleccionar una empresa de transporte permite gestionar los viajes, como transportista permite ver la oferta como información importante de la ruta y carga del vehículo, los viajes ya ofertados por el conductor, agregar observaciones de la oferta, rechazar o aceptar la oferta del viaje según parámetros configurados.</p>
+<p>Al aceptar la oferta, el dador de carga puede visualizar información importante como documentación de la placa, conductor y registros adicionales. Registrar el arribo del camión al deposito de salida, validar accesos y verificación del vehículo para la confirmación del viaje.</p>
+</div>
+<img alt="../../_images/viaje.png" class="align-center" src="../../_images/viaje.png" />
+</section>
+<section id="garage-home-light-garage-home-dark-yard-management">
+<h2><span class="material-symbols-outlined">
+garage_home
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ garage_home
+</span> Yard Management<a class="headerlink" href="#garage-home-light-garage-home-dark-yard-management" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Dentro de Home de UNIGIS TMS se muestra el módulo “Yard Management” ubicado en el menú lateral. Con el módulo “Yard Management” permite administrar la ocupación de los muelles, el usuario podrá asignar viajes en determinados estados a las cortinas disponibles y las cuales se visualizarán gráficamente a través de colores. Adicionalmente es posible configurar estados como ocupada, disponible, en mantenimiento y según el estado permitirá asignar un viaje a una cortina o no. También administra alertas para los casos en que el vehículo supera el tiempo de carga establecido, las notificaciones se pueden visualizar en UNIGIS o se pueden enviar por correo electrónico.</p>
+<p>Mientras el vehículo se encuentra en viaje activo el área de torre en control, le darán seguimiento al viaje mediante:
+- Visualización personalizada por transporte, por viaje o una vista general de la jornada actual.
+- Permite consultar el estado de la conexión, el detalle del tiempo transcurrido y las ultimas actualizaciones de los viajes.
+- Consultar Información general, por ejemplo, tiempos de planificación contra el tiempo real, detalles del vehículo, velocidad, detalle de los productos a entregar, información del viaje, paradas y alarmas.
+- Los clústeres representan un grupo de vehículo o paradas. Estos se pueden habilitar o deshabilitar para ver el detalle de sus estados por grupo.
+- Puede controla en tiempo real la ejecución de las entregas visualizando los estados de las paradas del viaje.
+- Configuración de notificaciones automáticas por medio de WhattApp, SMS o correo electrónico con el detalle que se requiera compartir dependiendo del estado del pedido.
+- Entre otras.</p>
+</div>
+</section>
+<section id="local-light-local-dark-smart-tracking-monitoreo-logistico">
+<h2><span class="material-icons">
+local_shipping
+</span> <span class="material-icons dark-mode-icon" style="display: none;">
+local_shipping
+</span> Smart Tracking (Monitoreo Logístico)<a class="headerlink" href="#local-light-local-dark-smart-tracking-monitoreo-logistico" title="Link to this heading">#</a></h2>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><script>
+  if (document.documentElement.classList.contains('theme-dark')) {
+    document.querySelector('.light-mode-icon').style.display = 'none';
+    document.querySelector('.dark-mode-icon').style.display = 'inline';
+  } else {
+    document.querySelector('.light-mode-icon').style.display = 'inline';
+    document.querySelector('.dark-mode-icon').style.display = 'none';
+  }
+</script><div class="justified-text docutils container">
+<p>En la pantalla inicial de UNIGIS TMS se muestra el módulo “Tracking” ubicado en el menú lateral. El módulo “Tracking” es una herramienta para realizar el monitoreo logístico prevista del plan de distribución y la entrega de productos en tiempo real, se integra con todos los dispositivos móviles y GPS instalados en sus propios vehículos o con servicios de transportes tercerizada. Valida en tiempo real que se cumplan las rutas planeadas, los horarios de visitas y las entregas finales. Permite la configuración de alertas personalizadas y mensajes en el momento que ocurren para la toma de decisiones.</p>
+</div>
+</section>
+<section id="phonelink-ring-light-phonelink-ring-dark-confirmacion-de-entregas-pod-y-movilidad">
+<h2><span class="material-symbols-outlined">
+phonelink_ring
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ phonelink_ring
+</span> Confirmación de Entregas (POD) y Movilidad<a class="headerlink" href="#phonelink-ring-light-phonelink-ring-dark-confirmacion-de-entregas-pod-y-movilidad" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>UNIGIS ofrece un conjunto de aplicaciones móviles para colaborar en la gestión de la distribución y ofrecer un mejor servicio a los clientes. La aplicación de confirmación de entregas (POD) permite informar en tiempo real si la entrega es efectiva junto con las evidencias de la firma electrónica, scan de productos y documentos, fotos, encuestas de satisfacción, contactless, entre otros beneficios. Ofrece al operador la mejor ruta de llegada a destino considerando el tránsito de la ciudad en cada momento.</p>
+</div>
+</section>
+<section id="request-quote-light-request-quote-dark-finalizacion-y-tarifacion-de-viajes">
+<h2><span class="material-symbols-outlined">
+request_quote
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ request_quote
+</span> Finalización y Tarifación de viajes<a class="headerlink" href="#request-quote-light-request-quote-dark-finalizacion-y-tarifacion-de-viajes" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>UNIGIS TMS cuenta con un módulo “Tarifas” para la finalización y liquidación de sus viajes, puede tarifar desde el inicio del o hasta la entrega final de los productos al cliente, incluyendo la liquidación del transporte con sus tarifas y costos, documentos oficiales, tipos de ventas, customización de tarifas y todos los procesos operativos necesarios. Ofrece visibilidad y trazabilidad end-to-end del estado de los pedidos, viajes y entregas, desde la planeación inicial y hasta la ejecución final junto con todas las evidencias que ocurren durante el proceso. Opera en forma conjunta con los diferentes portales colaborativos (ERP, CRM, WMS, otro) Permite crear fácilmente los reportes, estadísticas e indicadores estratégicos del negocio se requiere.</p>
+<p>Al momento de la finalización de la parada o el viaje permite al monitoreo dejar de visualizarlo dentro del mapa como activo, es cuando entra la rendición del viaje. Al finalizar el viaje el usuario puede customizar los estados y alertas que aplicara para la llegada o rendición de viaje, presentar remitos de conformidad, hojas de viaje, sellos, incidencias económicas y gestión de productos no entregados, en caso de que no finalizar un viaje correctamente el sistema cuenta con estados para visualizar el viaje a parcialmente rendido para el seguimiento de este.</p>
+<p>El sistema genera para cada empresa de transporte cada liquidación de costo en estado inicial. Será posible hacer ajustes por incidencias.</p>
+</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"><script>
+  if (document.documentElement.classList.contains('theme-dark')) {
+    document.querySelector('.light-mode-icon').style.display = 'none';
+    document.querySelector('.dark-mode-icon').style.display = 'inline';
+  } else {
+    document.querySelector('.light-mode-icon').style.display = 'inline';
+    document.querySelector('.dark-mode-icon').style.display = 'none';
+  }
+</script></section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../Metodolog%C3%ADa/Met.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Metodología de Implementación</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Introducci%C3%B3n/intro.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introducción</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Circuito Operativo</a><ul>
+<li><a class="reference internal" href="#assignment-light-assignment-dark-administracion-de-pedidos-y-ordenes"><span class="material-symbols-outlined">
+assignment
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ assignment
+</span> Administración de Pedidos y Órdenes</a></li>
+<li><a class="reference internal" href="#location-on-light-location-on-dark-planeacion-y-transporte-routing"><span class="material-symbols-outlined">
+location_on
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ location_on
+</span> Planeación y Transporte (Routing)</a></li>
+<li><a class="reference internal" href="#desktop-windows-light-desktop-windows-dark-tendering"><span class="material-symbols-outlined">
+desktop_windows
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ desktop_windows
+</span> Tendering</a></li>
+<li><a class="reference internal" href="#garage-home-light-garage-home-dark-yard-management"><span class="material-symbols-outlined">
+garage_home
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ garage_home
+</span> Yard Management</a></li>
+<li><a class="reference internal" href="#local-light-local-dark-smart-tracking-monitoreo-logistico"><span class="material-icons">
+local_shipping
+</span> <span class="material-icons dark-mode-icon" style="display: none;">
+local_shipping
+</span> Smart Tracking (Monitoreo Logístico)</a></li>
+<li><a class="reference internal" href="#phonelink-ring-light-phonelink-ring-dark-confirmacion-de-entregas-pod-y-movilidad"><span class="material-symbols-outlined">
+phonelink_ring
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ phonelink_ring
+</span> Confirmación de Entregas (POD) y Movilidad</a></li>
+<li><a class="reference internal" href="#request-quote-light-request-quote-dark-finalizacion-y-tarifacion-de-viajes"><span class="material-symbols-outlined">
+request_quote
+</span>  <span class="material-symbols-outlined dark-mode-icon" style="display: none;">
+ request_quote
+</span> Finalización y Tarifación de viajes</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

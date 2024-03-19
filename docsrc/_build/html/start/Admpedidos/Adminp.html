@@ -1,0 +1,468 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="Planeación de Rutas" href="../Ruteo/Ruteo.html" /><link rel="prev" title="Arquitectura Funcional y Técnica" href="../Arq/Arq.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Administración de Pedidos - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Gettingstart.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruteo/Ruteo.html">Planeación de Rutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="administracion-de-pedidos">
+<h1>Administración de Pedidos<a class="headerlink" href="#administracion-de-pedidos" title="Link to this heading">#</a></h1>
+<section id="pedidos">
+<h2>Pedidos<a class="headerlink" href="#pedidos" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Dentro de UNIGIS TMS resulta útil determinar la naturaleza de un pedido y una orden para introducción al módulo de Administración de Pedidos (Order Management).</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/pedidos.png"><img alt="../../_images/pedidos.png" class="align-left" src="../../_images/pedidos.png" style="width: 100px; height: 100px;" /></a>
+<div class="justified-text docutils container">
+<p>Un pedido dentro de UNIGIS TMS es una solicitud de transporte que nos entrega el cliente o dador de carga el cual contiene los datos necesarios para saber dónde recolectar los ítems o productos como domicilio de entrega, detalle de los productos, fechas pactadas y entre otros datos sobre el pedido solicitado.</p>
+<p>Un pedido pertenece a un único cliente o dador de carga, dentro de UNIGIS TMS se asignan estados que reflejan el avance punto a punto en el transcurso del proceso del cumplimiento del servicio, según el tipo de pedido se permite generar pedidos multi tienda, troncal, reenvíos, pick up, delivery, pedidos híbridos, etc.).
+Entidades importantes.</p>
+<ul class="simple">
+<li><p>Cliente. El cliente es el dador de carga que solicita en primera instancia un pedido, es el receptor de toda la información a detalle sobre el pedido solicitado por el Cliente Orden.</p></li>
+<li><p>Cliente Orden. Es el destinatario el cual solicito el pedido.</p></li>
+<li><p>Domicilio Orden. En caso de requerir y dependiendo del tipo de operación el sistema cuenta con la capacidad de tercerizar el pedido indicando un Domicilio final para la Orden.</p></li>
+</ul>
+</div>
+</section>
+<section id="orden">
+<h2>Orden<a class="headerlink" href="#orden" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Una orden es la entidad ejecutiva mediante la cual se ordena realizar una actividad, es decir, una orden contiene todos los datos necesarios y establecidos para ejecutar la orden del pedido, como lo son:</p>
+<p>Información general sobre la orden del pedido.
+Información sobre los ítems o productos, estos pueden incluir todos los productos o una parte de ellos.
+Validaciones y observaciones sobre el avance del proceso que reflejan su cumplimiento a través de estados. Los estados pueden configurarse para automatizar las acciones por transiciones de estados.</p>
+<p>En el entendimiento que desde el pedido se crean las ordenes, un pedido puede requerir la cantidad de ordenes necesarias para distintas operaciones y fechas para cumplir su objetivo.
+Las ordenes son la entidad que se rutea dinámicamente con la herramienta de UNIGIS Routing dentro de la creación de una jornada de trabajo.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/orden.png"><img alt="../../_images/orden.png" class="align-left" src="../../_images/orden.png" style="width: 100px; height: 100px;" /></a>
+<dl class="simple">
+<dt>Tipos de Orden</dt><dd><ul class="simple">
+<li><p>Pick-Up.</p></li>
+<li><p>Delivery.</p></li>
+<li><p>Reenvío.</p></li>
+<li><p>Multi-tienda.</p></li>
+<li><p>Troncal.</p></li>
+<li><p>Entre otras.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id1">
+<h2>Administración de Pedidos<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El administrador de pedidos (Order Management) tiene la capacidad de integrar y gestionar todos los pedidos de venta de diferentes portales colaborativos (ERP, CRM, WMS, entre otros) que utiliza un negocio para delivery y pedidos. Los administra en un sistema centralizado que permite ajustar las fechas de entrega comprometidas, realizar particiones y consolidaciones, geo codificar y normalizar las direcciones, hasta generar las órdenes de entrega, trabajo o servicio, que requiere la logística de distribución.</p>
+<p>Las principales tareas de un negocio es la gestión de pedidos, ordenes de entrega y recolección, con el módulo de Administrador de Pedidos (Order Management) permite administrar los pedidos de productos a entregar, consolidar los pedidos por cliente, generar ordenes de entrega, programar todo tipo de operación, administrar datos por catálogos, geo codificador automático, visibilidad y trazabilidad del estado de los pedidos, configurar reglas de negocio y flujos de trabajo.</p>
+<p>Se puede acceder al administrador de pedidos en todas las soluciones de UNIGIS TMS, dentro de la versión Web de UNIGIS TMS se visualiza en la pantalla Home.</p>
+</div>
+</section>
+<section id="configuracion">
+<h2>Configuración<a class="headerlink" href="#configuracion" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Crear un pedido dispone con la previa creación de una estructura base, configuración y catálogos involucrados en la transacción de datos para un nuevo pedido. Es necesario realizar la configuración de las entidades relacionadas al flujo de trabajo “Pedidos” para iniciar con la operación.</p>
+</div>
+<img alt="../../_images/conf.png" class="align-center" src="../../_images/conf.png" />
+<div class="justified-text docutils container">
+<p>Establecido el pedido o solicitud de transporte esto se pueden referenciar la cantidad de órdenes necesarias. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. (Multi tienda, troncal, reenvíos, pick up, delivery, etc.).</p>
+</div>
+</section>
+<section id="permisos">
+<h2>Permisos<a class="headerlink" href="#permisos" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El módulo de administración de pedidos dispone con una serie de permisos para cada grupo, tipo de usuario, estado del pedido y tipo de pedido, según se requiera delegar todo tipo de acciones y catálogos involucrados para pedidos. Esto se realiza desde el administrador del sistema, si no se cuentan con los permisos necesarios no se pueden realizar acciones como dar de alta pedidos, editar, dar de baja, cambio de estado, etc.</p>
+</div>
+<img alt="../../_images/permisos.png" class="align-center" src="../../_images/permisos.png" />
+</section>
+<section id="flujos-de-trabajo">
+<h2>Flujos de Trabajo<a class="headerlink" href="#flujos-de-trabajo" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Toda entidad transaccional en UNIGIS TMS posee un flujo de trabajo que son 100% configurables para adaptarlos a proceso internos de un negocio. Esto permite configurar cualquier cantidad de estados para los momentos importantes dentro del proceso de un pedido, los estados producen transiciones configurables para hacer que se ejecute automáticamente un proceso.</p>
+<p>Las transiciones pueden ser limitadas por grupo de usuarios, características de la entidad, tipo de orden, categoría viaje, tipo de pedido, etc. Los cambios de estado de una entidad puede ser desencadenadores de una transición en otra entidad, por ejemplo, cuando un pedido pase en estado “aprobado” pueden desencadenar el proceso de planificación de viaje con el estado “Planificado”.</p>
+</div>
+<img alt="../../_images/flujos.png" class="align-center" src="../../_images/flujos.png" />
+<dl class="simple">
+<dt>Estado Pedido</dt><dd><p>Los estados de pedido son una parte fundamental en la administración de pedidos que se reciben. Todos los pedidos pasan por varios estados a lo largo del proceso, estos pedidos desencadenan y permiten acciones configurables dentro de UNIGIS TMS. Por ejemplo, cuando un pedido tiene un estado “Ingresado” se pueden permitir acciones como la edición del pedido, eliminar pedido, etc.</p>
+</dd>
+</dl>
+<img alt="../../_images/estadopedido.png" class="align-center" src="../../_images/estadopedido.png" />
+<dl class="simple">
+<dt>Transiciones de pedidos</dt><dd><p>Los pedidos pueden cambiar de estado de forma automática cuando reciben información desencadenante para avanzar o no con el proceso, esto se le llama transiciones. Las transiciones permitidas son por tipos de estado de origen y destino, el desencadenante de un nuevo estado del pedido. Por ejemplo, cuando el estado origen de un pedido sea “Ingresado” y su orden haya sido “Ruteada” este pase a estado destino “Planificado” de forma automática.</p>
+</dd>
+</dl>
+<img alt="../../_images/transicionpedido.png" class="align-center" src="../../_images/transicionpedido.png" />
+<dl class="simple">
+<dt>Tipo de Pedido</dt><dd><p>El objetivo de esta entidad es la crear los modelos de servicio por catálogos para los tipos de pedido de cada operación. Se definen los tipos de pedio a operar configurando campos relacionados.</p>
+</dd>
+</dl>
+<img alt="../../_images/tipopedido.png" class="align-center" src="../../_images/tipopedido.png" />
+<dl>
+<dt>Orden Tipo Pedido</dt><dd><p>El objetivo de esta entidad es usarse como modelo para crear ordenes desde un tipo de pedido, es decir, al disponer con un pedido del tipo cualquier tipo esta entidad ayuda a ejecutar el tipo de orden asignada, tomando datos relacionados al pedido para continuar con el proceso de la orden.</p>
+<p>Por ejemplo, para un tipo de pedido “Delivery” genera un tipo de orden “Delivery” de tal manera que para generar una entrega se necesita de las especificaciones origen para llevarse a cabo una orden determinada. Especificaciones como: fechas de entrega, horarios, domicilio, operación, deposito, etc.</p>
+</dd>
+</dl>
+<img alt="../../_images/ordentipopedido.png" class="align-center" src="../../_images/ordentipopedido.png" />
+</section>
+<section id="proceso">
+<h2>Proceso<a class="headerlink" href="#proceso" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El objetivo de esta entidad es la configuración de acciones o transiciones para la creación de procesos automatizados, las acciones o transiciones se pueden configurar antes o después de un cambio de estado o cuando se elimina un pedido de manera distribuida, sincrónica o temporal. Con lo cual permite configurar y adaptar UNIGIS TMS al negocio de cada cliente mediante un catálogo de métodos establecidos o customizados y la manera de la que estos se ejecutan en cada operación o tipo de jornada.</p>
+<p>Por ejemplo, cuando una entidad de tipo “Pedido” genere una transición de “Ingresado” a “Aprobado” el método a ejecutar será el de crear una orden desde ese pedido. Entendido esto se puede ir más a detalle la configuración con indicaciones en el proceso, si desea que se realice antes o después de la transición, al mismo tiempo, fuera de la transición o de manera temporal indicado por un comando crontab. Se permiten validaciones y condiciones para que el proceso se cumpla.</p>
+</div>
+<img alt="../../_images/proceso.png" class="align-center" src="../../_images/proceso.png" />
+</section>
+<section id="configuracion-b2b">
+<h2>Configuración B2B<a class="headerlink" href="#configuracion-b2b" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>La configuración del portal B2B (Business-To-Business) está orientada a un tipo de cliente o dador de carga para las transacciones comerciales entre empresas, es decir, el cliente administrador del producto UNIGIS TMS crea grupos o usuarios que les permite acceder a un portal B2B para el alta de sus pedidos. Los clientes son configurados por el nivel de usuario y sus tipos de pedidos que puedan realizar por grupo de usuarios dentro del administrador del sistema.</p>
+</div>
+<img alt="../../_images/b2b.png" class="align-center" src="../../_images/b2b.png" />
+<img alt="../../_images/b2b2.png" class="align-center" src="../../_images/b2b2.png" />
+<div class="justified-text docutils container">
+<p>En la opción para la configuración del portal B2B dispone de una gran cantidad de permisos por módulo, acciones o datos. El usuario administrador del producto UNIGIS TMS dispone con el control para permitir o no todo tipo de acciones, vistas y aplicaciones que permite realizar el cliente referente a sus propios pedidos.</p>
+<p>El formulario de registro para un nuevo pedido es configurable por una matriz de campos estandarizados a medida que el cliente administrador lo requiera según su obligatoriedad de su negocio, los formularios pueden ser por tipo de pedido o cliente dador de carga.</p>
+</div>
+</section>
+<section id="configuracion-b2c">
+<h2>Configuración B2C<a class="headerlink" href="#configuracion-b2c" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El portal B2C (Busness-To-Consumer) esta orienta al consumidor final del producto para ofrecer un proceso y experiencia de compra mejorado en todas las etapas de un pedido. El portal B2C permite que el cliente administrador de UNIGIS TMS configurar por branding e información que desea presentar al cliente correspondiente al seguimiento de los pedidos.</p>
+</div>
+<img alt="../../_images/b2c.png" class="align-center" src="../../_images/b2c.png" />
+<div class="justified-text docutils container">
+<p>Bajo un numero de referencia el cliente orden puede visualizar la trazabilidad de entrega y el seguimiento de los estados previamente configurados de su pedido.</p>
+</div>
+<img alt="../../_images/b2c2.png" class="align-center" src="../../_images/b2c2.png" />
+</section>
+<section id="crear-pedido">
+<h2>Crear Pedido<a class="headerlink" href="#crear-pedido" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El producto permite crear y administrar pedidos por las diferentes soluciones disponibles para usuarios; por el administrador de pedidos versión Web, por el portal colaborativo B2B (Business-To-Business), por UNIGIS FLEET o por medio de Web Service. Estas soluciones contienen los campos para la captura de datos necesarios para saber sobre el servicio solicitado. Como se muestran a continuación.</p>
+<p>Dentro de UNIGIS TMS la versión Web cuenta con una herramienta para la administración de pedidos, automatiza todo el proceso de gestión de pedidos. Permite gestionar la información de inventario, depósitos, ventas y clientes en un solo lugar, para que puedas acceder fácilmente a todos estos datos desde cualquier lugar y en cualquier momento. Se visualiza en la pantalla Home como Order Management (Administrador de Pedidos).</p>
+<p>La funcionalidad de la opción pedidos es que los usuarios de la operación pueden registrar de manera manual un pedido, una vez realizada la configuración se encuentran todas las funcionalidades para la gestión como: crear, consultar detalles del pedido, buscar, eliminar, entre otros, para los registros de los pedidos.</p>
+</div>
+<img alt="../../_images/om.png" class="align-center" src="../../_images/om.png" />
+</section>
+<section id="portal-b2b">
+<h2>Portal B2B<a class="headerlink" href="#portal-b2b" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Un pedido puede ser registrado mediante el portal B2B, dicho portal esta orienta a que el cliente orden o dador de carga realice el registro de sus pedidos y el estado con la que estos se van desarrollando, se permite realizar consulta de detalles, dar seguimiento a su entrega mediante una bitácora de acciones o monitoreo con las fechas y horario de como fue el transcurso de su pedido mediante los permisos que otorga el usuario administrador de UNIGIS TMS.</p>
+<p>Para el registro de un pedido se visualiza el formulario anteriormente configurado dentro del administrador del sistema según los campos para un cliente orden determinado, de igual forma el usuario puede dar uso al portal B2B para registrar por si mismo sus solicitudes de transporte.</p>
+</div>
+<img alt="../../_images/pedidob2b.png" class="align-center" src="../../_images/pedidob2b.png" />
+</section>
+<section id="fleet">
+<h2>FLEET<a class="headerlink" href="#fleet" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Dentro de la solución UNIGIS FLEET el usuario puede acceder al administrador de pedidos mediante el menú   ubicado en la barra de navegación lateral. Una vez seleccionada se puede visualizar todas las funcionalidades correspondientes para consultar información, buscar un pedido, crear o editar un pedido.</p>
+</div>
+<img alt="../../_images/fleet.png" class="align-center" src="../../_images/fleet.png" />
+<p>Se visualiza los estados previamente configurados para el seguimiento de los pedidos.</p>
+<img alt="../../_images/pedidofleet.png" class="align-center" src="../../_images/pedidofleet.png" />
+</section>
+<section id="mapi">
+<h2>MAPI<a class="headerlink" href="#mapi" title="Link to this heading">#</a></h2>
+<div class="justified-tex docutils container">
+<p>El Ingreso de pedidos mediante UNIGIS MAPI se realiza por el protocolo estándar SOAP basado en el lenguaje de XML con su Web Service asignado para “CrearOrdenesPedido” el usuario puede realizar el envió de este registro para el intercambio de información al servidor.</p>
+</div>
+<img alt="../../_images/mapi.png" class="align-center" src="../../_images/mapi.png" />
+<p>Request (Solicitud-Pedido) en lenguaje XML contiene todos los campos necesarios por etiquetas para que el usuario pueda crear un pedido.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../Ruteo/Ruteo.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Planeación de Rutas</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Arq/Arq.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Arquitectura Funcional y Técnica</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Administración de Pedidos</a><ul>
+<li><a class="reference internal" href="#pedidos">Pedidos</a></li>
+<li><a class="reference internal" href="#orden">Orden</a></li>
+<li><a class="reference internal" href="#id1">Administración de Pedidos</a></li>
+<li><a class="reference internal" href="#configuracion">Configuración</a></li>
+<li><a class="reference internal" href="#permisos">Permisos</a></li>
+<li><a class="reference internal" href="#flujos-de-trabajo">Flujos de Trabajo</a></li>
+<li><a class="reference internal" href="#proceso">Proceso</a></li>
+<li><a class="reference internal" href="#configuracion-b2b">Configuración B2B</a></li>
+<li><a class="reference internal" href="#configuracion-b2c">Configuración B2C</a></li>
+<li><a class="reference internal" href="#crear-pedido">Crear Pedido</a></li>
+<li><a class="reference internal" href="#portal-b2b">Portal B2B</a></li>
+<li><a class="reference internal" href="#fleet">FLEET</a></li>
+<li><a class="reference internal" href="#mapi">MAPI</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

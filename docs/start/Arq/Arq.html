@@ -1,0 +1,540 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="Administración de Pedidos" href="../Admpedidos/Adminp.html" /><link rel="prev" title="Metodología de Implementación" href="../Metodolog%C3%ADa/Met.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Arquitectura Funcional y Técnica - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Gettingstart.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruteo/Ruteo.html">Planeación de Rutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="arquitectura-funcional-y-tecnica">
+<h1>Arquitectura Funcional y Técnica<a class="headerlink" href="#arquitectura-funcional-y-tecnica" title="Link to this heading">#</a></h1>
+<section id="opciones-de-implementacion">
+<h2>Opciones de Implementación<a class="headerlink" href="#opciones-de-implementacion" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>UNIGIS TMS cuenta con tres modelos de implementación que permite automatizar para ser más agiles y centrar en la calidad y mejora del producto.</p>
+<dl class="simple">
+<dt>On-Cloud: UNIGIS Cloud. (opción default)</dt><dd><p>La opción recomendada 100%, la cual se encuentra hosteada por UNIGIS TMS con proveedores on cloud de primer nivel como lo son: Azure y Century link.</p>
+</dd>
+</dl>
+</div>
+<img alt="../../_images/cloud.png" class="align-center" src="../../_images/cloud.png" />
+<ul class="simple">
+<li><p>Mejor soporte.</p></li>
+<li><p>Alta disponibilidad.</p></li>
+<li><p>Alta seguridad.</p></li>
+<li><p>Mejor conexión.</p></li>
+<li><p>Mejor tiempo de respuesta.</p></li>
+<li><p>Mejor tiempo de actualizaciones.</p></li>
+<li><p>Mayor tecnología.</p></li>
+</ul>
+<blockquote>
+<div><dl class="simple">
+<dt>On-Premise: Client Infrastructure.</dt><dd><p>La opción tradicional que se despliega que despliega todas las aplicaciones y componentes de UNIGIS implementados en la infraestructura de la nube del cliente, incluidos los datos geoespaciales y el motor de optimización. Modelo de caja de arena. empresas con políticas estrictas para proteger los datos internos o procesos críticos que se implementarán en nubes externas.</p>
+</dd>
+</dl>
+</div></blockquote>
+<img alt="../../_images/server.png" class="align-center" src="../../_images/server.png" />
+<div class="justified-text docutils container">
+<dl class="simple">
+<dt>Hybrid: UNIGIS Cloud &amp; On demand.</dt><dd><p>Servidor web, aplicaciones y de bases de datos implementado en las instalaciones (lado del cliente). Los datos de tráfico de mapas, el motor de optimización y las API GIS están en la nube UNIGIS. Este despliegue requiere de una conexión a Internet confiable de alto rendimiento.</p>
+</dd>
+</dl>
+<p>Tecnologías que conforman la solución UNIGIS TMS:
+Frameworks, Tecnologías y Lenguajes de Programación.</p>
+</div>
+<img alt="../../_images/tecs.png" class="align-center" src="../../_images/tecs.png" />
+</section>
+<section id="layouts">
+<h2>Layouts<a class="headerlink" href="#layouts" title="Link to this heading">#</a></h2>
+<p>Las capas de la infraestructura funcional presentan el siguiente flujo funcional corresponde a la solución On-cloud recomendada para el producto:</p>
+<img alt="../../_images/layouts.png" class="align-center" src="../../_images/layouts.png" />
+<p>Persistencias de Datos &gt; Capa Backend &gt; Web Layer &gt; Peticiones de Usuario &gt; Display &gt; Usuarios (HUB/IoT)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Solución basada en el ecosistema MSFT. (Microsoft)</p></li>
+<li><p>Arquitectura SOA.</p></li>
+<li><p>Procesos de Back-End + Job Queues.</p></li>
+<li><p>Propietario de la solución. No aplicaciones externas.</p></li>
+<li><p>Escalabilidad horizontal y alta compatibilidad.</p></li>
+</ul>
+</div></blockquote>
+<p>UNIGIS Endpoint tiene la capacidad de realizar una nativa integración con otras aplicaciones como ERP’s, CRM’s o WMS, este Endpoint puede ser Cloud/On Premise se comunica de dos maneras: con adapters o de manera directa.</p>
+<blockquote>
+<div><p>Datos de entrada:
+- Adaptadores propios UNIGIS. (Adapters) Es una pieza de software custom que transforma la información de entrada a los diferentes servicios.
+- Directa. Consumo de los servicios directos.
+Datos de salida:
+- SyncOuts. Pieza de software custom basada en un modelo UNIGIS EDF (Event Driver framework) basado en eventos, es decir, se configura los tipos de eventos que requiera información para comunicar en tiempo real los datos relevantes a cada tipo de evento.
+- UNIGIS MAPI WS (Librería estándar)
+Logístics: Datos maestros / catálogos (Clientes, Ubicaciones, Productos, Depósitos, Vehículos, Tarifas, etc.) y datos tradicionales (Ordenes, Entregas, Rutas, Envíos, Facturas, Etc.).
+GPS (Dispositivos y integración de proveedores): Posiciones, Alertas, Telemática, Comandos.
+Geographic: Codificación Geográfica de Avance y Reserva, Indicaciones de Conducción, Mapas Deslizantes, Mapas Estáticos, Áreas, Distancia, Etc.
+Authentication (SSO)
+Otros: Zona Horaria, Geografía o Tracking.</p>
+</div></blockquote>
+<img alt="../../_images/appis.png" class="align-center" src="../../_images/appis.png" />
+<img alt="../../_images/appis2.png" class="align-center" src="../../_images/appis2.png" />
+</section>
+<section id="unigis-hub">
+<h2>UNIGIS HUB<a class="headerlink" href="#unigis-hub" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera se adapta a tecnología on premise u on cloud.
+Como único servidor intermedio transmite y distribuyen sin importar el tipo de tecnología implementada en el usuario, es decir, la solución UNIGIS HUB es capaz de integrar entre distintas tecnologías on premise u on cloud para transferir información en tiempo real.</p>
+</div></blockquote>
+<img alt="../../_images/sources.png" class="align-center" src="../../_images/sources.png" />
+<img alt="../../_images/sources2.png" class="align-center" src="../../_images/sources2.png" />
+<div class="justified-text docutils container">
+<ul class="simple">
+<li><p>UNIGIS HUB IoT Integración empresarial.</p></li>
+<li><ul>
+<li><p>300 AVL/ GPS Proveedor integrados.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>50,000 Dispositivos/Vehículos integrados.</p></li>
+</ul>
+</li>
+<li><p>+50 MM eventos diarios (posicionamientos, sensores).</p></li>
+<li><p>Múltiples fuentes: IoT Eventos (GPS), proveedores terceros, dispositivos móviles, UNIGIS Apps.</p></li>
+<li><p>Operación en tiempo real.</p></li>
+</ul>
+</div>
+</section>
+<section id="modelo-de-datos">
+<h2>Modelo de Datos<a class="headerlink" href="#modelo-de-datos" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>UNIGIS implementa un repositorio de datos único multi cliente (UNIGIS_DataRepository) su desarrollo del tipo Code First: no triggers (Sin desencadenantes), no stored procedures (Sin procedimientos almacenados), lo cual nos dice que explícitamente son datos de fácil navegación con nomenclatura en español (Tablas, campos, indicies, etc.), en cuanto a la seguridad la integridad del modelo de datos es asegurado con foreing keys obligatorias.</p>
+</div></blockquote>
+</section>
+<section id="entidades-core">
+<h2>Entidades Core<a class="headerlink" href="#entidades-core" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Permite a los programadores trabajar con datos en forma de objetos y propiedades funcionales, por ejemplo, empresa, sucursal o operación como entidades base, sin tener que pensar en las tablas de las bases de datos subyacentes y en las columnas en las que se almacenan estos datos, se pueden crear y mantener aplicaciones orientadas a datos con menos código que en las aplicaciones tradicionales.</p>
+<p>Se divide en tres tipos de entidades: Entidades Base, Catálogos y entidades Transaccionales.</p>
+</div></blockquote>
+<img alt="../../_images/entidades.png" class="align-center" src="../../_images/entidades.png" />
+</section>
+<section id="descripcion-general">
+<h2>Descripción General<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>UNIGIS TMS contiene diferentes entidades y relaciones durante los diferentes procesos donde se pueden ver representados mediante un diagrama de flujo de datos, dentro del siguiente diagrama se representa una estructura base en función de los módulos del producto y como se relacionan entre sí. Así mismo como se almacenan, organizan y se acceden a los datos.</p>
+<p>Diagrama de flujo de datos:</p>
+</div></blockquote>
+<img alt="../../_images/overview.png" class="align-center" src="../../_images/overview.png" />
+<dl class="simple">
+<dt>Base</dt><dd><p>La estructura base se compone de la empresa, sucursales y operaciones, las entidades que son importantes para iniciar la operación dentro de UNIGIS TMS.</p>
+</dd>
+</dl>
+<img alt="../../_images/base.png" class="align-center" src="../../_images/base.png" />
+<p>En donde se entiende como una empresa (Unidad Organizacional) puede contar con ninguna, una o más sucursales dependiendo de la forma de trabajo, que a su vez una sucursal o no, puede disponer de 1 o más operaciones especializadas a cada forma de trabajo. Cada operación va a ejecutarse en una Jornada de trabajo preprogramada.</p>
+<p>La operación es la segmentación de cada forma de trabajo para cada empresa, por lo que es importante definir sus comportamientos, configuraciones, grupos de usuarios, datos y procesos de forma especializada para iniciar a definir la ejecución.</p>
+<p>La ejecución representada por jornadas o planificación del día pueden ser por órdenes múltiples a disposición de la modalidad de trabajo de la empresa.</p>
+<dl class="simple">
+<dt>Órdenes</dt><dd><p>La estructura de órdenes es la resolución de los pedidos de cada cliente:</p>
+</dd>
+</dl>
+<img alt="../../_images/ordenes.png" class="align-center" src="../../_images/ordenes.png" />
+<p>Un cliente o dador de carga puede contar con distintos clientes que a su vez esos clientes pueden estar referenciados a un tercer domicilio donde se pretende finalizar un pedido. Permitiendo abarcar pedidos de clientes de nuestro cliente.</p>
+<p>El cliente es quien levanta 1 o más pedidos en donde se inicia un compromiso de servicio a entregar, recolectar y/o visitar dependiendo de la complejidad. El pedido contiene una lista de ítems o productos a unas fechas pactadas lo cual establece un nivel de servicio y restricciones que se deben tomar en cuenta (Variables logísticas y/o ubicación geográfica).</p>
+<p>Establecido el pedido o solicitud de transporte esto se pueden referenciar en N cantidad de órdenes. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. (Multi tienda, troncal, reenvíos, pick up, delivery, etc).</p>
+<dl class="simple">
+<dt>Planeación y resuelto</dt><dd><p>Toda orden necesita de una planeación con todas las entidades relacionas al tipo de operación necesaria para finalizar la orden.</p>
+</dd>
+</dl>
+<img alt="../../_images/planeacion.png" class="align-center" src="../../_images/planeacion.png" />
+<p>Una orden ya establecida puede generar una o más rutas de recolección y entrega, una ruta dispone de un plan a ejecutar con todos las entidades correspondientes para llevar a cabo de manera optimizada la operación. Cada ruta contiene recursos asignados utilizados para lograr el objetivo de la orden.</p>
+<p>Puede contener uno o más conductores, tipo de vehículo, uno o más vehículos según sus características del domicilio destino, en caso de recolección puede relacionarse con un muelle o deposito de origen o destino.</p>
+<dl class="simple">
+<dt>Ejecución y Tracking</dt><dd><p>La ejecución de la ruta se convierte en un viaje que contiene parte fundamental del flujo de datos en tiempo real.</p>
+</dd>
+</dl>
+<img alt="../../_images/tracking.png" class="align-center" src="../../_images/tracking.png" />
+<p>Un viaje se compone de una secuencia de paradas planificadas o no planificadas, todas relacionadas a una única orden. Las paradas no planificadas pueden ser de tipo servicios, control, mantenimiento o distintas cuestiones alternas por ejecución del viaje.</p>
+<p>Cada parada es una transacción que resulta en diferentes estados según su ejecución (Entregado, no entregado, pendiente, etc.).</p>
+<dl class="simple">
+<dt>Tarifación</dt><dd><p>Al finalizar un circuito punto a punto el modelo de datos realiza una finalización y liquidación del viaje lo cual contiene entidades que valorizan todo el proceso del producto.</p>
+</dd>
+</dl>
+<img alt="../../_images/tarifacion.png" class="align-center" src="../../_images/tarifacion.png" />
+<div class="justified-text docutils container">
+<p>Una liquidación es el conjunto de una o más guías de un mismo tipo para un periodo de tiempo previamente establecidos. Permite obtener la valorización final de todas las entidades que han sido involucradas hasta cumplir el objetivo.</p>
+<p>Una guía es 100 porciento configurable de costos de tarifación como de venta. Estos costos contienen pedidos, viajes y paradas, el tarificador realiza los cálculos sobre las guías previamente configurables.</p>
+</div>
+</section>
+<section id="workflows">
+<h2>Workflows<a class="headerlink" href="#workflows" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Toda entidad que contiene una actividad relacional posse un workflow, estos workflows son completadas en un determinado orden de estados y transiciones para alcanzar un objetivo del producto. Estos estados y transacciones son 100% configurables a medida del negocio, es decir, solo se limitan las transiciones por grupos de usuarios, atributos de la entidad (tipo de orden, categoría de viaje, tipo de pedido, etc.) o jerarquía en la estructura base, lo cual nos dice que no están fijas por código. Permiten agregar procesos que se ejecutan en cada transición, y en esta secuencia se pueden automatizar por determinadas medidas del negocio esto hace que las entidades cambien de estados.</p>
+</div></blockquote>
+<img alt="../../_images/workflows.png" class="align-center" src="../../_images/workflows.png" />
+</section>
+<section id="modelo-de-seguridad-y-usuarios">
+<h2>Modelo de Seguridad y Usuarios<a class="headerlink" href="#modelo-de-seguridad-y-usuarios" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Los accesos al sistema se segmentan por Grupos con niveles de acceso y permisos los cuales contienen datos, workflows, módulos del sistema y acciones que puede realizar “N” cantidad de usuarios asignados a un grupo. Estos grupos y usuarios Los perfiles limitan a ciertas acciones dentro del sistema como por ejemplo un conductor, transporte, administrador, monitor o un perfil que se desea configurar para una autogestión de permisos de forma predefinida. Se usa una autentificación externa SSO con LDAP y OAUTH.</p>
+</div></blockquote>
+<img alt="../../_images/mus.png" class="align-center" src="../../_images/mus.png" />
+</section>
+<section id="arquitectura-de-integracion">
+<h2>Arquitectura de Integración<a class="headerlink" href="#arquitectura-de-integracion" title="Link to this heading">#</a></h2>
+</section>
+<section id="unigis-mapi">
+<h2>UNIGIS MAPI<a class="headerlink" href="#unigis-mapi" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>UNIGIS MAPI es una arquitectura que integran web services que con ayuda de una herramienta como SoapUI o Postman permite realizar validaciones de servicios o solicitudes de diferentes indoles para un intercambio de información segura, completa y confiable de UNIGIS.</p>
+<p>UNIGIS MAPI es la arquitectura de integración.
+- Arquitectura de Servicio (SOA) de Web Services construida sobre framework .NET.
+- Integra todas la funciones y servicios disponibles en UNIGIS para el intercambio de información I/O con aplicaciones externas y dispositivos (IoT).
+- Contiene las validaciones y reglas de negocios para asegurar la consistencia del modelo y las aplicaciones.
+- Tecnologías de integración SOAP (XML) y API REST (JSON).
+- Seguridad mediante HTTPS y API Keys por cada instalación.
+- UNIGIS MAPI dispone con más de 100 métodos (Solicitudes).</p>
+<p>Algunos de los métodos I/O mas comunes sobre las estructuras base, transaccional de las operaciones y catálogos maestros son los siguientes.</p>
+</div></blockquote>
+<img alt="../../_images/unigismapi.png" class="align-center" src="../../_images/unigismapi.png" />
+<dl>
+<dt>Uso y Recomendaciones</dt><dd><blockquote>
+<div><ol class="arabic simple">
+<li><p>Request &amp; Response.</p></li>
+</ol>
+</div></blockquote>
+<p>Por cada solicitud (Request) MAPI tiene una respuesta (Response).</p>
+<ul>
+<li><p>Respuesta Simple: Devuelve un valor generalmente numérico que informa que el procesamiento de datos fue exitoso o que hubo un error (código de error).</p></li>
+<li><p>Respuesta Compleja: Devuelve una relación de entidades con sus datos. Si la respuesta es vacia el servicio no pudo encontrar información con los parámetros enviados.</p>
+<blockquote>
+<div><ol class="arabic simple" start="2">
+<li><p>SOAP o REST.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+<p>UNIGIS MAPI permite integrar bajo tecnologías SOAP (XML) o REST (JSON) decidiendo el cliente y proyecto cual es la mejor opción. Algunas herramientas de ayuda para el consumo de la MAPI UNIGIS son SOAPUI o POSTMAN.</p>
+<p>Por ejemplo, en una solicitud para crear orden pedido. La herramienta muestra un Request (Solicitud) en lenguaje XML en donde un usuario puede agregar los datos requeridos para ejecutar la solicitud sobre el web service correspondiente. Al finalizar la herramienta muestra un Response (Respuesta) con las observaciones finales de la solicitud ya que fue correcta o ejecutada incorrectamente.</p>
+</dd>
+</dl>
+<img alt="../../_images/mapi1.png" class="align-center" src="../../_images/mapi1.png" />
+</section>
+<section id="tipo-de-integraciones">
+<h2>Tipo de integraciones<a class="headerlink" href="#tipo-de-integraciones" title="Link to this heading">#</a></h2>
+<p>Tipos de Integraciones.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Servicios con MAPI Estándar (Directa)</p></li>
+</ol>
+<p>Uso de MAPI estándar con las funciones disponibles. Solo requiere desarrollo por parte del equipo cliente. Por configuración y parámetros del sistema se puede cambiar el comportamiento de algunos métodos.
+2. Servicios con MAPI Custom.</p>
+<p>Cuando el cliente o proyecto requiere una personalización de la integración se construye un custom wrapper que consume los servicios estándar de MAPI. Requiere mantenimiento posterior.
+3.     Adapters Custom.</p>
+<p>Cuando no se pueden consumir los servicios MAPI por limitaciones técnicas se construyen componente ad-hoc (Programas generalmente, independientes) para el proyecto. Incluyen todas las reglas de validación necesarias para la consistencia en UNIGIS. Existen adapters disponibles para reutilizar o adaptarlos.
+4.     Ingregaciones con SYNC OUTs</p>
+<p>Adicional a MAPI la arquitectura UNIGIS dispone de mecanismos de “Aviso en tiempo real” para sistemas externos de los eventos o cambios que ocurran en el sistema, llamados SYNC OUTS. Estos eventos pueden ser, cambios de estados en entidades, nuevos registros en entidades o transacciones, entre otros.
+Características de los SYNC OUT:</p>
+<ul class="simple">
+<li><p>Monitorean creación de entidades: viaje, orden, guía, alarma o ruta.</p></li>
+<li><p>Monitorean cambios de estados en entidades como: viaje, orden, guía, ruta, parada, liquidación, pedido, incidencia.</p></li>
+<li><p>Hacen uso de los estados ya configurados en los workflows de UNIGIS.</p></li>
+<li><p>Envían en tiempo real los datos a un servicio SOAP o REST desarrollado por el cliente, con la estructura, seguridad, campos, etc, definidos.</p></li>
+<li><p>Realiza reintento y genera logs para tener trazabilidad de lo ocurrido.</p></li>
+<li><p>Son muy flexibles y configurables para adaptarse fácilmente a distintos escenarios incluso algunos muy completos de integración en tiempo real.</p></li>
+</ul>
+</div></blockquote>
+<img alt="../../_images/ejemplo.png" class="align-center" src="../../_images/ejemplo.png" />
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../Admpedidos/Adminp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Administración de Pedidos</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Metodolog%C3%ADa/Met.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Metodología de Implementación</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Arquitectura Funcional y Técnica</a><ul>
+<li><a class="reference internal" href="#opciones-de-implementacion">Opciones de Implementación</a></li>
+<li><a class="reference internal" href="#layouts">Layouts</a></li>
+<li><a class="reference internal" href="#unigis-hub">UNIGIS HUB</a></li>
+<li><a class="reference internal" href="#modelo-de-datos">Modelo de Datos</a></li>
+<li><a class="reference internal" href="#entidades-core">Entidades Core</a></li>
+<li><a class="reference internal" href="#descripcion-general">Descripción General</a></li>
+<li><a class="reference internal" href="#workflows">Workflows</a></li>
+<li><a class="reference internal" href="#modelo-de-seguridad-y-usuarios">Modelo de Seguridad y Usuarios</a></li>
+<li><a class="reference internal" href="#arquitectura-de-integracion">Arquitectura de Integración</a></li>
+<li><a class="reference internal" href="#unigis-mapi">UNIGIS MAPI</a></li>
+<li><a class="reference internal" href="#tipo-de-integraciones">Tipo de integraciones</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

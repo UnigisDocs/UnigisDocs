@@ -1,0 +1,162 @@
+Planeación de Rutas
+===================
+
+Ruteo
+------
+
+.. container:: justified-text
+
+ Resulta útil determinar la naturaleza de planificar una ruta antes de decidir que tipos de planificación utilizar para lograr la optimización de las paradas, es útil conocer entre los dos métodos principales de planificación de rutas: fijas y dinámicas.
+ 
+ - Rutas Fijas. Cada ruta tiene un conjunto especifico de paradas en un orden especifico no dispuesto a cambiar, garantizando que los destinatarios siempre recibirán su producto/carga en la hora especificada y a menudo por el mismo conductor. 
+ - Rutas Dinámicas. Esta el otro extremo en esta todos los puntos de entrega/recolección son planificadas en la ruta mas optima, teniendo en cuenta las restricciones de horario, distancia y optimización de carga, generalmente los destinos son visitados por diferentes vehículos/conductores. Este tipo de ruta busca aprovechar de la mejor forma el tiempo entre las distancias recorridas y el tipo de vehículo.
+
+.. image:: ruteo.png
+    :align: center
+
+Módulo de Ruteo
+---------------
+
+.. container:: justified-text
+
+ La planificación de las rutas se refiere al proceso de selección de entregas, producto, transporte y otros factores que puedan influir en la distribución para crear una ruta adecuada. El módulo de “Routing” dentro de UNIGIS TMS tiene la capacidad de planificar, diseñar y optimizar todas las rutas de logísticas en base a reglas de negocio y parámetros configurables necesarias para que de forma automática pueda reducir tiempos de planeación, tiempos en ruta y tiempos de entrega.
+
+ Considera todo tipo de variables conocidas por zonas específicas al momento de planear una orden como los horarios de entrega, tipos de vehículos, dimensiones del pedido, rutas optimizadas, depósitos, longitud y latitud, datos logisticos, ventanas horarias, entre otras variables.
+
+ Se puede acceder al Ruteo (Routing) en todas las soluciones de UNIGIS TMS, dentro de la versión Web de UNIGIS TMS se visualiza en la pantalla Home.
+
+ La orden especifica los datos generales para la entrega del pedido, como que se tiene que realizar, a donde se tiene que ir, en que horario y que ítems contiene el pedido. Es un proceso que viene del administrador de pedidos.
+ 
+ - Gestión del Transporte que realiza la distribución
+ - Geo codificador de direcciones con normalizador
+ - Planeación óptima de rutas de distribución
+ - Optimización del cubicaje de los vehículos
+ - Reglas de negocio configurables por operación, transporte, volumetría, tipo de producto, ventanas horarias y más
+ - Restricciones geográficas y de circulación con el tráfico
+ - Entrega y recolección de mercadería, logística inversa
+ - Mapas digitales mundiales
+
+Entidades
+---------
+.. container:: justified-text
+
+ Planificar una solicitud de transporte dispone con la previa creación de una estructura base, configuración y catálogos involucrados en la transacción de datos para una nueva orden ruta. Es necesario realizar la configuración de las entidades relacionadas a los flujos de trabajo jornada, orden y rutas para iniciar con la operación.
+
+.. image:: entidades.png
+    :align: center
+
+.. container:: justified-text
+
+ Establecido el pedido o solicitud de transporte esto se pueden referenciar la cantidad de órdenes necesarias. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. En la planificación no se planifica hacia un vehículo, si no con un tipo de vehículo disponible en un depósito correspondiente a una operación para las características especificas que presentan la ruta, jornada y orden para cumplir con su objetivo el domicilio orden.
+
+.. image:: entidadruteo.png
+    :align: center
+
+Configuración de Datos generales
+-----------------------------------
+
+.. container:: justified-text
+
+ Catálogos que considerar antes de empezar a planificar una ruta
+
+ - Depósitos. Es el centro de distribución donde parte o regresan los vehículos, área de influencia. El depósito cuenta con una zona de ruteo preferente. Datos generales del depósito, cercanía, dirección, parámetros horarios, carga, parámetros internacionales, jurisdicción. planificar por tipo de depósito y producto.
+ - Tipos de vehículos. Cada tipo de vehículo dispone con ciertas características para peso, carga, especificaciones de vehículo, velocidad máxima o mínima para la configuración de alertas, cantidad de la flota de vehículos, dimensiones de carga, tiempos de inactividad, momento más optima, Alertas de velocidad máxima. Recursos disponibles
+ - Tipo de Jornada. Agrupador de ordenes utilizadas para planificar en el momento, guía de operación. Planificar ordenes para una jornada del día. Para fijas o dinámicas. Descripción, tipo de operación, filtro de ordenes clasificar a un tipo de operaciones a considerar dentro de la jornada, segmentar jornada con tipos de jornada, jornada por tipo de jornada.
+ - Muelles. Por tipo de vehículo- muelle. Deposito asignado, descripción, horarios de operación, tipo de muelle, días permitidos. Restricción por tipo de vehículo para cada muelle. La asignación y disponibilidad.
+ - Zonas de planificación. Geo referencia. Área de influencia zona metropolitana dibujar una zona de propiedad para ruteo. Por órdenes para planificar. Las zonas son una entidad fundamental no solo delimitan las zonas de ruteo si no que se pueden contar con restricciones por zonas por tipos de vehículos, por condiciones, horarios, peso o volumen por área. Zona de ruteo por operación o tipo de jornada. Prioridad de zonas. Geo editor, zonas de peligro zonas de depósitos, zonas de ruteo, factor importante.
+ - Escenarios de planificación.  condiciones
+ - Ordenes geo codificadas. Propiedades a función en la zona de la que se encuentren respetando los parámetros.
+
+Principales Datos de la Orden
+-----------------------------
+
+.. container:: justified-text
+
+ Un pedio realiza las ordenes de entrega para completar una jornada, La orden especifica que es lo que se tiene que realizar. (donde, como, hora,)
+ Principales datos que deben de disponer una orden de entrega.
+ - Delivery note. (Referencia de Entrega)
+ - Descripción.
+ - Dirección.
+ - Variables de peso, volumen, bultos, palets.
+ - Horarios.
+ - Tiempos de espera.
+ - Tipo de entrega.
+
+ Todos los datos son indispensables para la construcción de la ruta.
+
+.. image:: datosorden.png
+    :align: center
+
+.. container:: justified-text
+
+ Para que la orden sea considerada para planificar tiene que estar dentro del horario efectivo de la ruta según las entidades que intervienen. 
+
+ El centro de distribución tiene que estar disponible dentro del horario efectivo de la ruta, el vehículo debe de pertenecer al tipo de deposito disponible y dentro de la franja horaria de la distribución y coincidir los horarios del domicilio orden para llegar a su entrega.
+
+ A considerar tiempos de embarque, traslados, etc.
+
+.. image:: datosorden1.png
+    :align: center
+
+.. container:: justified-text
+
+
+ La configuración de datos generales para órdenes se centra en los escenarios, los cuales son responsables de la distribución de productos o mercancías desde ciertos depósitos hasta su usuario final. Dentro de estos modelos, se consideran variables como clientes, demanda y las posibles rutas, las cuales desempeñan un papel importante en la gestión logística.
+
+ Se busca optimizar la salida de vehículos dependiendo de la ubicación del depósito, teniendo en cuenta aspectos como la disposición lineal por calles. Se incluyen datos generales, la consolidación de escenarios y la identificación de posibles barreras áreas.
+
+.. image:: conf.png
+    :align: center
+
+Consolidación 
+--------------
+
+.. container:: justified-text
+
+ Para optimizar la entrega de varias órdenes en un mismo domicilio, se busca consolidarlas en una sola parada. Esto implica agrupar las órdenes en una misma ubicación geográfica o parada, dentro de un radio de influencia determinado.
+
+ En el caso de entregas verticales, donde se realizan diferentes entregas en la misma calle, se busca también consolidarlas en un radio de influencia para optimizar tanto la parada del vehículo como el tiempo del conductor. Por ejemplo, en el caso de entregas de servicios de agua, se considera la cercanía, la ubicación exacta o un radio de influencia dentro de una distancia preestablecida.
+
+ Además, se promedian los tiempos de espera y se establece un máximo tiempo de espera para garantizar una gestión eficiente de la entrega de las órdenes.
+
+.. image:: conso.png
+    :align: center
+
+Escenarios
+----------
+
+.. container:: justified-text
+    
+ Se permite crear diferentes escenarios a medida de la planificación de una operación con las condiciones presentadas al Domicio orden, por ejemplo, un escenario para temporada baja, para turno nocturno, por vehículos, por zonas de riesgo, etc. 
+ 
+ Dependiendo la cantidad de órdenes y jornadas a asignar.
+
+.. image:: escenario.png
+    :align: center
+
+.. container:: justified-text
+
+ El radio de densidad o influencia de las órdenes busca optimizar matemáticamente la cantidad de kilómetros recorridos y la cantidad de productos entregados, garantizando que las rutas no se dispersen geográficamente y se planifiquen de manera óptima sin superposiciones. Se utiliza el concepto de baricentro para determinar la ubicación central, y se establece una distancia máxima entre cada orden para evitar la dispersión y optimizar la eficiencia logística.
+
+.. image:: radio.png
+    :align: center
+
+
+Parámetros generales
+    Inicio de rutas: Preferencia de selección del baricentro para empezar a construir la ruta, por selección de semilla. Según la conveniencia o mandatorio para iniciar las paradas preferentemente de inicio de ruta. Priorizar por:
+
+- Grupos: Buscando la idea de no generar solapamiento entre rutas, autoclustering, grupo de rutas 
+- Vehículos: Reutilización de tipo de vehículos, preferencias por tipo de vehículo. Porcentaje de cargas. Volumetría. Depósitos automáticos. Optimización de vehículos. Permitir a los vehículos múltiples depósitos.
+- Horarios: Deposito, salida, vehículos, ordenes, ventanas de simulación. Por intervalos ampliar fn. La selección del resultado optimo validar cual es la mejor. evalúa todos los parámetros mejorar detalles de la planificación particulares dentro de la ruta a otra.
+
+Parámetros avanzados
+    Priorizar construcción de ruta, restricciones. Primera orden, concurrencia, ruteo por calles. Contorno avanzado algoritmo que permite un contorno más especifico por área.
+
+Optimización
+    Parámetro una vez generado la ruta se valida por una optimización de su preferencia.
+
+
+
+
+
+
