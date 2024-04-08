@@ -10,11 +10,19 @@ Bienvenido a UNIGIS
     
     Desarrollamos soluciones logísticas con la aplicando la última tecnología informática, flexibles y confiables para superar los desafíos del mercado global. Como en los siguientes países: Argentina, Chile, Brasil, Colombia, México, Estados Unidos y España.
 
-.. image:: mapa.png
-   :align: right
-   :width: 200px
-   :height: 200px
-   :target: _self
+.. image:: imagenmapa.png
+    :align: center
+    :class: only-light
+    :height: 300px
+    :width: 550px
+    :target: _self
+
+.. image:: imagenmapablack.png
+    :align: center
+    :class: only-dark
+    :height: 300px
+    :width: 550px
+    :target: _self
 
 - Especialistas en distribución y transporte.
 - Respaldo con +20 años de experiencia.

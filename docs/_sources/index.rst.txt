@@ -7,18 +7,14 @@ UNIGIS DOCS
 
     Aquí encontrarás una completa guía que te brindará un contexto detallado sobre nuestro negocio y la plataforma UNIGIS TMS. 
 
-.. image:: GettingStart/imagenmapa.png
-    :align: center
-    :class: only-light
-    :height: 300px
-    :width: 550px
+.. image:: GettingStart/mapa.png
+   :align: right
+   :width: 200px
+   :height: 200px
+   :target: _self
 
-.. image:: GettingStart/imagenmapablack.png
-    :align: center
-    :class: only-dark
-    :height: 300px
-    :width: 550px
-
+Contenido
+------------
 
 .. toctree::
    :maxdepth: 1
