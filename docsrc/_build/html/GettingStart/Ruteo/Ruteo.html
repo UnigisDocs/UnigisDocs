@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c8da5f81" />
     
     
 
@@ -219,33 +219,34 @@
         <article role="main">
           <section id="planeacion-de-rutas">
 <h1>Planeación de Rutas<a class="headerlink" href="#planeacion-de-rutas" title="Link to this heading">#</a></h1>
+<img alt="../../_images/routing.png" class="align-left" src="../../_images/routing.png" />
 <section id="ruteo">
 <h2>Ruteo<a class="headerlink" href="#ruteo" title="Link to this heading">#</a></h2>
 <div class="justified-text docutils container">
-<p>Resulta útil determinar la naturaleza de planificar una ruta antes de decidir que tipos de planificación utilizar para lograr la optimización de las paradas, es útil conocer entre los dos métodos principales de planificación de rutas: fijas y dinámicas.</p>
-<ul class="simple">
-<li><p>Rutas Fijas. Cada ruta tiene un conjunto especifico de paradas en un orden especifico no dispuesto a cambiar, garantizando que los destinatarios siempre recibirán su producto/carga en la hora especificada y a menudo por el mismo conductor.</p></li>
-<li><p>Rutas Dinámicas. Esta el otro extremo en esta todos los puntos de entrega/recolección son planificadas en la ruta mas optima, teniendo en cuenta las restricciones de horario, distancia y optimización de carga, generalmente los destinos son visitados por diferentes vehículos/conductores. Este tipo de ruta busca aprovechar de la mejor forma el tiempo entre las distancias recorridas y el tipo de vehículo.</p></li>
-</ul>
+<p>Para lograr la optimización de las paradas en la planificación de rutas, es importante comprender la naturaleza de ambos métodos principales: rutas fijas y rutas dinámicas.</p>
+<p>Rutas Fijas:</p>
+<p>En las rutas fijas, cada ruta tiene un conjunto específico de paradas en un orden predeterminado que no varía. Esto garantiza que los destinatarios siempre recibirán sus productos o carga en el horario especificado, a menudo por el mismo conductor.</p>
+<p>Rutas Dinámicas:</p>
+<p>Por otro lado, las rutas dinámicas optimizan todos los puntos de entrega y recolección en la ruta más eficiente, teniendo en cuenta restricciones de horario, distancia y optimización de carga. En este caso, los destinos suelen ser atendidos por diferentes vehículos y conductores. Este enfoque busca aprovechar al máximo el tiempo y la eficiencia en la distribución de las cargas, adaptándose a las distancias recorridas y al tipo de vehículo utilizado.</p>
 </div>
 <img alt="../../_images/ruteo.png" class="align-center" src="../../_images/ruteo.png" />
 </section>
 <section id="modulo-de-ruteo">
 <h2>Módulo de Ruteo<a class="headerlink" href="#modulo-de-ruteo" title="Link to this heading">#</a></h2>
 <div class="justified-text docutils container">
-<p>La planificación de las rutas se refiere al proceso de selección de entregas, producto, transporte y otros factores que puedan influir en la distribución para crear una ruta adecuada. El módulo de “Routing” dentro de UNIGIS TMS tiene la capacidad de planificar, diseñar y optimizar todas las rutas de logísticas en base a reglas de negocio y parámetros configurables necesarias para que de forma automática pueda reducir tiempos de planeación, tiempos en ruta y tiempos de entrega.</p>
-<p>Considera todo tipo de variables conocidas por zonas específicas al momento de planear una orden como los horarios de entrega, tipos de vehículos, dimensiones del pedido, rutas optimizadas, depósitos, longitud y latitud, datos logisticos, ventanas horarias, entre otras variables.</p>
-<p>Se puede acceder al Ruteo (Routing) en todas las soluciones de UNIGIS TMS, dentro de la versión Web de UNIGIS TMS se visualiza en la pantalla Home.</p>
-<p>La orden especifica los datos generales para la entrega del pedido, como que se tiene que realizar, a donde se tiene que ir, en que horario y que ítems contiene el pedido. Es un proceso que viene del administrador de pedidos.</p>
+<p>La planificación de rutas se refiere al proceso de selección de entregas, productos, transporte y otros factores relevantes para la distribución, con el objetivo de crear rutas óptimas. El módulo de «Routing» en UNIGIS TMS cuenta con la capacidad de planificar, diseñar y optimizar todas las rutas logísticas basadas en reglas de negocio y parámetros configurables. Esto permite reducir los tiempos de planificación, en ruta y de entrega de forma automática.</p>
+<p>Se consideran diversas variables al planificar una ruta, como horarios de entrega, tipos de vehículos, dimensiones del pedido, rutas optimizadas, ubicaciones de depósitos, coordenadas geográficas, datos logísticos y ventanas horarias, entre otras.</p>
+<p>El módulo de Ruteo (Routing) está disponible en todas las soluciones de UNIGIS TMS, accesible a través de la versión web en la pantalla principal (Home).</p>
+<p>Una orden proporciona los datos generales para la entrega del pedido, incluyendo qué hacer, a dónde ir, cuándo y qué productos contiene. Este proceso se inicia desde el administrador de pedidos e implica:</p>
 <ul class="simple">
-<li><p>Gestión del Transporte que realiza la distribución</p></li>
-<li><p>Geo codificador de direcciones con normalizador</p></li>
-<li><p>Planeación óptima de rutas de distribución</p></li>
-<li><p>Optimización del cubicaje de los vehículos</p></li>
-<li><p>Reglas de negocio configurables por operación, transporte, volumetría, tipo de producto, ventanas horarias y más</p></li>
-<li><p>Restricciones geográficas y de circulación con el tráfico</p></li>
-<li><p>Entrega y recolección de mercadería, logística inversa</p></li>
-<li><p>Mapas digitales mundiales</p></li>
+<li><p>Gestión del transporte para la distribución.</p></li>
+<li><p>Geo codificación de direcciones con normalización.</p></li>
+<li><p>Planeación óptima de rutas de distribución.</p></li>
+<li><p>Optimización del espacio de carga de los vehículos.</p></li>
+<li><p>Reglas de negocio configurables por operación, transporte, volumetría, tipo de producto y ventanas horarias, entre otros.</p></li>
+<li><p>Restricciones geográficas y de circulación considerando el tráfico.</p></li>
+<li><p>Entrega y recolección de mercancías, incluyendo logística inversa.</p></li>
+<li><p>Utilización de mapas digitales globales.</p></li>
 </ul>
 </div>
 </section>
@@ -254,11 +255,12 @@
 <div class="justified-text docutils container">
 <p>Planificar una solicitud de transporte dispone con la previa creación de una estructura base, configuración y catálogos involucrados en la transacción de datos para una nueva orden ruta. Es necesario realizar la configuración de las entidades relacionadas a los flujos de trabajo jornada, orden y rutas para iniciar con la operación.</p>
 </div>
-<img alt="../../_images/entidades1.png" class="align-center" src="../../_images/entidades1.png" />
+<img alt="../../_images/entidadesrouting.png" class="align-center" src="../../_images/entidadesrouting.png" />
 <div class="justified-text docutils container">
 <p>Establecido el pedido o solicitud de transporte esto se pueden referenciar la cantidad de órdenes necesarias. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. En la planificación no se planifica hacia un vehículo, si no con un tipo de vehículo disponible en un depósito correspondiente a una operación para las características especificas que presentan la ruta, jornada y orden para cumplir con su objetivo el domicilio orden.</p>
 </div>
-<img alt="../../_images/entidadruteo.png" class="align-center" src="../../_images/entidadruteo.png" />
+<img alt="../../_images/Planeaci%C3%B3nlight1.png" class="only-light align-center" src="../../_images/Planeaci%C3%B3nlight1.png" />
+<img alt="../../_images/Planeaci%C3%B3nblack1.png" class="only-dark align-center" src="../../_images/Planeaci%C3%B3nblack1.png" />
 </section>
 <section id="configuracion-de-datos-generales">
 <h2>Configuración de Datos generales<a class="headerlink" href="#configuracion-de-datos-generales" title="Link to this heading">#</a></h2>
@@ -382,7 +384,6 @@ Algunos aspectos importantes del módulo «Routing» son:</p>
 </ul>
 <p>Este módulo proporciona una visión integral de las actividades de recolección y entrega, facilitando la optimización de las operaciones logísticas dentro de UNIGIS TMS.</p>
 </div>
-<img alt="../../_images/crear.png" class="align-center" src="../../_images/crear.png" />
 <div class="justified-text docutils container">
 <p>Antes de crear una nueva ruta se puede estableces parámetros entendidas como reglas de negocios para la jornada seleccionada, como lo son: marcar zonas, escenarios, horarios, tipo de vehículos autorizados, radio máximo, recolecciones, optimización, etc. Todo esto de manera visual dentro del mapa de geolocalización.</p>
 </div>

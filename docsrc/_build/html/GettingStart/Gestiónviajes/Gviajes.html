@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c8da5f81" />
     
     
 
@@ -147,7 +147,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -211,7 +211,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -219,6 +219,78 @@
         <article role="main">
           <section id="gestion-de-viajes">
 <h1>Gestión de Viajes<a class="headerlink" href="#gestion-de-viajes" title="Link to this heading">#</a></h1>
+<figure class="align-left">
+<img alt="../../_images/Imagen19.png" src="../../_images/Imagen19.png" />
+</figure>
+<section id="conceptos-basicos">
+<h2>Conceptos Básicos<a class="headerlink" href="#conceptos-basicos" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>La gestión del viaje y transporte implica la administración, planeación, control y cierre de servicios de distribución. Se basa en objetivos y procesos bien definidos dentro de la logística empresarial, lo cual influye en los beneficios que una compañía puede obtener en esta área. Es crucial mantener un control efectivo en cada etapa del proceso. Por eso, muchas empresas optan por implementar soluciones TMS que gestionen integralmente flotas y transportes.</p>
+<p>En este contexto, es útil comprender los aspectos relacionados y principales de la planificación de rutas en UNIGIS TMS para administrar, conocer, analizar y utilizar la siguiente información:</p>
+<p>Ruta:</p>
+<p>En UNIGIS TMS, una ruta es un trayecto planificado y optimizado que un vehículo de transporte asignado recorrerá para realizar un viaje específico, pasando por paradas o entregas programadas.</p>
+<p>Viaje:</p>
+<p>El viaje se refiere a la ejecución del servicio planificado para el vehículo de transporte, desde un punto de origen hasta un destino específico. Su objetivo principal es realizar las entregas programadas, y contiene todos los datos relacionados con la ruta para garantizar una optimización exitosa del viaje.</p>
+<p>Parada:</p>
+<p>Una parada es un punto específico a lo largo de la ruta planificada donde el vehículo de transporte realiza una acción, como carga o descarga de productos, recolección de mercancías u otras tareas específicas. Las paradas son parte integral de la ruta establecida y son fundamentales para optimizar la eficiencia del proceso de entrega y cumplir con las promesas de entrega.</p>
+</div>
+</section>
+<section id="entidades">
+<h2>Entidades<a class="headerlink" href="#entidades" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Para planificar una solicitud de transporte, es necesario crear una estructura base, configurar catálogos y establecer la transacción de datos para una nueva orden de ruta. Se debe configurar las entidades relacionadas con los flujos de trabajo de jornadas, órdenes y rutas antes de iniciar la operación.</p>
+<p>Una vez establecido el pedido o solicitud de transporte, se pueden determinar la cantidad de órdenes necesarias. Estas órdenes están asociadas a una única jornada, operación y fechas debido a la naturaleza del pedido. En la planificación, no se asigna un vehículo específico, sino que se planifica con un tipo de vehículo disponible en un depósito correspondiente a una operación, considerando las características específicas de la ruta, jornada y orden para cumplir con el objetivo del domicilio de la orden.</p>
+</div>
+<figure class="align-center">
+<img alt="../../_images/entidades.png" src="../../_images/entidades.png" />
+</figure>
+</section>
+<section id="id1">
+<h2>Gestión de Viajes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El módulo de gestión de viajes y paradas facilita la publicación de rutas a tus transportistas terceros previamente registrados. Estas rutas pueden ser aceptadas por los transportistas, asignando vehículos y conductores de manera eficiente, considerando la disponibilidad, habilidades y restricciones de cada recurso. El módulo de Tendering puede ayudar en esta asignación de manera automática o sugerir opciones óptimas, permitiendo conocer la rentabilidad del servicio en los viajes según su categoría.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/Imagen2.png"><img alt="../../_images/Imagen2.png" class="align-center" src="../../_images/Imagen2.png" style="width: 400px; height: 250px;" /></a>
+<div class="justified-text docutils container">
+<p>Las empresas de transporte o conductores pueden acceder al portal de transporte para visualizar la oferta en tiempo real de las rutas publicadas por el dador de carga. A su vez, el dador de carga puede visualizar la oferta para optimizar las rutas de transporte, basándose en evaluaciones (Tendering), control de rutas planificadas y optimizadas (Routing), y reducción de kilómetros y uso de vehículos. Esto se realiza mediante comunicación en tiempo real con empresas transportistas, ya sea que parte de la flota o la totalidad se encuentre tercerizada a través del portal del transporte.</p>
+</div>
+<img alt="../../_images/Imagen5.png" class="align-center" src="../../_images/Imagen5.png" />
+<div class="justified-text docutils container">
+<p>Al seleccionar una empresa de transporte, se permite gestionar los viajes. Como transportista, puedes ver la oferta, que incluye información importante sobre la ruta y la carga del vehículo, así como los viajes ya ofertados por el conductor. Además, puedes agregar observaciones a la oferta y aceptarla o rechazarla según los parámetros configurados.</p>
+<p>Una vez aceptada la oferta, el dador de carga puede acceder a información importante, como la documentación de la placa, del conductor y otros registros adicionales. El registro del arribo del camión al depósito de salida, la validación de accesos y la verificación del vehículo permiten validar los documentos necesarios para el arribo y confirmación del viaje y transporte. Esto garantiza el cumplimiento normativo y reduce el riesgo de problemas legales.</p>
+<p>Maximizar la eficiencia del espacio de carga y reducir los costos asociados puede lograrse mediante la optimización de las cargas, considerando la capacidad y las características específicas de los vehículos.</p>
+</div>
+<img alt="../../_images/Imagen6.png" class="align-center" src="../../_images/Imagen6.png" />
+</section>
+<section id="workflows">
+<h2>Workflows<a class="headerlink" href="#workflows" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Cada entidad en el producto UNIGIS TMS dispone de sus flujos de trabajo, los cuales pueden ser implementados para gestionar tareas recurrentes, como la confirmación de entregas, la actualización de información y la comunicación con los conductores. Esto resulta en una reducción de la carga administrativa y una mejora en la eficiencia operativa.</p>
+</div>
+</section>
+<section id="automatizacion-de-procesos">
+<h2>Automatización de Procesos<a class="headerlink" href="#automatizacion-de-procesos" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>La entidad tiene como objetivo la configuración de acciones o transiciones para la creación de procesos automatizados. Estas acciones o transiciones pueden configurarse antes o después de un cambio de estado, o cuando se elimina un pedido, de manera distribuida, sincrónica o temporal. Esto permite configurar y adaptar UNIGIS TMS a cualquier tipo de operación, utilizando un catálogo de métodos establecidos o personalizados, y especificando cómo se ejecutan en cada operación o tipo de jornada.</p>
+<p>Por ejemplo, cuando una entidad de tipo «Pedido» cambia de estado de «Ingresado» a «Aprobado», el método que se ejecuta es el de crear una orden a partir de ese pedido. La entidad de orden realiza el proceso de planificación correspondiente. De esta manera, cuando la entidad de viaje toma esa transición, cambia su estado a «Confirmado» para dar inicio al arribo del vehículo al depósito. Estas acciones pueden realizarse fuera de la transición o de manera temporal, indicada por un comando crontab. Además, se permiten validaciones y condiciones para garantizar que el proceso se cumpla entre entidades.</p>
+</div>
+</section>
+<section id="unigis-x-deliveries">
+<h2>UNIGIS X DELIVERIES<a class="headerlink" href="#unigis-x-deliveries" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>UNIGIS X DELIVERIES proporciona capacidades de seguimiento en tiempo real dentro de UNIGIS TMS para monitorear la ubicación y el progreso de los vehículos durante los viajes mediante flujos de trabajo configurados por estados. Esto facilita la toma de decisiones rápidas en caso de desviaciones o problemas durante el viaje.</p>
+<p>La aplicación móvil muestra un enlace asignado para el viaje del conductor, donde puede visualizar los viajes disponibles del día y la información general de la jornada, así como detalles de las paradas, tanto de servicio como de control o mantenimiento, todo configurable según las necesidades del negocio.</p>
+<p>La aplicación móvil también cuenta con un QR CARD configurable para cada interacción que desee aplicar. Por ejemplo, para control de carga, entradas y salidas de vehículos, inicio de jornadas, documentación, estados de flujo de trabajo, firmas, entre otras interacciones. Los permisos determinan qué acciones puede realizar el usuario en la gestión de viajes.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/Imagen3.png"><img alt="../../_images/Imagen3.png" class="align-center" src="../../_images/Imagen3.png" style="width: 250px; height: 400px;" /></a>
+<div class="justified-text docutils container">
+<p>Una vez que el conductor acepta la jornada, la aplicación proporciona detalles sobre las paradas en su ruta. Puede usar la función de navegación integrada con Waze o Google Maps para dirigirse a la próxima parada, consultar los productos a entregar y comunicarse con el cliente en caso necesario.</p>
+<p>Durante el viaje, se pueden realizar diversas acciones, como mensajería en tiempo real, llamadas a la torre de control y cambio de estados de recursos, entre otras.</p>
+<p>Para la entrega y confirmación, una vez que el conductor llega a la dirección de entrega, completa la entrega y puede marcarla como finalizada en la aplicación. Esto notifica a la plataforma y al cliente que el pedido ha sido entregado con éxito. En caso de una entrega parcial, el conductor puede seleccionar el estado correspondiente y proporcionar una breve descripción con evidencia del motivo.</p>
+<p>UNIGIS X DELIVERIES es una aplicación configurable para la gestión y monitoreo de viajes que se adapta a cualquier tipo de entrega. Integra flujos de trabajo configurados y se ajusta a los permisos y seguridad de cada usuario. En ausencia de conexión a internet, guarda los datos offline hasta el próximo punto de conexión, incluyendo evidencias, encuestas y códigos QR con opciones configurables.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/Imagen26.png"><img alt="../../_images/Imagen26.png" class="align-center" src="../../_images/Imagen26.png" style="width: 300px; height: 400px;" /></a>
+</section>
 </section>
 
         </article>
@@ -263,8 +335,32 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Gestión de Viajes</a><ul>
+<li><a class="reference internal" href="#conceptos-basicos">Conceptos Básicos</a></li>
+<li><a class="reference internal" href="#entidades">Entidades</a></li>
+<li><a class="reference internal" href="#id1">Gestión de Viajes</a></li>
+<li><a class="reference internal" href="#workflows">Workflows</a></li>
+<li><a class="reference internal" href="#automatizacion-de-procesos">Automatización de Procesos</a></li>
+<li><a class="reference internal" href="#unigis-x-deliveries">UNIGIS X DELIVERIES</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c8da5f81" />
     
     
 
@@ -219,45 +219,39 @@
         <article role="main">
           <section id="administracion-de-pedidos">
 <h1>Administración de Pedidos<a class="headerlink" href="#administracion-de-pedidos" title="Link to this heading">#</a></h1>
+<img alt="../../_images/admi.png" class="align-left" src="../../_images/admi.png" />
 <section id="pedidos">
 <h2>Pedidos<a class="headerlink" href="#pedidos" title="Link to this heading">#</a></h2>
 <div class="justified-text docutils container">
-<p>Dentro de UNIGIS TMS resulta útil determinar la naturaleza de un pedido y una orden para introducción al módulo de Administración de Pedidos (Order Management).</p>
-</div>
-<a class="reference internal image-reference" href="../../_images/pedidos.png"><img alt="../../_images/pedidos.png" class="align-left" src="../../_images/pedidos.png" style="width: 100px; height: 100px;" /></a>
-<div class="justified-text docutils container">
-<p>Un pedido dentro de UNIGIS TMS es una solicitud de transporte que nos entrega el cliente o dador de carga el cual contiene los datos necesarios para saber dónde recolectar los ítems o productos como domicilio de entrega, detalle de los productos, fechas pactadas y entre otros datos sobre el pedido solicitado.</p>
-<p>Un pedido pertenece a un único cliente o dador de carga, dentro de UNIGIS TMS se asignan estados que reflejan el avance punto a punto en el transcurso del proceso del cumplimiento del servicio, según el tipo de pedido se permite generar pedidos multi tienda, troncal, reenvíos, pick up, delivery, pedidos híbridos, etc.).
-Entidades importantes.</p>
-<ul class="simple">
-<li><p>Cliente. El cliente es el dador de carga que solicita en primera instancia un pedido, es el receptor de toda la información a detalle sobre el pedido solicitado por el Cliente Orden.</p></li>
-<li><p>Cliente Orden. Es el destinatario el cual solicito el pedido.</p></li>
-<li><p>Domicilio Orden. En caso de requerir y dependiendo del tipo de operación el sistema cuenta con la capacidad de tercerizar el pedido indicando un Domicilio final para la Orden.</p></li>
-</ul>
+<p>En UNIGIS TMS, es útil entender la naturaleza de un pedido y una orden.</p>
+<p>Pedido:
+Un pedido en UNIGIS TMS es una solicitud de transporte proporcionada por el cliente o dador de carga. Contiene información como la ubicación de recolección y entrega, detalles de los productos y fechas acordadas.</p>
+<p>Cada pedido pertenece a un único cliente o dador de carga y se le asignan estados que reflejan su progreso a lo largo del proceso de cumplimiento del servicio. Dependiendo del tipo de pedido, se pueden generar pedidos multi-tienda, troncal, reenvíos, pick up, delivery, pedidos híbridos, entre otros.</p>
+<p>Entidades importantes:</p>
+<p>Cliente: Es el dador de carga que solicita el pedido inicialmente y recibe información detallada sobre el pedido solicitado por el Cliente Orden.</p>
+<p>Cliente Orden: Es el destinatario que solicitó el pedido.</p>
+<p>Domicilio Orden: En algunos casos, el sistema puede tercerizar el pedido indicando un domicilio final para la orden, dependiendo del tipo de operación.</p>
 </div>
 </section>
 <section id="orden">
 <h2>Orden<a class="headerlink" href="#orden" title="Link to this heading">#</a></h2>
 <div class="justified-text docutils container">
-<p>Una orden es la entidad ejecutiva mediante la cual se ordena realizar una actividad, es decir, una orden contiene todos los datos necesarios y establecidos para ejecutar la orden del pedido, como lo son:</p>
-<p>Información general sobre la orden del pedido.
-Información sobre los ítems o productos, estos pueden incluir todos los productos o una parte de ellos.
-Validaciones y observaciones sobre el avance del proceso que reflejan su cumplimiento a través de estados. Los estados pueden configurarse para automatizar las acciones por transiciones de estados.</p>
-<p>En el entendimiento que desde el pedido se crean las ordenes, un pedido puede requerir la cantidad de ordenes necesarias para distintas operaciones y fechas para cumplir su objetivo.
-Las ordenes son la entidad que se rutea dinámicamente con la herramienta de UNIGIS Routing dentro de la creación de una jornada de trabajo.</p>
-</div>
-<a class="reference internal image-reference" href="../../_images/orden.png"><img alt="../../_images/orden.png" class="align-left" src="../../_images/orden.png" style="width: 100px; height: 100px;" /></a>
-<dl class="simple">
-<dt>Tipos de Orden</dt><dd><ul class="simple">
+<p>Una orden es la entidad ejecutiva mediante la cual se lleva a cabo una actividad específica. Contiene toda la información necesaria para ejecutar la acción solicitada en el pedido, incluyendo:</p>
+<p>Información general sobre la orden del pedido.</p>
+<p>Detalles sobre los ítems o productos asociados, que pueden abarcar todos los productos o solo una parte de ellos.</p>
+<p>Validaciones y observaciones sobre el progreso del proceso, reflejadas a través de estados configurables que automatizan las acciones correspondientes.</p>
+<p>Desde un pedido, pueden generarse múltiples órdenes según las operaciones y fechas requeridas para alcanzar el objetivo deseado.</p>
+<p>Las órdenes son dinámicamente ruteadas con la herramienta de UNIGIS Routing en la creación de jornadas de trabajo.</p>
+<p>Tipos de Órdenes:</p>
+<ul class="simple">
 <li><p>Pick-Up.</p></li>
 <li><p>Delivery.</p></li>
 <li><p>Reenvío.</p></li>
 <li><p>Multi-tienda.</p></li>
 <li><p>Troncal.</p></li>
-<li><p>Entre otras.</p></li>
+<li><p>Entre otros.</p></li>
 </ul>
-</dd>
-</dl>
+</div>
 </section>
 <section id="id1">
 <h2>Administración de Pedidos<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>

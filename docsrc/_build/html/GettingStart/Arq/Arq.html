@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cca1f7bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c8da5f81" />
     
     
 
@@ -227,8 +227,6 @@
 <dt>On-Cloud: UNIGIS Cloud. (opción default)</dt><dd><p>La opción recomendada 100%, la cual se encuentra hosteada por UNIGIS TMS con proveedores on cloud de primer nivel como lo son: Azure y Century link.</p>
 </dd>
 </dl>
-</div>
-<img alt="../../_images/cloud.png" class="align-center" src="../../_images/cloud.png" />
 <ul class="simple">
 <li><p>Mejor soporte.</p></li>
 <li><p>Alta disponibilidad.</p></li>
@@ -238,13 +236,11 @@
 <li><p>Mejor tiempo de actualizaciones.</p></li>
 <li><p>Mayor tecnología.</p></li>
 </ul>
-<blockquote>
-<div><dl class="simple">
+<dl class="simple">
 <dt>On-Premise: Client Infrastructure.</dt><dd><p>La opción tradicional que se despliega que despliega todas las aplicaciones y componentes de UNIGIS implementados en la infraestructura de la nube del cliente, incluidos los datos geoespaciales y el motor de optimización. Modelo de caja de arena. empresas con políticas estrictas para proteger los datos internos o procesos críticos que se implementarán en nubes externas.</p>
 </dd>
 </dl>
-</div></blockquote>
-<img alt="../../_images/server.png" class="align-center" src="../../_images/server.png" />
+</div>
 <div class="justified-text docutils container">
 <dl class="simple">
 <dt>Hybrid: UNIGIS Cloud &amp; On demand.</dt><dd><p>Servidor web, aplicaciones y de bases de datos implementado en las instalaciones (lado del cliente). Los datos de tráfico de mapas, el motor de optimización y las API GIS están en la nube UNIGIS. Este despliegue requiere de una conexión a Internet confiable de alto rendimiento.</p>
@@ -258,42 +254,38 @@ Frameworks, Tecnologías y Lenguajes de Programación.</p>
 <section id="layouts">
 <h2>Layouts<a class="headerlink" href="#layouts" title="Link to this heading">#</a></h2>
 <p>Las capas de la infraestructura funcional presentan el siguiente flujo funcional corresponde a la solución On-cloud recomendada para el producto:</p>
-<img alt="../../_images/layouts.png" class="align-center" src="../../_images/layouts.png" />
+<img alt="../../_images/Layouts.png" class="align-center" src="../../_images/Layouts.png" />
+<div class="justified-text docutils container">
 <p>Persistencias de Datos &gt; Capa Backend &gt; Web Layer &gt; Peticiones de Usuario &gt; Display &gt; Usuarios (HUB/IoT)</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>Solución basada en el ecosistema MSFT. (Microsoft)</p></li>
 <li><p>Arquitectura SOA.</p></li>
 <li><p>Procesos de Back-End + Job Queues.</p></li>
 <li><p>Propietario de la solución. No aplicaciones externas.</p></li>
 <li><p>Escalabilidad horizontal y alta compatibilidad.</p></li>
 </ul>
-</div></blockquote>
 <p>UNIGIS Endpoint tiene la capacidad de realizar una nativa integración con otras aplicaciones como ERP’s, CRM’s o WMS, este Endpoint puede ser Cloud/On Premise se comunica de dos maneras: con adapters o de manera directa.</p>
-<blockquote>
-<div><p>Datos de entrada:
+<p>Datos de entrada:
 - Adaptadores propios UNIGIS. (Adapters) Es una pieza de software custom que transforma la información de entrada a los diferentes servicios.
-- Directa. Consumo de los servicios directos.
-Datos de salida:
+- Directa. Consumo de los servicios directos.</p>
+<p>Datos de salida:
 - SyncOuts. Pieza de software custom basada en un modelo UNIGIS EDF (Event Driver framework) basado en eventos, es decir, se configura los tipos de eventos que requiera información para comunicar en tiempo real los datos relevantes a cada tipo de evento.
-- UNIGIS MAPI WS (Librería estándar)
-Logístics: Datos maestros / catálogos (Clientes, Ubicaciones, Productos, Depósitos, Vehículos, Tarifas, etc.) y datos tradicionales (Ordenes, Entregas, Rutas, Envíos, Facturas, Etc.).
-GPS (Dispositivos y integración de proveedores): Posiciones, Alertas, Telemática, Comandos.
-Geographic: Codificación Geográfica de Avance y Reserva, Indicaciones de Conducción, Mapas Deslizantes, Mapas Estáticos, Áreas, Distancia, Etc.
-Authentication (SSO)
-Otros: Zona Horaria, Geografía o Tracking.</p>
-</div></blockquote>
-<img alt="../../_images/appis.png" class="align-center" src="../../_images/appis.png" />
-<img alt="../../_images/appis2.png" class="align-center" src="../../_images/appis2.png" />
+- UNIGIS MAPI WS (Librería estándar)</p>
+<p>Logístics: Datos maestros / catálogos (Clientes, Ubicaciones, Productos, Depósitos, Vehículos, Tarifas, etc.) y datos tradicionales (Ordenes, Entregas, Rutas, Envíos, Facturas, Etc.).
+GPS (Dispositivos y integración de proveedores): Posiciones, Alertas, Telemática, Comandos.</p>
+<p>Geographic: Codificación Geográfica de Avance y Reserva, Indicaciones de Conducción, Mapas Deslizantes, Mapas Estáticos, Áreas, Distancia, Etc.
+Authentication (SSO)</p>
+<p>Otros: Zona Horaria, Geografía o Tracking.</p>
+</div>
+<img alt="../../_images/apis.png" class="align-center" src="../../_images/apis.png" />
 </section>
 <section id="unigis-hub">
 <h2>UNIGIS HUB<a class="headerlink" href="#unigis-hub" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera se adapta a tecnología on premise u on cloud.
+<div class="justified-text docutils container">
+<p>UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera se adapta a tecnología on premise u on cloud.
 Como único servidor intermedio transmite y distribuyen sin importar el tipo de tecnología implementada en el usuario, es decir, la solución UNIGIS HUB es capaz de integrar entre distintas tecnologías on premise u on cloud para transferir información en tiempo real.</p>
-</div></blockquote>
-<img alt="../../_images/sources.png" class="align-center" src="../../_images/sources.png" />
-<img alt="../../_images/sources2.png" class="align-center" src="../../_images/sources2.png" />
+</div>
+<img alt="../../_images/Sources.png" class="align-center" src="../../_images/Sources.png" />
 <div class="justified-text docutils container">
 <ul class="simple">
 <li><p>UNIGIS HUB IoT Integración empresarial.</p></li>
@@ -313,60 +305,74 @@ Como único servidor intermedio transmite y distribuyen sin importar el tipo de 
 </section>
 <section id="modelo-de-datos">
 <h2>Modelo de Datos<a class="headerlink" href="#modelo-de-datos" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>UNIGIS implementa un repositorio de datos único multi cliente (UNIGIS_DataRepository) su desarrollo del tipo Code First: no triggers (Sin desencadenantes), no stored procedures (Sin procedimientos almacenados), lo cual nos dice que explícitamente son datos de fácil navegación con nomenclatura en español (Tablas, campos, indicies, etc.), en cuanto a la seguridad la integridad del modelo de datos es asegurado con foreing keys obligatorias.</p>
-</div></blockquote>
+<div class="justified-text docutils container">
+<p>UNIGIS implementa un repositorio de datos único multi cliente (UNIGIS_DataRepository) su desarrollo del tipo Code First: no triggers (Sin desencadenantes), no stored procedures (Sin procedimientos almacenados), lo cual nos dice que explícitamente son datos de fácil navegación con nomenclatura en español (Tablas, campos, indicies, etc.), en cuanto a la seguridad la integridad del modelo de datos es asegurado con foreing keys obligatorias.</p>
+</div>
 </section>
 <section id="entidades-core">
 <h2>Entidades Core<a class="headerlink" href="#entidades-core" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Permite a los programadores trabajar con datos en forma de objetos y propiedades funcionales, por ejemplo, empresa, sucursal o operación como entidades base, sin tener que pensar en las tablas de las bases de datos subyacentes y en las columnas en las que se almacenan estos datos, se pueden crear y mantener aplicaciones orientadas a datos con menos código que en las aplicaciones tradicionales.</p>
+<div class="justified-text docutils container">
+<p>Permite a los programadores trabajar con datos en forma de objetos y propiedades funcionales, por ejemplo, empresa, sucursal o operación como entidades base, sin tener que pensar en las tablas de las bases de datos subyacentes y en las columnas en las que se almacenan estos datos, se pueden crear y mantener aplicaciones orientadas a datos con menos código que en las aplicaciones tradicionales.</p>
 <p>Se divide en tres tipos de entidades: Entidades Base, Catálogos y entidades Transaccionales.</p>
-</div></blockquote>
-<img alt="../../_images/entidades.png" class="align-center" src="../../_images/entidades.png" />
+</div>
+<img alt="../../_images/Entidades.png" class="align-center" src="../../_images/Entidades.png" />
 </section>
 <section id="descripcion-general">
 <h2>Descripción General<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>UNIGIS TMS contiene diferentes entidades y relaciones durante los diferentes procesos donde se pueden ver representados mediante un diagrama de flujo de datos, dentro del siguiente diagrama se representa una estructura base en función de los módulos del producto y como se relacionan entre sí. Así mismo como se almacenan, organizan y se acceden a los datos.</p>
+<div class="justified-text docutils container">
+<p>UNIGIS TMS contiene diferentes entidades y relaciones durante los diferentes procesos donde se pueden ver representados mediante un diagrama de flujo de datos, dentro del siguiente diagrama se representa una estructura base en función de los módulos del producto y como se relacionan entre sí. Así mismo como se almacenan, organizan y se acceden a los datos.</p>
 <p>Diagrama de flujo de datos:</p>
-</div></blockquote>
-<img alt="../../_images/overview.png" class="align-center" src="../../_images/overview.png" />
+</div>
+<img alt="../../_images/Overviewlight.png" class="only-light align-center" src="../../_images/Overviewlight.png" />
+<img alt="../../_images/Overviewblack.png" class="only-dark align-center" src="../../_images/Overviewblack.png" />
 <dl class="simple">
 <dt>Base</dt><dd><p>La estructura base se compone de la empresa, sucursales y operaciones, las entidades que son importantes para iniciar la operación dentro de UNIGIS TMS.</p>
 </dd>
 </dl>
-<img alt="../../_images/base.png" class="align-center" src="../../_images/base.png" />
+<img alt="../../_images/Baselight.png" class="only-light align-center" src="../../_images/Baselight.png" />
+<img alt="../../_images/Baseblack.png" class="only-dark align-center" src="../../_images/Baseblack.png" />
+<div class="justified-text docutils container">
 <p>En donde se entiende como una empresa (Unidad Organizacional) puede contar con ninguna, una o más sucursales dependiendo de la forma de trabajo, que a su vez una sucursal o no, puede disponer de 1 o más operaciones especializadas a cada forma de trabajo. Cada operación va a ejecutarse en una Jornada de trabajo preprogramada.</p>
 <p>La operación es la segmentación de cada forma de trabajo para cada empresa, por lo que es importante definir sus comportamientos, configuraciones, grupos de usuarios, datos y procesos de forma especializada para iniciar a definir la ejecución.</p>
 <p>La ejecución representada por jornadas o planificación del día pueden ser por órdenes múltiples a disposición de la modalidad de trabajo de la empresa.</p>
+</div>
 <dl class="simple">
 <dt>Órdenes</dt><dd><p>La estructura de órdenes es la resolución de los pedidos de cada cliente:</p>
 </dd>
 </dl>
-<img alt="../../_images/ordenes.png" class="align-center" src="../../_images/ordenes.png" />
+<img alt="../../_images/Ordeneslight.png" class="only-light align-center" src="../../_images/Ordeneslight.png" />
+<img alt="../../_images/Ordenesblack.png" class="only-dark align-center" src="../../_images/Ordenesblack.png" />
+<div class="justified-text docutils container">
 <p>Un cliente o dador de carga puede contar con distintos clientes que a su vez esos clientes pueden estar referenciados a un tercer domicilio donde se pretende finalizar un pedido. Permitiendo abarcar pedidos de clientes de nuestro cliente.</p>
 <p>El cliente es quien levanta 1 o más pedidos en donde se inicia un compromiso de servicio a entregar, recolectar y/o visitar dependiendo de la complejidad. El pedido contiene una lista de ítems o productos a unas fechas pactadas lo cual establece un nivel de servicio y restricciones que se deben tomar en cuenta (Variables logísticas y/o ubicación geográfica).</p>
 <p>Establecido el pedido o solicitud de transporte esto se pueden referenciar en N cantidad de órdenes. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. (Multi tienda, troncal, reenvíos, pick up, delivery, etc).</p>
+</div>
 <dl class="simple">
-<dt>Planeación y resuelto</dt><dd><p>Toda orden necesita de una planeación con todas las entidades relacionas al tipo de operación necesaria para finalizar la orden.</p>
+<dt>Planeación y ruteo</dt><dd><p>Toda orden necesita de una planeación con todas las entidades relacionas al tipo de operación necesaria para finalizar la orden.</p>
 </dd>
 </dl>
-<img alt="../../_images/planeacion.png" class="align-center" src="../../_images/planeacion.png" />
+<img alt="../../_images/Planeaci%C3%B3nlight.png" class="only-light align-center" src="../../_images/Planeaci%C3%B3nlight.png" />
+<img alt="../../_images/Planeaci%C3%B3nblack.png" class="only-dark align-center" src="../../_images/Planeaci%C3%B3nblack.png" />
+<div class="justified-text docutils container">
 <p>Una orden ya establecida puede generar una o más rutas de recolección y entrega, una ruta dispone de un plan a ejecutar con todos las entidades correspondientes para llevar a cabo de manera optimizada la operación. Cada ruta contiene recursos asignados utilizados para lograr el objetivo de la orden.</p>
 <p>Puede contener uno o más conductores, tipo de vehículo, uno o más vehículos según sus características del domicilio destino, en caso de recolección puede relacionarse con un muelle o deposito de origen o destino.</p>
+</div>
 <dl class="simple">
 <dt>Ejecución y Tracking</dt><dd><p>La ejecución de la ruta se convierte en un viaje que contiene parte fundamental del flujo de datos en tiempo real.</p>
 </dd>
 </dl>
-<img alt="../../_images/tracking.png" class="align-center" src="../../_images/tracking.png" />
+<img alt="../../_images/Trackinglight.png" class="only-light align-center" src="../../_images/Trackinglight.png" />
+<img alt="../../_images/Trackingblack.png" class="only-dark align-center" src="../../_images/Trackingblack.png" />
+<div class="justified-text docutils container">
 <p>Un viaje se compone de una secuencia de paradas planificadas o no planificadas, todas relacionadas a una única orden. Las paradas no planificadas pueden ser de tipo servicios, control, mantenimiento o distintas cuestiones alternas por ejecución del viaje.</p>
 <p>Cada parada es una transacción que resulta en diferentes estados según su ejecución (Entregado, no entregado, pendiente, etc.).</p>
+</div>
 <dl class="simple">
 <dt>Tarifación</dt><dd><p>Al finalizar un circuito punto a punto el modelo de datos realiza una finalización y liquidación del viaje lo cual contiene entidades que valorizan todo el proceso del producto.</p>
 </dd>
 </dl>
-<img alt="../../_images/tarifacion.png" class="align-center" src="../../_images/tarifacion.png" />
+<img alt="../../_images/Tarifaci%C3%B3nlight.png" class="only-light align-center" src="../../_images/Tarifaci%C3%B3nlight.png" />
+<img alt="../../_images/Tarifaci%C3%B3nblack.png" class="only-dark align-center" src="../../_images/Tarifaci%C3%B3nblack.png" />
 <div class="justified-text docutils container">
 <p>Una liquidación es el conjunto de una o más guías de un mismo tipo para un periodo de tiempo previamente establecidos. Permite obtener la valorización final de todas las entidades que han sido involucradas hasta cumplir el objetivo.</p>
 <p>Una guía es 100 porciento configurable de costos de tarifación como de venta. Estos costos contienen pedidos, viajes y paradas, el tarificador realiza los cálculos sobre las guías previamente configurables.</p>
@@ -374,25 +380,27 @@ Como único servidor intermedio transmite y distribuyen sin importar el tipo de 
 </section>
 <section id="workflows">
 <h2>Workflows<a class="headerlink" href="#workflows" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Toda entidad que contiene una actividad relacional posse un workflow, estos workflows son completadas en un determinado orden de estados y transiciones para alcanzar un objetivo del producto. Estos estados y transacciones son 100% configurables a medida del negocio, es decir, solo se limitan las transiciones por grupos de usuarios, atributos de la entidad (tipo de orden, categoría de viaje, tipo de pedido, etc.) o jerarquía en la estructura base, lo cual nos dice que no están fijas por código. Permiten agregar procesos que se ejecutan en cada transición, y en esta secuencia se pueden automatizar por determinadas medidas del negocio esto hace que las entidades cambien de estados.</p>
-</div></blockquote>
-<img alt="../../_images/workflows.png" class="align-center" src="../../_images/workflows.png" />
+<div class="justified-text docutils container">
+<p>Toda entidad que contiene una actividad relacional posse un workflow, estos workflows son completadas en un determinado orden de estados y transiciones para alcanzar un objetivo del producto. Estos estados y transacciones son 100% configurables a medida del negocio, es decir, solo se limitan las transiciones por grupos de usuarios, atributos de la entidad (tipo de orden, categoría de viaje, tipo de pedido, etc.) o jerarquía en la estructura base, lo cual nos dice que no están fijas por código. Permiten agregar procesos que se ejecutan en cada transición, y en esta secuencia se pueden automatizar por determinadas medidas del negocio esto hace que las entidades cambien de estados.</p>
+</div>
+<img alt="../../_images/workflowlight.png" class="only-light align-center" src="../../_images/workflowlight.png" />
+<img alt="../../_images/workflowblack.png" class="only-dark align-center" src="../../_images/workflowblack.png" />
 </section>
 <section id="modelo-de-seguridad-y-usuarios">
 <h2>Modelo de Seguridad y Usuarios<a class="headerlink" href="#modelo-de-seguridad-y-usuarios" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Los accesos al sistema se segmentan por Grupos con niveles de acceso y permisos los cuales contienen datos, workflows, módulos del sistema y acciones que puede realizar “N” cantidad de usuarios asignados a un grupo. Estos grupos y usuarios Los perfiles limitan a ciertas acciones dentro del sistema como por ejemplo un conductor, transporte, administrador, monitor o un perfil que se desea configurar para una autogestión de permisos de forma predefinida. Se usa una autentificación externa SSO con LDAP y OAUTH.</p>
-</div></blockquote>
-<img alt="../../_images/mus.png" class="align-center" src="../../_images/mus.png" />
+<div class="justified-text docutils container">
+<p>Los accesos al sistema se segmentan por Grupos con niveles de acceso y permisos los cuales contienen datos, workflows, módulos del sistema y acciones que puede realizar “N” cantidad de usuarios asignados a un grupo. Estos grupos y usuarios Los perfiles limitan a ciertas acciones dentro del sistema como por ejemplo un conductor, transporte, administrador, monitor o un perfil que se desea configurar para una autogestión de permisos de forma predefinida. Se usa una autentificación externa SSO con LDAP y OAUTH.</p>
+</div>
+<img alt="../../_images/muslight.png" class="only-light align-center" src="../../_images/muslight.png" />
+<img alt="../../_images/musblack.png" class="only-dark align-center" src="../../_images/musblack.png" />
 </section>
 <section id="arquitectura-de-integracion">
 <h2>Arquitectura de Integración<a class="headerlink" href="#arquitectura-de-integracion" title="Link to this heading">#</a></h2>
 </section>
 <section id="unigis-mapi">
 <h2>UNIGIS MAPI<a class="headerlink" href="#unigis-mapi" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>UNIGIS MAPI es una arquitectura que integran web services que con ayuda de una herramienta como SoapUI o Postman permite realizar validaciones de servicios o solicitudes de diferentes indoles para un intercambio de información segura, completa y confiable de UNIGIS.</p>
+<div class="justified-text docutils container">
+<p>UNIGIS MAPI es una arquitectura que integran web services que con ayuda de una herramienta como SoapUI o Postman permite realizar validaciones de servicios o solicitudes de diferentes indoles para un intercambio de información segura, completa y confiable de UNIGIS.</p>
 <p>UNIGIS MAPI es la arquitectura de integración.
 - Arquitectura de Servicio (SOA) de Web Services construida sobre framework .NET.
 - Integra todas la funciones y servicios disponibles en UNIGIS para el intercambio de información I/O con aplicaciones externas y dispositivos (IoT).
@@ -401,46 +409,45 @@ Como único servidor intermedio transmite y distribuyen sin importar el tipo de 
 - Seguridad mediante HTTPS y API Keys por cada instalación.
 - UNIGIS MAPI dispone con más de 100 métodos (Solicitudes).</p>
 <p>Algunos de los métodos I/O mas comunes sobre las estructuras base, transaccional de las operaciones y catálogos maestros son los siguientes.</p>
-</div></blockquote>
-<img alt="../../_images/unigismapi.png" class="align-center" src="../../_images/unigismapi.png" />
-<dl>
-<dt>Uso y Recomendaciones</dt><dd><blockquote>
-<div><ol class="arabic simple">
-<li><p>Request &amp; Response.</p></li>
-</ol>
-</div></blockquote>
+</div>
+<img alt="../../_images/MAPI1.png" class="align-center" src="../../_images/MAPI1.png" />
+<div class="justified-text docutils container">
+<p>Uso y Recomendaciones
+1.  Request &amp; Response.</p>
 <p>Por cada solicitud (Request) MAPI tiene una respuesta (Response).</p>
-<ul>
+<ul class="simple">
 <li><p>Respuesta Simple: Devuelve un valor generalmente numérico que informa que el procesamiento de datos fue exitoso o que hubo un error (código de error).</p></li>
-<li><p>Respuesta Compleja: Devuelve una relación de entidades con sus datos. Si la respuesta es vacia el servicio no pudo encontrar información con los parámetros enviados.</p>
-<blockquote>
-<div><ol class="arabic simple" start="2">
+<li><p>Respuesta Compleja: Devuelve una relación de entidades con sus datos. Si la respuesta es vacia el servicio no pudo encontrar información con los parámetros enviados.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
 <li><p>SOAP o REST.</p></li>
 </ol>
-</div></blockquote>
-</li>
-</ul>
 <p>UNIGIS MAPI permite integrar bajo tecnologías SOAP (XML) o REST (JSON) decidiendo el cliente y proyecto cual es la mejor opción. Algunas herramientas de ayuda para el consumo de la MAPI UNIGIS son SOAPUI o POSTMAN.</p>
 <p>Por ejemplo, en una solicitud para crear orden pedido. La herramienta muestra un Request (Solicitud) en lenguaje XML en donde un usuario puede agregar los datos requeridos para ejecutar la solicitud sobre el web service correspondiente. Al finalizar la herramienta muestra un Response (Respuesta) con las observaciones finales de la solicitud ya que fue correcta o ejecutada incorrectamente.</p>
-</dd>
-</dl>
+</div>
 <img alt="../../_images/mapi1.png" class="align-center" src="../../_images/mapi1.png" />
 </section>
 <section id="tipo-de-integraciones">
 <h2>Tipo de integraciones<a class="headerlink" href="#tipo-de-integraciones" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
 <p>Tipos de Integraciones.</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p>Servicios con MAPI Estándar (Directa)</p></li>
 </ol>
-<p>Uso de MAPI estándar con las funciones disponibles. Solo requiere desarrollo por parte del equipo cliente. Por configuración y parámetros del sistema se puede cambiar el comportamiento de algunos métodos.
-2. Servicios con MAPI Custom.</p>
-<p>Cuando el cliente o proyecto requiere una personalización de la integración se construye un custom wrapper que consume los servicios estándar de MAPI. Requiere mantenimiento posterior.
-3.     Adapters Custom.</p>
-<p>Cuando no se pueden consumir los servicios MAPI por limitaciones técnicas se construyen componente ad-hoc (Programas generalmente, independientes) para el proyecto. Incluyen todas las reglas de validación necesarias para la consistencia en UNIGIS. Existen adapters disponibles para reutilizar o adaptarlos.
-4.     Ingregaciones con SYNC OUTs</p>
-<p>Adicional a MAPI la arquitectura UNIGIS dispone de mecanismos de “Aviso en tiempo real” para sistemas externos de los eventos o cambios que ocurran en el sistema, llamados SYNC OUTS. Estos eventos pueden ser, cambios de estados en entidades, nuevos registros en entidades o transacciones, entre otros.
-Características de los SYNC OUT:</p>
+<p>Uso de MAPI estándar con las funciones disponibles. Solo requiere desarrollo por parte del equipo cliente. Por configuración y parámetros del sistema se puede cambiar el comportamiento de algunos métodos.</p>
+<ol class="arabic simple" start="2">
+<li><p>Servicios con MAPI Custom.</p></li>
+</ol>
+<p>Cuando el cliente o proyecto requiere una personalización de la integración se construye un custom wrapper que consume los servicios estándar de MAPI. Requiere mantenimiento posterior.</p>
+<ol class="arabic simple" start="3">
+<li><p>Adapters Custom.</p></li>
+</ol>
+<p>Cuando no se pueden consumir los servicios MAPI por limitaciones técnicas se construyen componente ad-hoc (Programas generalmente, independientes) para el proyecto. Incluyen todas las reglas de validación necesarias para la consistencia en UNIGIS. Existen adapters disponibles para reutilizar o adaptarlos.</p>
+<ol class="arabic simple" start="4">
+<li><p>Ingregaciones con SYNC OUTs</p></li>
+</ol>
+<p>Adicional a MAPI la arquitectura UNIGIS dispone de mecanismos de “Aviso en tiempo real” para sistemas externos de los eventos o cambios que ocurran en el sistema, llamados SYNC OUTS. Estos eventos pueden ser, cambios de estados en entidades, nuevos registros en entidades o transacciones, entre otros.</p>
+<p>Características de los SYNC OUT:</p>
 <ul class="simple">
 <li><p>Monitorean creación de entidades: viaje, orden, guía, alarma o ruta.</p></li>
 <li><p>Monitorean cambios de estados en entidades como: viaje, orden, guía, ruta, parada, liquidación, pedido, incidencia.</p></li>
@@ -449,8 +456,7 @@ Características de los SYNC OUT:</p>
 <li><p>Realiza reintento y genera logs para tener trazabilidad de lo ocurrido.</p></li>
 <li><p>Son muy flexibles y configurables para adaptarse fácilmente a distintos escenarios incluso algunos muy completos de integración en tiempo real.</p></li>
 </ul>
-</div></blockquote>
-<img alt="../../_images/ejemplo.png" class="align-center" src="../../_images/ejemplo.png" />
+</div>
 </section>
 </section>
 

@@ -1,13 +1,16 @@
 Metodología de Implementación
 =============================
 .. container:: justified-text
-
-    El proceso del producto se compone por tres metodologías que se aplican a un tercio de la capacidad del equipo, ¿Qué significa a un tercio de capacidad? se refiere a que al inicio de la planeación el equipo toma en cuenta las actividades que se planean al inicio del periodo, las actividades de del día a día y reserva, y actividades que se planean trimestralmente esto entraría dentro del objetivo del producto. 
     
-    Las metodologías que se aplican a lo largo del proceso de trabajo son las siguientes:
+ El proceso del producto se compone por tres metodologías que se aplican a un tercio de la capacidad del equipo, ¿Qué significa a un tercio de capacidad? se refiere a que al inicio de la planeación el equipo toma en cuenta las actividades que se planean al inicio del periodo, las actividades de del día a día y reserva, y actividades que se planean trimestralmente esto entraría dentro del objetivo del producto. 
+    
+ Las metodologías que se aplican a lo largo del proceso de trabajo son las siguientes:
 
-.. image:: met.png
-    :align: center
+ +--------------+-------------+-------------+
+ |     SCRUM    |    KANBAN   |  SSM SAFe4  |
+ +==============+=============+=============+
+ |              |             |             |
+ +--------------+-------------+-------------+
 
 **Scrum adaptado**
 
@@ -48,17 +51,27 @@ Metodología de Implementación
     
     La duración de este método de trabajo tiene una duración de 3 meses y tiene como resultado una versión mayor dentro del producto. 
 
+.. image:: Metodologíalight.png
+    :align: center
+    :class: only-light
+
+.. image:: Metodologíablack.png
+    :align: center
+    :class: only-dark
+
 Versiones
 ----------
 
 .. container:: justified-text
 
-    La numeración de las versiones de los incrementos de software nos permite expresar de forma normalizada las modificaciones existentes entre las distintas versiones, indicando los cambios que se han producido entre una versión y la siguiente, las publicaciones dentro de la metodología de trabajo se realizan de dos maneras:
+    La numeración de las versiones de los incrementos de software nos permite expresar de forma normalizada las modificaciones existentes entre las distintas versiones, indicando los cambios que se han producido entre una versión y la siguiente.
 
-    1. **LTS (Long Term Support)**
+    Dentro de la metodología de trabajo, las publicaciones se realizan de dos maneras:
 
-    Una LTS o una implementación estándar es la que se implementan los clientes dentro de producción con una publicación de cada 3 meses y tienen un soporte de optimización durante 12 meses, es decir, durante un año se tienen cuatro versiones que se optimizan durante 12 meses.
+    1. LTS (Long Term Support)
 
+    Una LTS o una implementación estándar es aquella que se implementa en producción para los clientes, con una publicación cada 3 meses y un soporte de optimización durante 12 meses. Esto significa que durante un año, se tienen cuatro versiones que se optimizan continuamente.
+    
     Esto nos permite disponer con:
 
     - Versiones estables.
@@ -198,6 +211,7 @@ Soporte
 .. _a link: https://support.unigis.com/
 
 .. container:: justified-text
+ 
  Acceso al servicio UNIGIS Service Desk
  El equipo de servicio UNIGIS al completar un proyecto que pasa al servicio UNIGIS Service Desk, entrega la documentación completa del cliente para pasar a producción y acceder al servicio, entre ellas módulos contratados y cantidad de licencias, flujos definidos, integraciones, key users de la cuenta y contactos. Si el cliente es on premise se debe indicar los datos de conexión. Toda esta documentación necesaria para poder brindar un soporte técnico adecuada se define en conjunto con los equipos de servicio y producto/desarrollo de UNIGIS.
 
@@ -224,15 +238,20 @@ Soporte
 Consulta de Soporte
     Para el formato de solicitud de consulta de soporte se realiza cuando el usuario presenta alguna duda o consulta sobre el funcionamiento de UNIGIS.
 
-.. image:: consulta.png
+.. image:: Consulta.png
     :align: center
 
 Consultas generales acerca del funcionamiento del sistema o temas relacionados con el uso de este. Incluye todos los temas que no requiera una modificación directa sobre los productos UNIGIS.
 
 Proceso:
 
-.. image:: consultaproceso.png
+.. image:: Consultalight.png
     :align: center
+    :class: only-light
+
+.. image:: Consultablack.png
+    :align: center
+    :class: only-dark
 
 Reportar problema
     Para el formato de reporte de problema se realiza cuando el usuario presenta algún problema con el producto y debe de capturar todos los datos para su resolución. 
@@ -244,8 +263,13 @@ Reporte de errores detectados en UNIGIS. Alguna funcionalidad incluida no cumple
 
 Proceso:
  
-.. image:: procesoreporte.png
+.. image:: Problemalight.png
     :align: center
+    :class: only-light
+
+.. image:: Problemablack.png
+    :align: center
+    :class: only-dark
 
 Solicitudes
     Dentro de Jira Service Desk el usuario puede ver el listado de sus solicitudes y el estado en la que se encuentran para su gestión.
@@ -257,21 +281,80 @@ Cambios programados requeridos por una nueva funcionalidad, ajustes o resolució
 
 Proceso: 
 
-.. image:: cambiosproceso.png
+.. image:: Cambioslight.png
     :align: center
+    :class: only-light
 
+.. image:: Cambiosblack.png
+    :align: center
+    :class: only-dark
 
 SLA Y SLO
 ----------
+.. container:: justified-text
+    
     Como objetivo inicial los tiempos del SLO son sensiblemente menores a los definidos en el SLA, estos son 50% menor aproximadamente, teniendo como meta el compromiso con el servicio y el 100% de cumplimiento de SLA.
 
     - SLA 
-        Impacto. Sin disponibilidad de la plataforma UNIGIS (Máximo) – Operación afectada severamente (Alto) – La solución UNIGIS está funcionando con impedimento (Medio) – No afecta la operación en producción (Bajo).
+
+    Impacto. Sin disponibilidad de la plataforma UNIGIS (Máximo) 
+    
+    – Operación afectada severamente (Alto) 
+   
+    – La solución UNIGIS está funcionando con impedimento (Medio) 
+    
+    – No afecta la operación en producción (Bajo).
     
     Categoría de cliente. Definición comercial.
     Tipo de solicitud. La solicitud recibida está vinculada a la resolución de un problema o es una consulta. 
+    
     Problema > Consulta
     
     Tiempo de respuesta. Es el tiempo que transcurre entre la recepción de la solicitud y la asignación al especialista para comenzar con el tratamiento de esta y la respectiva notificación al cliente.
 
     Tiempo de Resolución. Es el tiempo entre que se recibe la solicitud y se diagnostica y el especialista da por resuelta la solicitud de servicio.
+
+
++--------------------+-----------+--------------------+---------------------+--------------------+
+| TIPO DE INCIDENCIA | PRIORIDAD |     DESCRIPCIÓN    | TIEMPO DE RESPUESTA | TIEMPO DE SOLUCIÓN |
++====================+===========+====================+=====================+====================+
+| Soporte General    |   Máxima  | Sin disponibilidad |      1-2 horas      |      2-4 horas     |
++--------------------+-----------+--------------------+---------------------+--------------------+
+| Soporte General    |   Alta    | Afecta la operación|      2-4 horas      |      4-8 horas     |
++--------------------+-----------+--------------------+---------------------+--------------------+
+| Soporte General    |   Media   | Errores menores    |      4-8 horas      |      8-16 horas    |
++--------------------+-----------+--------------------+---------------------+--------------------+
+| Soporte General    |   Baja    | No afecta operación|      8-12 horas     |      16-36 horas   |
++--------------------+-----------+--------------------+---------------------+--------------------+
+
+.. container:: justified-text
+    
+    - SLO
+    
+    Tiempo de respuesta. Es el tiempo que transcurre entre la recepción de la solicitud y la asignación al especialista para comenzar con el tratamiento de esta y la respectiva notificación al cliente.
+    
+    Tiempo de Resolución. Es el tiempo entre que se recibe la solicitud y se diagnostica y el especialista da por resuelta la solicitud de servicio.
+
+.. image:: slaslo.png
+   :align: center
+   :width: 400px
+   :height: 320px
+
+
++---------------+---------------------+------------------------+
+|      SLO      | TIEMPO DE RESPUESTA |  TIEMPO DE RESOLUCIÓN  |
++===============+=====================+========================+
+|  Bloqueante   |     30 minutos      |         1 hora         |
++---------------+---------------------+------------------------+
+|   Muy alto    |       1 hora        |         2 horas        |
++---------------+---------------------+------------------------+
+|    Alto       |       2 horas       |         4 horas        |
++---------------+---------------------+------------------------+
+|    Medio      |       4 horas       |         8 horas        |
++---------------+---------------------+------------------------+
+|     Bajo      |       4 horas       |         16 horas       |
++---------------+---------------------+------------------------+
+|   Muy bajo    |       4 horas       |         24 horas       |
++---------------+---------------------+------------------------+
+| Sin impacto   |       8 horas       |         36 horas       |
++---------------+---------------------+------------------------+

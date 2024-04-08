@@ -8,6 +8,7 @@
 h1 {
     font-weight: 400; /* Peso normal o regular */
     font-size: 24px;
+    text-align: justify;
 }
 h2 {
     font-weight: 400; /* Peso normal o regular */
@@ -15,10 +16,12 @@ h2 {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-align: justify;
 }
 h3 {
     font-weight: 400; /* Peso normal o regular */
     font-size: 18px;
+    text-align: justify;
 }
 .light-mode h1, .light-mode h2 {
     color: #303030;
@@ -35,6 +38,18 @@ a.reference.internal {
 .toctree-wrapper ul li {
     list-style: none;
 }
+.epigraph {
+    text-align: justify;
+}
+/* Cambia el color y estilo del enlace de toctree */
+.toctree-wrapper a {
+    color: #00979b; /* Cambia el color del texto */
+    font-weight: 400; /* Cambia el estilo del texto */
+}
+.open-dropdown {
+    display: block;
+}
 .justified-text {
     text-align: justify;
 }
+

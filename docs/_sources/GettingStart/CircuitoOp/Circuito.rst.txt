@@ -45,6 +45,9 @@ Circuito Operativo
 
   Order Management tiene la capacidad de integrar y gestionar todos los pedidos de venta de diferentes portales colaborativos (ERP, CRM, WMS, entre otros) que utiliza una empresa para delivery y pedidos. Los administra en un sistema centralizado que permite ajustar las fechas de entrega comprometidas, realizar particiones y consolidaciones, geo codificar y normalizar las direcciones, hasta generar las órdenes de entrega, trabajo o servicio, que requiere la logística de distribución
 
+.. image:: Imagen7.png
+    :align: center
+
 |location_on_light| |location_on_dark| Planeación y Transporte (Routing)
 ------------------------------------------------------------------------
 
@@ -71,6 +74,9 @@ Circuito Operativo
 
   Dentro de la planificación se pueden visualizar datos importantes como direcciones de la orden, vehículos, horarios, etc. para la geo codificación de la ruta.
 
+.. image:: Imagen8.png
+    :align: center
+
 |desktop_windows_light| |desktop_windows_dark| Tendering
 ---------------------------------------------------------
 
@@ -92,16 +98,13 @@ Circuito Operativo
 
   Las empresas de transporte o conductores pueden acceder al portal de transporte y visualizar la oferta en tiempo real de las rutas publicadas por el dador de carga, este a su vez puede visualizar la oferta para la optimización de las rutas de transporte, en base a evaluaciones (tender) control de rutas planificadas y optimizadas (routing) y reducción de kilómetros y uso de vehículos con comunicación en tiempo real con empresas transportistas si parte de la flota o el total se encuentra tercerizado a través del portal del transporte.
 
-.. image:: transp.png
-    :align: center
-
 .. container:: justified-text
 
   Al seleccionar una empresa de transporte permite gestionar los viajes, como transportista permite ver la oferta como información importante de la ruta y carga del vehículo, los viajes ya ofertados por el conductor, agregar observaciones de la oferta, rechazar o aceptar la oferta del viaje según parámetros configurados.
 
   Al aceptar la oferta, el dador de carga puede visualizar información importante como documentación de la placa, conductor y registros adicionales. Registrar el arribo del camión al deposito de salida, validar accesos y verificación del vehículo para la confirmación del viaje.
 
-.. image:: viaje.png
+.. image:: Imagen9.png
     :align: center
 
 |garage_home_light| |garage_home_dark| Yard Management
@@ -132,6 +135,9 @@ Circuito Operativo
   - Configuración de notificaciones automáticas por medio de WhattApp, SMS o correo electrónico con el detalle que se requiera compartir dependiendo del estado del pedido.
   - Entre otras.
 
+.. image:: Imagen10.png
+    :align: center
+
 |local_light| |local_dark| Smart Tracking (Monitoreo Logístico)
 ---------------------------------------------------------------
 
@@ -151,21 +157,12 @@ Circuito Operativo
     local_shipping
     </span>
 
-.. raw:: html
-
-   <script>
-     if (document.documentElement.classList.contains('theme-dark')) {
-       document.querySelector('.light-mode-icon').style.display = 'none';
-       document.querySelector('.dark-mode-icon').style.display = 'inline';
-     } else {
-       document.querySelector('.light-mode-icon').style.display = 'inline';
-       document.querySelector('.dark-mode-icon').style.display = 'none';
-     }
-   </script>
-
 .. container:: justified-text
 
   En la pantalla inicial de UNIGIS TMS se muestra el módulo “Tracking” ubicado en el menú lateral. El módulo “Tracking” es una herramienta para realizar el monitoreo logístico prevista del plan de distribución y la entrega de productos en tiempo real, se integra con todos los dispositivos móviles y GPS instalados en sus propios vehículos o con servicios de transportes tercerizada. Valida en tiempo real que se cumplan las rutas planeadas, los horarios de visitas y las entregas finales. Permite la configuración de alertas personalizadas y mensajes en el momento que ocurren para la toma de decisiones.
+
+.. image:: Imagen11.png
+    :align: center
 
 |phonelink_ring_light| |phonelink_ring_dark| Confirmación de Entregas (POD) y Movilidad
 ---------------------------------------------------------------------------------------
@@ -185,6 +182,9 @@ Circuito Operativo
 .. container:: justified-text
 
   UNIGIS ofrece un conjunto de aplicaciones móviles para colaborar en la gestión de la distribución y ofrecer un mejor servicio a los clientes. La aplicación de confirmación de entregas (POD) permite informar en tiempo real si la entrega es efectiva junto con las evidencias de la firma electrónica, scan de productos y documentos, fotos, encuestas de satisfacción, contactless, entre otros beneficios. Ofrece al operador la mejor ruta de llegada a destino considerando el tránsito de la ciudad en cada momento.
+
+.. image:: Imagen25.png
+    :align: center
 
 |request_quote_light| |request_quote_dark| Finalización y Tarifación de viajes
 ------------------------------------------------------------------------------
@@ -209,18 +209,9 @@ Circuito Operativo
 
   El sistema genera para cada empresa de transporte cada liquidación de costo en estado inicial. Será posible hacer ajustes por incidencias.
 
+.. image:: Imagen12.png
+    :align: center
+
 .. raw:: html
 
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
-
-.. raw:: html
-
-   <script>
-     if (document.documentElement.classList.contains('theme-dark')) {
-       document.querySelector('.light-mode-icon').style.display = 'none';
-       document.querySelector('.dark-mode-icon').style.display = 'inline';
-     } else {
-       document.querySelector('.light-mode-icon').style.display = 'inline';
-       document.querySelector('.dark-mode-icon').style.display = 'none';
-     }
-   </script>

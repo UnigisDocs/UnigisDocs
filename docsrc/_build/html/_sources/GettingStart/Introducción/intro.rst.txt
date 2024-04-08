@@ -6,9 +6,9 @@ Bienvenido a UNIGIS
 
 .. container:: justified-text
 
- UNIGIS es una plataforma TMS innovadora con todas las aplicaciones para lograr una distribución y gestión del transporte inteligente, eficiente y colaborativa entre proveedores y clientes. Asegura una reducción de los costos operativos logísticos gracias a sus procesos y herramientas que incorporan las últimas tecnologías como, IOT (Internet of Things), Artificial Intelligence, Machine Learning, Cloud services y Big Data. También mejora el nivel de servicio a los clientes con la visibilidad en tiempo real de los indicadores clave del negocio que permiten actuar en forma rápida y proactiva a los desafíos cotidianos.
-   
- Desarrollamos soluciones logísticas con la aplicando la última tecnología informática, flexibles y confiables para superar los desafíos del mercado global. Como en los siguientes países: Argentina, Chile, Brasil, Colombia, México, Estados Unidos y España.
+    UNIGIS es una plataforma TMS innovadora con todas las aplicaciones para lograr una distribución y gestión del transporte inteligente, eficiente y colaborativa entre proveedores y clientes. Asegura una reducción de los costos operativos logísticos gracias a sus procesos y herramientas que incorporan las últimas tecnologías como, IOT (Internet of Things), Artificial Intelligence, Machine Learning, Cloud services y Big Data. También mejora el nivel de servicio a los clientes con la visibilidad en tiempo real de los indicadores clave del negocio que permiten actuar en forma rápida y proactiva a los desafíos cotidianos.
+    
+    Desarrollamos soluciones logísticas con la aplicando la última tecnología informática, flexibles y confiables para superar los desafíos del mercado global. Como en los siguientes países: Argentina, Chile, Brasil, Colombia, México, Estados Unidos y España.
 
 .. image:: mapa.png
    :align: right
@@ -24,15 +24,6 @@ Bienvenido a UNIGIS
 - Equipo de profesionales expertos en logística.
 - Innovación UNIGIS labs:: IA ML, Iot, big data, cloud. 
 
-Recursos y Soporte
-------------------
-
-.. container:: justified-text
-
- Durante tu inducción, recibirás acceso a una variedad de recursos y herramientas que te ayudarán a integrarte en nuestro equipo y a familiarizarte con nuestros procesos y procedimientos. No dudes en comunicarte con nuestro equipo si tienes alguna pregunta o necesitas apoyo adicional.
-    
- ¡Una vez más, bienvenido(a) a *UNIGIS*! Estamos emocionados de tener la oportunidad de trabajar juntos y esperamos que tu tiempo con nosotros sea gratificante y exitoso.
-
 ¿Que es un TMS (Transportation Management System)?
 --------------------------------------------------
 .. container:: justified-text
@@ -45,42 +36,25 @@ Recursos y Soporte
     
     Corresponde a el nivel más básico del modelo logístico lo que corresponde a que el proveedor es el encargado de entregar a su mercado el producto con sus propios recursos.
 
-.. image:: 1PL.png
-    :align: center
-    :width: 200px
-    :height: 90
-
 2PL
     Transporte		
     
     Corresponde a un actor tercero que se enfoca en la ejecución del transporte entre el proveedor y el mercado, durante el proceso de entrega se controla la ejecución de recolección hasta la entrega y todos los factores que intervienen dentro de la misma
-
-.. image:: 2PL.png
-    :align: center
 
 3PL
     Almacén + Logística + Transporte
     
     Dentro del 3PL se expande el alcance de la operación del transporte para esto se debe automatizar el proceso correspondiente a la logística como administración de pedidos, rutas con mucha inteligencia, gestión de recursos (insumos, retornables, etc.) y visibilidad track and trade (estatus de envío). 
 
-.. image:: 3PL.png
-    :align: center
-
 4PL
     Almacén + Logística + Especialidad + Transporte
     
     Dentro de este nivel se comienza a abarcar situaciones complejas que requiere de planificación avanzada para las reglas de negocio de cada mercado como entender circuitos E-commerce, viajes al interior con troncales y Cross dock, viajes especiales, por ejemplo: contenedores, almacén frio, ruteo con inteligencia y automatización, la visibilidad track and trace es más específica.
 
-.. image:: 4PL.png
-    :align: center
-
 5PL
     Planifica + almacén + Logística + Especialidad + Transporte + Post Venta
     
     Dentro de este nivel se trabaja con situaciones globales con la planificación y administración de viajes multimodales como necesidades del producto, documentación, monedas, temas aduanales, zonas horarias y rutas de diferentes países (terrestres, marítimas y/o aéreas).
-
-.. image:: 5PL.png
-    :align: center
 
 ¿Qué empresa necesita un TMS?
 -----------------------------
@@ -88,20 +62,11 @@ Recursos y Soporte
 
  Toda empresa que tenga necesidad de mover productos propios, que se dedique a prestar servicios de transporte y las empresas especializadas en servicios de logística.
 
-- Dador de Carga. Empresas que tienen necesidad de enviar sus productos a clientes o centros de distribución para tercerizar el proceso de transporte con empresas de logística especializadas (LPS). Por ejemplo: SODIMAC, BURGER KING, NIKE, PHILIPS.
+ - Dador de Carga. Empresas que tienen necesidad de enviar sus productos a clientes o centros de distribución para tercerizar el proceso de transporte con empresas de logística especializadas (LPS). Por ejemplo: SODIMAC, BURGER KING, NIKE, PHILIPS.
 
-.. image:: dador.png
-    :align: center
+ - Productores / Revendedores (hacen sus propias entregas). Empresas que quieren abarcar el ciclo completo de su producto desde la fabricación y/o venta hasta la entrega de este al cliente final o a sus distribuidores. Empresas con producto que disponen con su propia flotilla.
 
-- Productores / Revendedores (hacen sus propias entregas). Empresas que quieren abarcar el ciclo completo de su producto desde la fabricación y/o venta hasta la entrega de este al cliente final o a sus distribuidores. Empresas con producto que disponen con su propia flotilla.
-
-.. image:: productores.png
-    :align: center
-
-- Proveedores de Servicios Logísticos (LPS). Empresas que se dedican a proveer servicios de transporte para productos, muchas de ellas agregan valor adicional en el proceso logístico ofreciendo servicios adicionales como: Seguimiento satelital, almacenaje, cross dock, preparación de entregas, kitting, programación de entregas, gestión de turnos, gestión de re-entregas, entre otros servicios especializados. 
-
-.. image:: LPS.png
-    :align: center
+ - Proveedores de Servicios Logísticos (LPS). Empresas que se dedican a proveer servicios de transporte para productos, muchas de ellas agregan valor adicional en el proceso logístico ofreciendo servicios adicionales como: Seguimiento satelital, almacenaje, cross dock, preparación de entregas, kitting, programación de entregas, gestión de turnos, gestión de re-entregas, entre otros servicios especializados. 
 
 Solución Integral UNIGIS TMS
 ----------------------------
@@ -114,10 +79,9 @@ Solución Integral UNIGIS TMS
  La solución cuenta con una gran variedad de módulos:
 
 .. image:: SI.png
-   :align: right
-   :width: 250px
-   :height: 250px
-   :target: _self
+   :align: center
+   :width: 400px
+   :height: 400px
 
 - Administración de Pedidos.
 - Planeación de Distribución.

@@ -1,54 +1,55 @@
 Administración de Pedidos
 =========================
 
+
+.. image:: admi.png
+    :align: left
+
 Pedidos
--------
-.. container:: justified-text
-
- Dentro de UNIGIS TMS resulta útil determinar la naturaleza de un pedido y una orden para introducción al módulo de Administración de Pedidos (Order Management).
- 
-.. image:: pedidos.png
-   :align: left
-   :width: 100
-   :height: 100
+--------
 
 .. container:: justified-text
 
- Un pedido dentro de UNIGIS TMS es una solicitud de transporte que nos entrega el cliente o dador de carga el cual contiene los datos necesarios para saber dónde recolectar los ítems o productos como domicilio de entrega, detalle de los productos, fechas pactadas y entre otros datos sobre el pedido solicitado.
+   En UNIGIS TMS, es útil entender la naturaleza de un pedido y una orden.
 
- Un pedido pertenece a un único cliente o dador de carga, dentro de UNIGIS TMS se asignan estados que reflejan el avance punto a punto en el transcurso del proceso del cumplimiento del servicio, según el tipo de pedido se permite generar pedidos multi tienda, troncal, reenvíos, pick up, delivery, pedidos híbridos, etc.).
- Entidades importantes.
+   Pedido:
+   Un pedido en UNIGIS TMS es una solicitud de transporte proporcionada por el cliente o dador de carga. Contiene información como la ubicación de recolección y entrega, detalles de los productos y fechas acordadas.
 
- - Cliente. El cliente es el dador de carga que solicita en primera instancia un pedido, es el receptor de toda la información a detalle sobre el pedido solicitado por el Cliente Orden. 
- - Cliente Orden. Es el destinatario el cual solicito el pedido.
- - Domicilio Orden. En caso de requerir y dependiendo del tipo de operación el sistema cuenta con la capacidad de tercerizar el pedido indicando un Domicilio final para la Orden.
+   Cada pedido pertenece a un único cliente o dador de carga y se le asignan estados que reflejan su progreso a lo largo del proceso de cumplimiento del servicio. Dependiendo del tipo de pedido, se pueden generar pedidos multi-tienda, troncal, reenvíos, pick up, delivery, pedidos híbridos, entre otros.
+
+   Entidades importantes:
+
+   Cliente: Es el dador de carga que solicita el pedido inicialmente y recibe información detallada sobre el pedido solicitado por el Cliente Orden.
+
+   Cliente Orden: Es el destinatario que solicitó el pedido.
+
+   Domicilio Orden: En algunos casos, el sistema puede tercerizar el pedido indicando un domicilio final para la orden, dependiendo del tipo de operación.
 
 Orden
 ------
+
 .. container:: justified-text
+   
+   Una orden es la entidad ejecutiva mediante la cual se lleva a cabo una actividad específica. Contiene toda la información necesaria para ejecutar la acción solicitada en el pedido, incluyendo:
 
- Una orden es la entidad ejecutiva mediante la cual se ordena realizar una actividad, es decir, una orden contiene todos los datos necesarios y establecidos para ejecutar la orden del pedido, como lo son: 
+   Información general sobre la orden del pedido.
+   
+   Detalles sobre los ítems o productos asociados, que pueden abarcar todos los productos o solo una parte de ellos.
+   
+   Validaciones y observaciones sobre el progreso del proceso, reflejadas a través de estados configurables que automatizan las acciones correspondientes.
+   
+   Desde un pedido, pueden generarse múltiples órdenes según las operaciones y fechas requeridas para alcanzar el objetivo deseado.
 
- Información general sobre la orden del pedido.
- Información sobre los ítems o productos, estos pueden incluir todos los productos o una parte de ellos. 
- Validaciones y observaciones sobre el avance del proceso que reflejan su cumplimiento a través de estados. Los estados pueden configurarse para automatizar las acciones por transiciones de estados.
+   Las órdenes son dinámicamente ruteadas con la herramienta de UNIGIS Routing en la creación de jornadas de trabajo.
 
- En el entendimiento que desde el pedido se crean las ordenes, un pedido puede requerir la cantidad de ordenes necesarias para distintas operaciones y fechas para cumplir su objetivo.
- Las ordenes son la entidad que se rutea dinámicamente con la herramienta de UNIGIS Routing dentro de la creación de una jornada de trabajo.
+   Tipos de Órdenes:
 
-.. image:: orden.png
-   :align: left
-   :width: 100
-   :height: 100
-
-Tipos de Orden
-    - Pick-Up.
-    - Delivery.
-    - Reenvío.
-    - Multi-tienda.
-    - Troncal.
-    - Entre otras.
-
+   - Pick-Up.
+   - Delivery.
+   - Reenvío.
+   - Multi-tienda.
+   - Troncal.
+   - Entre otros.
 
 Administración de Pedidos
 -------------------------
