@@ -80,7 +80,7 @@ UNIGIS HUB
     UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera se adapta a tecnología on premise u on cloud.  
     Como único servidor intermedio transmite y distribuyen sin importar el tipo de tecnología implementada en el usuario, es decir, la solución UNIGIS HUB es capaz de integrar entre distintas tecnologías on premise u on cloud para transferir información en tiempo real.
 
-.. image:: Sources.png
+.. image:: sources.png
     :align: Center
 
 .. container:: justified-text
@@ -107,10 +107,8 @@ Entidades Core
  
     Se divide en tres tipos de entidades: Entidades Base, Catálogos y entidades Transaccionales.
 
-.. image:: Entidades.png
+.. image:: entidad.png
     :align: center
-    :width: 650px
-    :height: 450px
 
 Descripción General
 --------------------
@@ -267,10 +265,8 @@ UNIGIS MAPI
 
     Algunos de los métodos I/O mas comunes sobre las estructuras base, transaccional de las operaciones y catálogos maestros son los siguientes.
 
-.. image:: MAPI1.png
+.. image:: mapi2.png
     :align: center
-    :width: 650px
-    :height: 350px
 
 .. container:: justified-text
 
