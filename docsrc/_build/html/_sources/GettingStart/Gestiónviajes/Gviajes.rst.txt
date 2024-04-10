@@ -49,23 +49,61 @@ Gestión de Viajes
     :width: 400px
     :height: 250px
 
+Portal B2B (business-to-business)
+----------------------------------
+
 .. container:: justified-text
 
-    Las empresas de transporte o conductores pueden acceder al portal de transporte para visualizar la oferta en tiempo real de las rutas publicadas por el dador de carga. A su vez, el dador de carga puede visualizar la oferta para optimizar las rutas de transporte, basándose en evaluaciones (Tendering), control de rutas planificadas y optimizadas (Routing), y reducción de kilómetros y uso de vehículos. Esto se realiza mediante comunicación en tiempo real con empresas transportistas, ya sea que parte de la flota o la totalidad se encuentre tercerizada a través del portal del transporte.
+    El portal de transporte B2B, se promueve la colaboración entre diversos actores del sector con el objetivo de mejorar la eficiencia y la oferta de servicios. Para ello, se brindan herramientas e información a los servicios de transporte tercero, permitiéndoles ofertar viajes de acuerdo a sus capacidades y especialidades.
+
+    Estos servicios de transporte externos pueden acceder a una plataforma donde visualizan los viajes ofertados, aquellos disponibles y los que ya están en curso. Una vez que se asigna un viaje, el conductor dispone de toda la información necesaria para llevar a cabo el transporte de manera fluida. Esto incluye detalles como las paradas del viaje, los ítems correspondientes a cada parada, así como la ruta a seguir. Todas estas configuraciones y permisos son proporcionados por el usuario del producto, garantizando un control total sobre el proceso.
 
 .. image:: Imagen5.png
     :align: Center
 
 .. container:: justified-text
 
-    Al seleccionar una empresa de transporte, se permite gestionar los viajes. Como transportista, puedes ver la oferta, que incluye información importante sobre la ruta y la carga del vehículo, así como los viajes ya ofertados por el conductor. Además, puedes agregar observaciones a la oferta y aceptarla o rechazarla según los parámetros configurados.
+    Las empresas de transporte o conductores pueden acceder al portal de transporte para visualizar la oferta en tiempo real de las rutas publicadas por el dador de carga. A su vez, el dador de carga puede visualizar la oferta para optimizar las rutas de transporte, basándose en evaluaciones (Tendering), control de rutas planificadas y optimizadas (Routing), y reducción de kilómetros y uso de vehículos. Esto se realiza mediante comunicación en tiempo real con empresas transportistas, ya sea que parte de la flota o la totalidad se encuentre tercerizada a través del portal del transporte.
+
+.. container:: justified-text
+
+    Al seleccionar una empresa de transporte, se permite gestionar los viajes. Como transportista, puedes ver la oferta, que incluye información importante sobre la ruta y la carga del vehículo, así como los viajes ya ofertados por el conductor. Además, puedes agregar observaciones a la oferta y aceptarla o rechazarla según los parámetros configurados. 
+
+.. image:: Imagenb2b.png
+    :align: center
+
+.. container:: justified-text
 
     Una vez aceptada la oferta, el dador de carga puede acceder a información importante, como la documentación de la placa, del conductor y otros registros adicionales. El registro del arribo del camión al depósito de salida, la validación de accesos y la verificación del vehículo permiten validar los documentos necesarios para el arribo y confirmación del viaje y transporte. Esto garantiza el cumplimiento normativo y reduce el riesgo de problemas legales.
-
+    
     Maximizar la eficiencia del espacio de carga y reducir los costos asociados puede lograrse mediante la optimización de las cargas, considerando la capacidad y las características específicas de los vehículos.
+
+Yard Management
+-----------------
+
+.. container:: justified-text
+    
+    Dentro del módulo de Yard, se lleva a cabo una gestión integral de los muelles y depósitos de manera visual, aprovechando todas las características disponibles. Cada muelle cuenta con su propio calendario que muestra ocupaciones y reservas generadas de forma automatizada, facilitando una visión clara de la disponibilidad. Además, se ofrece una página inteligente para cada muelle, proporcionando detalles cruciales.
+
+    Para los depósitos, se dispone de una visualización completa de sus características y disponibilidad, incluyendo geocercas individuales, y se muestra información detallada sobre los vehículos alojados en cada uno.
+
+.. image:: yardimagen.png
+    :align: center
+
+.. container:: justified-text
+
+    Cuando se selecciona un vehículo, se accede a toda la información relevante, como la del conductor, viajes asignados, carga, ítems y otros datos importantes. También se ofrecen detalles sobre las salidas, fechas de entrada y salidas, facilitando una navegación clara y precisa.
+
+    La gestión de los muelles puede realizarse de manera manual o automática. En el primer caso, se permite la gestión por entradas o salidas, búsqueda por clientes, visualización de disponibilidad por fechas, optimización de asignaciones por viajes próximos, y visualización de advertencias o riesgos. Se proporciona información crucial sobre el conductor y los permisos necesarios para las operaciones en el depósito, entre otras funciones.
+
+    En el proceso automático, se incluye la planeación de rutas, donde las solicitudes pueden ser confirmadas o ignoradas según la gestión requerida. Cada opción se integra en un workflow configurado, lo que permite cambios automáticos de estado según las acciones realizadas dentro del yard, manteniendo así un flujo de trabajo actualizado en todo momento. Por ejemplo, cambios de estado pueden ocurrir al momento de entrada al depósito, descarga, salida del vehículo, manejo de documentación, entre otros procesos.
 
 .. image:: Imagen6.png
     :align: Center
+
+.. container:: justified-text
+
+    Una vez el transporte sale del deposito se puede realizar un monitoreo detallado de las asignaciones que han sido ruteadas en función del inventario predefinido dentro del módulo de Tracking. Esta funcionalidad permite una supervisión precisa y en tiempo real de las operaciones en curso, facilitando la toma de decisiones y la gestión eficiente de los recursos disponibles.
 
 Workflows
 ----------

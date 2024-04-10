@@ -20,7 +20,7 @@ Opciones de Implementación
  - Mayor tecnología. 
 
  On-Premise: Client Infrastructure.
-    La opción tradicional que se despliega que despliega todas las aplicaciones y componentes de UNIGIS implementados en la infraestructura de la nube del cliente, incluidos los datos geoespaciales y el motor de optimización. Modelo de caja de arena. empresas con políticas estrictas para proteger los datos internos o procesos críticos que se implementarán en nubes externas.
+    La opción tradicional que se despliega en todas las aplicaciones y componentes de UNIGIS implementados en la infraestructura de la nube del cliente, incluidos los datos geoespaciales y el motor de optimización. Modelo de caja de arena. empresas con políticas estrictas para proteger los datos internos o procesos críticos que se implementarán en nubes externas.
 
 .. container:: justified-text
 
@@ -77,7 +77,7 @@ UNIGIS HUB
 
 .. container:: justified-text
 
-    UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera se adapta a tecnología on premise u on cloud.  
+    UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera se adaptar a la tecnología on premise u on cloud.  
     Como único servidor intermedio transmite y distribuyen sin importar el tipo de tecnología implementada en el usuario, es decir, la solución UNIGIS HUB es capaz de integrar entre distintas tecnologías on premise u on cloud para transferir información en tiempo real.
 
 .. image:: sources.png
@@ -103,7 +103,7 @@ Entidades Core
 --------------
 .. container:: justified-text
 
-    Permite a los programadores trabajar con datos en forma de objetos y propiedades funcionales, por ejemplo, empresa, sucursal o operación como entidades base, sin tener que pensar en las tablas de las bases de datos subyacentes y en las columnas en las que se almacenan estos datos, se pueden crear y mantener aplicaciones orientadas a datos con menos código que en las aplicaciones tradicionales.
+    Permite a los programadores trabajar con datos en forma de objetos y propiedades funcionales, por ejemplo, empresa, sucursal u operación como entidades base, sin tener que pensar en las tablas de las bases de datos subyacentes y en las columnas en las que se almacenan estos datos, se pueden crear y mantener aplicaciones orientadas a datos con menos código que en las aplicaciones tradicionales.
  
     Se divide en tres tipos de entidades: Entidades Base, Catálogos y entidades Transaccionales.
 
@@ -220,7 +220,7 @@ Workflows
 ---------
 .. container:: justified-text
 
-    Toda entidad que contiene una actividad relacional posse un workflow, estos workflows son completadas en un determinado orden de estados y transiciones para alcanzar un objetivo del producto. Estos estados y transacciones son 100% configurables a medida del negocio, es decir, solo se limitan las transiciones por grupos de usuarios, atributos de la entidad (tipo de orden, categoría de viaje, tipo de pedido, etc.) o jerarquía en la estructura base, lo cual nos dice que no están fijas por código. Permiten agregar procesos que se ejecutan en cada transición, y en esta secuencia se pueden automatizar por determinadas medidas del negocio esto hace que las entidades cambien de estados.
+    Toda entidad que contiene una actividad relacional posee un workflow, estos workflows son completadas en un determinado orden de estados y transiciones para alcanzar un objetivo del producto. Estos estados y transacciones son 100% configurables a medida del negocio, es decir, solo se limitan las transiciones por grupos de usuarios, atributos de la entidad (tipo de orden, categoría de viaje, tipo de pedido, etc.) o jerarquía en la estructura base, lo cual nos dice que no están fijas por código. Permiten agregar procesos que se ejecutan en cada transición, y en esta secuencia se pueden automatizar por determinadas medidas del negocio esto hace que las entidades cambien de estados.
 
 .. image:: workflowlight.png
     :align: center

@@ -73,7 +73,7 @@ Configuración
 
 .. container:: justified-text
 
- Establecido el pedido o solicitud de transporte esto se pueden referenciar la cantidad de órdenes necesarias. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. (Multi tienda, troncal, reenvíos, pick up, delivery, etc.).
+ Establecido el pedido o solicitud de transporte esto se pueden referenciar la cantidad de órdenes necesarias. Las ordenes pertenecen a una única jornada, operación y fechas por su naturaleza del pedido. (Multi tienda, troncal, reenvíos, pick up, delivery, etc.).
 
 Permisos
 --------
@@ -110,13 +110,13 @@ Transiciones de pedidos
    :align: center
 
 Tipo de Pedido
-    El objetivo de esta entidad es la crear los modelos de servicio por catálogos para los tipos de pedido de cada operación. Se definen los tipos de pedio a operar configurando campos relacionados.
+    El objetivo de esta entidad es crear los modelos de servicio por catálogos para los tipos de pedido de cada operación. Se definen los tipos de pedio a operar configurando campos relacionados.
 
 .. image:: tipopedido.png
    :align: center
 
 Orden Tipo Pedido
-    El objetivo de esta entidad es usarse como modelo para crear ordenes desde un tipo de pedido, es decir, al disponer con un pedido del tipo cualquier tipo esta entidad ayuda a ejecutar el tipo de orden asignada, tomando datos relacionados al pedido para continuar con el proceso de la orden. 
+    El objetivo de esta entidad es usarse como modelo para crear ordenes desde un tipo de pedido, es decir, al disponer con un pedido de cualquier tipo esta entidad ayuda a ejecutar el tipo de orden asignada, tomando datos relacionados al pedido para continuar con el proceso de la orden. 
 
     Por ejemplo, para un tipo de pedido “Delivery” genera un tipo de orden “Delivery” de tal manera que para generar una entrega se necesita de las especificaciones origen para llevarse a cabo una orden determinada. Especificaciones como: fechas de entrega, horarios, domicilio, operación, deposito, etc.
 
