@@ -38,10 +38,8 @@ Layouts
 
 Las capas de la infraestructura funcional presentan el siguiente flujo funcional corresponde a la solución On-cloud recomendada para el producto: 
 
-.. image:: Layouts.png
+.. image:: layout.png
     :align: center
-    :width: 600px
-    :height: 300px
 
 .. container:: justified-text
 
@@ -84,8 +82,6 @@ UNIGIS HUB
 
 .. image:: Sources.png
     :align: Center
-    :width: 650px
-    :height: 450px
 
 .. container:: justified-text
 
