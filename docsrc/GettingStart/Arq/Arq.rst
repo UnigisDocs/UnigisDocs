@@ -77,7 +77,7 @@ UNIGIS HUB
 
 .. container:: justified-text
 
-    UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera se adaptar a la tecnología on premise u on cloud.  
+    UNIGIS HUB es una pieza o un componente de software intermedia con el propósito de recibir e integrar información de distintas fuentes como lo son GPS, proveedores GPS, aplicaciones móviles, entre otras señales o transferencia de información que se requiera adaptar a la tecnología on premise u on cloud.  
     Como único servidor intermedio transmite y distribuyen sin importar el tipo de tecnología implementada en el usuario, es decir, la solución UNIGIS HUB es capaz de integrar entre distintas tecnologías on premise u on cloud para transferir información en tiempo real.
 
 .. image:: sources.png

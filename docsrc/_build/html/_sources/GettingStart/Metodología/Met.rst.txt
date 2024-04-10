@@ -206,7 +206,7 @@ Soporte
  
  Acceso al servicio de soporte mediante un formulario de Alta de cliente al servicio UNIGIS Service Desk.
 
- Formulario donde se completan los datos del cliente implementando de producción que accede al servicio de UNIGIS Service Desk. Se establece un usuario y una contraseña genérica para acceder al sistema UNIGIS SD y se solicita que el interlocutor / key user quien centraliza, usa y registra las solicitudes. El cliente acepta (firma) las condiciones de uso del servicio, esencialmente acepta el SLA de UNIGIS. Si el cliente esta on premise debe aceptar un acceso remoto permanente para poder dar soporte y cumplir con el SLA. Este documente está pendiente de definición con la dirección.
+ Formulario donde se completan los datos del cliente implementando de producción que accede al servicio de UNIGIS Service Desk. Se establece un usuario y una contraseña genérica para acceder al sistema UNIGIS SD y se solicita que sea el interlocutor / key user quien centraliza, usa y registra las solicitudes. El cliente acepta (firma) las condiciones de uso del servicio, esencialmente acepta el SLA de UNIGIS. Si el cliente esta on premise debe aceptar un acceso remoto permanente para poder dar soporte y cumplir con el SLA. Este documente está pendiente de definición con la dirección.
 
 .. _a link: https://support.unigis.com/
 

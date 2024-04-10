@@ -55,7 +55,7 @@ Entidades
 
 .. container:: justified-text
 
- Establecido el pedido o solicitud de transporte esto se pueden referenciar la cantidad de órdenes necesarias. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. En la planificación no se planifica hacia un vehículo, si no con un tipo de vehículo disponible en un depósito correspondiente a una operación para las características especificas que presentan la ruta, jornada y orden para cumplir con su objetivo el domicilio orden.
+ Establecido el pedido o solicitud de transporte estos se pueden referenciar la cantidad de órdenes necesarias. Las ordenes perteneces a una única jornada, operación y fechas por su naturaleza del pedido. En la planificación no se planifica hacia un vehículo, si no con un tipo de vehículo disponible en un depósito correspondiente a una operación para las características especificas que presentan la ruta, jornada y orden para cumplir con su objetivo el domicilio orden.
 
 .. image:: Planeaciónlight.png
     :align: center
@@ -73,7 +73,7 @@ Configuración de Datos generales
  Catálogos que considerar antes de empezar a planificar una ruta
 
  - Depósitos. Es el centro de distribución donde parte o regresan los vehículos, área de influencia. El depósito cuenta con una zona de ruteo preferente. Datos generales del depósito, cercanía, dirección, parámetros horarios, carga, parámetros internacionales, jurisdicción. planificar por tipo de depósito y producto.
- - Tipos de vehículos. Cada tipo de vehículo dispone con ciertas características para peso, carga, especificaciones de vehículo, velocidad máxima o mínima para la configuración de alertas, cantidad de la flota de vehículos, dimensiones de carga, tiempos de inactividad, momento más optima, Alertas de velocidad máxima. Recursos disponibles
+ - Tipos de vehículos. Cada tipo de vehículo dispone con ciertas características para peso, carga, especificaciones de vehículo, velocidad máxima o mínima para la configuración de alertas, cantidad de la flota de vehículos, dimensiones de carga, tiempos de inactividad, momento más optimo, Alertas de velocidad máxima. Recursos disponibles
  - Tipo de Jornada. Agrupador de ordenes utilizadas para planificar en el momento, guía de operación. Planificar ordenes para una jornada del día. Para fijas o dinámicas. Descripción, tipo de operación, filtro de ordenes clasificar a un tipo de operaciones a considerar dentro de la jornada, segmentar jornada con tipos de jornada, jornada por tipo de jornada.
  - Muelles. Por tipo de vehículo- muelle. Deposito asignado, descripción, horarios de operación, tipo de muelle, días permitidos. Restricción por tipo de vehículo para cada muelle. La asignación y disponibilidad.
  - Zonas de planificación. Geo referencia. Área de influencia zona metropolitana dibujar una zona de propiedad para ruteo. Por órdenes para planificar. Las zonas son una entidad fundamental no solo delimitan las zonas de ruteo si no que se pueden contar con restricciones por zonas por tipos de vehículos, por condiciones, horarios, peso o volumen por área. Zona de ruteo por operación o tipo de jornada. Prioridad de zonas. Geo editor, zonas de peligro zonas de depósitos, zonas de ruteo, factor importante.
@@ -140,7 +140,7 @@ Escenarios
 
 .. container:: justified-text
     
- Se permite crear diferentes escenarios a medida de la planificación de una operación con las condiciones presentadas al Domicio orden, por ejemplo, un escenario para temporada baja, para turno nocturno, por vehículos, por zonas de riesgo, etc. 
+ Se permite crear diferentes escenarios a medida de la planificación de una operación con las condiciones presentadas al Domicilio orden, por ejemplo, un escenario para temporada baja, para turno nocturno, por vehículos, por zonas de riesgo, etc. 
  
  Dependiendo la cantidad de órdenes y jornadas a asignar.
 
@@ -159,13 +159,13 @@ Parámetros generales
 
 .. container:: justified-text
 
- Inicio de rutas: Preferencia de selección del baricentro para empezar a construir la ruta, por selección de semilla. Según la conveniencia o mandatorio para iniciar las paradas preferentemente de inicio de ruta. 
- 
- Priorizar por:
+    Al iniciar la planificación de rutas, es crucial establecer un punto de partida óptimo mediante la preferencia de selección del baricentro, utilizando una semilla seleccionada. Esta elección se basa en la conveniencia para comenzar las paradas preferentemente al inicio de la ruta.
 
- - Grupos: Buscando la idea de no generar solapamiento entre rutas, autoclustering, grupo de rutas 
- - Vehículos: Reutilización de tipo de vehículos, preferencias por tipo de vehículo. Porcentaje de cargas. Volumetría. Depósitos automáticos. Optimización de vehículos. Permitir a los vehículos múltiples depósitos.
- - Horarios: Deposito, salida, vehículos, ordenes, ventanas de simulación. Por intervalos ampliar fn. La selección del resultado optimo validar cual es la mejor. evalúa todos los parámetros mejorar detalles de la planificación particulares dentro de la ruta a otra.
+    Se prioriza la selección según los siguientes criterios:
+
+    - Grupos: Buscando la idea de no generar solapamiento entre rutas, autoclustering, grupo de rutas 
+    - Vehículos: Reutilización de tipo de vehículos, preferencias por tipo de vehículo. Porcentaje de cargas. Volumetría. Depósitos automáticos. Optimización de vehículos. Permitir a los vehículos múltiples depósitos.
+    - Horarios: Deposito, salida, vehículos, ordenes, ventanas de simulación. Por intervalos ampliar fn. La selección del resultado optimo validar cual es la mejor. evalúa todos los parámetros mejorar detalles de la planificación particulares dentro de la ruta a otra.
 
 Parámetros avanzados
     Priorizar construcción de ruta, restricciones. Primera orden, concurrencia, ruteo por calles. Contorno avanzado algoritmo que permite un contorno más especifico por área.
