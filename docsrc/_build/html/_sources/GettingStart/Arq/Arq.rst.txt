@@ -40,6 +40,8 @@ Las capas de la infraestructura funcional presentan el siguiente flujo funcional
 
 .. image:: Layouts.png
     :align: center
+    :width: 600px
+    :height: 300px
 
 .. container:: justified-text
 
@@ -82,6 +84,8 @@ UNIGIS HUB
 
 .. image:: Sources.png
     :align: Center
+    :width: 650px
+    :height: 450px
 
 .. container:: justified-text
 
@@ -109,6 +113,8 @@ Entidades Core
 
 .. image:: Entidades.png
     :align: center
+    :width: 650px
+    :height: 450px
 
 Descripción General
 --------------------
@@ -267,6 +273,8 @@ UNIGIS MAPI
 
 .. image:: MAPI1.png
     :align: center
+    :width: 650px
+    :height: 350px
 
 .. container:: justified-text
 

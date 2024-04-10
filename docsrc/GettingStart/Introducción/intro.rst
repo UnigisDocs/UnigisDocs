@@ -8,7 +8,7 @@ Bienvenido a UNIGIS
 
     UNIGIS es una plataforma TMS innovadora con todas las aplicaciones para lograr una distribución y gestión del transporte inteligente, eficiente y colaborativa entre proveedores y clientes. Asegura una reducción de los costos operativos logísticos gracias a sus procesos y herramientas que incorporan las últimas tecnologías como, IOT (Internet of Things), Artificial Intelligence, Machine Learning, Cloud services y Big Data. También mejora el nivel de servicio a los clientes con la visibilidad en tiempo real de los indicadores clave del negocio que permiten actuar en forma rápida y proactiva a los desafíos cotidianos.
     
-    Desarrollamos soluciones logísticas con la aplicando la última tecnología informática, flexibles y confiables para superar los desafíos del mercado global. Como en los siguientes países: Argentina, Chile, Brasil, Colombia, México, Estados Unidos y España.
+    Desarrollamos soluciones logísticas aplicando la última tecnología informática, flexibles y confiables para superar los desafíos del mercado global. Como en los siguientes países: Argentina, Chile, Brasil, Colombia, México, Estados Unidos y España.
 
 .. image:: imagenmapa.png
     :align: center
@@ -98,5 +98,6 @@ Solución Integral UNIGIS TMS
 -  Monitoreo Logístico.
 - Control de Entregas.
 - Gestión de Transporte.
+- B2B / B2C.
 - Dashboards and E-Commerce.
 
