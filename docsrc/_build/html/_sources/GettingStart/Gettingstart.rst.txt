@@ -6,9 +6,7 @@ Recursos y Soporte
 
 .. container:: justified-text
       
-      Durante tu inducción, recibirás acceso a una variedad de recursos y herramientas que te ayudarán a integrarte en nuestro equipo y a familiarizarte con nuestros procesos y procedimientos. No dudes en comunicarte con nuestro equipo si tienes alguna pregunta o necesitas apoyo adicional.
-    
-      ¡Una vez más, bienvenido(a) a *UNIGIS*! Estamos emocionados de tener la oportunidad de trabajar juntos y esperamos que tu tiempo con nosotros sea gratificante y exitoso.
+   Durante tu inducción, recibirás acceso a una variedad de recursos y herramientas que te ayudarán a familiarizarte con nuestros procesos y procedimientos.
 
 .. toctree::
    :hidden:
@@ -122,8 +120,8 @@ Administración de Pedidos
  
    Ruteo/Ruteo.rst
 
-Planeación de Rutas
---------------------
+Planeación de Distribución
+----------------------------
 
 .. epigraph:: 
       
@@ -143,6 +141,24 @@ Planeación de Rutas
 
    Gestiónviajes/Gviajes.rst
 
+Yard Management
+--------------------
+
+.. epigraph:: 
+
+   El objetivo principal de un módulo de Yard Management en UNIGIS TMS es optimizar y coordinar eficientemente las operaciones dentro del área de almacenamiento o patio, con el fin de mejorar la eficiencia operativa y la productividad en la gestión logística. Los puntos principales a abordar son:
+   
+   Yard Management:
+
+   Se aborda la asignación de vehículos, conductores, muelles y depositos, detallando cómo se asignan los recursos necesarios para realizar los viajes planificados. Se describen los procedimientos para la asignación manual del vehículo y conductor, proporcionando pautas claras para esta tarea. 
+   
+   Además, se discute la validación de la documentación requerida, destacando la importancia de garantizar que todos los documentos necesarios estén en regla antes de iniciar un viaje junto con sus flujos de trabajo. Se exploran las experiencias de uso asociadas a estos procesos, ofreciendo insights sobre cómo se aplican en la práctica y cómo mejoran la eficiencia y seguridad de las operaciones de transporte.
+
+.. toctree::
+   :hidden:
+
+   Yard/Yard.rst
+
 Gestión de Viajes 
 ------------------
 
@@ -154,10 +170,6 @@ Gestión de Viajes
 
    Descripción general del módulo para viajes y las entidades vinculadas, presentando las características y funciones principales del sistema de gestión de viajes.
    
-   Yard Management y Portal de Transporte:
-
-   Se aborda la asignación de vehículos y conductores, detallando cómo se asignan los recursos necesarios para realizar los viajes planificados. Se describen los procedimientos para la asignación manual del vehículo y conductor, proporcionando pautas claras para esta tarea. Además, se discute la validación de la documentación requerida, destacando la importancia de garantizar que todos los documentos necesarios estén en regla antes de iniciar un viaje. Se exploran las experiencias de uso asociadas a estos procesos, ofreciendo insights sobre cómo se aplican en la práctica y cómo mejoran la eficiencia y seguridad de las operaciones de transporte.
-
    UNIGIS X Deliveries:
 
    Descripción del proceso de entrega y recolección de recursos utilizando UNIGIS X Deliveries.
@@ -166,6 +178,18 @@ Gestión de Viajes
    :hidden:
 
    Tracking/Tracking.rst
+
+Portal B2B (business-to-business)
+----------------------------------
+
+.. epigraph:: 
+
+   El objetivo de este documento es proporcionar al usuario los aspectos importantes sobre un portal de transporte B2B que facilita y optimiza la interacción entre empresas dentro de la logística de sus ordenes. Proporciona una plataforma centralizada donde terceros pueden colaborar, ejecutar viajes y gestionar sus operaciones de manera eficiente.
+
+.. toctree::
+   :hidden:
+
+   B2B/b2b.rst
 
 Tracking
 ----------
@@ -181,7 +205,19 @@ Tracking
    Notificaciones y Alarmas:
 
    Se aborda la configuración y gestión de alarmas para eventos específicos, permitiendo a los usuarios definir alertas para situaciones particulares. Además, se explora el uso de notificaciones push, una herramienta fundamental para informar a los usuarios sobre cambios importantes en tiempo real. Se proporcionan experiencias de uso relacionadas con notificaciones y alarmas, destacando su importancia en la mejora de la eficiencia y la capacidad de respuesta del sistema.
-   
+
+UNIGIS X DELIVERIES
+--------------------
+
+.. epigraph::
+
+   El objetivo de este documento es proporcionar al usuario una guía con el contexto en el control de entragas de UNIGIS al ofrecer una aplicación móvil que colabora en la gestión de la distribución y mejoren el servicio al cliente. Una de estas aplicaciones es la de confirmación de entregas (POD), que permite informar en tiempo real sobre la efectividad de la entrega, proporcionando evidencias como firmas electrónicas, escaneos de productos y documentos, fotografías, encuestas de satisfacción, entre otros beneficios. Además, esta aplicación ofrece al operador la mejor ruta de llegada al destino, teniendo en cuenta el tráfico de la ciudad en cada momento.
+
+.. toctree::
+   :hidden:
+
+   Mobile/Deliveries.rst
+
 .. toctree::
    :hidden:
 

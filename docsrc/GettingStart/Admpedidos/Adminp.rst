@@ -1,7 +1,6 @@
 Administración de Pedidos
 =========================
 
-
 .. image:: admi.png
     :align: left
 

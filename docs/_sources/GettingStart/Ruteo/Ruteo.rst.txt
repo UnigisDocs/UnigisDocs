@@ -1,5 +1,5 @@
-Planeación de Rutas
-===================
+Planeación de Distribución
+===========================
 
 .. image:: routing.png
     :align: left
