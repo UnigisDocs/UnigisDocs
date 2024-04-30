@@ -26,6 +26,27 @@ Características
 
     Los servicios aprovechan todos los estándares que ofrece la plataforma web de Microsoft IIS (Internet Information Services) y pueden ser publicados sobre protocolo http o https (si se requiere de mayor seguridad para una comunicación cifrada). También se pueden incorporar certificados de validación de autenticidad si así lo requiere el cliente.
 
+Pre Requisitos
+----------------
+-	Contar con la aplicación SOAP UI, Postman  o servicios propios, y poder realizar las solicitudes de la MAPI.
+
+-	Contar con un ambiente de pruebas o producción.
+
+-	Tener la liga creada para ejecución de la MAPI.
+
+- Esto es diferente para cada cliente puesto que se genera con su nombre empresarial, a continuación, se comparte un ejemplo del link:
+
+https:/dominio/cliente/Mapi/SOAP/Logistic/Service.asmx
+
+o	Si con cuenta con Postman puede descargarlo mediante el siguiente link:
+
+https://www.postman.com/downloads/
+
+.. note::
+    
+    El dominio cambia de acuerdo con el ambiente ya sea de pruebas o producción.
+    En la sección de cliente, va el nombre de quien usará la MAPI.
+
 Web Services
 -----------------
 
@@ -6672,11 +6693,1145 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Integer	
       - 
 
+2.36. CodigoSucursalOperacionRequest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
 
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - codigoSucursal	
+      - String	
+      - Código de la sucursal (referencia externa)
+    * - codigoOperacion	
+      - String	
+      - Código de la operación (referencia externa)
 
+2.37. pEstadosViaje
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
 
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - IdViaje	
+      - Integer	
+      - Identificador único de viaje
+    * - IdEstadoViaje	
+      - Integer	
+      - Referencia a entidad EstadoViaje
+    * - DescripcionEstadoViaje	
+      - String	
+      - Descripción a estado del viaje.
+    * - RefDocumento	
+      - String	
+      - Identificación de documento (pedido, factura u otro) en el sistema externo propio de la empresa correspondiente a la Parada
+    * - Estado	
+      - String	
+      - Descripción del estado de la parada.
+    * - IdEstadoParada	
+      - Integer	
+      - Identificador a referencia entidad EstadoParada.
+    * - Motivo	
+      - String	
+      - Motivo del estado de parada.
+    * - EstadoFecha	
+      - Datetime	
+      - Fecha del estado de parada.
+    * - Observaciones	
+      - String	
+      - Subdivisión política dentro de la provincia/estado. Ej: Partido, Municipio.
+    * - Latitud	
+      - Double	
+      - Latitud de la ubicación del estado de la parada.
+    * - Longitud	
+      - Double	
+      - Longitud de la ubicación del estado de la parada.
+    * - IdViaje	
+      - Integer	
+      - Identificador único del viaje.
+    * - IdParadaTraceEstado	
+      - Integer	
+      - Identificador único del trace de la parada.
+    * - ReferenciaViaje	
+      - String	
+      - Referencia externa del viaje.
+    * - Login	
+      - String	
+      - Login del usuario asignado a la parada.
+    * - InicioVisitaReal	
+      - Datetime	
+      - Inicio de la visita a la sucursal.
+    * - FinVisitaReal	
+      - Datetime	
+      - Fin de la visita a sucursal.
 
+2.38. pCustodio
+~~~~~~~~~~~~~~~~~~~~
 
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
 
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - Nombre	
+      - String	
+      - Nombre del custodio
+    * - Apellido	
+      - String	
+      - Apellido del custodio
+    * - Email	
+      - String	
+      - Correo electrónico del custodio
+    * - Telefono1	
+      - String	
+      - Teléfono del custodio
+    * - Telefono2	
+      - String	
+      - Teléfono Segundo del custodio
+    * - ReferenciaExterna	
+      - String	
+      - Referencia externa de custodio
+    * - NroDocumento	
+      - String	
+      - Identificador único del documento
+    * - EmpresaCustodia	
+      - String	
+      - descripción empresa custodia
+    * - Calificacion	
+      - Double	
+      - Calificación del custodio
+    * - Prioridad	
+      - Integer	
+      - 
+
+2.39. pOrdenModificar
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - RefDocumento	
+      - String	
+      - Identificación de documento de la orden
+
+2.40. pOrdenModificar
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción 
+    * - RefDocumento	
+      - String	
+      - Identificación de documento de la orden Item
+
+2.41. pParadaItem
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción 
+    * - RefDocumento	
+      - String	
+      - Identificación de documento de la parada Item
+    * - RefDocumentoAdicional	
+      - Double	
+      - Identificación adicional de documento externo
+    * - Descripcion	
+      - String	
+      - Descripción de la parada item 
+    * - Producto	
+      - pProducto
+      - Producto al que se encuentra asignado
+    * - Cantidad	
+      - Double	
+      - 
+    * - Volumen	
+      - Double	
+      - 
+    * - Peso	
+      - Double	
+      - 
+    * - Bulto	
+      - Double	
+      - 
+    * - Pallets	
+      - Double	
+      - 
+    * - MotivoEntrega	
+      - String	
+      - 
+    * - TipoRotacionPermitida	
+      - String	
+      - 
+    * - Varchar1	
+      - String	
+      - Campo para datos adicionales
+    * - Varchar2	
+      - String	
+      - Campo para datos adicionales
+    * - Varchar3	
+      - String	
+      - Campo para datos adicionales
+    * - UnidadMedida	
+      - String	
+      - 
+    * - CodigoProducto	
+      - String	
+      - 
+    * - ProductoLinea	
+      - String	
+      - 
+    * - ProductoSubLinea	
+      - String	
+      - 
+
+2.42. pTarifa
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción 
+    * - ReferenciaExterna	
+      - String	
+      - Referencia con la que se identifica la tarifa
+    * - Valor	
+      - Double	
+      - Valor de la tarifa
+    * - VigenciaDesde	
+      - Datetime	
+      - Vigencia de la tarifa que inicio
+
+2.43. pMoverParadas
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción 
+    * - IdViajeOrigen	
+      - Integer	
+      - Es el id origen del viaje.
+    * - ReferenciaViajeOrigen	
+      - String	
+      - Referencia con el cual se identifica el viaje origen.
+    * - IdViajeDestino	
+      - Integer	
+      - Es el id de destino del viaje.
+    * - ReferenciaViajeDestino	
+      - String	
+      - Referencia con el cual se identifica el viaje destino.
+    * - ParadasMover	
+      - pParadaMover	
+      - Objeto complejo.
+
+2.44. pEmpresaCustodia
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción 
+    * - ReferenciaExterna	
+      - String	
+      - Referencia externa de la Empresa ya sea una descripción de esta o un ID de un sistema que no sea el de UNIGIS.
+    * - RazonSocial	
+      - String	
+      - Razón social de la empresa o nombre legal de la misma.
+    * - Domiclio	
+      - String	
+      - Domicilio donde se ubica la empresa.
+    * - Email	
+      - String	
+      - Correo electrónico de la empresa.
+    * - Telefono1	
+      - String	
+      - Teléfono de la empresa.
+    * - Telefono2	
+      - String	
+      - Teléfono adicional de la empresa.
+
+2.45. pDocumento
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción 
+    * - TipoDocumento	
+      - String	
+      - Descripción del tipo de documento.
+    * - Referencia	
+      - String	
+      - Referencia para la identificación del documento.
+    * - FechaEmision	
+      - DateTime	
+      - Fecha de la emisión del documento.
+    * - FechaExpiracion	
+      - DateTime	
+      - Fecha de expiración para el documento.
+    * - Categoria	
+      - String	
+      - Descripción de la categoría del documento.
+    * - Clase	
+      - String	
+      - Una breve descripción de que describa la clase que pertenece el documento.
+    * - Observaciones	
+      - String	
+      - Anotaciones para el documento.
+    * - ReferenciaEstadoDocumento	
+      - String	
+      - El identificador externo para la entidad EstadoDocumento.
+    * - ReferenciaConductor	
+      - String	
+      - Identificador externo del conductor.
+    * - EmisorDocumento	
+      - String	
+      - Texto con el emisor del documento.
+    * - ForzarActualizacion	
+      - Boolean	
+      - 
+
+2.46. pDocumento
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - ReferenciaExterna	
+      - String	
+      - Identificador externo de la forma de pago.
+    * - Descripcion	
+      - String	
+      - Un texto breve que describa la forma de pago del cliente.
+    * - IdSucursal	
+      - Integer	
+      - Fecha de la emisión del documento.
+    * - IdOperacion	
+      - Integer	
+      - Fecha de expiración para el documento.
+    * - IdCliente	
+      - Integer	
+      - Descripción de la categoría del documento.
+    * - IdClienteOrden	
+      - Integer	
+      - Identificador interno de ClienteOrden.
+    * - IdDomicilioOrden	
+      - Integer	
+      - Llave primaria de la entidad DomicioloOrden.
+    * - IdFormaPago	
+      - Integer	
+      - Llave primaria de la entidad FormaPago
+    * - RefExtSucursal	
+      - String	
+      - Identificador externo de la Sucursal.
+    * - RefExtOperacion	
+      - String	
+      - Identificador externo de la Operación.
+    * - RefExtCliente	
+      - String	
+      - Identificador externo del Cliente.
+    * - RefExtClienteOrden	
+      - String	
+      - Identificador externo de ClienteOrden.
+    * - RefExtDomicilioOrden	
+      - String	
+      - Identificador externo de DomicilioOrden.
+    * - RefExtFormaPago	
+      - String	
+      - Identificador Externo de FormaPago.
+    * - Parcial	
+      - Boolean	
+      - Indicador de forma de pago si este es relativo o no.
+    * - OpcionPreferente	
+      - Boolean	
+      - Indicador si la forma de pago es la preferido, sí o no.
+    * - FechaDesde	
+      - DateTime	
+      - Fecha valida de inicio.
+    * - FechaHasta	
+      - DateTime	
+      - Fecha fin valida de la forma de pago.
+
+2.47.	pGuiaLiquidacion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - IdGuiaLiquidacion	
+      - Integer	
+      - Id de la guía (en caso de exportación Unigis – Unigis).
+    * - Estado	
+      - String	
+      - Descripción estado guía.
+    * - Fecha	
+      - DateTime	
+      - Fecha hora.
+    * - FechaCreacion	
+      - DateTime	
+      - Fecha hora.
+    * - Observaciones	
+      - String	
+      - Observaciones.
+    * - ImporteNeto	
+      - Double	
+      - Importe Neto.
+    * - ImporteTotal	
+      - Double	
+      - Importe Total.
+    * - ImporteConceptos	
+      - Double	
+      - Importe conceptos.
+    * - Empresa	
+      - pEmpresa	
+      - Dato complejo con la información de la empresa.
+    * - Sucursal	
+      - pSucursal	
+      - Dato complejo con la información de la sucursal.
+    * - Operacion	
+      - pOperacion	
+      - Dato complejo con la información de la operación.
+    * - Transporte	
+      - pTransporte	
+      - Dato complejo con la información del transporte.
+    * - Conductor	
+      - pConductor	
+      - Dato complejo con la información del conductor.
+    * - Vehiculo	
+      - pVehiculo	
+      - Dato complejo con la información del vehículo asociado a la guía.
+    * - Cliente	
+      - pCliente	
+      - Dato complejo con la información del cliente.
+    * - RefExterna	
+      - String	
+      - Referencia externa.
+    * - TipoGuia	
+      - String	
+      - Descripción del tipo de guía.
+    * - Jurisdiccion	
+      - String	
+      - Descripción para la restricción geográfica.
+    * - IdLiquidacion	
+      - Integer	
+      - Identificador de la entidad liquidación.
+    * - EstadoLiquidacion	
+      - String	
+      - Descripción del estado de la liquidación.
+    * - Periodo	
+      - pPeriodoLiquidacion	
+      - Dato complejo con la información del periodo de liquidación.
+    * - Viajes	
+      - List<pViaje>	
+      - Lista de viajes asociados a la guía.
+    * - Conceptos	
+      - List<pConceptoDinamico>	
+      - Lista de conceptos externos.
+    * - Incidencias	
+      - List<pIncidencia>	
+      - Lista de incidencias de la guía.
+    * - Imputaciones	
+      - List<pImputacion>	
+      - Lista de imputaciones de la guía.
+    * - ConceptosDinamicos	
+      - List<pConceptoDinamico>	
+      - Lista de conceptos dinámicos.
+    * - ConceptosValorizados	
+      - List<pConceptoValorizado>	
+      - Lista de conceptos valorizados.
+
+2.48.	pPack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - IdPack	
+      - Long	
+      - Identificador del Pack siendo su llave primaria.
+    * - RefDocumento	
+      - String	
+      - Identificador externo del documento.
+    * - Operacion	
+      - String	
+      - Descripción de la operación que pertenece el Pack.
+    * - EstadoPack	
+      - String	
+      - Una breve anotación indicando como el estado del Pack.
+    * - Cliente	
+      - pCliente	
+      - Dato complejo con la información del cliente.
+    * - ClienteDador	
+      - pClienteDador	
+      - Dato complejo con la información del cliente dador.
+    * - DepositoSalida	
+      - String	
+      - Descripción del depósito de salida (CEDI) al que pertenece el Pack.
+    * - TipoPack	
+      - String	
+      - Una breve descripción indicando el tipo de pack.
+    * - ConfiguracionPacking	
+      - String	
+      - Descripción indicando la configuración del empaquetado.
+    * - Mixto	
+      - Boolean	
+      - Indicador que determina si el Pack es mixto o no.
+    * - CantidadItems	
+      - Integer	
+      - La cantidad de ítems que incluye el Pack.
+    * - Peso	
+      - Double	
+      - Peso del pack en kilogramos.
+    * - Volumen	
+      - Double	
+      - Volumen del pack.
+    * - Bultos	
+      - Double	
+      - Cantidad de bultos para el pack.
+    * - Altura	
+      - Double	
+      - Altura del pack.
+    * - Ancho	
+      - Double	
+      - Ancho del pack.
+    * - Profundidad	
+      - Double	
+      - Profundidad del pack.
+    * - FechaRecoleccion	
+      - DateTime	
+      - Fecha programada para su recolección.
+    * - InicioHorario1	
+      - Integer	
+      - Campo de fecha adicional indicando el inicio de un evento, en el formato militar, ej: 1530.
+    * - FinHorario1	
+      - Integer	
+      - Campo de fecha adicional indicando el fin de un evento, en el formato militar, ej: 1530.
+    * - Latitud	
+      - Double	
+      - Coordenadas geográficas del Pack.
+    * - Longitud	
+      - Double	
+      - Coordenadas geográficas del Pack.
+    * - TiempoEspera	
+      - Integer	
+      - 
+    * - TipoMerge	
+      - Integer	
+      - 
+    * - Configuracion	
+      - String	
+      - 
+    * - Rotacion	
+      - String	
+      - Indicación de la posición del pack Horizontal – H y Vertical V.
+    * - Apilable	
+      - Boolean	
+      - Indicador que determina si el Pack es apilable o no.
+    * - CampoDinamico	
+      - List<CampoValor>	
+      - Lista de datos complejos para los campos adicionales para la entidad Pack_Dyn.
+    * - Items	
+      - List<pPackItem>	
+      - Lista de datos complejos con la información para los ítems del pack.
+
+2.49.	pOrdenEntrega
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 10
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+      - Req
+    * - Sucursal	
+      - String	
+      - Descripción de la sucursal a la que pertenece.	
+      - SI
+    * - Operacion	
+      - String	
+      - Descripción de la operación a la que pertenece.	
+      - SI
+    * - RefDocumento	
+      - String	
+      - Identificación de documento sistema externo.
+      - SI
+    * - RefDocumentoAdicional	
+      - String	
+      - Identificación adicional de documento externo.
+      - NO
+    * - RefDocumentoPedido	
+      - String	
+      - Identificación adicional de documento de pedido externo.
+      - NO
+    * - Tipo	
+      - String	
+      - Identifica el tipo de Orden, siendo el código “P” el código de recolección y “D” de entrega. Por default se asume “D”.	
+      - NO
+    * - TipoOrden	
+      - String	
+      - Descripción del tipo de orden.	
+      - NO
+    * - TipoParda	
+      - String	
+      - Descripción del tipo de parada.	
+      - NO
+    * - CategoriaOrden	
+      - String	
+      - Descripción de la categoría orden.	
+      - NO
+    * - RefDocumentoRecoleccion	
+      - String	
+      - Identificación de la orden de recolección.
+      - NO
+    * - Estado	
+      - String	
+      - Descripción del estado en el que se encuentra la orden.	
+      - SI
+    * - TipoJornada	
+      - String	
+      - La descripción del tipo de jornada.	
+      - NO
+    * - JornadaDescripcion	
+      - String	
+      - Descripción de la jornada.	
+      - NO
+    * - FechaJornada	
+      - DateTime	
+      - Fecha de ejecución logística de la orden.	
+      - SI
+    * - Cliente	
+      - Cliente	
+      - Tipo de dato complejo, el detalle de los atributos se especifica más adelante.
+      - NO
+    * - Descripcion	
+      - String	
+      - Descripción de la orden, generalmente se detalla la razón social del Cliente.	
+      - SI
+    * - Dirección	
+      - String	
+      - Dirección completa de la tienda/concesionario.	
+      - SI
+    * - Calle	
+      - String	
+      - Calle completa en donde se ubica la orden.	
+      - NO
+    * - NroPuerta	
+      - String	
+      - Numeración indicando la posición dentro del eje vial.
+      - NO
+    * - EntreCalles	
+      - String	
+      - En caso de conocerla y para aportar más datos al motor georeferenciador se puede indicar la calle con la cual hace intersección.
+      - NO
+    * - DivisionPolitica4/Barrio	
+      - String	
+      - Subdivisión política, está dentro total o parcialmente de un municipio o localidad, divisiones políticas de nivel 4, ej: Barrio, Colonia.	
+      - NO
+    * - DivisionPolitica3/Localidad	
+      - String	
+      - Subdivisión política dentro de la provincia/estado, Ej: Localidad, Ciudad.	
+      - NO
+    * - DivisionPolitica2/Partido	
+      - String	
+      - Subdivisión política dentro de la provincia/estado. Ej: Partido, Municipio.	
+      - NO
+    * - DivisionPolitica1/Provincia	
+      - String	
+      - División política nivel 1 dentro de un país. Ej: Provincia, Estado, Región.	
+      - NO
+    * - País	
+      - String 
+      - Nación, estado soberano	
+      - NO
+    * - InicioHorario1	
+      - Integer	
+      - Inicio de la primera ventana horaria en HHMM.
+      - SI
+    * - FinHorario1	
+      - Integer	
+      - Fin de la primera ventana horaria en HHMM	
+      - SI
+    * - InicioHorario2	
+      - Integer	
+      - Inicio de la segunda ventana horaria en HHMM.
+      - NO
+    * - FinHorario2	
+      - Integer	
+      - Fin de la segunda ventana horaria en HHMM.
+      - NO
+    * - TiempoEspera	
+      - Integer	
+      - Tiempo estimado para la realizar la entrega.
+      - SI
+    * - CrearDomicilio	
+      - Boolean		
+      - 
+      - NO
+    * - Orden	
+      - Integer	
+      - Dato de salida, indica el número de secuencia de la orden en una ruta.	
+      - NO
+    * - InicioHorarioPlanificado	
+      - DateTime	
+      - Dato de salida, indica el horario estimado de visita de la orden en una ruta.	
+      - NO
+    * - FinHorarioPlanificado	
+      - DateTiime	
+      - Data de salida, indica el horario estimado de visita de la orden de una ruta (Inicio +)
+      - NO
+    * - Volumen	
+      - Double	
+      - Volumen de la orden.	
+      - NO
+    * - Peso	
+      - Double	
+      - Peso de la orden	
+      - NO
+    * - Bulto	
+      - Double	
+      - Cantidad de bultos de la orden.	
+      - NO
+    * - Pallets	
+      - Double	
+      - Cantidad de pallets de la orden.	
+      - NO
+    * - Distancia	
+      - Double	
+      - La cantidad de kilómetros a recorrer cuando se rutea la orden.	
+      - NO
+    * - Latitud	
+      - Double	
+      - Coordenadas geográficas de la orden.	
+      - NO
+    * - Longitud	
+      - Double	
+      - Coordenadas geográficas de la orden.	
+      - NO
+    * - Observaciones	
+      - String	
+      - Anotaciones para la orden.	
+      - NO
+    * - Email	
+      - String	
+      - Correo electrónico asociado a la orden.	
+      - NO
+    * - Telefono	
+      - String	
+      - Teléfono asociado a la orden.	
+      - NO
+    * - Telefono2	
+      - String	
+      - Teléfono adicional de la orden.	
+      - NO
+    * - Telefono3	
+      - String	
+      - Teléfono adicional de la orden.	
+      - NO
+    * - CodigoPostal	
+      - String	
+      - Código postal donde se ubica la orden.	
+      - NO
+    * - Varchar1	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar2	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar3	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar4	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar5	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar6	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar7	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar8	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar9	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Int1	
+      - Integer	
+      - Dato adicional de tipo entero.	
+      - NO
+    * - Int2	
+      - Integer	
+      - Dato adicional de tipo entero.	
+      - NO
+    * - IdRuta	
+      - Integer	
+      - Número de ruta a la que pertenece la orden, no confundir con la llave primaria de la entidad Ruta.	
+      - NO
+    * - PreOrden	
+      - Integer	
+      - La indicación para especificar la secuencia que se desea.	
+      - NO
+    * - GrupoConsolidacion	
+      - Integer	
+      - Número de grupo de consolidado a la que pertenece la orden.	
+      - NO
+    * - PrioridadAbsoluta	
+      - Integer	 
+      - La prioridad del embarque.	
+      - NO
+    * - GrupoRutas	
+      - Integer	
+      - Número de grupo de rutas a la que pertenece la orden.	
+      - NO
+    * - TiempoLatencia	
+      - Integer	
+      - Es el tiempo otorgado antes de ejecutar la recolección.	
+      - NO
+    * - TiempoEsperaPromedio	
+      - Integer	
+      - El tiempo de espera dentro de una ubicación.	
+      - NO
+    * - MotivoEstadoParadaDescripcion	
+      - String	
+      - Descripción del motivo del estado de la parada.	
+      - NO
+    * - MotivoEstadoParadaReferencia	
+      - String	
+      - Descripción del motivo de parada referencia.	
+      - NO
+    * - Items	
+      - List<pOrdenEntregaItem>	
+      - Listado de ítems que incluirá la orden.	
+      - NO
+    * - Servicios	
+      - List<pServicioAdicional>	
+      - Listado de servicios adicionales que incluirá la orden.	
+      - NO
+    * - Fotos	
+      - List<pFoto>	
+      - Listado de archivos de imagen para la orden.	
+      - NO
+    * - ParadaItems	
+      - List<ConsultarParadaResultadoItem>		
+      - Listado de pardas resultado item.	
+      - NO
+    * - DepositoSalida	
+      - pDeposito	
+      - Dato complejo con la información del depósito de salida.	
+      - NO
+    * - DepositoLlegada	
+      - pDeposito	
+      - Dato complejo con la información del depósito de llegada.	
+      - NO
+    * - Remito	
+      - pRemito	
+      - Dato complejo con la información del Remito.	
+      - NO
+    * - EstadoOrden	
+      - pEstadoOrdenEntrega	
+      - Dato complejo con la información del estado de orden de entrega.	
+      - NO
+    * - CampoDinamico	
+      - List<CampoValor>	
+      - Lista de datos complejos para los campos adicionales para la entidad Orden_Dyn.	
+      - NO
+    * - Bonificaciones	
+      - List<pOrdenEntregaBonificacion>	
+      - Lista de datos complejos la entregade bonificaciones.	
+      - NO
+
+2.50.	pOrdenTrabajo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 10
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+      - Req
+    * - Sucursal	
+      - String	
+      - Descripción de la sucursal a la que pertenece.	
+      - SI
+    * - Operacion	
+      - String	
+      - Descripción de la operación a la que pertenece.	
+      - SI
+    * - RefDocumento	
+      - String	
+      - Identificación de documento sistema externo.
+      - SI
+    * - RefDocumentoAdicional	
+      - String	
+      - Identificación adicional de documento externo.
+      - NO
+    * - RefDocumentoPedido	
+      - String	
+      - Identificación adicional de documento de pedido externo.
+      - NO
+    * - ReferenciaWMS	
+      - String	
+      - Identificación externa del WMS.	
+      - NO
+    * - TipoOrden	
+      - String	
+      - Descripción del tipo de orden.	
+      - NO
+    * - TipoCarga	
+      - String	
+      - Descripción del tipo de carga.	
+      - NO
+    * - CategoriaOrden	
+      - String	
+      - Descripción de la categoría orden.	
+      - NO
+    * - RefDocumentoRecoleccion	
+      - String	
+      - Identificación de la orden de recolección	
+      - NO
+    * - Estado	
+      - String	
+      - Descripción del estado en el que se encuentra la orden.	
+      - SI
+    * - TipoJornada	
+      - String	
+      - La descripción del tipo de jornada.	
+      - NO
+    * - JornadaDescripcion	
+      - String	
+      - Descripción de la jornada.	
+      - NO
+    * - FechaJornada	
+      - DateTime	
+      - Fecha de ejecución logística de la orden.	
+      - SI
+    * - Cliente	
+      - Cliente	
+      - Tipo de dato complejo, el detalle de los atributos se especifica más adelante.	
+      - NO
+    * - Cliente2	
+      - Cliente	
+      - Tipo de dato complejo, el detalle de los atributos se especifica más adelante.	
+      - NO
+    * - ClienteDador	
+      - ClienteDador	
+      - Tipo de dato complejo, con los atributos de ClienteDador.	
+      - NO
+    * - Descripcion	
+      - String	
+      - Descripción de la orden, generalmente se detalla la razón social del Cliente.	
+      - SI
+    * - Dirección	
+      - String	
+      - Dirección completa de la tienda/concesionario.	
+      - SI
+    * - Calle	
+      - String	
+      - Calle completa en donde se ubica la orden.	
+      - NO
+    * - NroPuerta	
+      - String	
+      - Numeración indicando la posición dentro del eje vial	
+      - NO
+    * - EntreCalles	
+      - String	
+      - En caso de conocerla y para aportar más datos al motor georeferenciador se puede indicar la calle con la cual hace intersección.
+      - NO
+    * - DivisionPolitica4/Barrio	
+      - String	
+      - Subdivisión política, está dentro total o parcialmente de un municipio o localidad, divisiones políticas de nivel 4, ej: Barrio, Colonia.	
+      - NO
+    * - DivisionPolitica3/Localidad	
+      - String	
+      - Subdivisión política dentro de la provincia/estado, Ej: Localidad, Ciudad.	
+      - NO
+    * - DivisionPolitica2/Partido	
+      - String	
+      - Subdivisión política dentro de la provincia/estado. Ej: Partido, Municipio.	
+      - NO
+    * - DivisionPolitica1/Provincia	
+      - String	
+      - División política nivel 1 dentro de un país. Ej: Provincia, Estado, Región.	
+      - NO
+    * - País	
+      - String	
+      - Nación, estado soberano	
+      - NO
+    * - TiempoEspera	
+      - Integer	
+      - Tiempo estimado para la realizar la entrega	
+      - SI
+    * - Orden	
+      - Integer	
+      - Dato de salida, indica el número de secuencia de la orden en una ruta.	
+      - NO
+    * - Volumen	
+      - Double	
+      - Volumen de la orden.	
+      - NO
+    * - Peso	
+      - Double	
+      - Peso de la orden	
+      - NO
+    * - Bulto	
+      - Double	
+      - Cantidad de bultos de la orden.	
+      - NO
+    * - Pallets	
+      - Double	
+      - Cantidad de pallets de la orden.	
+      - NO
+    * - Latitud	
+      - Double	
+      - Coordenadas geográficas de la orden.	
+      - NO
+    * - Longitud	
+      - Double	
+      - Coordenadas geográficas de la orden.	
+      - NO
+    * - Observaciones	
+      - String	
+      - Anotaciones para la orden.	
+      - NO
+    * - Email	
+      - String	
+      - Correo electrónico asociado a la orden.	
+      - NO
+    * - Telefono	
+      - String	
+      - Teléfono asociado a la orden.	
+      - NO
+    * - Telefono2	
+      - String	
+      - Teléfono adicional de la orden.	
+      - NO
+    * - Telefono3	
+      - String	
+      - Teléfono adicional de la orden.	
+      - NO
+    * - CodigoPostal	
+      - String	
+      - Código postal donde se ubica la orden.	
+      - NO
+    * - Varchar1	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar2	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar3	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar4	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar5	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar6	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar7	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar8	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - Varchar9	
+      - String	
+      - Dato adicional de tipo cadena.	
+      - NO
+    * - PrioridadOrden	
+      - String	
+      - La prioridad del embarque de la orden.	
+      - NO
+    * - UsuarioSolicitante	
+      - String	
+      - Login del usuario que solicita.	
+      - NO
+    * - DepositoSalida	
+      - String	
+      - Descripción del depósito de salida.  
+      - NO
+    * - DepositoLlegada	
+      - String	
+      - Descripción del depósito de llegada.	
+      - NO
+    * - EstadoOrden	
+      - String	
+      - Dato complejo con la información del estado de orden de entrega.	
+      - NO
+    * - CampoDinamico	
+      - List<CampoValor>	
+      - Lista de datos complejos para los campos adicionales para la entidad Orden_Dyn.	
+      - NO
