@@ -1,0 +1,462 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="MAPI Logistic Services" href="../../MAPILogisticServices/MapiConfig.html" /><link rel="prev" title="Syncout Genérico" href="SyncoutG.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Syncout V2 - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2966eb94" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../GettingStart/Gettingstart.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Ruteo/Ruteo.html">Planeación de Distribución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Yard/Yard.html">Yard Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/B2B/b2b.html">Portal B2B (business-to-business)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Mobile/Deliveries.html">UNIGIS X DELIVERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Indexsyncout.html">Json Syncout</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Json Syncout</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SyncoutG.html">Syncout Genérico</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Syncout V2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../MAPILogisticServices/MapiConfig.html">MAPI Logistic Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Routing/Routing.html">Planeación de Distribución</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="syncout-v2">
+<h1>Syncout V2<a class="headerlink" href="#syncout-v2" title="Link to this heading">#</a></h1>
+<section id="configuracion-y-uso">
+<h2>Configuración y Uso<a class="headerlink" href="#configuracion-y-uso" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>La siguiente Guía de configuración y uso de ABM JSON SYNCOUT V2, servirá para comprender la funcionalidad, información técnica, Configuración paso a paso, así como la descripción de la funcionalidad a detalle y organizada con la finalidad de que sea comprensible en todos los niveles y tener al alcance la información que pueda ser de utilidad en cualquier momento.</p>
+<p><strong>Habilitar Permisos para uso de Integrations Center</strong></p>
+<p>Es necesario configurar los permisos de acceso para el nuevo módulo para ello es necesario ingresar a <kbd class="kbd docutils literal notranslate">AdministradordelSistema</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Grupos</kbd>. Seleccionar el grupo que desee actualizar y dar la opción de editar, posteriormente en la pestaña de aplicaciones se debe seleccionar el check de <kbd class="kbd docutils literal notranslate">IntegrationsCenter</kbd>.</p>
+</div>
+<img alt="../../_images/config1.png" class="align-center" src="../../_images/config1.png" />
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Esto se debe aplicar para todos los grupos que requieran acceder a este nuevo módulo.</p>
+</div>
+</section>
+<section id="funcionalidad">
+<h2>Funcionalidad<a class="headerlink" href="#funcionalidad" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Se puede acceder al módulo de integraciones desde dos secciones diferentes, desde el menú lateral, o desde el menú de Log Out, ambos seleccionando la opción de <kbd class="kbd docutils literal notranslate">IntegrationsCenter</kbd>.</p>
+<p>Al dar clic en alguna de estas opciones se abrirá el nuevo módulo mostrando la siguiente pantalla y seleccionaremos la opción de Syncout.</p>
+</div>
+<img alt="../../_images/integrationsyncout.png" class="align-center" src="../../_images/integrationsyncout.png" />
+<div class="justified-text docutils container">
+<p>Dependiendo de los sistemas externos que se tengan creados se debe de dar clic en el incono señalado para realizar la configuración del Json Syncout.</p>
+</div>
+<img alt="../../_images/se%C3%B1alar.png" class="align-center" src="../../_images/se%C3%B1alar.png" />
+<div class="justified-text docutils container">
+<p>A continuación se muestra una lista de las configuraciones realizadas y para agregar una nueva debe dar clic al icono de <kbd class="kbd docutils literal notranslate">+</kbd>.</p>
+</div>
+<img alt="../../_images/agregar.png" class="align-center" src="../../_images/agregar.png" />
+<div class="justified-text docutils container">
+<p>Al dar clic se mostrará una pantalla con los campos a llenar y configurar el Json que se necesita para hacer las peticiones así como la Query para la obtención de los datos para generar el request.</p>
+<ol class="arabic simple">
+<li><p>Primeramente en “Descripción sistema externo” podemos ver el nombre del sistema externo al que daremos de alta el Syncout.</p></li>
+<li><p>Enseguida un combo donde se muestran las entidades posibles para configurar ejemplo: SistemaExternoModificarEstadoViajeSalida.</p></li>
+</ol>
+</div>
+<img alt="../../_images/formulario.png" class="align-center" src="../../_images/formulario.png" />
+<div class="justified-text docutils container">
+<p>Al seleccionar en el combo de “Sistema Externo” y “Sistemas configurados” mostrará las configuraciones en la tabla de salida ejemplo: SistemaExternoModificarEstadoViajeSalida.</p>
+<p>La descripción se mostrará: identidad (IdSistemaExternoSalidaModificarEstadoViaje) separado de ‘|’ enseguida del estado de la entidad (EstadoViaje) separado de ‘|’ y por último el sistema externo.</p>
+</div>
+<img alt="../../_images/formulario2.png" class="align-center" src="../../_images/formulario2.png" />
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Cabe destacar que el combo es multiseleccionable por lo que con una sola configuración se pueden dar de alta todos los cambios de estado de una entidad y así evitar subir una configuración por cada cambio de estado.</p>
+</div>
+<div class="justified-text docutils container">
+<p>Una vez seleccionado la configuración de la tabla de salida se comienza con la configuración del Json que se creara para las peticiones al WebServices del cliente.</p>
+<p>En primer lugar, se muestra caja de texto ‘URL’ en ella se colocará la Url del WebServices que se necesita para la autenticación ya sea para obtener un token.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Cabe recalcar que conforme se tenga la documentación del cliente para su Syncout son los parámetros que se configuraran.</p>
+</div>
+<img alt="../../_images/formulario3.png" class="align-center" src="../../_images/formulario3.png" />
+<div class="justified-text docutils container">
+<p>El siguiente apartado se llama ‘Replace’ aquí se configura cuando en la Url que proporcionan tiene parámetros para reemplazar ejemplo : <a class="reference external" href="https://prueba/wmtst/wmwebservice_rest_oltp/&#64;WareHouse/shipments">https://prueba/wmtst/wmwebservice_rest_oltp/&#64;WareHouse/shipments</a></p>
+<p>Se deben completar los campos:</p>
+<ul class="simple">
+<li><p>Key (es el parámetro a remplazar que forma parte de la Url)</p></li>
+<li><p>Entidad (entidad o tabla a la cual se va a hacer referencia para obtener el campo)</p></li>
+<li><p>Campo (es el campo de la entidad que se va a obtener para reemplazar en la URL)</p></li>
+</ul>
+</div>
+<img alt="../../_images/formulario4.png" class="align-center" src="../../_images/formulario4.png" />
+<img alt="../../_images/formulario5.png" class="align-center" src="../../_images/formulario5.png" />
+<div class="justified-text docutils container">
+<p>Una vez que se completen estos datos se verán reflejados en el Json de esta forma.</p>
+</div>
+<div class="highlight-Json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="nt">&quot;Json&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 3</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">            </span><span class="nt">&quot;URL&quot;</span><span class="p">:{</span>
+<span class="linenos"> 5</span><span class="w">                </span><span class="nt">&quot;URI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://wmstest.iflow.corp./wmtst/wmwebservice_rest_oltp/@wareHouse/shipments&quot;</span><span class="p">,</span>
+<span class="linenos"> 6</span><span class="w">                </span><span class="nt">&quot;Replace&quot;</span><span class="p">:[</span>
+<span class="linenos"> 7</span><span class="w">                    </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">                        </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@WareHouse&quot;</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="w">                        </span><span class="nt">&quot;Entity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DepostioSalida&quot;</span><span class="p">,</span>
+<span class="linenos">10</span><span class="w">                        </span><span class="nt">&quot;Field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ReferenciaExterna&quot;</span>
+<span class="linenos">11</span><span class="w">                    </span><span class="p">}</span>
+<span class="linenos">12</span><span class="w">                </span><span class="p">]</span>
+<span class="linenos">13</span><span class="w">            </span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<p>Cada vez que se requiera agregar un parámetro más se debe dar clic en el signo <kbd class="kbd docutils literal notranslate">+</kbd> en caso contrario de borrar un parámetro dar clic al icono de borrar.</p>
+</div>
+<img alt="../../_images/replace.png" class="align-center" src="../../_images/replace.png" />
+<img alt="../../_images/replace2.png" class="align-center" src="../../_images/replace2.png" />
+<div class="justified-text docutils container">
+<p>Otra sección más del llenado del Json es “Headers” en el cual se agregarán que necesite el web services. Cada vez que se quiera agregar un header se debe dar clic en el icono <kbd class="kbd docutils literal notranslate">+</kbd> o si se necesita quitar dar clic al icono <kbd class="kbd docutils literal notranslate">Borrar</kbd>.</p>
+</div>
+<img alt="../../_images/replace3.png" class="align-center" src="../../_images/replace3.png" />
+<div class="justified-text docutils container">
+<p>Los datos se observarán de la siguiente forma:</p>
+</div>
+<div class="highlight-Json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">        </span><span class="nt">&quot;Headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">2</span><span class="w">          </span><span class="p">{</span>
+<span class="linenos">3</span><span class="w">            </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">            </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gzip, deflate, br&quot;</span><span class="p">,</span>
+<span class="linenos">5</span><span class="w">          </span><span class="p">}</span>
+<span class="linenos">6</span><span class="w">        </span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<blockquote>
+<div><p>El siguiente Apartado es ‘Paramsbody’ en el cual se agregaran todos los parametros que se tienen que configurar en el body.</p>
+<p>Para agregar se debe dar click en el icono <kbd class="kbd docutils literal notranslate">+</kbd> y para quitar es con el icono de <kbd class="kbd docutils literal notranslate">Borrar</kbd>.</p>
+</div></blockquote>
+<img alt="../../_images/params.png" class="align-center" src="../../_images/params.png" />
+</div>
+<div class="highlight-Json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">    </span><span class="nt">&quot;ParamsBody&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="linenos">2</span><span class="w">        </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">        </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="linenos">4</span><span class="w">    </span><span class="p">}],</span>
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<p>El siguiente apartado es la selección de combos los cuales son:</p>
+<p>Método: Se elegirá el tipo de método del webservices</p>
+</div>
+<img alt="../../_images/m%C3%A9todo.png" class="align-center" src="../../_images/m%C3%A9todo.png" />
+<div class="justified-text docutils container">
+<p>Tipo de método : Se elegirá el tipo de contenido</p>
+<p>Aceptar: este encabezado es tipo de respuesta del servidor puede aceptar un cliente.</p>
+<p>Auth: el tipo de autenticación a la que está configurado el web services</p>
+<p>Envió único:</p>
+<p>Para agregar credenciales en el caso de requerir ejemplo un usuario y contraseña agregarlos en este apartado dando clic en el icono (+) y para eliminar en icono borrar.</p>
+<p>La configuración de este apartado se verá así en el Json.</p>
+</div>
+<div class="highlight-Json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">    </span><span class="nt">&quot;Credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">2</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">3</span><span class="w">            </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User&quot;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">            </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pruebas&quot;</span>
+<span class="linenos">5</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">6</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">7</span><span class="w">            </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Password&quot;</span><span class="p">,</span>
+<span class="linenos">8</span><span class="w">            </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234&quot;</span>
+<span class="linenos">9</span><span class="w">        </span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<p>Para agregar otro Json el cual se encargará de hacer la petición al WebServices debe configurarse por lo cual se dará clic en el botón agregar Json</p>
+</div>
+<img alt="../../_images/nuevo.png" class="align-center" src="../../_images/nuevo.png" />
+<p>Al dar clic copiara la pantalla y clonara otro apartado esto para configurar el segundo JSON.</p>
+<img alt="../../_images/nuevo2.png" class="align-center" src="../../_images/nuevo2.png" />
+<p>Al terminar la configuración del segundo Json se debe dar clic en botón <kbd class="kbd docutils literal notranslate">ComprobarJson</kbd>.</p>
+<p>Esto creara el Json de acuerdo con lo configurado.</p>
+<img alt="../../_images/comprobar.png" class="align-center" src="../../_images/comprobar.png" />
+<p>En la siguiente imagen se muestra como se ve el Json al ser configurado:</p>
+<img alt="../../_images/configjson.png" class="align-center" src="../../_images/configjson.png" />
+<p>Al final se debe de crear una consulta en SQL la cual va a recabar los datos que se van a enviar al webservices a reportar. Y una vez finalizado dar clic en el botón de crear.</p>
+<img alt="../../_images/final.png" class="align-center" src="../../_images/final.png" />
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../MAPILogisticServices/MapiConfig.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">MAPI Logistic Services</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="SyncoutG.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Syncout Genérico</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Syncout V2</a><ul>
+<li><a class="reference internal" href="#configuracion-y-uso">Configuración y Uso</a></li>
+<li><a class="reference internal" href="#funcionalidad">Funcionalidad</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

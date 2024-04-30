@@ -1,0 +1,943 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../genindex.html" /><link rel="search" title="Búsqueda" href="../search.html" /><link rel="prev" title="MAPI Logistic Services" href="../MAPILogisticServices/MapiConfig.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Planeación de Distribución - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2966eb94" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GettingStart/Gettingstart.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Ruteo/Ruteo.html">Planeación de Distribución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Yard/Yard.html">Yard Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/B2B/b2b.html">Portal B2B (business-to-business)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Mobile/Deliveries.html">UNIGIS X DELIVERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../json/Indexsyncout.html">Json Syncout</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Json Syncout</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/SyncoutG.html">Syncout Genérico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/Syncout.html">Syncout V2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MAPILogisticServices/MapiConfig.html">MAPI Logistic Services</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Planeación de Distribución</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="planeacion-de-distribucion">
+<h1>Planeación de Distribución<a class="headerlink" href="#planeacion-de-distribucion" title="Link to this heading">#</a></h1>
+<section id="configuracion-y-uso">
+<h2>Configuración y Uso<a class="headerlink" href="#configuracion-y-uso" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El siguiente documento tiene como objetivo proporcionar información técnica, describir la funcionalidad paso a paso, así como ofrecer una descripción detallada y organizada. Esta guía está diseñada para ser comprensible en todos los niveles y tener la información disponible para su uso en cualquier momento que pueda ser de utilidad.</p>
+</div>
+</section>
+<section id="permisos">
+<h2>Permisos<a class="headerlink" href="#permisos" title="Link to this heading">#</a></h2>
+<section id="crear-usuario">
+<h3>Crear Usuario<a class="headerlink" href="#crear-usuario" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Para acceder al módulo de Routing, el administrador debe dirigirse a <kbd class="kbd docutils literal notranslate">AdministracióndelSistema</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Seguridad</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Usuarios</kbd>.</p>
+<p>Al ingresar, se debe visualizar un listado de usuarios registrados. Para agregar un nuevo usuario, es necesario hacer clic en el botón Crear <kbd class="kbd docutils literal notranslate">+</kbd> y completar los campos respectivos.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/Usuario.png"><img alt="../_images/Usuario.png" class="align-center" src="../_images/Usuario.png" style="width: 480px; height: 520px;" /></a>
+</section>
+<section id="permisos-de-grupo">
+<h3>Permisos de Grupo<a class="headerlink" href="#permisos-de-grupo" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Lo siguiente es que el usuario cuente con los permisos necesarios esto se realiza dentro de <kbd class="kbd docutils literal notranslate">AdministracióndelSistema</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Seguridad</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Grupos</kbd>.</p>
+<p>Al ingresar, debe visualizar un listado de los grupos con los que se cuenta actualmente. Para conceder permisos al usuario registrado previamente, debe hacer clic en el botón «Crear» <kbd class="kbd docutils literal notranslate">+</kbd> y seleccionar la pestaña de Usuarios.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/Grupo.png"><img alt="../_images/Grupo.png" class="align-center" src="../_images/Grupo.png" style="width: 480px; height: 520px;" /></a>
+</section>
+</section>
+<section id="funcionalidad">
+<h2>Funcionalidad<a class="headerlink" href="#funcionalidad" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Como usuario del módulo de Routing en el TMS de UNIGIS, primero debe iniciar sesión con el usuario y la contraseña registrados en el administrador de sistema. Una vez dentro, puede acceder al módulo de Routing.</p>
+</div>
+<div class="justified-text docutils container">
+<p>Dentro del módulo, encontrará las secciones de Jornadas, Planeación y Catálogos. Para realizar ajustes clave para su empresa, es necesario ingresar a una jornada. Esto se puede hacer dando doble clic en una jornada del listado o haciendo clic en el botón <kbd class="kbd docutils literal notranslate">Planificar</kbd>.</p>
+<p>Una vez dentro de una jornada, verá datos relacionados con Rutas, Órdenes, Consolidados y Consultas. Si desea una configuración personalizada, puede hacer clic en el botón <kbd class="kbd docutils literal notranslate">ajustes</kbd> ubicado en la parte inferior izquierda.</p>
+</div>
+<img alt="../_images/config.png" class="align-center" src="../_images/config.png" />
+</section>
+<section id="configuracion-de-datos-generales">
+<h2>Configuración de Datos Generales<a class="headerlink" href="#configuracion-de-datos-generales" title="Link to this heading">#</a></h2>
+</section>
+<section id="general">
+<h2><code class="docutils literal notranslate"><span class="pre">General</span></code><a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
+<section id="modo-de-ruteo">
+<h3>Modo de Ruteo<a class="headerlink" href="#modo-de-ruteo" title="Link to this heading">#</a></h3>
+<p>Indica el modo en que se realizará el ruteo, puede ser:</p>
+<ul class="simple">
+<li><p>Ruteo por Ordenes: Ruteará Ordenes de manera individual.</p></li>
+<li><p>Ruteo por Consolidados: Rutea una agrupación de Ordenes Parada. Este modo requiere ejecutar previamente el proceso de «Consolidación de Ordenes».</p></li>
+</ul>
+</section>
+<section id="restriccion-ambiental">
+<h3>Restricción Ambiental<a class="headerlink" href="#restriccion-ambiental" title="Link to this heading">#</a></h3>
+<p>Restringe configuraciones de ruteo por Normativas Ambientales, puede ser:</p>
+<ul class="simple">
+<li><p>Default: No aplica restricciones ambientales.</p></li>
+<li><p>Normativa Europea: Contempla los tiempos de conducción y descansos en las rutas según la Normativa Europea (Reglamento (CE) N.º 561/2006).</p></li>
+</ul>
+</section>
+<section id="opciones">
+<h3>Opciones<a class="headerlink" href="#opciones" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Visualización de Trayectos: Es el modo en que se visualizan los trayectos generados, puede ser:</p>
+<ul class="simple">
+<li><p>Sin Líneas: No Muestra trayectos.</p></li>
+<li><p>Por Calles: Muestra los trayectos según la red de viales.</p></li>
+<li><p>Lineal: Muestra los trayectos de forma directa.</p></li>
+</ul>
+<p>Cálculo de Distancias: Modo en que se calculan las distancias de las rutas, puede ser:</p>
+<ul class="simple">
+<li><p>Por Calles: Distancia entre Ordenes contemplando la red de viales.</p></li>
+<li><p>Lineal: Durante la construcción y optimización de rutas, se consideran distancias lineales entre Ordenes.</p></li>
+<li><p>Máxima Precisión: Calcula las distancias entre Ordenes por calles con mínimo error.</p></li>
+<li><p>Lineal - Manhattan: El cálculo de distancia se compone de la suma de las diferencias absolutas de las coordenadas entre dos puntos.</p></li>
+</ul>
+<p>Mapa Optimizado: Opción para que en mapa se muestre solo el detalle necesario, optimizando tiempos de carga en la renderización de los mapas a utilizar. Los trayectos de las rutas se visualizarán solo al abrir el detalle de cada ruta, mostrándose inicialmente solo los puntos de ubicación de las Ordenes.</p>
+<p>Contemplar Hora Actual: Para creaciones de ruta que se están planificando en el mismo día de la Jornada, la hora de inicio de estas será superior a la hora actual de ruteo. Tener en cuenta que el horario de inicio se fija al momento de rutear, para extenderlo utilizar «Diferencia temporal».</p>
+<p>Diferencia Temporal: Indica cuantos minutos posteriores a la «Contemplación de Hora actual» podrán inicializar las rutas nuevas.</p>
+</div>
+</section>
+<section id="depositos">
+<h3>Depositos<a class="headerlink" href="#depositos" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Automáticos: Para el ruteo se utiliza como Depósitos de Salida y Llegada los configurados en las Ordenes (entidad Orden, campos DepositoSalidaIN y DepositoLlegadaIN) y no el informado en el ruteo automático (Zona). De esta manera nunca se «mezclarán» Ordenes con distintos Deposito de Salida o Llegada en una misma ruta.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Tener en cuenta que, de no encontrarse seleccionado, el ruteo utilizará como Depósitos de Salida y Llegada el informado en el ruteo automático (Zona).</p>
+</div>
+<div class="justified-text docutils container">
+<p>Omitir el uso de Muelles: Ejecuta el ruteo sin considerar Muelles de Carga.</p>
+<p>No dibujar salida ni llegada: No dibuja en el mapa los trayectos desde el Depósito de Salida a la primer Orden ni del de la última al Depósito de Llegada. Sin embargo, los tiempos y distancias correspondientes si son considerados.</p>
+<p>Omitir el Uso de Muelles de Llegada: Ejecuta el ruteo sin considerar Muelles de Descarga.</p>
+<p>Ignorar Actividades de Muelles: No toma en cuenta las ocupaciones previas (viajes, rutas o actividades) de los Muelles al generar un nuevo ruteo automático.</p>
+<p>Tiempos Precalculados:Se contempla durante el ruteo los tiempos precargados en minutos de los registros manuales seteados en la entidad DistanciaRelacion. Dichos tiempos de ruta preestablecidos son únicamente entre Depósito de Salida y las Ordenes, pudiendo ser configurados según Operación, TipoPedido y CategoríaPedido (utilizándose el que mejor machee considerando estos tres campos, en caso de existir más de uno).</p>
+<p>Ignorar los Turnos de los Depósitovs: No se toma en cuenta la Capacidad Operativa de los Depósitos al momento de rutear. Es decir, las ventanas horarias que poseen los Depósitos para operar, en función del día y la franja horaria disponible.</p>
+<p>Concatenar Depósitos: Priorizar el ruteo de Ordenes por dos oleadas, primeramente, se ruteará bajo la condición Depósitos Automáticos.</p>
+<p>Luego, al quedar Ordenes sin rutear que pertenecen a distintos Depósitos, el algoritmo anula la condición de Depósito Automático y permite rutear las Ordenes remanentes en conjunto. Para que el mismo se encuentre habilitado debe encontrarse seteado el check «Depósitos Automáticos».</p>
+</div>
+</section>
+<section id="vehiculos">
+<h3>Vehículos<a class="headerlink" href="#vehiculos" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Origen: Indica el origen de los datos asociados Tipo de Vehículo, puede ser:</p>
+<ul class="simple">
+<li><p>Default: Utiliza los datos del Tipo de Vehículo.</p></li>
+<li><p>Operación: Modifica los datos de los Tipos de Vehículo para una Operación en particular (Entidad OperacionTipoVehiculo).</p></li>
+<li><p>Zonas: Modifica los datos de los Tipos de Vehículo para una Zona en particular (Entidad ZonaTipoVehiculo).</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Tener en cuenta que el Producto siempre rutea por Tipo de Vehículo.</p>
+</div>
+<div class="justified-text docutils container">
+<p>Asiganación Automática: Asigna, luego de realizar el ruteo, un Vehículo a la ruta según el Tipo de Vehículo utilizado. Se considera únicamente los Vehículos asociados a la Operación (entidad VehiculoDisponible).</p>
+<p>Utilizar Flotas por Jornada: Permite utilizar una lista específica de Vehículos disponibles para trabajar en la jornada (estado Activo), seleccionándolos a partir de la “Lista de vehículos”. Tener en cuenta que el ruteo solo considera dicha cantidad de vehículos. A su vez permite actualizar la cantidad de Vehículos mediante el Método “Actualizar Vehículos”.</p>
+<p>Lista de Vehículos: Permite mostrar el detalle total de Vehículos disponibles, pudiendo seleccionar aquellos con los que se desea trabajar en la Jornada.</p>
+<p>Mímimos de Tipo: Permite que se contemplen las mínimas capacidades operativas en los Tipos de Vehículo (Volumen, Peso, Pallets y Bultos).</p>
+<p>Tiempos de Inactivadad: Indica que se respete la parada de descanso.</p>
+<p>Respetar Actividades: Rutea con los Vehículos disponibles respetando la agenda o disponibilidad real (viajes, ruta o actividades).</p>
+<p>Usar Ventana Horaria: Respeta el Inicio Horario y Fin Horario del Tipo de Vehículo al momento de rutear.</p>
+<p>Máximos Según Grupos: Setea la cantidad de vehículos a utilizar en función de las demandas máx</p>
+<p>Utilizar flotas de Operación: Permite utilizar una lista específica de Vehículos disponibles para trabajar en operación seleccionándolos en la “Lista de vehículos”.</p>
+<p>Lista de Vehículos: Si se utiliza Flotas por operación, esta funcionalidad permite tener disponible Vehículos.</p>
+</div>
+</section>
+<section id="ordenes">
+<h3>Ordenes<a class="headerlink" href="#ordenes" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Carga Exclusiva: Permite que las Ordenes (o un Consolidado) sean ruteados de manera única en la Ruta, es decir que el Vehículo solo se utiliza para transportar esta carga. Deben tener seteado el campo «Carga Exclusiva».</p>
+<p>Segunda Ventana Horario: Permite utilizar para el ruteo ambas Ventanas Horarias seteadas en las Ordenes (InicioHorario1 / FinHorario1 y InicioHorario2 / FinHorario2).</p>
+<p>Prioridad Absoluta: Prioridad de rutear dicha Orden frente a las otras de menor prioridad en la misma Jornada. No garantiza su ruteo.</p>
+<p>Prioridad: Prioridad relativa de secuencia entre Ordenes dentro de la misma ruta, buscando jerarquizar el orden de las Ordenes en la Ruta. El valor 1 indica la Prioridad mayor, mientras que el 999 la menor.</p>
+<p>Grupo Rutas: Garantiza formar rutas con Ordenes de un mismo Grupo. Se setea en Grupo de Rutas informado en la Orden.</p>
+<p>Grupo Rutas Inclusivo: Ídem Grupo Rutas con la particularidad que los que posean valor 0 pueden agregarse en cualquier otro Grupo.</p>
+<p>Última Visita: Fuerza que las Ordenes que posean el campo activo «Ultima Visita» se asignen en la última posición de la Ruta. En caso de que existan más de una Orden con dicho seteo, las mismas se rutearán en rutas distintas a menos que se encuentren en un mismo Consolidado.</p>
+<p>Agrupación en Ruta: Busca realizar una Consolidación de manera dinámica mientras se rutea, consolidando Ordenes que se encuentran en el mismo Domicilio-Orden quedando así visitados a la misma hora.</p>
+<p>Ignorar Tipo de Entrega: No se considera el Tipo de la Orden al generar las rutas. Todas se consideran como Ordenes Tipo «Entregas».</p>
+<p>Comtemplar Pólizas: Habilita el control de Pólizas de seguros al momento de rutear, tal que se sumarice el valor transportado, a partir de los Valores Declarados en las Ordenes, siendo el Rlímite el permitido en la/s Pólizas (del cliente Dador de la orden) de la Ruta.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se valida que no se supere el valor máximo a transportar por cada Póliza, por lo que cada Cliente deberá tener una Póliza asignada al momento de utilizar la funcionalidad. Finalmente, una Ruta puede tener N Pólizas, siempre y cuando no se supere el «TopLimite» de la misma.</p>
+</div>
+<div class="justified-text docutils container">
+<p>Máximas en Ruta: Limita la saturación de la Ruta por la capacidad máxima informada en la Orden (Bultos máximos en Ruta, Pallets máximos en Ruta, Peso máximos en Ruta, Volumen máximos en Ruta).</p>
+<p>Contemplar Cuentas: Permite modificar el comportamiento de la validación de las Pólizas. Al momento de generar las rutas se valida el valor de la Póliza asignada a una determinada Cuenta y no por Cliente. Para ello se requiere que en la Póliza se encuentre la Cuenta a la cual pertenece y se aplicará aquella Póliza que contenga la misma cuenta que tenga la Orden.</p>
+<p>Utilizar Depósitos PickUps: Una vez realizada la importación de datos a través de la Jornada y previo al ruteo, el sistema automáticamente genera (según lo indicado en el IdDeposito del Pedido o sus PedidoItems) la creación de las nuevas Ordenes (Depósitos Pickups o Auxiliares Auto creadas) a las que debe concurrir para realizar la entrega. Dichas “Ordenes” son ficticias y se generan de manera automática, asegurándose la recolección en cada Depósito, para luego realizar la Entrega de estos.</p>
+<p>Respetar Vehículo Pre Asignado: Agrupa las Ordenes con la pareja Conductor/Vehículo preasignado en el Pedido, haciendo con ellos una ruta forzando a su creación.</p>
+</div>
+</section>
+</section>
+<section id="consolidacion">
+<h2><code class="docutils literal notranslate"><span class="pre">Consolidación</span></code><a class="headerlink" href="#consolidacion" title="Link to this heading">#</a></h2>
+<img alt="../_images/consolidados.png" class="align-center" src="../_images/consolidados.png" />
+<section id="id1">
+<h3>Opciones<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Ventana Horaria: Busca definir la ventana horaria que será utilizada en el Consolidado, puede ser:</p>
+<ul class="simple">
+<li><p>Ventana Más Amplia: Utiliza como ventana horaria del Consolidado, la ventana horaria más amplia de las Órdenes que posee.</p></li>
+<li><p>Ventana Más Restrictiva: Utiliza como ventana horaria del Consolidado, la ventana horaria menos amplia de las Órdenes que posee.</p></li>
+</ul>
+<p>Tiempo De Espera: Define el Tiempo de Espera que será utilizado el Consolidado (Ordenes Parada), puede ser:</p>
+<ul class="simple">
+<li><p>Sumar Tiempos De Espera: El Tiempo de Espera del Consolidado es igual a la suma los Tiempos de Espera de cada Orden que contiene.</p></li>
+<li><p>Promediar Tiempos De Espera: El Tiempo de Espera del Consolidado es igual al promedio de los Tiempos de Espera de las Ordenes que se contienen.</p></li>
+<li><p>Máximo Tiempo De Espera: El Tiempo de Espera del Consolidado es igual al mayor Tiempo de Espera de la Orden que contienen.</p></li>
+</ul>
+<p>Dividir Tiempo De Espera En Ordenes: Distribuye el resultado del promedio en los Tiempos de Espera de las Ordenes que contiene, con el fin de ajustar el tiempo de estadía del Vehículo en dicho Domicilio-Orden.</p>
+<p>Valor 1: Primer Variable de Saturación para la Generación del Consolidado (Peso, Volumen, Bultos, Pallets, Adicional1 o Adicional2).</p>
+<p>Máximo Valor 1: Es el Valor Máximo que Soporta el Consolidado para la Primer Variable de Saturación Informada.</p>
+<p>Valor 2: Segunda Variable de Saturación para la Generación del Consolidado (Peso, Volumen, Bultos, Pallets, Adicional1 o Adicional2).</p>
+<p>Máximo Valor 2: Es el Valor Máximo que Soporta el Consolidado para la Segunda Variable de Saturación Informada.</p>
+<p>Reglas De Generación: Determina la Regla de Cercanía entre las Ordenes para su consolidación, puede ser:</p>
+<ul class="simple">
+<li><p>Ubicación Exacta: Se agrupan todas las Órdenes que poseen las mismas coordenadas geográficas (Radio de error: 5 metros ).</p></li>
+<li><p>Esquina: Se realiza la consolidación de todas las Órdenes que se encuentren en un radio definido por Distancia máxima (en metros) siendo el punto de llegada un VERTICE GEOGRÁFICO (Esquina).</p></li>
+<li><p>Cercanía: Se realiza la consolidación de todas las Órdenes que se encuentren en un radio definido por Distancia máxima (en metros), siendo el punto de llegada en CUALQUIER ESPACIO Geografía.</p></li>
+</ul>
+<p>Distancia Máxima (MTS): Distancia Máxima en Metros (Radio) para las reglas “ESQUINA” y “CERCANIA” que se evalúa para consolidar Órdenes cercanas entre sí, según sus coordenadas.</p>
+<p>Cantidad Máxima Parada: Cantidad máxima de Ordenes que pueden ser agrupados en un mismo Consolidado.</p>
+<p>Grupo De Consolidación: Agrupa las Ordenes (Consolida) pertenecientes al mismo Grupo de Ordenes, seteado en el campo “GrupoConsolidacion”.</p>
+<p>Ignorar Depósitos: Para la configuración «Depósitos Automáticos», permite anular los Depósitos seteados en los consolidados con el fin de ser agrupadas en conjunto (aunque se encuentren asignados a distintos Depósitos de Salida y Llegada).</p>
+<p>Contemplar Tipo De Orden: Consolida respetando el Tipo de la Orden (Tipo).</p>
+<p>Atributo De Ordenes: La descripción del Consolidado contiene datos de las Referencias Externas y Descripciones de las Ordenes, puede ser:</p>
+<ul class="simple">
+<li><p>Primera Orden: Coloca los datos de Referencia Externa y Descripción de la primer Orden consolidada.</p></li>
+<li><p>Concatenación De Datos: Coloca los datos concatenados de todas las Referencias Externas y Descripciones de cada Orden consolidada en la Parada.»</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="escenarios">
+<h2><code class="docutils literal notranslate"><span class="pre">Escenarios</span></code><a class="headerlink" href="#escenarios" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>En esta pestaña, puedes realizar varias acciones relacionadas con la gestión de escenarios. Puedes crear nuevos escenarios según tus necesidades específicas, restaurar versiones anteriores de escenarios mediante la opción de reestablecer históricos, seleccionar y utilizar escenarios existentes, o eliminar aquellos que ya no necesites. Esta funcionalidad te ofrece flexibilidad para administrar tus escenarios de manera eficiente.</p>
+</div>
+<img alt="../_images/Escenarios.png" class="align-center" src="../_images/Escenarios.png" />
+<div class="justified-text docutils container">
+<p>También cuenta con subpestañas que cada una cuenta con configuraciones especificas las cuales se describen a continuación:</p>
+</div>
+<section id="parametros-generales">
+<h3>Parámetros Generales<a class="headerlink" href="#parametros-generales" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Cantidad De Interacciones: Cantidad máxima de veces que se resolverá el problema de ruteo, por distintos enfoques, para realizar la elección del resultado óptimo. Los enfoques serán de acuerdo con la combinación de heurísticas de selección de Semillas (root) y heurísticas de selección de Vehículos disponibles.»</p>
+<p>Corte Por Tiempo (MIN): Límite de tiempo TOTAL para la ejecución de todas las iteraciones en caso de que la complejidad del ruteo implique un mayor tiempo de análisis que el deseado por el Usuario.</p>
+</div>
+<section id="radio-densidad">
+<h4>Radio Densidad<a class="headerlink" href="#radio-densidad" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Distancia Máxima (KM): Distancia máxima desde el centro geográfico de una ruta, para buscar posibles órdenes a insertar en la misma.</p>
+<p>Radio Dinámico: Permite que la herramienta defina el radio distancia que utilizará desde el baricentro geográfico de la Ruta a cada Orden, según la densidad de puntos de entrega y las Ordenes que ya se encuentren ruteadas</p>
+<p>Radio Escalonado: Fracciona la distancia máxima a utilizar en N escalones con el objetivo de lograr rutas más compactas geográficamente. Es una manera de jerarquizar el ruteo, y realizarlo de manera progresiva.</p>
+<p>Radio Local: Distancia máxima lineal entre una Orden y su siguiente/anterior.</p>
+<p>Radio Local Flexible: Distancia máxima lineal entre Ordenes consecutivas en un solo sentido, pudiendo ser la Orden siguiente o la Orden anterior como distancia máxima.</p>
+</div>
+</section>
+<section id="pickup-and-delivery">
+<h4>PickUp and Delivery<a class="headerlink" href="#pickup-and-delivery" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Modo Inverso Con Latencia: Ruteados Delivery &amp; Pickup: Realiza primero las entregas y luego de un período de tiempo (latencia), las recolecciones en el punto anterior.</p>
+<p>Pickup En Misma Ruta: Check que forza que el Delivery como el Pickup asociado se encuentren en la misma ruta. Para activarlo debe estar seteado el check «Modo Inverso con latencia».</p>
+<p>Validar Carga Temporal: Evita un exceso de carga del vehículo en una visita (Pallets, Peso, Volumen o Bultos)</p>
+<p>Analizar Corte De Pickups: Asigna la recolección en una segunda vuelta de la Ruta. Para activarlo debe estar seteado el check «Modo Inverso con latencia».</p>
+<p>Cantidad Máxima De Depósitos A Visitar: Es la cantidad máxima de Depósitos de los que se permite la Recolección.</p>
+<p>Evitar Vuelta Implícita Con Deposito Pickup: Obliga que, en caso de que las recolecciones sean en Depósitos, estos sean visitados una sola vez durante el ruteo a menos que por capacidad sea imposible de realizar.</p>
+</div>
+</section>
+<section id="parametros-opcionales">
+<h4>Parámetros Opcionales<a class="headerlink" href="#parametros-opcionales" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Considerar Barreras: Contemplar las demoras generadas por las barreras en el cálculo de tiempos.</p>
+<p>Omitir Retorno Al Deposito: No se contabilizan tiempos ni distancias desde la última Orden al Depósito de llegada.</p>
+<p>Considerar Áreas: Habilita el CrossDock dinámico durante el ruteo</p>
+<p>Depósito De Salida Dinámico: La asignación de Ordenes a Depósitos se realiza de manera dinámica según la distancia de estas a los depósitos seleccionados, contemplando la carga que puede transportar la flota asociada a cada Depósito</p>
+</div>
+</section>
+</section>
+<section id="inicio-de-rutas">
+<h3>Inicio de Rutas<a class="headerlink" href="#inicio-de-rutas" title="Link to this heading">#</a></h3>
+<p>En esta subpestaña, se describen los parámetros que pueden configurarse mediante un Slider y se puede ajustar su prioridad.</p>
+<section id="preferencias-de-seleccion-de-semilla">
+<h4>Preferencias de Selección de Semilla<a class="headerlink" href="#preferencias-de-seleccion-de-semilla" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Apertura Temprana: Se da preferencia de iniciar la construcción de las rutas (semilla) a los clientes con inicio horario más temprano (inicioHorario).»</p>
+<p>Cierre Temprano: Se da preferencia de iniciar la construcción de las rutas (semilla) a los clientes con fin horario más temprano</p>
+<p>Horario Promedio: Se da preferencia de iniciar la construcción de las rutas (semilla) a los clientes con horario promedio entre su inicio y fin horario es decir aquella cuyo horario sea el más parecido al promedio de todas las ventanas horarias de las Ordenes involucradas.</p>
+<p>Cercanía Ultima Ruta: Se da preferencia de iniciar la construcción de las rutas (semilla) a los clientes más cercanos a la última ruta generada</p>
+<p>Sensibilidad: Se da preferencia de iniciar la construcción de las rutas (semilla) según la ponderación de la slider de heurística de mayor peso</p>
+<p>Barrido Angular: Se da preferencia de iniciar la construcción de las rutas (semilla) aquella Orden que minimice su ángulo polar con respecto al Depósito. Es decir que la primer Orden con la que se construye la Ruta sea la primera hallada «barriendo» angularmente en sentido horario un giro de 360º a partir del Depósito de Salida.</p>
+<p>Densidad: Se da preferencia de iniciar la construcción de las rutas (semilla) donde la primer Orden sea aquella que se halla en el lugar de mayor concentración de Ordenes.</p>
+<p>Distancia Deposito: Se da preferencia de iniciar la construcción de las rutas (semilla) tal que la primer Orden se encuentre más cerca del Depósito de Salida</p>
+<p>Demanda: Se da preferencia de iniciar la construcción de las rutas (semilla) donde la primer Orden sea aquella cuya demanda en promedio sea mayor (Volumen, Peso, Pallets, Bultos).</p>
+</div>
+</section>
+<section id="prioridades-automaticas">
+<h4>Prioridades Automáticas<a class="headerlink" href="#prioridades-automaticas" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Usar Prioridades Automáticas: Permite asignar valores dinámicos de prioridades absolutas a las Ordenes según distintos criterios: Por vehículo o Por importe, según se elija.</p>
+<ul class="simple">
+<li><p>Por Vehículo: Prioriza el ruteo de órdenes que pueden ser transportadas por un porcentaje bajo de la flota disponible.</p></li>
+<li><p>Por Importe: Prioriza el ruteo de órdenes según los valores de importe asociados.</p></li>
+<li><p>Ignorar Valores: Se ignoran los valores de prioridades absolutas asociados a las órdenes durante el ruteo. Todas las Ordenes serán evaluadas sin Prioridad.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="grupos">
+<h3>Grupos<a class="headerlink" href="#grupos" title="Link to this heading">#</a></h3>
+<p>En esta subpestaña, se puede configurar los grupos de manera en la que se generan. A continuación se describe cada uno de los parámetros</p>
+<section id="autoclustering">
+<h4>Autoclustering<a class="headerlink" href="#autoclustering" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Habilitar Autoclustering: Habilita el uso de un algoritmo de clusterización K-Means. El agrupamiento se realiza minimizando el cuadrado de la suma de distancias entre cada Orden y el centroide de su grupo. Por lo tanto, permite al sistema dividir las Ordenes para tratar de segmentar el armado de rutas y que éstas sean más compactas.»</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>K-Means es un algoritmo iterativo que divide un conjunto de Ordenes en k grupos diferentes de tal manera que cada Orden pertenece solo a un grupo que tiene propiedades similares.</p>
+</div>
+<div class="justified-text docutils container">
+<p>Factor: Es el número de grupos (k) o centroides que se escogerán inicialmente del conjunto total de Ordenes para inicializar el primer paso del Algoritmo de clusterización K-Means. Por Default k = 5</p>
+<p>Ignorar Grupos Previos: Si las Ordenes tienen Grupo Ruta, se ignoran los mismos y se arman nuevos Grupos utilizando el ruteador k-Means. Estos Grupos no van a poder ser mezclados entre sí.</p>
+<p>Respetar Cantidad: Al «ignorar Grupos previos» se construyen la misma cantidad de Grupos que el Usuario definió. Es decir, se setea el k = cantidad de Grupo Ruta.</p>
+</div>
+</section>
+<section id="grupo-de-rutas-no-restrictivo">
+<h4>Grupo de Rutas No Restrictivo<a class="headerlink" href="#grupo-de-rutas-no-restrictivo" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Habilitar Grupo De Rutas No Restrictivo: Permite la inserción de órdenes de distintos Grupos dentro de una misma ruta durante la Construcción de esta. Busca flexibilizar la mezcla ordenes de diferentes grupos en algunas rutas:</p>
+<ul class="simple">
+<li><p>MIN: respeta 100% el Grupo.</p></li>
+<li><p>MAX: desactiva el grupo y permite mezclar todas las ordenes sin restricción.</p></li>
+</ul>
+</div>
+</section>
+<section id="opciones-de-agrupamiento">
+<h4>Opciones de agrupamiento<a class="headerlink" href="#opciones-de-agrupamiento" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Permitir Invasión De Grupos: Genera una Ruta primero con Ordenes de un mismo Grupo, y si la capacidad lo permite, se inserten Ordenes de otros Grupos. Tener en cuenta que debe setearse que Grupos están permitidos y la distancia máxima al baricentro geográfico del Grupo de Ruta Original puede buscar Ordenes (Grupos Permitidos y Radio de Invasión del modelo de condiciones).</p>
+</div>
+</section>
+<section id="opciones-de-agrupacion-en-ruta">
+<h4>Opciones de Agrupación en Ruta<a class="headerlink" href="#opciones-de-agrupacion-en-ruta" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Sumar Tiempos De Espera: Agrupación de Ordenes, que suman los tiempos de espera seteados en cada uno. Debe encontrarse seteado «Agrupación en ruta» en Configuración General. Valor mínimo 1 minuto.»</p>
+<p>Considerar Espera En Segundos: Requiere el campo «Sumar tiempos de espera» seteado. Considera que la unidad de tiempo en «Tiempo de Espera» sean segundos, al finalizar lo divide para setearlo en minutos.»</p>
+<p>Tiempos De Espera Máximo (MAX): Cota superior de suma de «Tiempo de Espera» en minutos de todas las Ordenes del mismo Domicilio. El valor del campo «TiempoEsperaMaximo» en la entidad “DomicilioOrden», de no encontrarse seteado utiliza el del escenario o no tendrá cota si no se encuentra esta última seteada.</p>
+<p>Tiempos De Espera Mínimo (MIN): Cota inferior de suma de «Tiempo de Espera» en minutos de todas las Ordenes del mismo Domicilio. El valor del campo «TiempoEsperaMinimo» en la entidad “DomicilioOrden», de no encontrarse seteado utiliza el del escenario o no tendrá cota si no se encuentra esta última seteada.</p>
+<p>Cantidad Máxima De Visitas: Indica cuántas veces puede ser visitado como máximo un domicilio (DomicilioOrden), en diferentes rutas de la misma Jornada, siempre que no sea posible hacerlo con la configuración indicada en el campo “Porcentaje mínimo de entrega parcial”, el cual estará al 100% para intentar que todos los consolidados de un cliente vayan en una sola ruta.</p>
+<p>Porcentaje Mínimo De Entrega Parcial: Permite realizar entregas parciales, seteandole cuál es el mínimo % que cumple la condición.</p>
+<p>Respetar Porcentaje En Segundas Vueltas: Respeta el % de entrega parcial para las segundas vueltas de la Ruta.</p>
+</div>
+</section>
+</section>
+<section id="id2">
+<h3>Vehículos<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>En esta subpestaña, se puede configurar los Vehículos para realizar la ejecución de rutas. A continuación se describe cada uno de los parámetros:</p>
+</div>
+<section id="modo">
+<h4>Modo<a class="headerlink" href="#modo" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Minimizar: Busca generar Rutas saturadas al utilizar la menor cantidad de Vehículos disponibles para la planeación</p>
+<p>Usar Todos: Busca utilizar todos los vehículos disponibles en la planeación, independientemente de la saturación de ruta resultante.</p>
+</div>
+</section>
+<section id="preferencia-en-seleccion-de-vehiculos">
+<h4>Preferencia en selección de vehículos<a class="headerlink" href="#preferencia-en-seleccion-de-vehiculos" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Reutilizar Tipos De Vehículos: Permite que un Tipo de Vehículo realice varias vueltas en una Jornada</p>
+<p>Respetar Mismo Grupo De Rutas: Permite que un mismo Vehículo sea reutilizado para realizar una segunda vuelta, pero solo si ésta tiene como destino clientes del mismo Grupo de la Primer Vuelta. Debe encontrarse seteado «Reutilizar tipo».</p>
+<p>Flexible: Opción que permite que solo en las segundas vueltas puedan incluirse otros clientes de Grupos de Rutas distintos para optimizar el Vehículo en dicha segunda vuelta, siempre y cuando una de las Ordenes de la segunda vuelta sea de la primera vuelta. Debe encontrarse seteado «Respetar mismo grupo de rutas» para poder utilizar esta opción.</p>
+<p>Slider Vehículos Pequeños - Grandes: Permite ponderar la preferencia en el tipo de vehículo a ser seleccionado para generar un ruteo.</p>
+<p>Cantidad Según Grupo De Rutas: Modifica la cantidad de vehículo de cada Tipo Vehículo sea igual a la cantidad de Grupos de rutas a rutear.</p>
+<p>Usar Vehículos Auxiliares: Prioriza los Tipos de Vehículos a utilizar por Vehículo Operación que puedan generar segundas vueltas. Requiere seteado el check «Utilizar Flotas por operación» de Parámetros Generales.</p>
+</div>
+</section>
+<section id="porcentaje-de-cargas">
+<h4>Porcentaje de cargas<a class="headerlink" href="#porcentaje-de-cargas" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Volumen Máximo: Porcentaje de volumen máximo para tener en cuenta durante el ruteo</p>
+<p>Peso Máximo: Porcentaje de peso máximo para tener en cuenta durante el ruteo.</p>
+<p>Bultos Máximo: Porcentaje de bultos máximo para tener en cuenta durante el ruteo.</p>
+<p>Pallets Máximo: Porcentaje de pallets máximo para tener en cuenta durante el ruteo.</p>
+<p>Adicional 1 Máximo: Porcentaje de Adicional 1 máximo a tener en cuenta durante el ruteo.</p>
+<p>Adicional 2 Máximo: Porcentaje de Adicional 2 máximo a tener en cuenta durante el ruteo.</p>
+<p>Mínimo Global: Porcentaje mínimo de carga de los vehículos para que una ruta sea considerada como válida. Debe considerarse al menos una de las variables mínima de la Demanda (Pallets, Peso, Volumen o Bultos)</p>
+<p>Restrictivo: Permite las validaciones de las demandas mínimo.</p>
+<p>Restrictivo Mínimo Global: Construye rutas sin validar el mínimo global, y luego elimina post construcción las rutas que no cumplen con algún mínimo.</p>
+<p>Mínimo Global Segundas Vueltas: Permite considerar distintos porcentajes mínimos para la segunda vuelta de la ruta. En caso de no habilitarlo, el algoritmo utilizará el porcentaje mínimo definido para la primera vuelta.</p>
+</div>
+</section>
+<section id="productos">
+<h4>Productos<a class="headerlink" href="#productos" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>No Mezclar Dadores De Carga: Dada la existencia de un mismo Producto (SKU) que pertenece a dadores de carga diferentes, se busca parametrizar la entrega de modo tal de evitar el riesgo de que el conductor entregue el lote de producto incorrecto al destinatario.  Por lo tanto, el seteo permite que si dos órdenes poseen Productos con mismo SKU y distinto IdCliente (obtenido de la entidad Producto,  no de la Orden) no podrán ser ruteados juntos.»</p>
+<p>Permitir En Mismo Destino: El seteo permite que si dos órdenes poseen productos con mismo SKU solo pueden rutearse juntos si ambos ordenes posean el mismo destinatario (mismo cliente, mismo domicilio). Requiere «No mezclar dadores de carga» « activo.»</p>
+</div>
+</section>
+<section id="volumetria">
+<h4>Volumetría<a class="headerlink" href="#volumetria" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Volumetría: Análisis y cálculo de la ubicación 3D de los ítems asociados a las ordenes dentro del Vehículo.</p>
+<p>Agrupar Por Orden: La ubicación de los ítems se calcula contemplando la secuencia de las órdenes dentro de la ruta, aunque esto implique dejar huecos por las características volumétricas de los ítems. Es decir, forzará a que sean ubicados según el orden de secuencia ( método LIFO )</p>
+<p>Permitir Apilabilidad Por Camas: Permite poder apilar objetos de distintas dimensiones, colocando niveladores / separadores para indicar el nuevo nivel (cama). Para lograrlo deben estar marcadas las opciones anteriores:  «procesar volumetría» y «agrupar por orden».</p>
+<p>Procesar Compartimentos Espejados: Una vez finalizada la construcción de la Ruta, validará que la carga de la misma sea tipo espejo (simetría espejada) con el fin de evitar bamboleo de Carga. La condición es seteada en la entidad Compartimento. Tener en cuenta que puede quitar Ordenes para cumplir lo anterior.</p>
+<p>Tolerancia De Altura: Diferencia de altura permitida entre distinto productos al «Procesar compartimentos espejados» en cm</p>
+<p>Procesar Compartimentos: Los cálculos de volumetría de los ítems se realizan luego de ser paletizados, por compartimentos disponibles por vehículo.</p>
+</div>
+</section>
+<section id="depositos-automaticos">
+<h4>Depósitos automáticos<a class="headerlink" href="#depositos-automaticos" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Permitir Múltiples Depósitos: Al utilizar «Depósitos Automáticos», las órdenes que queden sin rutear de un depósito pueden ser ruteadas utilizando la flota de otro depósito.</p>
+</div>
+</section>
+</section>
+<section id="horarios">
+<h3>Horarios<a class="headerlink" href="#horarios" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>En esta subpestaña se puede configurar los Horarios para configuración de Depósitos, Vehículos y Ordenes. A continuación, se describe cada uno de los parámetros.</p>
+</div>
+<section id="id3">
+<h4>Depósitos<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Depósitos Sin Límite Horario: No se considera el horario final de los depósitos de llegada, permitiendo el retorno a los mismos en cualquier momento (no necesariamente en el mismo día).</p>
+<p>Salida Temprana De Depósitos: Se generan rutas de manera tal que su inicio corresponde al horario más tardío entre el inicio horario del Depósito de Salida y el inicio horario del vehículo.</p>
+</div>
+</section>
+<section id="id4">
+<h4>Vehículos<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Tolerancia De Arribo Al Depósito (Min): Permite planificar la llegada al Depósito dentro de N minutos posteriores a su fin horario, solo cuando la herramienta lo encuentre necesario. Las entregas se realizarán dentro de la ventana horaria del tipo de vehículo excepto el horario de arribo al depósito.</p>
+</div>
+</section>
+<section id="id5">
+<h4>Ordenes<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Tolerancia De Arribo Tardío (Min): Permite planificar la visita a un cliente dentro de N minutos posteriores a su fin horario, solo cuando la herramienta lo encuentre necesario. Lo aplica a todas las Ordenes. El algoritmo priorizará el ruteo de las Ordenes que respeten las ventanas horarias originales.»</p>
+<p>Múltiples Días: Se permite que las Ordenes sean entregadas N días posteriores al día de la Jornada, según los días permitidos de las mismas.</p>
+<p>Visita En Ventana Horaria: El inicio y el fin de la visita deben ocurrir dentro de la ventana horaria de la Orden.</p>
+</div>
+</section>
+<section id="simulacion-de-ventanas">
+<h4>Simulación de Ventanas<a class="headerlink" href="#simulacion-de-ventanas" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Modificar Ventanas Horarias: Habilita la modificación de las ventanas horarias.</p>
+<p>Por Intervalos: Genera N segmentos (turnos de visita) entre el inicio más temprano y fin más tardío dentro de la jornada</p>
+<p>Ampliar Fin (Min): Modifica dinámicamente el valor del fin horario en N minutos de todas las órdenes. Es decir, agrega los N minutos indicados al FinHorario de TODAS las Ordenes/Paradas.</p>
+</div>
+</section>
+</section>
+<section id="parametros-avanzados">
+<h3>Parámetros Avanzados<a class="headerlink" href="#parametros-avanzados" title="Link to this heading">#</a></h3>
+<div class="justified-tex docutils container">
+<p>En esta subpestaña se puede configurar parámetros avanzados como restricciones, concurrencias, Ruteos por calles. A continuación, se describe cada uno de los parámetros.</p>
+</div>
+<section id="construccion-de-ruta">
+<h4>Construcción de Ruta<a class="headerlink" href="#construccion-de-ruta" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Priorizar Distancia Versus Tiempo (Alpha): Prioriza la distancia de las Ordenes sobre el tiempo de espera producido por ventanas horarias de corta duración; induciendo así al algoritmo a producir rutas más cortas en distancia sin considerar los tiempos muertos de espera (resultando rutas quizás más largas en tiempo de duración).</p>
+<p>Ahorro En Distancia (Delta): Factor que considera el ahorro en distancia entre clientes al analizar la inserción de un tercero entre ellos.</p>
+<p>Priorizar Punto Lejos (Gamma): Prioriza las ordenes lejanas del depósito de llegada, considerando que son las más difíciles de rutear, independientemente de cuan malo sea su costo de inserción.</p>
+<p>Priorizar Puntos Cercanos (Omega): Prioriza las ordenes más cercanas al centro geográfico de la Ruta. Este centro se calcula obteniendo baricentro geográfico de todas las ordenes de la ruta, sin considerar el Depósito de Salida ni el de Llegada.</p>
+<p>Omega Root: Prioriza las ordenes más cercanas a la posición de la semilla de la ruta.</p>
+<p>Epsilón: Rutas cuya prioridad de inserción son las Ordenes más cercanas a la recta armada entre el baricentro de la ruta al Depósito de Salida. A mayor valor que Épsilon, mayor es la incidencia. Default Value = 0 (nula incidencia)</p>
+<p>Epsilón Root: Rutas cuya prioridad de inserción son las Ordenes más cercanas a la recta armada entre la posición de la semilla de la ruta al Depósito de Salida. A mayor valor que Épsilon, mayor es la incidencia. Default Value = 0 (nula incidencia)</p>
+<p>Ventana De Inspección: Cantidad de arcos de ruta que se evaluarán para Determinar el Punto de inserción de la Ordene en una ruta. Default: últimos 10 arcos realizados de la Ruta</p>
+<p>Ventana De Inspección Automática: El producto seleccionará automáticamente los tramos a realizar las evaluaciones para determinar el mejor punto de inserción de la Orden no ruteada, siendo esta la mitad de las entregas realizadas en la ruta.</p>
+<p>Parámetros Automáticos: Pondera Priorizar distancia versus tiempo (Alpha) según las optimizaciones realizadas.</p>
+<p>Heurística De Mínimos Rápidos: Penaliza las Ordenes a utilizar como semilla que al haber sido utilizadas anteriormente han construido rutas desarmadas por no cumplir los mínimos de Demanda.</p>
+<p>Analizar Motivos De No Ruteo: Se analizarán los motivos de no inserción de las órdenes que queden sin rutear en todas las rutas.</p>
+<p>Contorno Avanzado: Genera un polígono tal que busque el contorno más preciso de todas las Ordenes a Rutear (Alpha Hull)</p>
+<p>Considerar Áreas: Genera un polígono tal que busque un contorno aproximado que englobe a todas las Ordenes a Rutear (Convex Hull)</p>
+<p>Impedir Cruces: Se impide durante la construcción y optimización de rutas la generación de cruces entre ellas. No considera los trayectos desde y hacia los Depósitos.</p>
+</div>
+</section>
+<section id="restricciones">
+<h4>Restricciones<a class="headerlink" href="#restricciones" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Ignorar Producto - Producto: Permite deshabilitar la condición restrictiva entre Productos a ser transportados.</p>
+<p>Ignorar Tipo De Vehículo - Producto: Permite deshabilitar la condición restrictiva entre los Productos a ser transportados y el Tipo de Vehículo permitido para realizarlo.</p>
+<p>Ignorar Tipo De Vehículo - Domicilio Orden: Permite deshabilitar la condición restrictiva entre el Tipo de Vehículo y el domicilio de entrega permitido.</p>
+<p>Ignorar Tipo De Vehículo - Categoría Orden: Permite deshabilitar la condición restrictiva entre el Tipo de Vehículo y la Categoría de la Orden por Empresa.</p>
+</div>
+</section>
+<section id="primera-orden">
+<h4>Primera Orden<a class="headerlink" href="#primera-orden" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Considerar Valor Importe: El armado de rutas contemplará que el primer orden a visitar deberá ser aquella que maximice y supere el valor importe indicado en el campo Importe de la entidad Orden.</p>
+<p>Mínimo: Permite indicar la cota mínima a considerar el importe de la Orden.</p>
+</div>
+</section>
+<section id="concurrencia">
+<h4>Concurrencia<a class="headerlink" href="#concurrencia" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Usar Múltiples Hilos: Las N iteraciones configuradas para resolver el problema de ruteo, se repartirán en tantos hilos como el usuario indique. Depende de la cantidad de procesadores disponibles en el servidor, pueden usarse hasta 4 para mejorar el tiempo de procesamiento al generar Rutas.</p>
+</div>
+</section>
+<section id="ruteo-por-calles">
+<h4>Ruteo por calles<a class="headerlink" href="#ruteo-por-calles" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Limitar Vecinos: Cantidad de órdenes lindantes entre sí que se considerarán para calcular las distancias entre ellas por «calles» según un criterio de «cercanía», mientras que para el resto de las Ordenes el ruteo será lineal. Se utiliza cuando las distancias entre clientes son largas e implican un recorrido amplio ente clientes. Default Value: 30 clientes.</p>
+<p>penalización Lineal: Al no encontrar un camino entre dos órdenes, la distancia entre ambas al armar la ruta se considerará lineal, penalizada por un factor.</p>
+<p>Distancia Temporal Avanzada: Utiliza para el cálculo una velocidad que surge del promedio entre el promedio armónico, el promedio aritmético y la velocidad mínima del conjunto de velocidades dado.</p>
+<p>Porcentaje Velocidad Vial: Permite modificar la velocidad dada por la red de calles a utilizar para viajar entre dos puntos.</p>
+<p>Usar Servidor: Permite la selección y utilización de un servidor particular para realizar el ruteo por calles.</p>
+<p>Origen: Indica el path del servidor a utilizar.</p>
+</div>
+</section>
+</section>
+<section id="optimizacion">
+<h3>Optimización<a class="headerlink" href="#optimizacion" title="Link to this heading">#</a></h3>
+<div class="justified-tex docutils container">
+<p>En esta subpestaña se puede configurar Optimizadores para dar mayor prioridad. A continuación, se describe cada uno de los parámetros.</p>
+</div>
+<section id="seleccion-de-resultado-optimo">
+<h4>Selección de Resultado Optimo<a class="headerlink" href="#seleccion-de-resultado-optimo" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Criterio de selección de mejor iteración, según:</p>
+<p>Cantidad De Vehículos: Asociado a utilizar la menor cantidad de vehículos.</p>
+<p>Solapamiento: Asociado a la menor área total solapada entre las rutas.</p>
+<p>Optimización De Carga: Asociado a la mayor demanda total transportada en las rutas generadas.</p>
+<p>Distancia Recorrida: Asociado a la menor distancia total de las rutas generadas.</p>
+<p>Tiempo: Asociado a la menor duración total de las rutas generadas.</p>
+<p>Espera En Muelles: Menor tiempo de espera en patio para los muelles del Depósito de llegada.</p>
+<p>Menor Costo: Asociada al menor Costo por tipo de vehículo.</p>
+</div>
+</section>
+<section id="post-optimizadores">
+<h4>Post-Optimizadores<a class="headerlink" href="#post-optimizadores" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Busca mejorar el resultado de ruteo de la mejor iteración.</p>
+<p>Cantidad De Iteraciones: Cantidad de veces que correrá el proceso de optimización.</p>
+<p>Secuencia: Optimización de la secuencia de cada ruta, eliminando, si es posible, cruces internos.</p>
+<p>Cargas: Se verifica el nivel de carga del vehículo asignado a la ruta y en caso de que el mismo no se encuentre completo, intentará cambiarlo por otro de menor carga máxima (o sea que mejor se ajuste a la carga de la Ruta). Se ejecuta automáticamente siempre.</p>
+<p>Secuencial Lineal: Optimización de la secuencia de cada ruta, eliminando, si es posible, cruces internos considerando distancias lineales y no por «Calles».</p>
+<p>Segundo Interno: Luego de optimizar las rutas generadas, se evalúa nuevamente la inserción de las órdenes que quedaron sin rutear. Corre automáticamente luego de los Optimizadores.</p>
+<p>Permitir Invasión De Grupos: Durante el «Segundo intento» se invalida el Grupo de las Ordenes para que encuentre un mejor resultado. P.e. Necesidad de optimizar de Rutas fijas.</p>
+<p>Distancias: Optimización de rutas realizando cambios de secuencia o intercambio de Ordenes entre Rutas con el objetivo de disminuir la distancia total de las Rutas generadas.</p>
+<p>Distancia A Deposito: Re secuencia las Rutas dejando en lo posible como primera visita la Orden más cercana al Depósitos de salida, ignorando la prioridad de ruteo de las Ordenes.</p>
+<p>Baricentros: Busca eliminar solapamiento, al intercambiar Ordenes entre dos Rutas entendiendo que el «»área»» de cobertura de cada Ruta será menor. Logra Rutas más compactas y elimina cruces entre ellas. A su vez, evita desvíos en las Rutas al rutear por baricentro de Cargas.  «</p>
+<p>Opt-Remove: Optimiza la distancia total de una Ruta (kms) al reordenar la posición de sus órdenes determinando nuevamente su punto de inserción a la ruta armada.</p>
+</div>
+</section>
+<section id="procesos">
+<h4>Procesos<a class="headerlink" href="#procesos" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Distancia Por Calles: Post Proceso que Re secuencia la Ruta minimizando la cantidad de recirculaciones en los viales. Requiere que todas las Ordenes posean la misma Ventana Horaria. No contempla en su validación: Visita en ventana horaria, Prioridad relativa (Orden.PreOrden), Ultima Visita y demás reglas que afecten a la secuencia de las visitas.»</p>
+<p>Tsp Trip: Optimizador que Re secuencia la ruta. Requiere que todas las Ordenes posean la misma Ventana Horaria. No contempla en su validación: Visita en ventana horaria, Prioridad relativa (Orden.PreOrden), Ultima Visita y demás reglas que afecten a la secuencia de las visitas.  Requiere tener un parámetro configurado: OSRM_Trip <a class="reference external" href="http://router.project-osrm.org/trip/v1/driving/">http://router.project-osrm.org/trip/v1/driving/</a>»». Pueden ser:</p>
+<p>Automático: Valor Default.
++ Distancia: Re secuencia tal que la última Orden es la de mayor distancia</p>
+<ul class="simple">
+<li><p>Cercanía: Opuesto a lo anterior. empieza por la Orden más alejada finalizando en la más cercana</p></li>
+</ul>
+<p>Balancear: Optimización de rutas armadas realizando intercambio de Ordenes entre ellas para que se encuentren balanceadas (similitud) según:</p>
+<p>Cantidad: Total.</p>
+<p>Peso: Total.</p>
+<p>Volumen: Total.</p>
+<p>Bultos: Total.</p>
+<p>Pallets: Total.</p>
+<p>Adicional 1: Total.</p>
+<p>Adicional 2: Total.</p>
+<p>Tiempo: Total.</p>
+<p>% Peso: porcentaje de carga del tipo de vehículo.</p>
+<p>% Volumen: porcentaje de ocupación del tipo de vehículo.</p>
+<p>% Bultos: porcentaje de bultos del tipo de vehículo.</p>
+<p>% Pallets: Porcentaje de Pallets del Tipo de Vehículo.</p>
+<p>Contemplar Distancia: Anula el procedo «Balancear» anterior, al realizarse este aumenta la distancia total de las Rutas.</p>
+<p>Limitar Cuadros: Solamente se permitirá el proceso de «Balancear» entre Rutas de la misma zona (área conformada por el conjunto de Ordenes de la Ruta sin considerar los Depósitos)</p>
+<p>Tolerancia (%): Grado de aceptación de rutas que se consideran balanceadas.</p>
+<p>Objetivo: Valor mínimo que se considera como balanceado.</p>
+</div>
+</section>
+<section id="parametro-de-optimizadores">
+<h4>Parámetro de Optimizadores<a class="headerlink" href="#parametro-de-optimizadores" title="Link to this heading">#</a></h4>
+<div class="justified-text docutils container">
+<p>Permitir Invasión De Grupos: Durante el proceso de optimización permite invalidar el Grupo de las Ordenes para que encuentre un mejor resultado. P.e. Para la optimización de rutas fijas</p>
+<p>Impedir Absorción De Rutas: Impedirá minimizar la cantidad de vehículos utilizados durante la construcción. La cantidad de Vehículos post construcción será fija.</p>
+<p>Respetar Cantidad De Grupos: Impedirá minimizar la cantidad de Rutas con respecto a los Grupos de Rutas utilizados durante la construcción. La cantidad de Grupo de Rutas post construcción será fija.</p>
+<p>Análisis Lineal: Los análisis de aceptación de cambios de mejores se realizarán con distancias lineales.</p>
+<p>Contemplar Tiempo: Los análisis de aceptación de cambios de mejores se realizarán según los tiempos de viaje.</p>
+<p>Recalcular Radio: Redefine el radio de densidad a utilizar en el proceso de optimización según el radio de las rutas o Grupos de rutas armadas: Máximo, Mínimo, Promedio o Grupos.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="barreras-y-areas">
+<h2><code class="docutils literal notranslate"><span class="pre">Barreras</span> <span class="pre">y</span> <span class="pre">Áreas</span></code><a class="headerlink" href="#barreras-y-areas" title="Link to this heading">#</a></h2>
+<img alt="../_images/Escenarios.png" class="align-center" src="../_images/Escenarios.png" />
+<div class="justified-text docutils container">
+<p><strong>Agregar Barreras</strong></p>
+<p>Barrera -1</p>
+<p>Dibujo: Dibujo Tipo trayecto con condición Barrera.</p>
+<p>Tiempo De Espera: Tiempo que se sumará al Tiempo de viaje entre dos Ordenes si se cruza la barrera. (En minutos)</p>
+<p>Activo: Considerar el uso de la Barrera durante el proceso de ruteo.</p>
+<p><strong>Agregar Ventana Horaria</strong></p>
+<p>Permite agregar una nueva Ventana Horaria a la barreara, activándola por horarios.</p>
+<p><strong>Ventana Horaria</strong></p>
+<p>Inicio Horario: Inicio del período en el que la Barrera se encontrará activa.</p>
+<p>Fin Horario: Finalización del período en el que la Barrera se encontrará activa.</p>
+<p>Tiempo De Espera: Es la demora que se adicionará al trayecto que interceda la Barrera (En minutos).</p>
+<p>Propagación: Permite que la adición de los minutos debido a la barrera no sea abrupta, sino que se efumine en el tiempo.</p>
+<p><strong>Zona</strong></p>
+<p>Área de estacionamiento permitido para dejar el acoplado.</p>
+<p>Dibujo: Área de estacionamiento permitido para dejar el acoplado.</p>
+<p>Tiempo De Espera: Tiempo de demora para tareas auxiliares en el Área (desenganche, enganche, etc).</p>
+<p>Activo: Permite el uso del área durante el proceso de ruteo.</p>
+<p>Permite Cargar: Habilita el permiso de carga en la operación.</p>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../MAPILogisticServices/MapiConfig.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">MAPI Logistic Services</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Planeación de Distribución</a><ul>
+<li><a class="reference internal" href="#configuracion-y-uso">Configuración y Uso</a></li>
+<li><a class="reference internal" href="#permisos">Permisos</a><ul>
+<li><a class="reference internal" href="#crear-usuario">Crear Usuario</a></li>
+<li><a class="reference internal" href="#permisos-de-grupo">Permisos de Grupo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#funcionalidad">Funcionalidad</a></li>
+<li><a class="reference internal" href="#configuracion-de-datos-generales">Configuración de Datos Generales</a></li>
+<li><a class="reference internal" href="#general"><code class="docutils literal notranslate"><span class="pre">General</span></code></a><ul>
+<li><a class="reference internal" href="#modo-de-ruteo">Modo de Ruteo</a></li>
+<li><a class="reference internal" href="#restriccion-ambiental">Restricción Ambiental</a></li>
+<li><a class="reference internal" href="#opciones">Opciones</a></li>
+<li><a class="reference internal" href="#depositos">Depositos</a></li>
+<li><a class="reference internal" href="#vehiculos">Vehículos</a></li>
+<li><a class="reference internal" href="#ordenes">Ordenes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#consolidacion"><code class="docutils literal notranslate"><span class="pre">Consolidación</span></code></a><ul>
+<li><a class="reference internal" href="#id1">Opciones</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#escenarios"><code class="docutils literal notranslate"><span class="pre">Escenarios</span></code></a><ul>
+<li><a class="reference internal" href="#parametros-generales">Parámetros Generales</a><ul>
+<li><a class="reference internal" href="#radio-densidad">Radio Densidad</a></li>
+<li><a class="reference internal" href="#pickup-and-delivery">PickUp and Delivery</a></li>
+<li><a class="reference internal" href="#parametros-opcionales">Parámetros Opcionales</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inicio-de-rutas">Inicio de Rutas</a><ul>
+<li><a class="reference internal" href="#preferencias-de-seleccion-de-semilla">Preferencias de Selección de Semilla</a></li>
+<li><a class="reference internal" href="#prioridades-automaticas">Prioridades Automáticas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grupos">Grupos</a><ul>
+<li><a class="reference internal" href="#autoclustering">Autoclustering</a></li>
+<li><a class="reference internal" href="#grupo-de-rutas-no-restrictivo">Grupo de Rutas No Restrictivo</a></li>
+<li><a class="reference internal" href="#opciones-de-agrupamiento">Opciones de agrupamiento</a></li>
+<li><a class="reference internal" href="#opciones-de-agrupacion-en-ruta">Opciones de Agrupación en Ruta</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Vehículos</a><ul>
+<li><a class="reference internal" href="#modo">Modo</a></li>
+<li><a class="reference internal" href="#preferencia-en-seleccion-de-vehiculos">Preferencia en selección de vehículos</a></li>
+<li><a class="reference internal" href="#porcentaje-de-cargas">Porcentaje de cargas</a></li>
+<li><a class="reference internal" href="#productos">Productos</a></li>
+<li><a class="reference internal" href="#volumetria">Volumetría</a></li>
+<li><a class="reference internal" href="#depositos-automaticos">Depósitos automáticos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#horarios">Horarios</a><ul>
+<li><a class="reference internal" href="#id3">Depósitos</a></li>
+<li><a class="reference internal" href="#id4">Vehículos</a></li>
+<li><a class="reference internal" href="#id5">Ordenes</a></li>
+<li><a class="reference internal" href="#simulacion-de-ventanas">Simulación de Ventanas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#parametros-avanzados">Parámetros Avanzados</a><ul>
+<li><a class="reference internal" href="#construccion-de-ruta">Construcción de Ruta</a></li>
+<li><a class="reference internal" href="#restricciones">Restricciones</a></li>
+<li><a class="reference internal" href="#primera-orden">Primera Orden</a></li>
+<li><a class="reference internal" href="#concurrencia">Concurrencia</a></li>
+<li><a class="reference internal" href="#ruteo-por-calles">Ruteo por calles</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optimizacion">Optimización</a><ul>
+<li><a class="reference internal" href="#seleccion-de-resultado-optimo">Selección de Resultado Optimo</a></li>
+<li><a class="reference internal" href="#post-optimizadores">Post-Optimizadores</a></li>
+<li><a class="reference internal" href="#procesos">Procesos</a></li>
+<li><a class="reference internal" href="#parametro-de-optimizadores">Parámetro de Optimizadores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#barreras-y-areas"><code class="docutils literal notranslate"><span class="pre">Barreras</span> <span class="pre">y</span> <span class="pre">Áreas</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

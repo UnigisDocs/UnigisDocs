@@ -1,0 +1,531 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../../genindex.html" /><link rel="search" title="Búsqueda" href="../../search.html" /><link rel="next" title="Syncout V2" href="Syncout.html" /><link rel="prev" title="Json Syncout" href="../Indexsyncout.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Syncout Genérico - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2966eb94" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../GettingStart/Gettingstart.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Ruteo/Ruteo.html">Planeación de Distribución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Yard/Yard.html">Yard Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/B2B/b2b.html">Portal B2B (business-to-business)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Mobile/Deliveries.html">UNIGIS X DELIVERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GettingStart/Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../Indexsyncout.html">Json Syncout</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Json Syncout</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Syncout Genérico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Syncout.html">Syncout V2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../MAPILogisticServices/MapiConfig.html">MAPI Logistic Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Routing/Routing.html">Planeación de Distribución</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="syncout-generico">
+<h1>Syncout Genérico<a class="headerlink" href="#syncout-generico" title="Link to this heading">#</a></h1>
+<section id="configuracion-y-uso">
+<h2>Configuración y Uso<a class="headerlink" href="#configuracion-y-uso" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>JSON Syncout permite realizar el envío de información de los cambios de estado a través de las tablas sistema externo a servicios que no requieran autenticación, esta nueva versión va a permitir la autenticación de diferentes formar como Basic Auth, Bearer Token, OAUTH y con el envío de Json genérico que tiene el actual o diferente según lo requiera el cliente.</p>
+<p>Tener un Syncout es una herramienta para enviar información a cualquier tipo de servicio y con diferentes formatos de tal forma que pueda reemplazar los Syncout Custom y disminuir el tiempo de implementación de este, solo se deberá configurar y levantar la instancia en el servidor.</p>
+<p>Es necesarios solicitar el deploy del Syncout que se encuentra en la siguiente ruta: U:ProductoOtrosJSON_SyncOutUNIGIS_JsonSyncOutV2.zip</p>
+<p>En el config del Syncout solo se debe configurar lo siguiente:</p>
+<ul class="simple">
+<li><p>Base de datos</p></li>
+<li><dl class="simple">
+<dt>parámetros</dt><dd><ul>
+<li><p>SistemaExterno: Nombre del sistema externo a monitorear.</p></li>
+<li><p>CustomParam0 (1,2,3…): Funcionan igual que en la versión 1 de JSON Syncout con el mismo formato Name0|Value0.</p></li>
+<li><p>Path Log: Ruta donde se depositará el archivo log, solo para casos donde aplique.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<p><strong>Ejemplo:</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">        </span><span class="nt">&lt;appSettings&gt;</span>
+<span class="linenos">2</span><span class="w">            </span><span class="nt">&lt;add</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SistemaExterno&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="w"> </span><span class="s">&quot;ArchivosPlANOS_FleteCCU&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">3</span><span class="w">            </span><span class="nt">&lt;add</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CustomParam0&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Name0|Value0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">4</span><span class="w">            </span><span class="nt">&lt;add</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CustomParam1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Name0|Value1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">5</span><span class="w">            </span><span class="nt">&lt;add</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CustomParam2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Name0|Value2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">6</span><span class="w">            </span><span class="nt">&lt;add</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CustomParam3&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Name0|Value3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos">7</span><span class="w">            </span><span class="nt">&lt;add</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Path_Log&quot;</span><span class="w">     </span><span class="na">value=</span><span class="s">&quot;C:\Log&quot;</span><span class="w">  </span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="parametros">
+<h2>Parámetros<a class="headerlink" href="#parametros" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Se genera la tabla SistemaExternoConfiguración con el objetivo de concentrar la configuración de cualquier entidad dentro de una sola tabla y Json Syncout V2 busque en esta lo necesario para poder operar</p>
+</div>
+<img alt="../../_images/parametro.png" class="align-center" src="../../_images/parametro.png" />
+<div class="justified-text docutils container">
+<p>Es necesario ingresar a <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Administración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">Sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">Sistema</kbd> –&gt;  <kbd class="kbd docutils literal notranslate">Parámetros</kbd>.</p>
+</div>
+<section id="parametros-claves-y-descripcion-de-parametros">
+<h3>Parámetros Claves y Descripción de Parámetros<a class="headerlink" href="#parametros-claves-y-descripcion-de-parametros" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">&lt;</kbd> <kbd class="kbd docutils literal notranslate">JsonConfiguracion</kbd> <kbd class="kbd docutils literal notranslate">&gt;</kbd></kbd> Estructura Json que se detalla más adelante y tendrá como función tener todo lo necesario sobre la API a consumir como: URL, parámetros, credenciales, método de consumo, configuración requerida previa a consumo entre otros datos. Este se podrá configurar dentro de un ABM.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">&lt;</kbd> <kbd class="kbd docutils literal notranslate">JsonSQL</kbd> <kbd class="kbd docutils literal notranslate">&gt;</kbd></kbd>  El campo indica la combinación entre JSON y SQL ya que como primer paso el campo contendrá una consulta SQL con una clave que permite darle una salida en formato JSON.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">&lt;</kbd> <kbd class="kbd docutils literal notranslate">Entidad</kbd> <kbd class="kbd docutils literal notranslate">&gt;</kbd></kbd>  Indica la tabla SistemaExterno[modificar/crear]estado[viaje/pedido/parada/guia]salida relacionada al sistema externo que se pretende habilitar.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">&lt;</kbd> <kbd class="kbd docutils literal notranslate">IdSistemaExternoEntidad</kbd> <kbd class="kbd docutils literal notranslate">&gt;</kbd></kbd>  Este campo no tiene llave foránea, pero va relacionado al campo anterior con el ID de la tabla que se selecciones para ese campo, en el ABM se mostrara la lista de los registros configurados previamente para relacionarlo.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">&lt;</kbd> <kbd class="kbd docutils literal notranslate">Activo</kbd> <kbd class="kbd docutils literal notranslate">y</kbd> <kbd class="kbd docutils literal notranslate">FechaCreacion</kbd> <kbd class="kbd docutils literal notranslate">&gt;</kbd></kbd>   Campos de control interno para habilitar o deshabilitar y fecha de registro.</p>
+</div>
+</section>
+<section id="procesos">
+<h3>Procesos<a class="headerlink" href="#procesos" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Habilitar Permisos para uso de Integrations Center.</p>
+<p>Es necesario configurar los permisos de acceso para el nuevo módulo para ello es necesario ingresar a <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Administrador</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">Grupos</kbd>. Seleccionar el grupo que desee actualizar y dar la opción de editar,</p>
+</div>
+</section>
+</section>
+<section id="funcionalidad">
+<h2>Funcionalidad<a class="headerlink" href="#funcionalidad" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Una vez que se tiene levantada la instancia de Json Syncout V2 se debe realizar la configuración de la tabla Por ABM - Integraciones – Sistema Externo – Json – Crear (Documentación de ABM en el siguiente ticket: <a class="reference external" href="https://unigis.atlassian.net/browse/DEV-19928">https://unigis.atlassian.net/browse/DEV-19928</a>.</p>
+</div>
+<section id="configuracion-json">
+<h3>Configuración JSON<a class="headerlink" href="#configuracion-json" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>El formato JSON se explica en este documento (En caso de no poderlo visualizar se adjunta al ticket directamente):</p>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">    </span>&quot;Jason&quot;:<span class="w"> </span>[{
+<span class="linenos"> 2</span><span class="w">                </span>&quot;URL&quot;:{
+<span class="linenos"> 3</span><span class="w">                </span>&quot;URI&quot;:<span class="w"> </span>&quot;www.url.com./metodo&quot;,
+<span class="linenos"> 4</span><span class="w">                    </span>&quot;key&quot;:<span class="w"> </span>&quot;@WareHouse&quot;
+<span class="linenos"> 5</span><span class="w">                    </span>&quot;Entity&quot;:<span class="w"> </span>&quot;Viaje.DepositoSalida&quot;,
+<span class="linenos"> 6</span><span class="w">                    </span>&quot;Field&quot;:<span class="w"> </span>&quot;ReferenciaExterna&quot;
+<span class="linenos"> 7</span><span class="w">              </span>}
+<span class="linenos"> 8</span><span class="w">    </span>]
+<span class="linenos"> 9</span><span class="w">    </span>&quot;Headers&quot;:<span class="w"> </span>[],
+<span class="linenos">10</span><span class="w">    </span>&quot;ParamsBody&quot;:<span class="w"> </span>[],
+<span class="linenos">11</span><span class="w">    </span>&quot;Method&quot;:<span class="w"> </span>&quot;GET&quot;,
+<span class="linenos">12</span><span class="w">    </span>&quot;ContentType&quot;:<span class="w"> </span>&quot;&quot;,
+<span class="linenos">13</span><span class="w">    </span>&quot;Accept&quot;:<span class="w"> </span>&quot;*/*&quot;,
+<span class="linenos">14</span><span class="w">    </span>&quot;AuthorizationType&quot;:<span class="w"> </span>{
+<span class="linenos">15</span><span class="w">        </span>&quot;AUTH&quot;:<span class="w"> </span>&quot;Basic<span class="w"> </span>Auth&quot;.
+<span class="linenos">16</span><span class="w">        </span>&quot;Credentials&quot;:<span class="w"> </span>[{
+<span class="linenos">17</span><span class="w">                </span>&quot;Key&quot;:<span class="w"> </span>&quot;Username&quot;,
+<span class="linenos">18</span><span class="w">                </span>&quot;Value&quot;:<span class="w"> </span>&quot;User&quot;
+<span class="linenos">19</span><span class="w">                </span>}
+<span class="linenos">20</span><span class="w">            </span>]
+<span class="linenos">21</span><span class="w">        </span>&quot;Response&quot;:<span class="w"> </span>{
+<span class="linenos">22</span><span class="w">            </span>&quot;Type&quot;:<span class="w"> </span>&quot;&quot;,
+<span class="linenos">23</span><span class="w">            </span>&quot;Field&quot;:<span class="w"> </span>&quot;
+<span class="linenos">24</span><span class="w">            </span>}
+<span class="linenos">25</span><span class="w">        </span>},
+<span class="linenos">26</span><span class="w">    </span>&quot;EnvioUnico&quot;:<span class="w"> </span>true,
+<span class="linenos">27</span><span class="w">    </span>&quot;Sequence&quot;:<span class="w"> </span>1
+<span class="linenos">28</span>}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>De forma temporal se tendrá que ingresar el JSON en un cuadro de texto con el formato solicitado, más adelante se estará modificando a un formulario</p>
+</div>
+<div class="justified-text docutils container">
+<p>A continuación, el detalle de cada campo en el JSON:</p>
+</div>
+<img alt="../../_images/detalle.png" class="align-center" src="../../_images/detalle.png" />
+<div class="justified-text docutils container">
+<p>Una vez configurada esta tabla y que la instancia nueva este arriba en el servidor cuando se realicen los cambios de estado se buscará en esta tabla y dependiendo de la configuración realizada hará los envíos</p>
+<p>En caso de no requerir esta configuración basta con seguir utilizando el método de lo que hoy es Json Syncout donde configuran la URL en la tabla de la entidad con el alias Salida y se enviara en un método POST con el formato JSON base</p>
+</div>
+</section>
+<section id="configuracion-del-campo-json-sql">
+<h3>Configuración del campo JSON SQL<a class="headerlink" href="#configuracion-del-campo-json-sql" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>El objetivo de este campo es que con una consulta se pueda obtener el JSON con la especificación que el servicio lo pide y poder dar más flexibilidad en caso de que esta llegue a cambiar poderlo modificar directo en el ABM y no en el Syncout.</p>
+<p>Por ejemplo con la siguiente consulta:</p>
+</div>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">SELECT</span>
+<span class="linenos">2</span><span class="w">        </span><span class="n">IdViaje</span><span class="p">,</span><span class="w"> </span><span class="n">Descripcion</span>
+<span class="linenos">3</span><span class="k">FROM</span>
+<span class="linenos">4</span><span class="w">        </span><span class="n">Viaje</span>
+<span class="linenos">5</span><span class="k">WHERE</span>
+<span class="linenos">6</span><span class="w">        </span><span class="n">Viaje</span><span class="p">.</span><span class="n">IdViaje</span><span class="p">.</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">272</span><span class="p">,</span><span class="mi">273</span><span class="p">)</span>
+<span class="linenos">7</span><span class="k">FOR</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">PATH</span>
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<p>Se obtiene el siguiente JSON por la instrucción que tiene el final “FOR JSON PATH”</p>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>[
+<span class="linenos"> 2</span><span class="w">    </span>{
+<span class="linenos"> 3</span><span class="w">        </span>&quot;IdViaje&quot;:<span class="w"> </span>272,
+<span class="linenos"> 4</span><span class="w">        </span>&quot;Descripción&quot;:<span class="w"> </span>&quot;Desc-272&quot;
+<span class="linenos"> 5</span><span class="w">    </span>}
+<span class="linenos"> 6</span><span class="w">    </span>{
+<span class="linenos"> 7</span><span class="w">        </span>&quot;IdViaje&quot;:<span class="w"> </span>273,
+<span class="linenos"> 8</span><span class="w">        </span>&quot;Descripción&quot;:<span class="w"> </span>&quot;Desc-273&quot;
+<span class="linenos"> 9</span><span class="w">    </span>}
+<span class="linenos">10</span>]
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<p><strong>Caso de Uso</strong></p>
+<p>Para guardar el SQL es necesario considerar 1 a 2 parámetros.</p>
+<ol class="arabic simple">
+<li><p>parámetro que es la base de la entidad que estamos enviando (Viaje, Parada, Orden, etc.)</p></li>
+<li><p>parámetros cuando en el JSON se mandará detalle como en viaje se mandará Idparada</p></li>
+</ol>
+<p>Por ejemplo,</p>
+<p>SQL con 2 parámetros, estos siempre llevaran este nombre independiente a la entidad:</p>
+</div>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">select</span>
+<span class="linenos"> 2</span><span class="n">o</span><span class="p">.</span><span class="n">ReferenciaAdicional</span><span class="w"> </span><span class="s1">&#39;orderkey&#39;</span><span class="p">,</span>
+<span class="linenos"> 3</span><span class="n">r</span><span class="p">.</span><span class="n">IdRuta</span><span class="w"> </span><span class="s1">&#39;route&#39;</span><span class="p">,</span>
+<span class="linenos"> 4</span><span class="n">o</span><span class="p">.</span><span class="n">Orden</span><span class="w"> </span><span class="s1">&#39;stop&#39;</span><span class="p">,</span>
+<span class="linenos"> 5</span><span class="n">rtrim</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">Dominio</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;trailernumber&#39;</span><span class="p">,</span>
+<span class="linenos"> 6</span><span class="n">rtrim</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">Dominio</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;susr4&#39;</span><span class="p">,</span>
+<span class="linenos"> 7</span><span class="n">o</span><span class="p">.</span><span class="n">RefOrdenExterna</span><span class="w"> </span><span class="s1">&#39;susr3&#39;</span><span class="p">,</span>
+<span class="linenos"> 8</span><span class="s1">&#39;INT0122-1&#39;</span><span class="w"> </span><span class="s1">&#39;susr1&#39;</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="n">GETDATE</span><span class="p">()</span><span class="w"> </span><span class="s1">&#39;susr2&#39;</span>
+<span class="linenos">10</span><span class="k">from</span><span class="w"> </span><span class="n">ruta</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">with</span><span class="p">(</span><span class="n">nolock</span><span class="p">)</span>
+<span class="linenos">11</span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">orden</span><span class="w"> </span><span class="n">o</span><span class="w">  </span><span class="k">with</span><span class="p">(</span><span class="n">nolock</span><span class="p">)</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">Ruta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">IdRuta</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">IdJornada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">IdJornada</span><span class="p">)</span>
+<span class="linenos">12</span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">Vehiculo</span><span class="w"> </span><span class="n">v</span><span class="w">  </span><span class="k">with</span><span class="p">(</span><span class="n">nolock</span><span class="p">)</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">IdVehiculo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">IdVehiculo</span><span class="p">)</span>
+<span class="linenos">13</span><span class="k">where</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">IdRuta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!!</span><span class="n">ID_ENTIDAD</span><span class="o">!!</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">IdOrden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!!</span><span class="n">ID_ENTIDAD2</span><span class="o">!!</span>
+<span class="linenos">14</span><span class="k">FOR</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">PATH</span><span class="p">,</span><span class="w"> </span><span class="n">WITHOUT_ARRAY_WRAPPER</span>
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<p>Hay casos más complejos donde se necesita obtener un formato con arreglos, ejemplo:</p>
+</div>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">select</span>
+<span class="linenos"> 2</span><span class="n">p</span><span class="p">.</span><span class="n">ReferenciaExterna</span><span class="w"> </span><span class="s1">&#39;externalreceptkey2&#39;</span><span class="p">,</span>
+<span class="linenos"> 3</span><span class="n">p</span><span class="p">.</span><span class="n">ReferenciaAdicional</span><span class="w"> </span><span class="s1">&#39;externreceiptkey&#39;</span><span class="p">,</span>
+<span class="linenos"> 4</span><span class="n">d</span><span class="p">.</span><span class="n">RefDomicilioExterno</span><span class="w"> </span><span class="s1">&#39;storerkey&#39;</span><span class="p">,</span>
+<span class="linenos"> 5</span><span class="mi">2</span><span class="w"> </span><span class="s1">&#39;type&#39;</span><span class="p">,</span>
+<span class="linenos"> 6</span><span class="p">(</span>
+<span class="linenos"> 7</span><span class="w">            </span><span class="k">SELECT</span>
+<span class="linenos"> 8</span><span class="w">            </span><span class="s1">&#39;TEST2226000&#39;</span><span class="w"> </span><span class="s1">&#39;externlineno&#39;</span>
+<span class="linenos"> 9</span><span class="w">            </span><span class="s1">&#39;RETORNO&#39;</span><span class="w">  </span><span class="s1">&#39;toloc&#39;</span>
+<span class="linenos">10</span><span class="w">            </span><span class="s1">&#39;TEST001676&#39;</span><span class="w"> </span><span class="s1">&#39;externreceiptkey&#39;</span>
+<span class="linenos">11</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable01&#39;</span>
+<span class="linenos">12</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable02&#39;</span>
+<span class="linenos">13</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable03&#39;</span>
+<span class="linenos">14</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable04&#39;</span>
+<span class="linenos">15</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable05&#39;</span>
+<span class="linenos">16</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable06&#39;</span>
+<span class="linenos">17</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable07&#39;</span>
+<span class="linenos">18</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable08&#39;</span>
+<span class="linenos">19</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable09&#39;</span>
+<span class="linenos">20</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable10&#39;</span>
+<span class="linenos">21</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable11&#39;</span>
+<span class="linenos">22</span><span class="w">            </span><span class="n">oid</span><span class="p">.</span><span class="n">lottable01</span><span class="w"> </span><span class="s1">&#39;lottable12&#39;</span>
+<span class="linenos">23</span><span class="w">            </span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">Cantidad</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pic</span><span class="p">.</span><span class="n">Cantidad</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;qtyexpected&#39;</span><span class="p">,</span>
+<span class="linenos">24</span><span class="w">            </span><span class="n">prd</span><span class="p">.</span><span class="n">ReferenciaExterna</span><span class="w"> </span><span class="s1">&#39;sku&#39;</span><span class="p">,</span>
+<span class="linenos">25</span><span class="w">            </span><span class="n">d</span><span class="p">.</span><span class="n">RefDomicilioExterno</span><span class="w"> </span><span class="s1">&#39;storerkey&#39;</span>
+<span class="linenos">26</span><span class="w">            </span><span class="k">FROM</span><span class="w"> </span><span class="n">ParadaItem</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pi</span>
+<span class="linenos">27</span><span class="w">            </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">Producto</span><span class="w"> </span><span class="n">prd</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="p">(</span><span class="n">prd</span><span class="p">.</span><span class="n">IdProducto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">.</span><span class="n">IdProducto</span><span class="p">)</span>
+<span class="linenos">28</span><span class="w">            </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">ParadaItemCantidad</span><span class="w"> </span><span class="n">pic</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">IdParadaItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pic</span><span class="p">.</span><span class="n">IdParadaItem</span><span class="p">)</span>
+<span class="linenos">29</span><span class="w">            </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">OrdenItem</span><span class="w"> </span><span class="n">oi</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">IdOrdenItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">IdOrdenItem</span><span class="p">)</span>
+<span class="linenos">30</span><span class="w">            </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">OrdenItem_Dyn</span><span class="w"> </span><span class="n">oid</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="p">(</span><span class="n">oid</span><span class="p">.</span><span class="n">IdOrdenItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oi</span><span class="p">.</span><span class="n">IdOrdenItem</span><span class="p">)</span>
+<span class="linenos">31</span><span class="w">            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">pi</span><span class="p">.</span><span class="n">IdParada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">IdParada</span>
+<span class="linenos">32</span><span class="w">            </span><span class="k">FOR</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">PATH</span>
+<span class="linenos">33</span><span class="w">            </span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">receptdetails</span>
+<span class="linenos">34</span><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">parada</span><span class="w"> </span><span class="n">p</span>
+<span class="linenos">35</span><span class="w">    </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">DomicilioOrden</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">IdDomicilioOrden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">IdDomicilioOrden</span><span class="p">)</span>
+<span class="linenos">36</span><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">IdParada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!!</span><span class="n">ID_ENTIDAD</span><span class="o">!!</span>
+<span class="linenos">37</span><span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">PATH</span><span class="p">,</span><span class="w"> </span><span class="n">WITHOUT_ARRAY_WRAPPER</span><span class="p">,</span><span class="n">INCLUIDE_NULL_VALUES</span>
+</pre></div>
+</div>
+<div class="justified-text docutils container">
+<p>Para estructurar el SQL contaran con el apoyo del equipo DEV por medio de SOP o REQ según corresponda para estructurar lo que se necesite.</p>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="Syncout.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Syncout V2</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Indexsyncout.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Json Syncout</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Syncout Genérico</a><ul>
+<li><a class="reference internal" href="#configuracion-y-uso">Configuración y Uso</a></li>
+<li><a class="reference internal" href="#parametros">Parámetros</a><ul>
+<li><a class="reference internal" href="#parametros-claves-y-descripcion-de-parametros">Parámetros Claves y Descripción de Parámetros</a></li>
+<li><a class="reference internal" href="#procesos">Procesos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#funcionalidad">Funcionalidad</a><ul>
+<li><a class="reference internal" href="#configuracion-json">Configuración JSON</a></li>
+<li><a class="reference internal" href="#configuracion-del-campo-json-sql">Configuración del campo JSON SQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>
