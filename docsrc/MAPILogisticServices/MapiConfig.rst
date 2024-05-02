@@ -63,7 +63,7 @@ Web Services
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Vehículos
       - List<pVehiculo>
       - Lista de Vehículos.
@@ -78,7 +78,7 @@ Web Services
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no.  1: OK ejecución correcta  0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -96,7 +96,7 @@ Web Services
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdViaje
       - Integer
       - Identificación del Viaje para consultar su estado.
@@ -193,7 +193,7 @@ Agregar Ítems a una parada a partir del IdViaje y la ReferenciaExterna.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - ApiKey
       - String
       - Apy Key.
@@ -210,7 +210,7 @@ Agregar Ítems a una parada a partir del IdViaje y la ReferenciaExterna.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List <AgregarParadaResponse>
       - Respuesta del servicio, lista de AgregarParadaResponse (tipo de dato complejo).
@@ -233,7 +233,7 @@ Agregar Ítems a una parada a partir del IdViaje y la ReferenciaExterna.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdViaje
       - Integer
       - Identificación de Viaje para anular en la plataforma UNIGIS. Este número identificador es el retornado por la interfaz al crear un Viaje con el método “CrearViaje”.
@@ -244,7 +244,7 @@ Agregar Ítems a una parada a partir del IdViaje y la ReferenciaExterna.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no.  True: OK ejecución correcta, se anuló el viaje y todos sus elementos relacionados False: ERROR   ocurrió algún problema en la ejecución del servicio, ej. el viaje ya está iniciado o finalizado y por ende no se puede anular.
@@ -260,7 +260,7 @@ Permite validar la ApiKey que será enviada en cada una de las peticiones realiz
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - ApiKeyValida
       - String
       - Api Key.
@@ -271,7 +271,7 @@ Permite validar la ApiKey que será enviada en cada una de las peticiones realiz
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Si la validación es correcta, devolverá un “true” o “false” en caso contrario.
@@ -287,7 +287,7 @@ Recibe un conductor a asignar a una lista de operaciones.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Conductor
       - String
       - Ingresar la referencia externa del conductor que se quiere asignar.
@@ -301,7 +301,7 @@ Recibe un conductor a asignar a una lista de operaciones.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<AgregarParadaResponse>
       - Respuesta del servicio, lista de AgregarParadaResponse (tipo de dato complejo).
@@ -317,7 +317,7 @@ Recibe una lista de tipos de vehículos para asignar a múltiples operaciones y 
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - BorrarAsignaciones
       - Bool
       - Ingresar en true si se quiere borrar las asignaciones previas del tipo vehículo.
@@ -331,7 +331,7 @@ Recibe una lista de tipos de vehículos para asignar a múltiples operaciones y 
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta  O código de error según tabla de código de errores.  0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -348,7 +348,7 @@ Recibe un vehículo a asignar a una lista de operaciones y sucursales.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Vehiculo
       - String
       - Dominio del vehículo.
@@ -381,7 +381,7 @@ Recibe una lista de vehículos a asignar a una lista de operaciones y sucursales
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Vehiculo
       - List<String>
       - Dominio del vehículo.
@@ -401,7 +401,7 @@ Recibe una lista de vehículos a asignar a una lista de operaciones y sucursales
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta O código de error según tabla de código de errores.  0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -417,7 +417,7 @@ Realiza un recalculo del viaje.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdViaje
       - Int
       - Número del viaje asignado por UNIGIS.
@@ -431,7 +431,7 @@ Realiza un recalculo del viaje.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - False si no encuentra el viaje y true después de la asignación de recalculo exitosa.
@@ -447,7 +447,7 @@ Permite realizar el cambio de estado de diferentes entidades.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Entidad
       - String
       - Nombre de la entidad donde se realizará el cambio de estado.
@@ -467,7 +467,7 @@ Permite realizar el cambio de estado de diferentes entidades.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. True: OK ejecución correcta, se relacionaron los viajes False: ERROR ocurrió algún problema en la ejecución del servicio, la ApiKey no es válida o el tipo de relación indicado no existe.
@@ -483,7 +483,7 @@ Permite cambiar el estado de los recursos ingresados.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Entidad
       - String
       - Nombre de la entidad donde se realizará el cambio de estado.
@@ -515,7 +515,7 @@ Permite cambiar el estado de los recursos ingresados.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. True: OK ejecución correcta, se relacionaron los viajes False: ERROR ocurrió algún problema en la ejecución del servicio, la ApiKey no es válida o el tipo de relación indicado no existe.
@@ -537,7 +537,7 @@ Permite cambiar el estado de los recursos ingresados.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdViaje
       - Integer
       - Identificación única del viaje. Se envía -1 si se desea ignorar en función de la referencia externa.
@@ -555,7 +555,7 @@ Permite cambiar el estado de los recursos ingresados.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Verdadero en caso de realizar el cambio.
@@ -571,7 +571,7 @@ Permite realizar la consulta de documentos por un rango de fechas de un estado.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - FechaDesde
       - DateTime
       - Fecha inicial de consulta.
@@ -589,7 +589,7 @@ Permite realizar la consulta de documentos por un rango de fechas de un estado.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Boolean
       - Verdadero en caso de realizar el cambio.
@@ -605,7 +605,7 @@ Recupera la información general del conductor desde cualquier parámetro que se
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - ReferenciaExterna
       - String
       - Referencia del conductor.
@@ -622,7 +622,7 @@ Recupera la información general del conductor desde cualquier parámetro que se
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - pConductor
       - Objeto complejo.
@@ -638,7 +638,7 @@ Permite obtener la razón social de la empresa a la cual pertenece la operación
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - OperationReference
       - String
       - Referencia de la operación que se desea consultar.
@@ -649,7 +649,7 @@ Permite obtener la razón social de la empresa a la cual pertenece la operación
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - String
       - Razón social de la empresa ligada a la operación consultada.
@@ -665,7 +665,7 @@ Consulta estados de paradas en viaje.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdViaje
       - Int
       - Id del viaje UNIGIS.
@@ -676,7 +676,7 @@ Consulta estados de paradas en viaje.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - pEstadosViaje
       - Objeto complejo.
@@ -692,7 +692,7 @@ Permite consultar la etiqueta o etiquetas asignadas a una parada del viaje.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - ApiKey
       - String
       - ApiKey.
@@ -701,7 +701,7 @@ Permite consultar la etiqueta o etiquetas asignadas a una parada del viaje.
       - Id de la etiqueta-parada que se desea consultar.
     * - FromDate
       - DateTime
-      - Fecha de inicio de rango de búsqueda de la fecha de creación de la etiqueta
+      - Fecha de inicio de rango de búsqueda de la fecha de creación de la etiqueta.
     * - ToDate
       - DateTime
       - Fecha de fin de rango de búsqueda de la fecha de creación de la etiqueta.
@@ -712,7 +712,7 @@ Permite consultar la etiqueta o etiquetas asignadas a una parada del viaje.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - ConsultarEtiquetasResponse
       - Tipo de dato complejo con toda la información de la consulta (ver datos completos de la ficha detallados más adelante).
@@ -728,7 +728,7 @@ Retorna un tipo de datos complejo con la URL del mapa, geo codificación reversa
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - ApiKey
       - String
       - ApiKey.
@@ -751,7 +751,7 @@ Retorna un tipo de datos complejo con la URL del mapa, geo codificación reversa
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - ConsultarMapaVehiculoResultado
       - Tipo de datos complejo con la respuesta del WS.
@@ -774,7 +774,7 @@ Servicio que retorna un tipo de dato complejo con la información de la orden de
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - ApiKey
       - String
       - ApiKey.
@@ -797,7 +797,7 @@ Servicio que retorna un tipo de dato complejo con la información de la orden de
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - pOrdenEntrega
       - Objeto con la información relativa a la orden de entrega.
@@ -813,7 +813,7 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - ApiKey
       - String
       - ApiKey.
@@ -827,7 +827,7 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - pOrdenPedido
       - Objeto con la información relativa al pedido.
@@ -843,7 +843,7 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - ApiKey
       - String
       - ApiKey.
@@ -857,7 +857,7 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado (*)
       - pOrdenPedido
       - Objeto con la información relativa al pedido.
@@ -875,7 +875,7 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdViaje
       - Integer
       - Identificación del Viaje para consultar su estado. Si se ingresa el Viaje se debe ingresar también la Secuencia que identifica a la Parada / Cliente a consultar.
@@ -898,7 +898,7 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - ConsultarParadaResultado
       - Tipo de dato complejo con toda la información de la consulta (ver datos completos de la ficha detallados más adelante).
@@ -916,7 +916,7 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdViaje
       - Integer
       - Identificación del Viaje para consultar su estado. Si se ingresa el Viaje se debe ingresar también la Secuencia que identifica a la Parada / Cliente a consultar.
@@ -955,7 +955,7 @@ Permite consultar información de trace de la parada de un estado en especifico.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - IdParada
       - Int
       - Identificador de la parada.
@@ -978,7 +978,7 @@ Permite consultar información de trace de la parada de un estado en especifico.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - pRecursoExtended
       - Objeto con los trace de la parada.
@@ -995,7 +995,7 @@ Permite consultar la información de los recursos.
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Tipo de Recurso
       - String
       - Referencia externa del tipo de recurso a consultar.
@@ -1024,7 +1024,7 @@ Permite consultar la información de los recursos.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - pRecursoExtended
       - Objeto con los trace del recurso.
@@ -1043,25 +1043,25 @@ Consulta los recursos del vehículo
       - Descripción
     * - Dominio
       - String
-      - Referencia externa del tipo de recurso a consultar
+      - Referencia externa del tipo de recurso a consultar.
     * - ReferenciaRecurso
       - String
-      - Referencia externa del recurso
+      - Referencia externa del recurso.
     * - Estado
       - String
       - n/a
     * - EstadoRecurso
       - String
-      - Referencia del estado de recurso
+      - Referencia del estado de recurso.
     * - FechaCreacion
       - String
-      - Entidad Deposito, viaje, clienteOrden, conductor, transporte, cliente, domicilioOrden, parada
+      - Entidad Deposito, viaje, clienteOrden, conductor, transporte, cliente, domicilioOrden, parada.
     * - FechaEstadoRecurso
       - String
-      - Referencia externa de la entidad
+      - Referencia externa de la entidad.
     * - FechaModificacion
       - DateTime
-      - Rango de fechas inicio
+      - Rango de fechas inicio.
 
 
 .. list-table:: Retorno
@@ -1070,7 +1070,7 @@ Consulta los recursos del vehículo
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - pRecursoExtended
       - Objeto con los trace del recurso.
@@ -1109,7 +1109,7 @@ Regresa la información de todas las transiciones o cambios de estados por los q
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - ConsultarViajeResultadoBasic
       - Objeto complejo.
@@ -1127,7 +1127,7 @@ Regresa la información de todas las transiciones o cambios de estados por los q
 
     * - Parámetros Entrada
       - Tipo de Dato
-      - Descripción
+      - Descripción.
     * - Dominio
       - String
       - Placa/Dominio/Identificación del vehículo a consultar.
@@ -1138,7 +1138,7 @@ Regresa la información de todas las transiciones o cambios de estados por los q
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - Integer
       - Retorna la cantidad de vehículos que se ajustan a la placa/dominio o identificación pasada como parámetro.
@@ -1167,7 +1167,7 @@ Regresa la información de todas las transiciones o cambios de estados por los q
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - ConsultarViajeResultado
       - Tipo de dato complejo con toda la información de la consulta (ver datos completos de la ficha detallados más adelante).
@@ -1210,7 +1210,7 @@ Permite regresar información de una lista de viajes con un rango de fechas, los
       - Permite regresar información de los recursos, default true.
     * - CargarUltimaParadaVisitada
       - Bool
-      - Permite regresar el ultimo estado, default true
+      - Permite regresar el ultimo estado, default true.
     * - CargarTransporte
       - Bool
       - Permite regresar información del transporte, default true.
@@ -1221,7 +1221,7 @@ Permite regresar información de una lista de viajes con un rango de fechas, los
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - ConsultarViajeResultado
       - Tipo de dato complejo con toda la información de la consulta (ver datos completos de la ficha detallados más adelante).
@@ -1251,7 +1251,7 @@ Permite consultar un viaje por la referencia externa del mismo.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - List<ConsultarViajeResultado>
       - List<ConsultarViajeResultado>	Tipo de dato complejo con toda la información de la consulta (ver datos completos de la ficha detallados).
@@ -1284,7 +1284,7 @@ Permite consultar un viaje por la referencia externa del mismo y por la fecha de
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado (*)
       - List<ConsultarViajeResultado>
       - Tipo de dato complejo con toda la información de la consulta.
@@ -1323,7 +1323,7 @@ Busca los viajes activos del domicilio orden y los finalizados e inactivos del d
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - ConsultarViajeResultado
       - Tipo de dato complejo con toda la  información de la consulta (ver datos completos de la ficha detallados más adelante).
@@ -1362,7 +1362,7 @@ Busca los viajes activos del domicilio orden y los finalizados e inactivos del d
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<ConsultarViajeResultado>
       - Tipo de dato complejo con toda la información de la consulta.
@@ -1389,7 +1389,7 @@ Permite crear beneficiarios los cuales se puede asignar transporte.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta O código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1419,7 +1419,7 @@ Crea o modifica el maestro de clientes dadores de la carga.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta O código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1575,7 +1575,7 @@ Crea o modifica documentos
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - 1: OK ejecución correcta O código de error según tabla de código de  errores. 0: ERROR ocurrió algún problema en la  ejecución del servicio.
@@ -1635,7 +1635,7 @@ Crea o modifica empresas de custódia.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - 1: OK ejecución correcta O código de error según tabla de código de  errores. 0: ERROR ocurrió algún problema en la  ejecución del servicio.
@@ -1665,7 +1665,7 @@ Permite crear Guías de Liquidación, sus Incidencias y crear los viajes asociad
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - 1: OK ejecución correcta O código de error según tabla de código de  errores. 0: ERROR ocurrió algún problema en la  ejecución del servicio.
@@ -1695,7 +1695,7 @@ Permite crear ordenes de trabajo. Aplica para "CrearOrdenesDetrabajo" 2.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - 1: OK ejecución correcta O código de error según tabla de código de  errores. 0: ERROR ocurrió algún problema en la  ejecución del servicio.
@@ -1726,7 +1726,7 @@ Permite crear ordenes de trabajo. Aplica para "CrearOrdenesDetrabajo" 2.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - 1: OK ejecución correcta O código de error según tabla de código de  errores. 0: ERROR ocurrió algún problema en la  ejecución del servicio.
@@ -1755,7 +1755,7 @@ Permite crear ordenes de trabajo. Aplica para "CrearOrdenesDetrabajo" 2.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - 1: OK ejecución correcta O código de error según tabla de código de  errores. 0: ERROR ocurrió algún problema en la  ejecución del servicio.
@@ -1782,7 +1782,7 @@ Método que permite el registro de pack y tipo packs que serán utilizados dentr
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1812,7 +1812,7 @@ Crea o modifica el catálogo de productos.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1842,7 +1842,7 @@ Crea / modifica Propietarios.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1872,7 +1872,7 @@ Crea o modifica el catálogo de recursos
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1902,7 +1902,7 @@ Crea un remito asociado a una orden de entrega.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1932,7 +1932,7 @@ Crea una ruta.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1963,7 +1963,7 @@ Permite crear tipos de impuesto por cliente.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -1993,7 +1993,7 @@ Crear tipos de vehículo.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2056,7 +2056,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2122,7 +2122,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Devuelve el código de error en caso de suceder alguno (ver Lista de Errores) < 0 o bien la identificación de viaje.
@@ -2193,7 +2193,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Integer
       - Devuelve el código de error en caso de suceder alguno (ver Lista de Errores) < 0 o bien la identificación de viaje.
@@ -2273,7 +2273,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Devuelve el código de error en caso de suceder alguno (ver Lista de Errores) < 0 o bien la identificación de viaje.
@@ -2353,7 +2353,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Devuelve el código de error en caso de suceder alguno (ver Lista de Errores) < 0 o bien la identificación de viaje.
@@ -2421,7 +2421,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Devuelve el código de error en caso de suceder alguno (ver Lista de Errores) < 0 o bien la identificación de viaje.
@@ -2501,7 +2501,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Devuelve el código de error en caso de suceder alguno (ver Lista de Errores) < 0 o bien la identificación de viaje.
@@ -2671,7 +2671,7 @@ Aplica para CrearVehiculos_ValidarExistencia
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Devuelve el código de error en caso de suceder alguno (ver Lista de Errores) < 0 o bien la identificación de viaje.
@@ -2701,7 +2701,7 @@ Crear o Modificar depósitos.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2791,7 +2791,7 @@ Elimina recurso desde una referencia.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2823,7 +2823,7 @@ Elimina recurso desde una referencia.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2856,7 +2856,7 @@ Elimina recurso desde una referencia.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2898,7 +2898,7 @@ Eliminar un ítem de una parada utilizando la fecha de la jornada para búsqueda
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2941,7 +2941,7 @@ Eliminar un ítem de una parada utilizando la fecha de la jornada para búsqueda
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -2971,7 +2971,7 @@ Permite finalizar un viaje.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Boolean
       - Flag que indica la eliminación del viaje (true = finalizado).
@@ -2998,7 +2998,7 @@ Se modifican los campos de cantidad en ítems, aplica para "ModificarCantidadRec
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3025,7 +3025,7 @@ Modificar el estado de documentos por IdDocumento de forma masiva.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3052,7 +3052,7 @@ Modifica el estado de una guía.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3079,7 +3079,7 @@ Modifica el estado de una liquidación.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3111,7 +3111,7 @@ Modifica el estado de una liquidación.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Id Unigis de la orden o en su defecto el código de error (número negativo).
@@ -3141,7 +3141,7 @@ Permite modificar el estado de un pedido (ver el tipo de dato pEstadoOrdenPedido
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Id Unigis del pedido o en su defecto el código de error (número negativo).
@@ -3171,7 +3171,7 @@ Permite modificar el estado de una parada. El nuevo estado debe estar dentro de 
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Retorna el identificador del registro de cambio de estado para la parada. Este registro es único y puede servir para futuras referencias. En caso de error: -5: ERROR_REFERENCIA, -7: ERROR_BASE_DE_DATOS, -9: ERROR_ESTADO.
@@ -3211,7 +3211,7 @@ Permite modificar el estado de una parada. El nuevo estado debe estar dentro de 
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Integer
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3253,7 +3253,7 @@ Modifica el estado de un viaje.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Integer
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3283,7 +3283,7 @@ Modificar el estado de un viaje asociando archivos al cambio de estado.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Integer
       - Id Unigis del pedido o en su defecto el código de error (número negativo).
@@ -3313,7 +3313,7 @@ Modificar el estado de un viaje completo.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Integer
       - Id Unigis del pedido o en su defecto el código de error (número negativo).
@@ -3355,7 +3355,7 @@ Modificar el ítem de una parada utilizando la fecha de la jornada para búsqued
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3400,7 +3400,7 @@ Modificar un ítem de una parada utilizando el id del viaje para la búsqueda.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3430,7 +3430,7 @@ Modificar paradas existentes.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3463,7 +3463,7 @@ Modificar los datos de un remito asociado a una orden.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3493,7 +3493,7 @@ Modificar los datos de una ruta.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3523,7 +3523,7 @@ Modifica una Ruta Avanzado.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3553,7 +3553,7 @@ Modifica el valor de las tarifas no de las fórmulas.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3592,7 +3592,7 @@ Modifica los datos de un viaje.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3625,7 +3625,7 @@ Modifica los datos de un viaje. Incluye la modificación de los productos en los
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Int
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta o código de error según tabla de código de errores. 0: ERROR ocurrió algún problema en la ejecución del servicio.
@@ -3655,7 +3655,7 @@ Mueve paradas de un viaje origen a un destino.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - ApiResultado
       - Objeto complejo de respuesta.
@@ -3685,7 +3685,7 @@ Obtiene los documentos asociados a una entidad.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - ObtenerDocumentosRespuesta
       - Objeto complejo de respuesta.
@@ -3721,7 +3721,7 @@ Obtiene un listado de estadias en un rango de fechas.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<pEstadiaParada>
       - Lista de estadías.
@@ -3775,7 +3775,7 @@ Retorna las guías de liquidación filtrando por los datos ingresados, como mín
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<pGuiaLiquidacion>
       - Lista de pGuiaLiquidacion, tipo de dato complejo con la información de la guía.
@@ -3834,7 +3834,7 @@ Retorna las guías de liquidación filtrando por los datos ingresados, como mín
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<pGuiaLiquidacion>
       - Lista de pGuiaLiquidacion, tipo de dato complejo con la información de la guía.
@@ -3919,7 +3919,7 @@ Retorna el detalle de una incidencia.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - pIncidencia
       - Objeto complejo con el detalle de la incidencia.
@@ -3941,7 +3941,7 @@ Retorna la liquidación con el detalle de sus guías.
       - ApiKey.
     * - IdLiquidacion 
       - Int
-      - Identificador de la liquidación .
+      - Identificador de la liquidación.
     * - ReferenciaLiquidacion 
       - String
       - Referencia externa de la liquidación.
@@ -3952,7 +3952,7 @@ Retorna la liquidación con el detalle de sus guías.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - pLiquidacion
       - Objeto complejo con el detalle de la liquidación.
@@ -3979,7 +3979,7 @@ Retorna las liquidaciones en estados configurados por Action.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - List<pLiquidacion>
       - Objeto complejo con el detalle de la liquidación.
@@ -4051,7 +4051,7 @@ Devuelve las ordenes asociadas a una ruta y a una jornada.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - List<pOrdenEntrega>
       - Objeto complejo con el detalle de las ordenes en la ruta.
@@ -4084,7 +4084,7 @@ Obtiene la información de la ruta y ordenes.
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - pRuta
       - Objeto complejo con el detalle de la ruta.
@@ -4114,7 +4114,7 @@ Retorna las rutas asociadas a los viajes presentes en la jornada indicada en la 
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - List<pRuta>
       - Lista de rutas, cada ruta contiene una lista de Órdenes de entrega con sus detalles completos.
@@ -4146,7 +4146,7 @@ Retorna las rutas asociadas a los viajes presentes en la jornada indicada en la 
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<pRuta>
       - Lista de rutas, cada ruta contiene una lista de Órdenes de entrega con sus detalles completos.
@@ -4182,7 +4182,7 @@ Retorna las órdenes de las rutas solicitadas. Aplica para ObtenerRutas_Ruta0Req
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<pRuta>
       - Lista de rutas, cada ruta contiene una lista de Órdenes de entrega con sus detalles completos.
@@ -4218,7 +4218,7 @@ Obtiene los viajes en una fecha determinada con la opción de filtrar por sucurs
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - List<pViaje>
       - Regresa una lista de los viajes recuperados.
@@ -4260,7 +4260,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción
     * - Resultado
       - Boolean 
       - Respuesta del servicio.
@@ -4292,7 +4292,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
 
     * - Parámetros Retorno
       - Tipo de Dato
-      - Descripción. 
+      - Descripción 
     * - Resultado
       - Boolean 
       - Respuesta del servicio.
@@ -4373,7 +4373,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Identifica al acompañante regular del móvil.
     * - Aseguradora	
       - String	
-      - Indica contra que compañía está asegurado el     v 
+      - Indica contra que compañía está asegurado el v.
     * - Contrato	
       - String	
       - Indica referencia al contrato del vehículo con la compañía.
@@ -4666,19 +4666,19 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - Documento	
       - List<int>	
-      - Lista de id´s de documentos que se cambiaran de estado 
+      - Lista de id´s de documentos que se cambiaran de estado. 
     * - Estado	
       - String	
       - Descripción del estado documento a modificar
     * - Motivo	
       - String	
-      - Si hay alguna incidencia indicar el motivo
+      - Si hay alguna incidencia indicar el motivo.
     * - Observaciones	
       - String	
-      - Si se requiere agregar alguna nota del cambio de estado se hace en este apartado
+      - Si se requiere agregar alguna nota del cambio de estado se hace en este apartado.
     * - ValidarTransicion	
       - Bool	
-      - Indica si se debe o no validar que se realizó la transición al momento de cambio de estado
+      - Indica si se debe o no validar que se realizó la transición al momento de cambio de estado.
 
 2.8. AgregarParadaResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4745,11 +4745,11 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - SI
     * - NroPuerta	
       - String	
-      - Numeración indicando la posición dentro del eje vial	
+      - Numeración indicando la posición dentro del eje vial.
       - NO
     * - EntreCalles	
       - String	
-      - En caso de conocerla y para aportar más datos al motor georeferenciador se puede indicar la calle con la cual hace intersección	
+      - En caso de conocerla y para aportar más datos al motor georeferenciador se puede indicar la calle con la cual hace intersección.
       - NO
     * - DivisionPolitica/Barrio	
       - String	
@@ -4781,27 +4781,27 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - Latitud	
       - Double	
-      - Latitud geográfica en grados decimales	
+      - Latitud geográfica en grados decimales.
       - SI
     * - Longitud	
       - Double	
-      - Longitud geográfica en grados decimales	
+      - Longitud geográfica en grados decimales.
       - SI
     * - Volumen	
       - Double	
-      - Volumen de los artículos que se entregan en la parada	
+      - Volumen de los artículos que se entregan en la parada.	
       - NO
     * - Peso	
       - Double	
-      - Peso de los artículos que se entregan en la parada	
+      - Peso de los artículos que se entregan en la parada.	
       - NO
     * - Bultos	
       - Double	
-      - Cantidad de bultos a entregar en la parada	
+      - Cantidad de bultos a entregar en la parada.	
       - NO
     * - Valor	
       - Double	
-      - Valor de los artículos a entregar en la parada	
+      - Valor de los artículos a entregar en la parada.	
       - NO
     * - Pallets	
       - Double	
@@ -4809,7 +4809,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - Telefono	
       - String	
-      - Número telefónico de contacto de la parada	
+      - Número telefónico de contacto de la parada.	
       - NO
     * - Telefono2	
       - String	
@@ -4991,16 +4991,16 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - IdGuia	
       - Int	
-      - Id de la guía que cambiara de estado
+      - Id de la guía que cambiara de estado.
     * - Estado	
       - String	
       - Descripción del estado guía a modificar
     * - ReferenciaGuia	
       - String	
-      - Se puede buscar por id o por referencia de la guía
+      - Se puede buscar por id o por referencia de la guía.
     * - Observaciones	
       - String	
-      - Si se requiere agregar alguna nota del cambio de estado se hace en este apartado
+      - Si se requiere agregar alguna nota del cambio de estado se hace en este apartado.
 
 2.12. pEstadoLiquidacion 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5075,16 +5075,16 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - RefDepositoExterno	
       - String	
-      - Código, Referencia externa del deposito
+      - Código, Referencia externa del deposito.
     * - Descripción	
       - String	
-      - Descripción del depósito/bodega
+      - Descripción del depósito/bodega.
     * - Direccion	
       - String	
-      - Numero de orden en la secuencia de entrega
+      - Numero de orden en la secuencia de entrega.
     * - Ciudad	
       - String	
-      - Ciudad donde se encuentra el deposito 
+      - Ciudad donde se encuentra el deposito. 
     * - Municipio	
       - String	
       - 
@@ -5093,13 +5093,13 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - Calle	
       - String	
-      - Calle donde está ubicado el deposito
+      - Calle donde está ubicado el deposito.
     * - NroPuerta	
       - String	
-      - Numero de puerta de la calle del depósito/bodega
+      - Numero de puerta de la calle del depósito/bodega.
     * - EntreCalle	
       - String	
-      - Entrecalle, intersección si el dato existiera
+      - Entrecalle, intersección si el dato existiera.
     * - DivisionPolitica4/Barrio	
       - String	
       - Subdivisión política, está dentro total o parcialmente de un municipio o localidad, divisiones políticas de nivel 4, ej: Barrio, Colonia.
@@ -5126,22 +5126,22 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Tiempo de espera en el depósito.
     * - Latitud	
       - Double	
-      - Latitud de la ubicación del deposito
+      - Latitud de la ubicación del deposito.
     * - Longitud	
       - Double	
-      - Longitud de la ubicación del deposito
+      - Longitud de la ubicación del deposito.
     * - X	
       - Double	
-      - Punto geográfico
+      - Punto geográfico.
     * - Y	
       - Double	
-      - Punto geográfico
+      - Punto geográfico.
     * - DistanciaMaxima	
       - Double	
-      - Kilómetros de distancia máxima 
+      - Kilómetros de distancia máxima. 
     * - CampoDInamico* 	
       - List<CampoValor>	
-      - Lista de datos dinámicos asociados al deposito 
+      - Lista de datos dinámicos asociados al deposito. 
 
 2.15. pRemito
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5226,7 +5226,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Referencia externa de la operación.
     * - Cantidad	
       - Integer	
-      - Cantidad Opcional
+      - Cantidad Opcional.
     * - CantidadMaxima	
       - Integer	
       - Cantidad Máximo de CodigoSucursalOperacion.
@@ -5366,11 +5366,11 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Req
     * - RefCliente	
       - String	
-      - Referencia, código, o número de cliente en sistemas externos	
+      - Referencia, código, o número de cliente en sistemas externos.	
       - SI
     * - RazonSocial	
       - String	
-      - Razón social del cliente	
+      - Razón social del cliente.
       - SI
     * - Teléfono	
       - String	
@@ -5426,15 +5426,15 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - País	
       - String	
-      - País, desagregado de la dirección del cliente	
+      - País, desagregado de la dirección del cliente.
       - NO
     * - Latitud	
       - Double	
-      - Latitud de la ubicación del cliente, el sistema soporta más de una. En casos determinado esto no es necesario porque la ge oposición de la dirección de entrega viene dada por la parada	
+      - Latitud de la ubicación del cliente, el sistema soporta más de una. En casos determinado esto no es necesario porque la ge oposición de la dirección de entrega viene dada por la parada.	
       - NO
     * - Longitud	
       - Double	
-      - Longitud de la ubicación del cliente, el sistema soporta más de una. En casos determinado esto no es necesario porque la ge oposición de la dirección de entrega viene dada por la parada	
+      - Longitud de la ubicación del cliente, el sistema soporta más de una. En casos determinado esto no es necesario porque la ge oposición de la dirección de entrega viene dada por la parada.	
       - NO
     * - RefDomicilioExterno	
       - String	
@@ -5442,51 +5442,51 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - DomicilioDescripcion	
       - String	
-      - Es la descripción del domicilio del cliente	
+      - Es la descripción del domicilio del cliente.	
       - NO
     * - InicioHorario1	
       - Integer	
-      - Inicio de la primera ventana horaria en HHMM	
+      - Inicio de la primera ventana horaria en HHMM.	
       - NO
     * - FinHorario1	
       - Integer	
-      - Fin de la primera ventana horaria en HHMM	
+      - Fin de la primera ventana horaria en HHMM.	
       - NO
     * - InicioHorario2	
       - Integer	
-      - Inicio de la segunda ventana horaria en HHMM	
+      - Inicio de la segunda ventana horaria en HHMM.	
       - NO
     * - FinHorario2	
       - Integer	
-      - Fin de la segunda ventana horaria en HHMM	
+      - Fin de la segunda ventana horaria en HHMM.	
       - NO
     * - TiempoEspera	
       - Integer	
-      - Tiempo estimado para la realizar la entrega	
+      - Tiempo estimado para la realizar la entrega.	
       - NO
     * - RazonSocialFiscal	
       - String	
-      - Descripción de la razón Social fiscal del cliente	
+      - Descripción de la razón Social fiscal del cliente.	
       - NO
     * - IdentificadorFiscal	
       - String	
-      - Identificador fiscal del Cliente	
+      - Identificador fiscal del Cliente.	
       - NO
     * - RequiereTurno	
       - String	
-      - Descripcion si requiere turno el cliente	
+      - Descripcion si requiere turno el cliente.	
       - NO
     * - Int1	
       - Integer	
-      - Dato adicional de tipo entero	
+      - Dato adicional de tipo entero.
       - NO
     * - Int2	
       - Integer	
-      - Dato adicional de tipo entero 	
+      - Dato adicional de tipo entero.	
       - NO
     * - Varchar1	
       - String	
-      - Dato adicional de tipo varchar	
+      - Dato adicional de tipo varchar.	
       - NO
     * - Varchar2	
       - String	
@@ -5510,11 +5510,11 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - TipoDocumento	
       - String	
-      - Descripción del tipo documento del cliente	
+      - Descripción del tipo documento del cliente.	
       - NO
     * - CargaExclusiva	
       - Bool	
-      - Valor True o False si tiene Carga Exclusiva el cliente	
+      - Valor True o False si tiene Carga Exclusiva el cliente.	
       - NO
     * - DomicilioCodigoPostal	
       - String	
@@ -5522,23 +5522,23 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - DomicilioFiscal	
       - pDomicilio	
-      - Objeto pDomicilio 	
+      - Objeto pDomicilio. 	
       - NO
     * - CampoDinamico	
       - List<CampoValor>	
-      - Lista de objeto Campo-Valor	
+      - Lista de objeto Campo-Valor.	
       - NO
     * - CampoDinamicoDomicilio	
       - List<CampoValor>	
-      - Lista de objeto Campo-Valor	
+      - Lista de objeto Campo-Valor.	
       - NO
     * - IgnorarOperacion	
       - Bool	
-      - Valor True o False si se ignora la Operación del cliente	
+      - Valor True o False si se ignora la Operación del cliente.	
       - NO
     * - IgnorarOperacionDomicilioOrden	
       - Bool	
-      - Valor True o False si se ignora la operación Domicilio orden del cliente	
+      - Valor True o False si se ignora la operación Domicilio orden del cliente.	
       - NO
     * - CrearDomicilioOrden	
       - Bool	
@@ -5558,7 +5558,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - IntegrarRNDC	
       - Bool	
-      - Valor True o false si se Integra el Cliente a RNDC	
+      - Valor True o false si se Integra el Cliente a RNDC.	
       - NO
     * - RefExternaDocumentoFiscal	
       - String	
@@ -5570,7 +5570,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - TipoServicio	
       - List<pTipoServicio>	
-      - Lista de objeto TipoServicio del cliente	
+      - Lista de objeto TipoServicio del cliente.	
       - NO
 
 2.22. pCustodio
@@ -5588,7 +5588,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Nombre del custodio.
     * - Apellido	
       - String	
-      - Apellido del custodio
+      - Apellido del custodio.
     * - Email	
       - String	
       - Correo electrónico asignado al custodio.
@@ -5629,37 +5629,37 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Indica si el resultado de la operación fue exitoso o no. 1: OK ejecución correcta, devuelve los parámetros 0: ERROR ocurrió algún problema en la ejecución del servicio, posiblemente el Viaje+Secuencia o el Cliente requerido no existen.
     * - ViajeFinalizado	
       - bool	
-      - Indica si el Viaje ha finalizado. 0: VIAJE ACTIVO el viaje sigue en ejecución 1: VIAJE_FINALIZADO ya se terminó la ejecución
+      - Indica si el Viaje ha finalizado. 0: VIAJE ACTIVO el viaje sigue en ejecución 1: VIAJE_FINALIZADO ya se terminó la ejecución.
     * - IdViaje	
       - Integer	
-      - Devuelve el identificar del Viaje de la Parada si la búsqueda se realizó por Referencia de Cliente
+      - Devuelve el identificar del Viaje de la Parada si la búsqueda se realizó por Referencia de Cliente.
     * - ViajeReferenciaExterna	
       - String	
       - Referencia Externa del Viaje.
     * - Secuencia	
       - Integer	
-      - Devuelvo el nro. de secuencia de la Parada dentro del Viaje (también cuando se realiza la búsqueda por cliente)
+      - Devuelvo el nro. de secuencia de la Parada dentro del Viaje (también cuando se realiza la búsqueda por cliente).
     * - EstadoParada	
       - String	
-      - Devuelve el valor texto del Estado de la Parada en la plataforma UNIGIS, según se definió en la configuración interna (CUMPLIDA, ANULADA, PENDIENTE, etc.)
+      - Devuelve el valor texto del Estado de la Parada en la plataforma UNIGIS, según se definió en la configuración interna (CUMPLIDA, ANULADA, PENDIENTE, etc.).
     * - HorarioParadaRealInicio	
       - DateTime	
-      - Fecha y hora real que el Vehículo llego a la Parada según lo reporta el control logístico
+      - Fecha y hora real que el Vehículo llego a la Parada según lo reporta el control logístico.
     * - HorarioParadaRealFin	
       - DateTime	
-      - Fecha y hora real que el Vehículo salió de la Parada según lo reporta el control logístico
+      - Fecha y hora real que el Vehículo salió de la Parada según lo reporta el control logístico.
     * - RefDocumento	
       - String	
-      - Identificación de documento (pedido, factura u otro) en el sistema externo propio de la empresa correspondiente a la Parada
+      - Identificación de documento (pedido, factura u otro) en el sistema externo propio de la empresa correspondiente a la Parada.
     * - RefDocumentoAdicional	
       - String	
-      - Identificación adicional de documento externo (pedido, factura u otro) en el sistema propio de la empresa
+      - Identificación adicional de documento externo (pedido, factura u otro) en el sistema propio de la empresa.
     * - RefCliente	
       - String	
-      - Identificación del Cliente asociado con la Parada según referencia externa ingresada originalmente
+      - Identificación del Cliente asociado con la Parada según referencia externa ingresada originalmente.
     * - Transporte	
       - String	
-      - Nombre de la empresa de Transporte que realiza la visita al Cliente
+      - Nombre de la empresa de Transporte que realiza la visita al Cliente.
     * - Dominio	
       - String	
       - Dominio (placa) del vehículo.
@@ -5710,58 +5710,58 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Dato de salida, indica el horario estimado de visita de la orden en una ruta.
     * - FinHorarioPlanificado	
       - DateTime	
-      - Data de salida, indica el horario estimado de visita de la orden de una ruta (Inicio + TiempoEspera)
+      - Data de salida, indica el horario estimado de visita de la orden de una ruta (Inicio + TiempoEspera).
     * - ETA	
       - DateTime	
       - Hora Estimada de llegada.
     * - Cliente	
       - pCliente	
-      - Objeto pCliente
+      - Objeto pCliente.
     * - ClienteDador	
       - pClienteDador	
-      - Objeto pClienteDador
+      - Objeto pClienteDador.
     * - OrdenParada	
       - pOrdenParada	
-      - Objeto pOrdenParada
+      - Objeto pOrdenParada.
     * - Fotos	
       - List<pFoto>	
-      - Lista de objeto pFoto
+      - Lista de objeto pFoto.
     * - Bitacora	
       - List<pBitacora>	
-      - Lista de objeto pBitacora
+      - Lista de objeto pBitacora.
     * - Items	
       - List<ConsultarParadaResultadoItem>	
-      - Lista de objeto ConsultarParadaResultadoItem
+      - Lista de objeto ConsultarParadaResultadoItem.
     * - Recursos	
       - List<pRecursos>	
-      - Lista de objeto pRecursos
+      - Lista de objeto pRecursos.
     * - Dinamicos	
       - List<CampoValor>	
-      - Lista de objeto Campo-Valor
+      - Lista de objeto Campo-Valor.
     * - Latitud	
       - Double	
-      - Latitud geográfica en grados decimales
+      - Latitud geográfica en grados decimales.
     * - Bultos	
       - Double	
-      - Cantidad de bultos a entregar en la parada
+      - Cantidad de bultos a entregar en la parada.
     * - Peso	
       - Double	
-      - Peso de los artículos que se entregan en la parada
+      - Peso de los artículos que se entregan en la parada.
     * - ValorDeclarado	
       - Double	
-      - Valor declarado de la parada
+      - Valor declarado de la parada.
     * - Longitud	
       - Double	
-      - Longitud geográfica en grados decimales
+      - Longitud geográfica en grados decimales.
     * - ValorACobrar	
       - Double	
-      - Valor por cobrar de la parada
+      - Valor por cobrar de la parada.
     * - ValorCobrado	
       - Double	
-      - Valor ya cobrado de la parada
+      - Valor ya cobrado de la parada.
     * - IdFormaPago	
       - Integer	
-      - Identificador de la forma de pago
+      - Identificador de la forma de pago.
 
 2.24. ConsultarParadaEstadosResultado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5775,7 +5775,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - Resultado	
       - String	
-      - Respuesta del método ConsultarParadaEstadosResultado
+      - Respuesta del método ConsultarParadaEstadosResultado.
     * - ArchivosParada	
       - List<pArchivosParada>	
       - Lista de objeto archivos de la parada.
@@ -5798,7 +5798,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Fecha en que se crea el viaje. HHMM
     * - TraceEstados	
       - List<pViajeTraceEstado>	
-      - Lista de objeto pViajeTraceEstado
+      - Lista de objeto pViajeTraceEstado.
 
 2.26. pVehiculo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5812,13 +5812,13 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - Deposito	
       - String	
-      - Deposito donde se encuentra el Tipo de Vehículo
+      - Deposito donde se encuentra el Tipo de Vehículo.
     * - RefVehiculoExterno	
       - String	
-      - Referência externa del veículo
+      - Referência externa del veículo.
     * - Descripcion	
       - String	
-      - Descripción del tipo vehículo
+      - Descripción del tipo vehículo.
     * - PesoMaximo	
       - Double	
       - Cantidad Peso máximo soportado del tipo vehículo.
@@ -5944,40 +5944,40 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Preferencia secundaria del tipo vehículo.
     * - IdTipoVehiculo	
       - Integer	
-      - Identificador único del tipo vehículo
+      - Identificador único del tipo vehículo.
     * - Float_1	
       - Float	
-      - Dato adicional de tipo float
+      - Dato adicional de tipo float.
     * - Float_2	
       - Float	
-      - Dato adicional de tipo float
+      - Dato adicional de tipo float.
     * - Primario	
       - Bool	
-      - Valor bool 
+      - Valor bool.
     * - Secundario	
       - Bool	
       - Valor bool
     * - VehSecObligatorio	
       - Bool	
-      - Valor bool que identifica un vehículo secundario obligatorio
+      - Valor bool que identifica un vehículo secundario obligatorio.
     * - PrimarioRouting	
       - Bool	
-      - Valor bool
+      - Valor bool.
     * - PermiteMultiplesDepositos	
       - Bool	
-      - Valor bool para distintos depósitos
+      - Valor bool para distintos depósitos.
     * - Custodia	
       - Bool	
-      - Valor bool
+      - Valor bool.
     * - Reutilizable	
       - Bool	
-      - Valor bool
+      - Valor bool.
     * - CostoJornada	
       - Decimal	
-      - Valor costo de la jornada completa
+      - Valor costo de la jornada completa.
     * - Color	
       - Integer	
-      - Aspecto del tipo de vehículo
+      - Aspecto del tipo de vehículo.
     * - TiempoEspera	
       - Integer	
       - El tiempo de la espera del tipo vehículo.
@@ -6077,13 +6077,13 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - ReferenciaExterna
       - String
-      - Referencia externa del recurso
+      - Referencia externa del recurso.
     * - Tipo
       - String	
       - 
     * - Descripcion	
       - String	
-      - Descripción del recurso
+      - Descripción del recurso.
     * - Calificacion	
       - Double	
       - 
@@ -6103,13 +6103,13 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - ReferenciaExterna	
       - String	
-      - Referencia externa del recurso
+      - Referencia externa del recurso.
     * - Tipo	
       - String	
       - 
     * - Descripcion	
       - String	
-      - Descripción del recurso
+      - Descripción del recurso.
     * - Calificacion	
       - Double	
       - 
@@ -6129,16 +6129,16 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - Referencia	
       - String	
-      - Referencia externa para identificar el transporte 
+      - Referencia externa para identificar el transporte. 
     * - ReferenciaAdicional	
       - String	
-      - Si existe una referencia adicional para el transporte se agrega 
+      - Si existe una referencia adicional para el transporte se agrega.
     * - Descripcion	
       - String	
       - 
     * - Cuit	
       - Double	
-      - RFC/ CUIT único el transporte
+      - RFC/ CUIT único el transporte.
     * - Direccion	
       - Integer	
       - 
@@ -6156,16 +6156,16 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - RazonSocial	
       - String	
-      - Nombre ante la autoridad del transporte
+      - Nombre ante la autoridad del transporte.
     * - NombreFantasia	
       - String	
-      - Alias 
+      - Alias.
     * - Email	
       - String	
       - 
     * - TipoTransporte	
       - String	
-      - Clasificación del transporte 
+      - Clasificación del transporte.
     * - Partido	
       - String	
       - 
@@ -6186,16 +6186,16 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - DescripcionEstado	
       - String	
-      - Descripción de la tabla estado 
+      - Descripción de la tabla estado.
     * - DescripcionGrupoTendering	
       - String	
       - Descripción del grupo al que se va a relacionar el transporte.
     * - Conductores	
       - List<pConductor>	
-      - Objeto complejo
+      - Objeto complejo.
     * - IdEstado	
       - Int	
-      - Id estado 
+      - Id estado.
     * - HorarioDesdeTendering	
       - Int	
       - 
@@ -6225,7 +6225,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Permite mostrar el transporte en el portal tendering.
     * - IntegrarRNDC	
       - Bool	
-      - Utilizado para permitir integrar o no al módulo de RNDC 
+      - Utilizado para permitir integrar o no al módulo de RNDC.
 
 2.31. pRuta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6254,10 +6254,10 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Horario de salida planificado de la ruta desde el depósito de salida.
     * - FechaHoraLlegada	
       - Datetime	
-      - Horario de llegada planificado de la ruta 
+      - Horario de llegada planificado de la ruta.
     * - FechaHoraCarga	
       - Datetime	
-      - Horario en que comienza la carga una vez llegada al punto asignado 
+      - Horario en que comienza la carga una vez llegada al punto asignado.
     * - Muelle	
       - String	
       - 
@@ -6278,10 +6278,10 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Cantidad de ordenes en la ruta.
     * - ReferenciaExterna	
       - String	
-      - Referencia de la ruta
+      - Referencia de la ruta.
     * - IdViaje	
       - Int	
-      - IdViaje para relacionar 
+      - IdViaje para relacionar.
     * - Sucursal	
       - String	
       - 
@@ -6290,7 +6290,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - Estado	
       - String	
-      - Estado para la ruta 
+      - Estado para la ruta.
     * - EstadoJornada	
       - String	
       - Estado para asignar la jornada.
@@ -6323,10 +6323,10 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - RazonSocialTransporte	
       - String	
-      - Transporte por asociar
+      - Transporte por asociar.
     * - CUIT_Transporte	
       - String	
-      - RFC/CUIT del transporte
+      - RFC/CUIT del transporte.
     * - Varchar1	
       - String	
       - 
@@ -6385,10 +6385,10 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - RefProducto	
       - String	
-      - Identificación del producto
+      - Identificación del producto.
     * - Descripción	
       - String	
-      - Descripción o nombre del Producto
+      - Descripción o nombre del Producto.
     * - Volumen	
       - Double	
       - Volumen de una unidad en metros cúbicos.
@@ -6418,22 +6418,22 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - SKU del produto 
     * - RazonSocial	
       - String	
-      - Nombre de la empresa a la que se va a relacionar el producto
+      - Nombre de la empresa a la que se va a relacionar el producto.
     * - RotacionesPermitidas	
       - String	
-      - Tipos de rotaciones que se le pueden hacer al producto 
+      - Tipos de rotaciones que se le pueden hacer al producto.
     * - Linea	
       - String	
-      - Categoria principal del produto
+      - Categoria principal del produto.
     * - SubLinea	
       - String	
-      -       - Clasificación dentro de la categoría principal 
+      - Clasificación dentro de la categoría principal.
     * - UnidadMedida	
       - String	
       - 
     * - ClienteDador	
       - pClienteDador	
-      - Objeto complejo 
+      - Objeto complejo.
     * - CampoDinamico	
       - List<CampoValor>	
       - Objeto complejo 
@@ -6462,46 +6462,46 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - IdOrden	
       - Long	
-      - Identificación del producto
+      - Identificación del producto.
     * - Sucursal	
       - String	
-      - Código de sucursal para simplificar la búsqueda de la orden
+      - Código de sucursal para simplificar la búsqueda de la orden.
     * - Operación	
       - String	
-      - Código de operación para simplificar la búsqueda de la orden
+      - Código de operación para simplificar la búsqueda de la orden.
     * - TipoOperacion	
       - String	
-      - Descripción del tipo de operación 
+      - Descripción del tipo de operación. 
     * - Descripcion	
       - String	
       - 
     * - RefDocumento	
       - String	
-      - Referencia para identificar la orden
+      - Referencia para identificar la orden.
     * - Estado	
       - String	
-      - Descripción del estado al que cambia la orden
+      - Descripción del estado al que cambia la orden.
     * - Motivo	
       - String	
-      - Si ocurre alguna incidencia agregar el motivo 
+      - Si ocurre alguna incidencia agregar el motivo. 
     * - EstadoFecha	
       - Datetime	
-      - Si se quiere asignar fecha se agrega el nodo
+      - Si se quiere asignar fecha se agrega el nodo.
     * - Observaciones	
       - String	
-      - Texto libre
+      - Texto libre.
     * - Items	
       - pOrdenEntregaItem	
-      - Objeto complejo
+      - Objeto complejo.
     * - ValidarTransicion	
       - Bool	
-      - Si es true valida que la transición es válida para hacer cambio de estado
+      - Si es true valida que la transición es válida para hacer cambio de estado.
     * - Login	
       - String	
       - 
     * - CampoValor	
       - List<CampoValor>	
-      - Objeto complejo
+      - Objeto complejo.
 
 2.34. pEstadoOrdenPedido
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6515,40 +6515,40 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - RefDocumento	
       - String	
-      - Referencia del pedido para buscar y cambiar estado  
+      - Referencia del pedido para buscar y cambiar estado.  
     * - Estado	
       - String	
-      - Descripción del estado al que pasa el pedido
+      - Descripción del estado al que pasa el pedido.
     * - EstadoPrioridad	
       - String	
-      - Si se ingresa estado a este nodo se tomará como principal y si no existe tomará el nodo anterior 
+      - Si se ingresa estado a este nodo se tomará como principal y si no existe tomará el nodo anterior. 
     * - EstadoOrdenEntrega	
       - String	
-      - Estado que se asignara a la orden que se crea a partir del pedido 
+      - Estado que se asignara a la orden que se crea a partir del pedido. 
     * - Motivo	
       - String	
-      - Si ocurre alguna incidencia agregar el motivo
+      - Si ocurre alguna incidencia agregar el motivo.
     * - Observaciones	
       - String	
-      - Texto libre
+      - Texto libre.
     * - EstadoFecha	
       - Datetime	
-      - Si se quiere asignar fecha se agrega el nodo
+      - Si se quiere asignar fecha se agrega el nodo.
     * - ValidarTransicion	
       - Bool	
-      - Si es true valida que la transición es válida para hacer cambio de estado
+      - Si es true valida que la transición es válida para hacer cambio de estado.
     * - Login	
       - String	
       - 
     * - Items	
       - List<pOrdenPedidoItem>	
-      - Objeto complejo
+      - Objeto complejo.
     * - Recursos	
       - List<pRecursos>	
-      - Objeto complejo
+      - Objeto complejo.
     * - ArchivosAsociados	
       - List<pArchivoDoc>	
-      - Objeto complejo
+      - Objeto complejo.
 
 2.35. pTipoVehiculo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6562,97 +6562,97 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - RefTipoVehiculo	
       - String	
-      - Código, Referencia externa del vehículo
+      - Código, Referencia externa del vehículo.
     * - Deposito	
       - String	
-      - Descripción del depósito/bodega
+      - Descripción del depósito/bodega.
     * - Descripcion	
       - String	
-      - Numero de orden en la secuencia de entrega
+      - Numero de orden en la secuencia de entrega.
     * - PesoMaximo	
       - Double	
-      - Peso máximo
+      - Peso máximo.
     * - VolumenMaximo	
       - Double	
-      - Volumen máximo
+      - Volumen máximo.
     * - BultosMaximo	
       - Double	
-      - Bultos máximos que puede llevar el vehículo
+      - Bultos máximos que puede llevar el vehículo.
     * - CantidadOrdenesMaximo	
       - Double	
-      - Cantidad órdenes del vehículo
+      - Cantidad órdenes del vehículo.
     * - DistanciaMaxima	
       - Double	
-      - Distancia máxima de recorrido del vehículo
+      - Distancia máxima de recorrido del vehículo.
     * - VelocidadMedia	
       - Double	
-      - Velocidad media de la unidad o vehículo
+      - Velocidad media de la unidad o vehículo.
     * - CostoKm	
       - Double	
-      - Costo por Kilometro
+      - Costo por Kilometro.
     * - CostoHr	
       - Double	
-      - Costo por Hora
+      - Costo por Hora.
     * - Cantidad	
       - Integer	
       - 
     * - Ancho	
       - Double	
-      - Ancho del vehículo
+      - Ancho del vehículo.
     * - Alto	
       - Double	
-      - Altura del vehículo
+      - Altura del vehículo.
     * - Profundidad	
       - Double	
-      - Profundidad del vehículo
+      - Profundidad del vehículo.
     * - Prioridad	
       - Double	
       - 
     * - InicioHorario	
       - Integer	
-      - Rango inicial para ejecuciones del vehículo
+      - Rango inicial para ejecuciones del vehículo.
     * - FinHorario	
       - Integer	
-      - Rango final para ejecuciones del vehículo
+      - Rango final para ejecuciones del vehículo.
     * - InicioHorarioInactividad	
       - Integer	
-      - Rango inicial para inactividad del vehículo
+      - Rango inicial para inactividad del vehículo.
     * - FinHorarioInactividad	
       - Integer	
-      - Rango final para inactividad del vehículo
+      - Rango final para inactividad del vehículo.
     * - TiempoInactividad	
       - Integer	
-      - Tiempo inactividad del vehículo
+      - Tiempo inactividad del vehículo.
     * - PesoMinimo	
       - Double	
-      - Peso mínimo que lleva el vehículo
+      - Peso mínimo que lleva el vehículo.
     * - VolumenMinimo	
       - Double	
-      - Volumen mínimo que lleva el vehículo
+      - Volumen mínimo que lleva el vehículo.
     * - BultosMinimo	
       - Double	
-      - Bultos mínimos que lleva el vehículo 
+      - Bultos mínimos que lleva el vehículo. 
     * - CantidadOrdenesMinimo	
       - Double	
-      - Cantidad mínima de ordenes por vehículo
+      - Cantidad mínima de ordenes por vehículo.
     * - VelocidadDepositos	
       - Double
       - 
     * - CantidadEntregasMaximo	
       - Integer	
-      - Cantidad de entregas por vehículo
+      - Cantidad de entregas por vehículo.
     * - Icono	
       - String	
       - 
     * - TiempoMinimoInactividad	
       - Integer	
-      - Tiempo mínimo de inactividad del vehículo
+      - Tiempo mínimo de inactividad del vehículo.
     * - DiasPermitidos	
       - String	
-      - Días que puede salir a ruta
+      - Días que puede salir a ruta.
     * - CantidadMaximaConductores	
       - Integer	
-      - Cantidad de conductores máxima asignados al vehículo
+      - Cantidad de conductores máxima asignados al vehículo.
     * - AdicionalMaximo1	
       - Double	
       - 
@@ -6661,7 +6661,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - MinutosConsiderarDetenido	
       - Integer	
-      - Minutos que se considera detenido el vehículo
+      - Minutos que se considera detenido el vehículo.
     * - MinutosParaPerdidaReporte	
       - Integer	
       - 
@@ -6670,22 +6670,22 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - TiempoMaximoJornada	
       - Integer	
-      - Tiempo máximo de jornada del vehículo
+      - Tiempo máximo de jornada del vehículo.
     * - MilesPerGallon	
       - Double	
-      - Millas por calón del vehículo
+      - Millas por calón del vehículo.
     * - KmsPorLitro	
       - Double	
-      - Kilómetros por litro del vehículo
+      - Kilómetros por litro del vehículo.
     * - VelocidadMaxima	
       - Double	
-      - Velocidad máxima del vehículo
+      - Velocidad máxima del vehículo.
     * - CantidadAgrupacionesMaximo	
       - Double	
       - 
     * - TiempoDescarga	
       - Integer	
-      - Tiempo en que tarda en descargar
+      - Tiempo en que tarda en descargar.
     * - VelocidadDepositoLlegada	
       - Double	
       - 
@@ -6705,10 +6705,10 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - codigoSucursal	
       - String	
-      - Código de la sucursal (referencia externa)
+      - Código de la sucursal (referencia externa).
     * - codigoOperacion	
       - String	
-      - Código de la operación (referencia externa)
+      - Código de la operación (referencia externa).
 
 2.37. pEstadosViaje
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6722,16 +6722,16 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - IdViaje	
       - Integer	
-      - Identificador único de viaje
+      - Identificador único de viaje.
     * - IdEstadoViaje	
       - Integer	
-      - Referencia a entidad EstadoViaje
+      - Referencia a entidad EstadoViaje.
     * - DescripcionEstadoViaje	
       - String	
       - Descripción a estado del viaje.
     * - RefDocumento	
       - String	
-      - Identificación de documento (pedido, factura u otro) en el sistema externo propio de la empresa correspondiente a la Parada
+      - Identificación de documento (pedido, factura u otro) en el sistema externo propio de la empresa correspondiente a la Parada.
     * - Estado	
       - String	
       - Descripción del estado de la parada.
@@ -6784,28 +6784,28 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - Nombre	
       - String	
-      - Nombre del custodio
+      - Nombre del custodio.
     * - Apellido	
       - String	
-      - Apellido del custodio
+      - Apellido del custodio.
     * - Email	
       - String	
-      - Correo electrónico del custodio
+      - Correo electrónico del custodio.
     * - Telefono1	
       - String	
-      - Teléfono del custodio
+      - Teléfono del custodio.
     * - Telefono2	
       - String	
-      - Teléfono Segundo del custodio
+      - Teléfono Segundo del custodio.
     * - ReferenciaExterna	
       - String	
-      - Referencia externa de custodio
+      - Referencia externa de custodio.
     * - NroDocumento	
       - String	
-      - Identificador único del documento
+      - Identificador único del documento.
     * - EmpresaCustodia	
       - String	
-      - descripción empresa custodia
+      - descripción empresa custodia.
     * - Calificacion	
       - Double	
       - Calificación del custodio
@@ -6825,7 +6825,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción
     * - RefDocumento	
       - String	
-      - Identificación de documento de la orden
+      - Identificación de documento de la orden.
 
 2.40. pOrdenModificar
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -6839,7 +6839,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción 
     * - RefDocumento	
       - String	
-      - Identificación de documento de la orden Item
+      - Identificación de documento de la orden Item.
 
 2.41. pParadaItem
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -6853,16 +6853,16 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción 
     * - RefDocumento	
       - String	
-      - Identificación de documento de la parada Item
+      - Identificación de documento de la parada Item.
     * - RefDocumentoAdicional	
       - Double	
-      - Identificación adicional de documento externo
+      - Identificación adicional de documento externo.
     * - Descripcion	
       - String	
-      - Descripción de la parada item 
+      - Descripción de la parada item. 
     * - Producto	
       - pProducto
-      - Producto al que se encuentra asignado
+      - Producto al que se encuentra asignado.
     * - Cantidad	
       - Double	
       - 
@@ -6886,13 +6886,13 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - 
     * - Varchar1	
       - String	
-      - Campo para datos adicionales
+      - Campo para datos adicionales.
     * - Varchar2	
       - String	
-      - Campo para datos adicionales
+      - Campo para datos adicionales.
     * - Varchar3	
       - String	
-      - Campo para datos adicionales
+      - Campo para datos adicionales.
     * - UnidadMedida	
       - String	
       - 
@@ -6918,13 +6918,13 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Descripción 
     * - ReferenciaExterna	
       - String	
-      - Referencia con la que se identifica la tarifa
+      - Referencia con la que se identifica la tarifa.
     * - Valor	
       - Double	
-      - Valor de la tarifa
+      - Valor de la tarifa.
     * - VigenciaDesde	
       - Datetime	
-      - Vigencia de la tarifa que inicio
+      - Vigencia de la tarifa que inicio.
 
 2.43. pMoverParadas
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -7389,7 +7389,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - País	
       - String 
-      - Nación, estado soberano	
+      - Nación, estado soberano.
       - NO
     * - InicioHorario1	
       - Integer	
@@ -7425,7 +7425,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - FinHorarioPlanificado	
       - DateTiime	
-      - Data de salida, indica el horario estimado de visita de la orden de una ruta (Inicio +)
+      - Data de salida, indica el horario estimado de visita de la orden de una ruta (Inicio +).
       - NO
     * - Volumen	
       - Double	
@@ -7649,7 +7649,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - RefDocumentoRecoleccion	
       - String	
-      - Identificación de la orden de recolección	
+      - Identificación de la orden de recolección.
       - NO
     * - Estado	
       - String	
@@ -7693,7 +7693,7 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - NroPuerta	
       - String	
-      - Numeración indicando la posición dentro del eje vial	
+      - Numeración indicando la posición dentro del eje vial.	
       - NO
     * - EntreCalles	
       - String	
@@ -7717,11 +7717,11 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - NO
     * - País	
       - String	
-      - Nación, estado soberano	
+      - Nación, estado soberano.	
       - NO
     * - TiempoEspera	
       - Integer	
-      - Tiempo estimado para la realizar la entrega	
+      - Tiempo estimado para la realizar la entrega.	
       - SI
     * - Orden	
       - Integer	
