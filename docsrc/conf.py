@@ -26,6 +26,13 @@ html_static_path = ['_static',
                     ]
 html_css_files = ['custom.css',
                   ]
+latex_elements = {
+    'papersize': 'letterpaper',
+    'pointsize': '10pt',
+}
+latex_documents = [
+    ('index', 'GettingStarted.tex', 'Getting Started', 'UNIGIS TMS', 'article'),
+]
 html_theme_options = {
     "light_logo": "Logolight.svg",
     "dark_logo": "logodark.svg",
