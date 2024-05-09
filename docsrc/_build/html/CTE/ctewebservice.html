@@ -1,0 +1,1372 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../genindex.html" /><link rel="search" title="Búsqueda" href="../search.html" /><link rel="prev" title="MapServer X" href="../MapServer/MapServer.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Web Service CTE - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2966eb94" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GettingStart/Gettingstart.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Ruteo/Ruteo.html">Planeación de Distribución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Yard/Yard.html">Yard Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/B2B/b2b.html">Portal B2B (business-to-business)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Mobile/Deliveries.html">UNIGIS X DELIVERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MAPILogisticServices/MapiConfig.html">MAPI Logistic Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Routing/Routing.html">Smart Planning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../json/Indexsyncout.html">Json Syncout</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Json Syncout</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/SyncoutG.html">Syncout Genérico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/Syncout.html">Syncout V2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MapServer/MapServer.html">MapServer X</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Web Service CTE</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="web-service-cte">
+<h1>Web Service CTE<a class="headerlink" href="#web-service-cte" title="Link to this heading">#</a></h1>
+<div class="justified-text docutils container">
+<p>Es un servicio que permite registrar los CTE (Conhecimento de Transporte Eletrônico) enviados por los clientes con base a la nueva estructura de datos. Con esto se permite enviar los CTE de una manera más eficiente aceptando el lenguaje XML con estructura en versión 3.0 y 4.0.</p>
+</div>
+<section id="pre-requisitos">
+<h2>Pre Requisitos<a class="headerlink" href="#pre-requisitos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Disponer con la versión 10.216.0.0 o superior.</p></li>
+<li><p>Dar de alta el tipo idTipoDocumento con valor CTE en caso de no existir.</p></li>
+<li><p>Dar de alta el estado de documento con ReferenciaExterna “inicial” en caso de no existir.</p></li>
+</ul>
+</section>
+<section id="informacion-tecnica">
+<h2>Información Técnica<a class="headerlink" href="#informacion-tecnica" title="Link to this heading">#</a></h2>
+<section id="tablas-y-campos">
+<h3>Tablas y Campos<a class="headerlink" href="#tablas-y-campos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>DocumentoCTEConfiguracion.</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la configuración necesaria para hacer la consulta al servicio CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">DocumentoCTEConfiguración</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdDocumentoCTEConfiguracion</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CNPJConsulta</p></td>
+<td><p>Varchar</p></td>
+<td><p>CNPJ enviado en el request de CTE.</p></td>
+</tr>
+<tr class="row-even"><td><p>UFEConsulta</p></td>
+<td><p>Varchar</p></td>
+<td><p>cUFAutor enviado en el request de CTE.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RutaCertificado</p></td>
+<td><p>Varchar</p></td>
+<td><p>Ruta del certificado.</p></td>
+</tr>
+<tr class="row-even"><td><p>PasswordCertificado</p></td>
+<td><p>Varchar</p></td>
+<td><p>Contraseña del certificado.</p></td>
+</tr>
+<tr class="row-odd"><td><p>UltimoNSURecuperado</p></td>
+<td><p>Varchar</p></td>
+<td><p>NSU enviado en el request de CTE.</p></td>
+</tr>
+<tr class="row-even"><td><p>FechaUltimaConsulta</p></td>
+<td><p>DateTime</p></td>
+<td><p>Fecha de última consulta enviada.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RutaZIP</p></td>
+<td><p>Varchar</p></td>
+<td><p>Ruta donde generará los archivos Zips recuperados por el servicio CTE.</p></td>
+</tr>
+<tr class="row-even"><td><p>URLIntegracion</p></td>
+<td><p>Varchar</p></td>
+<td><p>Url del servicio CTE.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumento</p></li>
+</ul>
+<p>Descripción: Tabla principal de CTE que almacenará en el encabezado principal del CTE, en el campo referenciaDocumento se almacenará el valor del path “ProtCTe/ chCTe” sobre el cual se validará la existencia del CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">CTEDocumento</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdDocumentoNFE</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea relacionado a la tabla DocumentoNFE.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdEstadoDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea relacionado a la tabla EstadoDocumento.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdTipoDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea relacionado a la tabla TipoDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdTipoModal</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea relacionado a la tabla TipoModal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdTipoServicio</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea relacionado a la tabla TipoServicio.</p></td>
+</tr>
+<tr class="row-even"><td><p>cUF</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/cUF”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cCT</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/cCT”.</p></td>
+</tr>
+<tr class="row-even"><td><p>cFOP</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/cFOP”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>natOp</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/natOP”.</p></td>
+</tr>
+<tr class="row-even"><td><p>mod</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/mod”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>serie</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/serie”.</p></td>
+</tr>
+<tr class="row-even"><td><p>nCT</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/nCT”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dhEmi</p></td>
+<td><p>DateTime</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/dhEmi”.</p></td>
+</tr>
+<tr class="row-even"><td><p>tpImp</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/tpImp”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tpEmis</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/tpEmis”.</p></td>
+</tr>
+<tr class="row-even"><td><p>cDV</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/cDV”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tpAmb</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/tpAmb”.</p></td>
+</tr>
+<tr class="row-even"><td><p>tpCTe</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/tpCTe”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>procEmi</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/procEmi”.</p></td>
+</tr>
+<tr class="row-even"><td><p>verProc</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/verProc”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>indGlobalizado</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/ indGlobalizado”.</p></td>
+</tr>
+<tr class="row-even"><td><p>cMunEnv</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/cMunEnv”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xMunEnv</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/xMunEnv”.</p></td>
+</tr>
+<tr class="row-even"><td><p>uFEnv</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/uFEnv”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cMunIni</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/cMunIni”.</p></td>
+</tr>
+<tr class="row-even"><td><p>xMunIni</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/xMunIni”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>uFIni</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/uFini”.</p></td>
+</tr>
+<tr class="row-even"><td><p>cMunFim</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/cMunFim”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xMunFim</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/xMunFim”.</p></td>
+</tr>
+<tr class="row-even"><td><p>uFFim</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/uFFim”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>retira</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/retira”.</p></td>
+</tr>
+<tr class="row-even"><td><p>xDetRetira</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/xDetRetira”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>indIEToma</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/indIEToma”.</p></td>
+</tr>
+<tr class="row-even"><td><p>dhCont</p></td>
+<td><p>DateTime</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/dhCont”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xJust</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/xJust”.</p></td>
+</tr>
+<tr class="row-even"><td><p>dhSaidaOrig</p></td>
+<td><p>DateTime</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/ dhSaidaOrig”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dhChegadaDest</p></td>
+<td><p>DateTime</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/ dhChegadaDest”.</p></td>
+</tr>
+<tr class="row-even"><td><p>NFEAsociada</p></td>
+<td><p>Varchar</p></td>
+<td><p>Se almacena un valor vacío, se usará posteriormente para otros módulos.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vTPrest</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/vPrest/vTPrest”</p></td>
+</tr>
+<tr class="row-even"><td><p>vRec</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/vPrest/vRec”</p></td>
+</tr>
+<tr class="row-odd"><td><p>TotalMercancia</p></td>
+<td><p>Decimal</p></td>
+<td><p>Guardar el total de la mercancía.</p></td>
+</tr>
+<tr class="row-even"><td><p>TotalCobrar</p></td>
+<td><p>Decimal</p></td>
+<td><p>Se almacena el valor cero, se usará posteriormente para otros módulos.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ReferenciaDocumento</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “ProtCTe/chCTe”.</p></td>
+</tr>
+<tr class="row-even"><td><p>RNTRC</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml Path “CTe/InfCte/InfModal/rodo/RNTRC”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>qrCodCTe</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml Path “CTe/infCTeSupl/qrCodCTe”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>TipoModal</p></li>
+</ul>
+<p>Descripción: Tabla de tipo catálogo que sincronizará los diferentes tipos de Modal enviados en el XML.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">TipoModal</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdTipoModal</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Descripcion</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/modal”.</p></td>
+</tr>
+<tr class="row-even"><td><p>ReferenciaExterna</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/modal”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>TipoServicio</p></li>
+</ul>
+<p>Descripción: Tabla de tipo catálogo que sincronizará los diferentes tipos de Servicio enviados en el XML.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id4">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">TipoServicio</span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdTipoServicio</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla autoincrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Descripcion</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/tpServ”.</p></td>
+</tr>
+<tr class="row-even"><td><p>ReferenciaExterna</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/Ide/tpServ”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoCarga</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información de la carga del CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id5">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">CTEDocumentoCarga</span><a class="headerlink" href="#id5" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoCarga</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea relacionado a la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>vCarga</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/vCarga”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>proPred</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/proPred”.</p></td>
+</tr>
+<tr class="row-even"><td><p>xOutCat</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/xOutCat”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vCargaAverb</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/vCargaAverb”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoCargaMedida</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información de la carga del CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id6">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">CTEDocumentoCargaMedida</span><a class="headerlink" href="#id6" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoCargaMedida</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdCTEDocumentoCarga</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumentoCarga.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdUnidadCarga</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla UnidadCarga.</p></td>
+</tr>
+<tr class="row-even"><td><p>tpMed</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/InfQ/tpMed”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>qCarga</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/InfQ/qCarga”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>UnidadCarga</p></li>
+</ul>
+<p>Descripción: Tabla de tipo catálogo que sincronizará los diferentes tipos de unidad de carga en el XML.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">UnidadCarga</span><a class="headerlink" href="#id7" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdUnidadCarga</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Descripcion</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/InfQ/cUnid”.</p></td>
+</tr>
+<tr class="row-even"><td><p>ReferenciaExterna</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/infCTeNorm/infCarga/InfQ/cUnid”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoComplemento</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información del complemento de CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id8">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">CTEDocumentoComplemento</span><a class="headerlink" href="#id8" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoComplemento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>xCaracAd</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/xCaracAd”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xCaracSer</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/xCaracSer”.</p></td>
+</tr>
+<tr class="row-even"><td><p>xEmi</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/xEmi”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>origCalc</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/origCalc”.</p></td>
+</tr>
+<tr class="row-even"><td><p>destCalc</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/destCalc”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xObs</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/xObs”.</p></td>
+</tr>
+<tr class="row-even"><td><p>ValorComplemento</p></td>
+<td><p>Decimal</p></td>
+<td><p>Se almacena un valor cero, se usará posteriormente para otros módulos.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoComplementoDetalle</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información del Detalle del Complemento de CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id9">
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">CTEDocumentoComplementoDetalle</span><a class="headerlink" href="#id9" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoComplemento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdCTEDocumentoComplemento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumentoComplemento.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xCampo</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/ObsCont/xCampo” o “CTe/compl/ObsFisco/xCampo”.</p></td>
+</tr>
+<tr class="row-even"><td><p>xTexto</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/compl/ObsCont/xTexto” o “CTe/compl/ObsFisco/xTexto”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ReferenciaComplemento</p></td>
+<td><p>Varchar</p></td>
+<td><p>Concatenación del campo xCampo y xTexto.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoConcepto</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información de los conceptos del CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id10">
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">CTEDocumentoConcepto</span><a class="headerlink" href="#id10" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoConcepto</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdTipoConcepto</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla TipoConcepto.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vComp</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/vPrest/Comp/vComp”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>TipoConcepto</p></li>
+</ul>
+<p>Descripción: Tabla de tipo catálogo que sincronizará los diferentes tipos de Conceptos en el XML.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id11">
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">TipoConcepto</span><a class="headerlink" href="#id11" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdTipoConcepto</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Descripcion</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/vPrest/Comp/vNome”.</p></td>
+</tr>
+<tr class="row-even"><td><p>ReferenciaExterna</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/vPrest/Comp/vNome”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoNFE</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información de los conceptos de los DocuementosNFE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id12">
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">CTEDocumentoNFE</span><a class="headerlink" href="#id12" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoNFE</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento</p></td>
+</tr>
+<tr class="row-even"><td><p>Tipo</p></td>
+<td><p>Varchar</p></td>
+<td><p>Tipo de Nfe el cual dependerá del nodo enviado: NFE: Si se envía sobre el path “CTe/InfCte/InfCteNorm/infDoc/ infNFE”. NF: Si se envía sobre el path “CTe/InfCte/InfCteNorm/infDoc/ infNF”. NF: Si se envía sobre el path “CTe/InfCte/InfCteNorm/infDoc/infOutros”. CTE: Si se envía sobre el path “CTe/InfCte/InfCteComp”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nfe</p></td>
+<td><p>Varchar</p></td>
+<td><p>Valor de Nfe el cual dependerá del DocuementosNFE.Tipo. NFE: Mapeo xml path “CTe/InfCte/InfCteNorm/infDoc/ infNFE/chave”. NF: Mapeo xml path “CTe/InfCte/InfCteNorm/infDoc/ infNF/mod” + “CTe/InfCte/InfCteNorm/infDoc/infNF/serie” + “CTe/InfCte/InfCteNorm/infDoc/infNF/nDoc” + “CTe/InfCte/InfCteNorm/infDoc/ infNF/dEmi” Otros: Mapeo xml path “CTe/InfCte/InfCteNorm/infDoc/infOutros/mod” +  “CTe/InfCte/InfCteNorm/infDoc/infOutros/serie” + “CTe/InfCte/InfCteNorm/infDoc/infOutros/nDoc” + “CTe/InfCte/InfCteNorm/infDoc/infOutros/dEmi” CTE: Mapeo xml path “CTe/InfCte/InfCteComp/chCTE”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoPersonasJuridicas</p></li>
+</ul>
+<p>Descripción: Tabla de tipo catálogo que sincronizará los diferentes tipos de Personas relacionadas al documento CTE.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id13">
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">CTEDocumentoPersonasJuridicas</span><a class="headerlink" href="#id13" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoPersonasJuridicas</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdTipoPersona</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla TipoPersona.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>TipoPersona</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información de los conceptos de los DocuementosNFE, el path de búsqueda dependerá del tipo de persona enviado y sobre el cual se define en el campo “TipoPersona”. “Descripción”.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id14">
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">TipoPersona</span><a class="headerlink" href="#id14" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdTipoPersona</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Descripcion</p></td>
+<td><p>Varchar</p></td>
+<td><p>Tipo de persona el cual dependerá de donde se toma la información TOMADOR: Si se envía sobre el path “CTe/InfCte/ide/toma3” o  “CTe/InfCte/ide/toma4” EMISOR: Si se envía sobre el path “CTe/InfCte/emit” REMITENTE: Si se envía sobre el path “CTe/InfCte/rem” EXPEDIDOR: Si se envía sobre el path “CTe/InfCte/exped” DESTINATARIO: Si se envía sobre el path “CTe/InfCte/ dest” ReferenciaExterna    Varchar  Se almacena el mismo valor enviado en TipoPersona.Descripción.</p></td>
+</tr>
+<tr class="row-even"><td><p>CNPJ</p></td>
+<td><p>Varchar</p></td>
+<td><p>El valor dependerá del TipoPersona.Descripcion enviado TOMADOR: Mapeo xml path “CTe/InfCte/ide/toma3/toma” o “CTe/InfCte/ide/toma4/toma” EMISOR, REMITENTE, EXPEDIDOR, DESTINATARIO: Mapeo del atributo “CNPJ” IE       Varchar Mapeo xml atributo “IE”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RazonSocial</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “xNome”.</p></td>
+</tr>
+<tr class="row-even"><td><p>NombreFantasia</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “xFant”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direccion</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “xLgr”.</p></td>
+</tr>
+<tr class="row-even"><td><p>Numero</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “nro”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Barrio</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “xBarirro”.</p></td>
+</tr>
+<tr class="row-even"><td><p>CodigoMunicipio</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “cMun”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Municipio</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “xMun”.</p></td>
+</tr>
+<tr class="row-even"><td><p>CEP</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “CEP”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Telefono</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “fone”.</p></td>
+</tr>
+<tr class="row-even"><td><p>Complemento</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “xCpl”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>UF</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “UF”.</p></td>
+</tr>
+<tr class="row-even"><td><p>CodigoPais</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “cPais”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pais</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “xPais”.</p></td>
+</tr>
+<tr class="row-even"><td><p>CPF</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “CPF”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Email</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “email”.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdCTETipoImpuesto</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea CTETipoImpuesto que se utilizara posteriormente para otros módulos.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoProtocolo</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información del protocolo del documento.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id15">
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">CTEDocumentoProtocolo</span><a class="headerlink" href="#id15" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoProtocolo</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>tpAmb</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/tpAmb”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>verAplic</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/verAplic”.</p></td>
+</tr>
+<tr class="row-even"><td><p>chCTe</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/chCTe”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dhRecbto</p></td>
+<td><p>DateTime</p></td>
+<td><p>Mapeo xml path “protCTe/dhRecbto”.</p></td>
+</tr>
+<tr class="row-even"><td><p>nProt</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/nProt”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>digVal</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/digVal”.</p></td>
+</tr>
+<tr class="row-even"><td><p>cStat</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/cSat”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xMotivo</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/xMotivo”.</p></td>
+</tr>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “protCTe/Id”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoImpuesto</p></li>
+</ul>
+<div class="table-wrapper colwidths-given docutils container" id="id16">
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-text">CTEDocumentoImpuesto</span><a class="headerlink" href="#id16" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoImpuesto</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumento.</p></td>
+</tr>
+<tr class="row-even"><td><p>vTotTrib</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/vTotTrib”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>infAdFisco</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/infAdFisco”.</p></td>
+</tr>
+<tr class="row-even"><td><p>vBCUFFim</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/ICMSUFFim/vBCUFFim”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>pFCPUFFim</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/ICMSUFFim/pFCPUFFim”.</p></td>
+</tr>
+<tr class="row-even"><td><p>pICMSUFFim</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/ICMSUFFim/pICMSUFFim”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>pICMSInter</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/ICMSUFFim/pICMSInter”.</p></td>
+</tr>
+<tr class="row-even"><td><p>vFCPUFFim</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/ICMSUFFim/ vFCPUFFim”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vICMSUFIni</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/ICMSUFFim/ vICMSUFIni”.</p></td>
+</tr>
+<tr class="row-even"><td><p>vICMSUFFim</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml path “CTe/InfCte/imp/ICMSUFFim/vICMSUFFim”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>CTEDocumentoImpuestoDetalle</p></li>
+</ul>
+<p>Descripción: Tabla que almacenará la información de los detalles del impuesto, el path de búsqueda dependerá del tipo de impuesto enviado y sobre el cual se define en el campo “CTEDocumentoImpuestoDetalle”.”ReferenciaExterna”.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id17">
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-text">CTEDocumentoImpuestoDetalle</span><a class="headerlink" href="#id17" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdCTEDocumentoImpuestoDetalle</p></td>
+<td><p>INT</p></td>
+<td><p>Llave primaria de la tabla auto incrementable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTEDocumentoImpuesto</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumentoImpuesto.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdCTEDocumento</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTEDocumentoImpuesto.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdCTETipoImpuesto</p></td>
+<td><p>INT</p></td>
+<td><p>Llave foránea sobre la tabla CTETipoImpuesto, en esta versión se almacenará el valor null, se utilizará posteriormente en otros módulos.</p></td>
+</tr>
+<tr class="row-even"><td><p>ReferenciaExterna</p></td>
+<td><p>Varchar</p></td>
+<td><p>Tipo de impuesto el cual dependerá de donde se envía la información ICMS00: Mapeo xml path “CTe/InfCte/imp/ICMS00” ICMS45: Mapeo xml path “CTe/InfCte/imp/ICMS45” ICMS60: Mapeo xml path “CTe/InfCte/imp/ICMS60” ICMS90: Mapeo xml path “CTe/InfCte/imp/ICMS90” ICMSOutraUF: Mapeo xml path “CTe/InfCte/imp/ICMSOutraUF” ICMSSN: Mapeo xml path “CTe/InfCte/imp/ICMSSN”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cST</p></td>
+<td><p>Varchar</p></td>
+<td><p>Mapeo xml atributo “cST”.</p></td>
+</tr>
+<tr class="row-even"><td><p>pRedBC</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml atributo “pRedBC”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vBC</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml atributo “vBC”.</p></td>
+</tr>
+<tr class="row-even"><td><p>pICMS</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml atributo “pICMS”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vICMS</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml atributo “vICMS”.</p></td>
+</tr>
+<tr class="row-even"><td><p>indSN</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml atributo “indSN”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vCred</p></td>
+<td><p>Decimal</p></td>
+<td><p>Mapeo xml atributo “vCred”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="caso-de-uso">
+<h2>Caso de Uso<a class="headerlink" href="#caso-de-uso" title="Link to this heading">#</a></h2>
+<p>Para acceder a este enlace se deberá ingresar con un usuario que tenga acceso al módulo de “Integrations Center”, posteriormente en el menú de Log Out seleccionar <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Integrations</kbd> <kbd class="kbd docutils literal notranslate">Center</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">CTE</kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Web</kbd> <kbd class="kbd docutils literal notranslate">Service</kbd></kbd>.</p>
+<img alt="../_images/cte1.png" class="align-center" src="../_images/cte1.png" />
+<p>Al dar clic en Web Service se abrirá el enlace «MAPI/SOAP/CTE/Service.ashx» para poder consumirla.</p>
+<img alt="../_images/cte2.png" class="align-center" src="../_images/cte2.png" />
+<p>Es necesario realizar una configuración previa con los siguientes pasos en SOAP UI:</p>
+<ul class="simple">
+<li><p>Método: Post</p></li>
+<li><p>Endpoint: MAPI/SOAP/CTE/Service.ashx</p></li>
+<li><p>Media type:  Text XML</p></li>
+<li><p>Body:</p></li>
+<li><dl class="simple">
+<dt>Add Header:</dt><dd><ul>
+<li><p>ApiKey</p></li>
+<li><p>Value: MAPI token</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="../_images/endpoint.png" class="align-center" src="../_images/endpoint.png" />
+<p>Puede surgir el caso donde se tenga un error de integración, el cual depende que el CTE ya exista o que no cuente con una estructura XML valida.</p>
+<p>Ejemplo error XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">    </span><span class="nt">&lt;CTEResposta</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">2</span><span class="nt">&lt;DocumentodeReferencia/&gt;</span>
+<span class="linenos">3</span><span class="nt">&lt;Codigo&gt;</span>0<span class="nt">&lt;/Codigo&gt;</span>
+<span class="linenos">4</span><span class="nt">&lt;Mensagem&gt;</span>Erro.<span class="w"> </span>CTE<span class="w"> </span>não<span class="w"> </span>integrado:<span class="w"> </span>Error<span class="w"> </span>en<span class="w"> </span>el<span class="w"> </span>documento<span class="w"> </span>XML<span class="w"> </span>(1,<span class="w"> </span>2).,<span class="w"> </span>Un<span class="w"> </span>nombre<span class="w"> </span>no<span class="w"> </span>puede<span class="w"> </span>empezar<span class="w"> </span>con<span class="w"> </span>el<span class="w"> </span>carácter<span class="w"> </span>&#39;<span class="ni">&amp;lt;</span>&#39;,<span class="w"> </span>valor<span class="w"> </span>hexadecimal<span class="w"> </span>0x3C.<span class="w"> </span>línea<span class="w"> </span>1,<span class="w"> </span>posición<span class="w"> </span>2.<span class="nt">&lt;/Mensagem&gt;</span>
+<span class="linenos">5</span><span class="nt">&lt;/CTEResposta&gt;</span>
+</pre></div>
+</div>
+<p>Ejemplo exitoso XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">&lt;CTEResposta</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">2</span><span class="nt">&lt;DocumentodeReferencia&gt;</span>52230144914992001886570010023207311023207316<span class="nt">&lt;/DocumentodeReferencia&gt;</span>
+<span class="linenos">3</span><span class="nt">&lt;Codigo&gt;</span>1<span class="nt">&lt;/Codigo&gt;</span>
+<span class="linenos">4</span><span class="nt">&lt;Mensagem&gt;</span>CTE<span class="w"> </span>Integrado<span class="w"> </span>corretamente<span class="nt">&lt;/Mensagem&gt;</span>
+<span class="linenos">5</span><span class="nt">&lt;/CTEResposta&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Los únicos códigos de integración son los siguientes: - (0) = error de integración (1) = Integración exitosa.</p>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../MapServer/MapServer.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">MapServer X</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Web Service CTE</a><ul>
+<li><a class="reference internal" href="#pre-requisitos">Pre Requisitos</a></li>
+<li><a class="reference internal" href="#informacion-tecnica">Información Técnica</a><ul>
+<li><a class="reference internal" href="#tablas-y-campos">Tablas y Campos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#caso-de-uso">Caso de Uso</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>
