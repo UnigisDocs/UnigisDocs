@@ -217,7 +217,7 @@ Descripción de destinatarios:
 
     Por último, accediendo la pestaña :kbd:`Grupo`, se podrán seleccionar los grupos de usuario para los que aplique este tipo de notificación. En la imagen puede observar un ejemplo de una lista de grupos a los que puede enviar las notificaciones.
 
-.. image:: grupo.png
+.. image:: Grupofirebase.png
    :align: center
 
 Para guardar sus cambios presione el botón :kbd:`Guardar`. Si lo desea puede regresar a la lista de Alarmas y Editar la alarma generada anterior en caso de que requiera realizar algún cambio.
