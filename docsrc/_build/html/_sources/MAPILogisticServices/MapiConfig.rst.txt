@@ -71,7 +71,6 @@ Web Services
       - String
       - Código de Sucursal.
 
-
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -203,6 +202,71 @@ Agregar Ítems a una parada a partir del IdViaje y la ReferenciaExterna.
     * - Paradas
       - List<pParadas>
       - Lista de pParada (tipo de dato complejo con la información de la parada).
+
+Ejemplo: 
+
+.. code-block:: xml
+
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <AgregarParadaViaje xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:ns4="http://xmlns.oracle.com/pcbpel/adapter/db/SOA/CrearParadaPRN-UNIGIS/consultarParadaPRN" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns3="http://xmlns.oracle.com/pcbpel/adapter/aq/SOA/CrearParadaPRN-UNIGIS/consultarParadaPRNAQ" xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/db/SOA/CrearParadaPRN-UNIGIS/consultarParadaUnidadesPRN" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:pc="http://xmlns.oracle.com/pcbpel/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:unis="http://unisolutions.com.ar/" xmlns="http://unisolutions.com.ar/">
+	   <unis:ApiKey>85-16-FD-C1-4E-0</unis:ApiKey>
+	   <unis:idViaje>5950</unis:idViaje>
+	   <unis:Paradas>
+	      <unis:pParada>
+	         <unis:Secuencia>1</unis:Secuencia>
+	         <unis:RefDocumento>122452</unis:RefDocumento>
+	         <unis:RefDocumentoAdicional>NORMAL</unis:RefDocumentoAdicional>
+	         <unis:RefDocumentoPedido>354136112</unis:RefDocumentoPedido>
+	         <unis:Descripcion>FRENO BENDIX</unis:Descripcion>
+	         <unis:Direccion>AVENIDA 44 A NRO. 59 - 77</unis:Direccion>
+	         <unis:Localidad>MEDELLÍN</unis:Localidad>
+	         <unis:Partido>MEDELLÍN</unis:Partido>
+	         <unis:Provincia>ANTIOQUIA</unis:Provincia>
+	         <unis:Pais>COL</unis:Pais>
+	         <unis:InicioHorarioPlanificado>?</unis:InicioHorarioPlanificado>
+               <unis:FinHorarioPlanificado>?</unis:FinHorarioPlanificado>
+	         <unis:Latitud>0</unis:Latitud>
+	         <unis:Longitud>0</unis:Longitud>
+	         <unis:Volumen>11</unis:Volumen>
+	         <unis:Peso>17</unis:Peso>
+	         <unis:Bulto>1</unis:Bulto>
+	         <unis:Pallets>0</unis:Pallets>
+	         <unis:Telefono>45122927</unis:Telefono>
+	         <unis:Email/>
+	         <unis:TiempoEstadia>1</unis:TiempoEstadia>
+	         <unis:InicioHorario1>0800</unis:InicioHorario1>
+	         <unis:FinHorario1>2000</unis:FinHorario1>
+	         <unis:InicioHorario2>0800</unis:InicioHorario2>
+	         <unis:FinHorario2>2000</unis:FinHorario2>
+	         <unis:Distancia>1</unis:Distancia>
+	         <unis:FechaLlegadaCargue>0001-01-01T00:00:00</unis:FechaLlegadaCargue>
+             <unis:FechaEntradaCargue>2024-04-01T00:00:00</unis:FechaEntradaCargue>
+             <unis:FechaSalidaCargue>2024-04-01T00:00:00</unis:FechaSalidaCargue>
+             <unis:FechaLlegadaDescargue>2024-04-01T00:00:00</unis:FechaLlegadaDescargue>
+             <unis:FechaEntradaDescargue>2024-04-01T00:00:00</unis:FechaEntradaDescargue>
+             <unis:FechaSalidaDescargue>2024-04-01T00:00:00</unis:FechaSalidaDescargue>
+	         <unis:Observaciones>EN CASO DE NOVEDAD LLAMAR AL 316-8323894</unis:Observaciones>
+	         <unis:Varchar1>MEDELLÍN</unis:Varchar1>
+	         <unis:Varchar2>PAQUETERIA</unis:Varchar2>
+	         <unis:RequiereControl>false</unis:RequiereControl>
+	         <unis:InicioHorarioPlanificado>0800</unis:InicioHorarioPlanificado>
+	         <unis:FinHorarioPlanificado>2000</unis:FinHorarioPlanificado>
+	         <unis:Valor_Declarado>796000</unis:Valor_Declarado>
+			 <unis:DescripcionMercancia>PRODUCTOS VARIOS</unis:DescripcionMercancia>
+			 <unis:HorasPlanCarga>1</unis:HorasPlanCarga>
+			 <unis:MinutosPlanCarga>30</unis:MinutosPlanCarga>
+			 <unis:HorasPlanDescarga>1</unis:HorasPlanDescarga>
+			 <unis:MinutosPlanDescarga>30</unis:MinutosPlanDescarga>
+			 <unis:Origen>MEDELLÍN – ANTIOQUIA</unis:Origen>
+			 <unis:Origen>MEDELLÍN - ANTIOQUIA</unis:Origen>
+			 <unis:Destino>MEDELLÍN – ANTIOQUIA</unis:Destino>
+	      </unis:pParada>
+	   </unis:Paradas>
+	</AgregarParadaViaje>
+   </soapenv:Body>
+  </soapenv:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -831,6 +895,135 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
     * - Resultado (*)
       - pOrdenPedido
       - Objeto con la información relativa al pedido.
+
+Ejemplo:
+
+.. code-block:: xml
+
+  <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ConsultarOrdenPedidoResponse xmlns="http://unisolutions.com.ar/">
+         <ConsultarOrdenPedidoResult>
+            <RefDocumento>6406851792</RefDocumento>
+            <RefDocumentoAdicional>28703072</RefDocumentoAdicional>
+            <Fecha>2020-08-03T00:00:00</Fecha>
+            <FechaEntrega>2020-08-05T12:00:00</FechaEntrega>
+            <FechaEntregaOriginal xsi:nil="true"/>
+            <Cliente>
+               <RefCliente>6400001929</RefCliente>
+               <RazonSocial>DISTRIBUIDORA SMART. S.A. DE</RazonSocial>
+               <Localidad>Tultitlán</Localidad>
+               <Latitud>0</Latitud>
+               <Longitud>0</Longitud>
+               <RefDomicilioExterno>6400000352</RefDomicilioExterno>
+               <DomicilioDescripcion>DISTRIBUIDORA LIVERPOOL. S.A. DE</DomicilioDescripcion>
+               <InicioHorario1>0</InicioHorario1>
+               <InicioHorario2>0</InicioHorario2>
+               <FinHorario1>0</FinHorario1>
+               <FinHorario2>0</FinHorario2>
+               <TiempoEspera>360</TiempoEspera>
+               <Varchar1>SUC 170 DISTRIBUIDRA LIVERPOOL</Varchar1>
+               <Varchar2>000212577</Varchar2>
+               <Int1>0</Int1>
+               <Int2>0</Int2>
+               <Float1>0</Float1>
+               <Float2>0</Float2>
+            </Cliente>
+            <Descripcion>DISTRIBUIDORA SMART, SA DE</Descripcion>
+            <TipoPedido>FTL</TipoPedido>
+            <Estado>Planeacion</Estado>
+            <Direccion>Avenida valles de las alamedas 7 y 8. CP 54940. Tultitlan Edo de Mexico</Direccion>
+            <Calle>Avenida valles de las alamedas 7 y 8. CP 54940. Tultitlan Edo de Mexico</Calle>
+            <Partido>Local</Partido>
+            <Provincia>México</Provincia>
+            <InicioHorario1>700</InicioHorario1>
+            <FinHorario1>700</FinHorario1>
+            <InicioHorario2>0</InicioHorario2>
+            <FinHorario2>0</FinHorario2>
+            <TiempoEspera>360</TiempoEspera>
+            <Volumen>0.054017664</Volumen>
+            <Peso>0</Peso>
+            <Bulto>1</Bulto>
+            <Pallets>0</Pallets>
+            <Distancia>0</Distancia>
+            <Latitud>19.5902525</Latitud>
+            <Longitud>-99.1813606</Longitud>
+            <Observaciones/>
+            <Varchar1>SUC 170 DISTRIBUIDRA SMART</Varchar1>
+            <Varchar2>000212577</Varchar2>
+            <Int1>0</Int1>
+            <Int2>0</Int2>
+            <CodigoPostal>57205</CodigoPostal>
+            <UrlB2C>https://cloudmx.unigis.com/ADIDAS/B2C/OrderBase/Details?reference=EAAAAC5nL5Kn0wWeNer+kwWx0LY5YG9ZFsGzaryEAH+EYqEm&amp;UTC_difference=-1</UrlB2C>
+            <EstadoDetalle>
+               <RefDocumento>6406851792</RefDocumento>
+               <Estado>Planeacion</Estado>
+               <EstadoFecha>2020-08-04T01:57:18.627Z</EstadoFecha>
+               <ValidarTransicion xsi:nil="true"/>
+            </EstadoDetalle>
+            <Items>
+               <pOrdenPedidoItem>
+                  <RefDocumento>00006520010145875327</RefDocumento>
+                  <RefDocumentoAdicional>G28243569</RefDocumentoAdicional>
+                  <Producto>
+                     <RefProducto>A3</RefProducto>
+                     <Volumen>0</Volumen>
+                     <Peso>0</Peso>
+                     <Bultos>0</Bultos>
+                     <Alto>0</Alto>
+                     <Ancho>0</Ancho>
+                     <Profundidad>0</Profundidad>
+                     <Apilable>0</Apilable>
+                  </Producto>
+                  <Cantidad>1</Cantidad>
+                  <Volumen>0.054017663999999986</Volumen>
+                  <Peso>0</Peso>
+                  <Bulto>1</Bulto>
+                  <Pallets>0</Pallets>
+                  <ImporteCosto>0</ImporteCosto>
+                  <FechaEntrega xsi:nil="true"/>
+                  <Varchar1>APP</Varchar1>
+                  <Varchar2>7/22/2020 12:25:28 PM</Varchar2>
+                  <Int1>0</Int1>
+                  <Int2>0</Int2>
+                  <Descripcion>A3</Descripcion>
+                  <IdPedidoItem>3450466</IdPedidoItem>
+                  <Unidades>3</Unidades>
+                  <ReferenciaCantidad>0</ReferenciaCantidad>
+                  <ReferenciaValor>0</ReferenciaValor>
+                  <ProcesarVolumetria>1</ProcesarVolumetria>
+                  <Apilable>0</Apilable>
+                  <Alto>0</Alto>
+                  <Ancho>0</Ancho>
+                  <Profundidad>0</Profundidad>
+               </pOrdenPedidoItem>
+            </Items>
+            <Documentos>
+               <pDocumento>
+                  <TipoDocumento>Facturas</TipoDocumento>
+                  <Referencia>6410696196</Referencia>
+                  <FechaEmision>2020-08-11T03:00:00</FechaEmision>
+                  <FechaExpiracion>2090-08-11T03:00:00</FechaExpiracion>
+                  <Categoria>28703072</Categoria>
+                  <Clase>26419.47</Clase>
+                  <Observaciones>6406851792</Observaciones>
+                  <ForzarActualizacion xsi:nil="true"/>
+               </pDocumento>
+            </Documentos>
+            <IdPedido>607620</IdPedido>
+            <GrupoRutas>0</GrupoRutas>
+            <InicioHorarioRecoleccion1>0</InicioHorarioRecoleccion1>
+            <InicioHorarioRecoleccion2>0</InicioHorarioRecoleccion2>
+            <FinHorarioRecoleccion1>0</FinHorarioRecoleccion1>
+            <FinHorarioRecoleccion2>0</FinHorarioRecoleccion2>
+            <Unidades>0</Unidades>
+            <ValorDeclarado>0</ValorDeclarado>
+            <Float1>0</Float1>
+            <Float2>0</Float2>
+         </ConsultarOrdenPedidoResult>
+      </ConsultarOrdenPedidoResponse>
+   </soap:Body>
+  </soap:Envelope>
 
 1.25. ConsultarOrdenPedidoId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1749,6 +1942,119 @@ Permite crear ordenes de trabajo. Aplica para "CrearOrdenesDetrabajo" 2.
       - List<pOrdenPedido>
       - Lista de Ordenes.
 
+Ejemplo:
+
+.. code-block:: XML
+
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+   <unis:CrearOrdenesPedido>
+         <unis:apiKey>02-82-B2-FD-84-8</unis:apiKey>
+         <unis:pedidos>
+            <unis:pOrdenPedido>
+               <unis:RefDocumento>06111117_test</unis:RefDocumento>
+               <unis:RefDocumentoAdicional>46084312611</unis:RefDocumentoAdicional>
+               <unis:Fecha>2023-03-15T10:10:10Z</unis:Fecha>
+               <unis:FechaEntrega>2023-03-18T10:10:10Z</unis:FechaEntrega>
+               <unis:FechaEntregaOriginal>2023-03-18T10:10:10Z</unis:FechaEntregaOriginal>
+               <unis:Cliente>
+                 <unis:RefCliente>1006</unis:RefCliente>
+                  <unis:RazonSocial>STO 006 BOSQUE</unis:RazonSocial>
+                  <unis:Latitud>10.9459154979</unis:Latitud>
+                  <unis:Longitud>-74.8221843130</unis:Longitud>
+                  <unis:RefDomicilioExterno>1006</unis:RefDomicilioExterno>
+                  <unis:DomicilioDescripcion>STO 006 BOSQUE</unis:DomicilioDescripcion>
+                  <unis:InicioHorario1>0</unis:InicioHorario1>
+                  <unis:InicioHorario2>0</unis:InicioHorario2>
+                  <unis:FinHorario1>0</unis:FinHorario1>
+                  <unis:FinHorario2>0</unis:FinHorario2>
+                  <unis:TiempoEspera>0</unis:TiempoEspera>
+                  <unis:IgnorarOperacion>true</unis:IgnorarOperacion>
+                  <unis:IgnorarOperacionDomicilioOrden>true</unis:IgnorarOperacionDomicilioOrden>
+               </unis:Cliente>
+               <unis:Descripcion>STO 006 BOSQUE</unis:Descripcion>
+               <unis:CodigoSucursal>Centro Logistico Bombona</unis:CodigoSucursal>
+               <unis:TipoPedido>GRANOS</unis:TipoPedido>
+               <unis:Estado>Confirmado</unis:Estado>
+               <unis:InicioHorario1>500</unis:InicioHorario1>
+               <unis:FinHorario1>1400</unis:FinHorario1>
+               <unis:InicioHorario2>0</unis:InicioHorario2>
+               <unis:FinHorario2>0</unis:FinHorario2>
+               <unis:TiempoEspera>30</unis:TiempoEspera>
+               <unis:Volumen>0</unis:Volumen>
+               <unis:Peso>0</unis:Peso>
+               <unis:Bulto>0</unis:Bulto>
+               <unis:Pallets>0</unis:Pallets>
+               <unis:Distancia>0</unis:Distancia>
+               <unis:Latitud>10.9459154979</unis:Latitud>
+               <unis:Longitud>-74.8221843130</unis:Longitud>
+               <unis:Observaciones>Sin Observaciones</unis:Observaciones>
+               <unis:Varchar1>SAO</unis:Varchar1>
+               <unis:Varchar2>No Contaminante</unis:Varchar2>
+               <unis:B2CPassword>089054929</unis:B2CPassword>
+               <unis:Int1>0</unis:Int1>
+               <unis:Int2>0</unis:Int2>
+               <unis:Tipo>D</unis:Tipo>
+               <unis:Categoria>Arrume negro</unis:Categoria>
+               <unis:Prioridad>Z001</unis:Prioridad>
+               <unis:depositoLlegada>
+                  <unis:RefDepositoExterno>GR001</unis:RefDepositoExterno>
+                  <unis:Descripcion>Centro Logistico Bombona GR001</unis:Descripcion>
+                  <unis:InicioHorario>0</unis:InicioHorario>
+                  <unis:FinHorario>0</unis:FinHorario>
+                  <unis:TiempoEspera>0</unis:TiempoEspera>
+                  <unis:Latitud>0</unis:Latitud>
+                  <unis:Longitud>0</unis:Longitud>
+                  <unis:X>0</unis:X>
+                  <unis:Y>0</unis:Y>
+               </unis:depositoLlegada>
+               <unis:CodigoOperacion>8051</unis:CodigoOperacion>
+               <unis:Items>
+                  <unis:pOrdenPedidoItem>
+                     <unis:RefDocumento>089054929</unis:RefDocumento>
+                     <unis:Producto>
+                        <unis:RefProducto>000000000000000027</unis:RefProducto>
+                        <unis:Descripcion>PAPA PASTUSA</unis:Descripcion>
+                        <unis:Volumen>0.598</unis:Volumen>
+                        <unis:Peso>4500</unis:Peso>
+                        <unis:Bultos>0</unis:Bultos>
+                        <unis:Alto>0.000000</unis:Alto>
+                        <unis:Ancho>0.000000</unis:Ancho>
+                        <unis:Profundidad>0.000000</unis:Profundidad>
+                        <unis:Apilable>0</unis:Apilable>
+                     </unis:Producto>
+                     <unis:Cantidad>1</unis:Cantidad>
+                     <unis:Volumen>0.598</unis:Volumen>
+                     <unis:Peso>4500</unis:Peso>
+                     <unis:Bulto>0</unis:Bulto>
+                     <unis:Pallets>0</unis:Pallets>
+                     <unis:ImporteCosto>0</unis:ImporteCosto>
+                     <unis:FechaEntrega>2023-03-18T10:10:10Z</unis:FechaEntrega>
+                     <unis:Int1>0</unis:Int1>
+                     <unis:Int2>0</unis:Int2>
+                     <unis:Descripcion>PAPA PASTUSA</unis:Descripcion>
+                     <unis:ReferenciaValor>-1</unis:ReferenciaValor>
+                     <unis:VigenciaDesde>2023-03-18T10:10:10Z</unis:VigenciaDesde>
+                     <unis:VigenciaHasta>2023-03-18T10:10:10Z</unis:VigenciaHasta>
+                     <unis:ProcesarVolumetria>1</unis:ProcesarVolumetria>
+                  </unis:pOrdenPedidoItem>
+               </unis:Items>
+               <unis:FechaRecoleccion>2023-03-18T10:10:10Z</unis:FechaRecoleccion>
+               <unis:usarProductos>true</unis:usarProductos>
+               <unis:Datetime1>2023-03-18T10:10:10Z</unis:Datetime1>
+               <unis:Datetime2>2023-03-18T10:10:10Z</unis:Datetime2>
+               <unis:Datetime3>2023-03-18T10:10:10Z</unis:Datetime3>
+               <unis:VigenciaDesde>2023-03-18T10:10:10Z</unis:VigenciaDesde>
+               <unis:VigenciaHasta>2023-03-18T10:10:10Z</unis:VigenciaHasta>
+               <unis:altaProductos>true</unis:altaProductos>
+               <unis:obligarProductoItems>true</unis:obligarProductoItems>
+            </unis:pOrdenPedido>
+         </unis:pedidos>
+      </unis:CrearOrdenesPedido>
+   </soapenv:Body>
+ </soapenv:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2049,7 +2355,84 @@ Aplica para CrearVehiculos_ValidarExistencia
     * - Vehiculos
       - List<pVehiculo>
       - Lista de vehículos.
-    
+
+Ejemplo:
+
+.. code-block:: XML
+
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <unis:CrearVehiculos>
+         <!--Optional:-->
+         <unis:apiKey>?</unis:apiKey>
+         <!--Optional:-->
+         <unis:vehiculos>
+            <!--Zero or more repetitions:-->
+            <unis:pVehiculo>
+               <!--Optional:-->
+               <unis:Dominio>MTJ5229</unis:Dominio>
+               <!--Optional:-->
+               <unis:DominioSemi>MTJ5229</unis:DominioSemi>
+               <!--Optional:-->
+               <unis:ReferenciaExterna>PARTICULAR</unis:ReferenciaExterna>
+               <!--Optional:-->
+               <unis:NroSerie>NVMTJ5229</unis:NroSerie>
+               <!--Optional:-->
+               <unis:Prestador>UNIGIS</unis:Prestador>
+               <!--Optional:-->
+               <unis:Flota>X</unis:Flota>
+               <!--Optional:-->
+               <unis:Chasis>1</unis:Chasis>
+               <unis:Volumen>1</unis:Volumen>
+               <unis:Peso>1</unis:Peso>
+               <!--Optional:-->
+               <unis:Ciudad>No Determinada</unis:Ciudad>
+               <!--Optional:-->
+               <unis:Marca>INDEFINIDA</unis:Marca>
+               <!--Optional:-->
+               <unis:Modelo>NO DETERMINADO</unis:Modelo>
+               <!--Optional:-->
+               <unis:Combustible>INDEFINIDO</unis:Combustible>
+               <!--Optional:-->
+               <unis:RefTipoVehiculo>?</unis:RefTipoVehiculo>
+				<!--Optional:-->
+               <unis:TipoVehiculo>PARTICULA</unis:TipoVehiculo>
+               <!--Optional:-->
+               <unis:TipoCarroceria>NO DETERMINADO</unis:TipoCarroceria>
+               <!--Optional:-->
+               <unis:Propietario>No Determinado</unis:Propietario>
+               <!--Optional:-->
+               <unis:Conductor>CONDUCTOR</unis:Conductor>
+               <!--Optional:-->
+               <unis:CoConductor></unis:CoConductor>
+               <!--Optional:-->
+               <unis:Aseguradora>No Determinada</unis:Aseguradora>
+               <!--Optional:-->
+               <unis:Contrato>1</unis:Contrato>
+               <!--Optional:-->
+               <unis:Transporte>No Determinado</unis:Transporte>
+               <!--Optional:-->
+               <unis:Categoria>No Determinado</unis:Categoria>
+               <!--Optional:-->
+               <unis:TipoCarga></unis:TipoCarga>
+               <!--Optional:-->
+               <unis:Grupos>
+                  <!--Zero or more repetitions:-->
+                  <unis:string>1</unis:string>
+               </unis:Grupos>
+               <!--Optional:-->
+               <unis:FechaFabricacion>0001-01-01T00:00:00</unis:FechaFabricacion>
+               <!--Optional:-->
+               <unis:IdEstado>-1</unis:IdEstado>
+            </unis:pVehiculo>
+         </unis:vehiculos>
+      </unis:CrearVehiculos>
+   </soapenv:Body>
+ </soapenv:Envelope>
+
+
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2665,6 +3048,102 @@ Aplica para CrearVehiculos_ValidarExistencia
       - Double
       - 
 
+Ejemplo:
+
+.. code-block:: xml
+
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <unis:CrearViajeCompleto>
+         <!--Optional:-->
+         <unis:crearviaje>
+            <unis:CrearViajeNumero>6</unis:CrearViajeNumero>
+            <!--Optional:-->
+            <unis:ApiKey>1</unis:ApiKey>
+            <!--Optional:-->
+            <unis:Dominio>56AJ6F</unis:Dominio>
+            <unis:FechaViaje>2019-06-06T10:31:00.000Z</unis:FechaViaje>
+            <unis:FechaInicioPlan>2019-06-06T10:31:00.000Z</unis:FechaInicioPlan>
+            <unis:FechaFinPlan>2019-10-16T10:31:00.000Z</unis:FechaFinPlan>
+            <unis:FechaInicioCarga>2019-10-16T10:31:00.000Z</unis:FechaInicioCarga>
+            <unis:FechaFinCarga>2019-10-16T10:31:00.000Z</unis:FechaFinCarga>
+            <unis:FechaArribo>2019-10-16T10:31:00.000Z</unis:FechaArribo>
+            <!--Optional:-->
+            <unis:Referencia>na3ssssss</unis:Referencia>
+            <!--Optional:-->
+            <unis:Observaciones>nas3ssss</unis:Observaciones>
+            <!--Optional:-->
+            <unis:transporte>
+            <!--Optional:-->
+               <unis:RazonSocial>No Determinado</unis:RazonSocial>
+               <!--Optional:-->
+               <unis:NombreFantasia>No Determinado</unis:NombreFantasia>
+            </unis:transporte>
+            <!--Optional:-->
+            <unis:cliente>
+               <!--Optional:-->
+               <unis:RefCliente>1002</unis:RefCliente>
+            <!--Optional:-->
+            <unis:RazonSocial>Philips Lighting Argentina S.A</unis:RazonSocial>
+            </unis:cliente>
+            <!--Optional:-->
+            <unis:depositoSalida>
+               <!--Optional:-->
+            <unis:RefDepositoExterno>MÉRIDA</unis:RefDepositoExterno>
+            <!--Optional:-->
+            <unis:Descripcion>MÉRIDA</unis:Descripcion>
+            </unis:depositoSalida>
+            <!--Optional:-->
+            <unis:depositoLlegada>
+               <!--Optional:-->
+            <unis:RefDepositoExterno>WALMART</unis:RefDepositoExterno>
+            <!--Optional:-->
+            <unis:Descripcion>WALMART</unis:Descripcion>
+            </unis:depositoLlegada>
+            <!--Optional:-->
+            <unis:conductor>
+               <!--Optional:-->
+            <unis:Login>GJPG01</unis:Login>
+            <!--Optional:-->
+            <unis:Nombre>GJPG01</unis:Nombre>
+            <!--Optional:-->
+            <unis:Apellido>GJPG01</unis:Apellido>
+            <!--Optional:-->
+            <unis:ReferenciaExterna>GJPG01</unis:ReferenciaExterna>
+            </unis:conductor>
+            <!--Optional:-->
+            <unis:login>GJPG01</unis:login>
+            <!--Optional:-->
+            <unis:prestador></unis:prestador>
+            <!--Optional:-->
+            <unis:varchar1></unis:varchar1>
+            <!--Optional:-->
+            <unis:varchar2></unis:varchar2>
+            <!--Optional:-->
+            <unis:varchar3></unis:varchar3>
+            <!--Optional:-->
+            <unis:Empresa>UNISOLUTIONS</unis:Empresa>
+            <!--Optional:-->
+            <unis:Sucursal>UNISOLUTIONS</unis:Sucursal>
+            <!--Optional:-->
+            <unis:Operacion>UNISOLUTIONS</unis:Operacion>
+            <!--Optional:-->
+            <unis:TipoOperacion>?</unis:TipoOperacion>
+            <!--Optional:-->
+            <unis:Recorrido></unis:Recorrido>
+            <!--Optional:-->
+            <unis:VehiculoSecundario>?</unis:VehiculoSecundario>
+            <!--Optional:-->
+            <unis:Categoria>?</unis:Categoria>
+            <unis:KmsPlan>1</unis:KmsPlan>
+            <!--Optional:-->
+            <unis:TipoViaje>?</unis:TipoViaje>
+         </unis:crearviaje>
+      </unis:CrearViajeCompleto>
+   </soapenv:Body>
+ </soapenv:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -3105,6 +3584,83 @@ Modifica el estado de una liquidación.
       - <pEstadoOrdenEntrega>
       - Tipo de dato complejo con la información del estado de la orden de entrega.
       
+Ejemplo
+
+.. code-block:: xml
+
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<unis:ModificarEstadoOrdenEntrega>
+			<unis:estado>
+				<unis:RefDocumento>p002Raul</unis:RefDocumento>
+				<unis:Estado>Listo para Enviar</unis:Estado>
+				<unis:EstadoFecha>2022-06-30T20:27:21</unis:EstadoFecha>
+				<unis:Items>
+					<unis:pOrdenEntregaItem>
+							<unis:RefDocumento>91PHCF20A1P</unis:RefDocumento>
+							<unis:Cantidad>200</unis:Cantidad>
+							<!--Optional:-->
+							<unis:Pallets>1</unis:Pallets>
+							<!--Optional:-->								
+							<unis:Bulto>1</unis:Bulto>
+							<unis:Producto>
+								<unis:RefProducto>91PHCF20A1P</unis:RefProducto>
+								<!--Optional:-->
+								<unis:Descripcion>CALOVENTOR FIJO PHILCO</unis:Descripcion>
+								<!--Optional:-->
+								<unis:Volumen>0.00957</unis:Volumen>
+								<!--Optional:-->
+								<unis:Peso>1.1</unis:Peso>
+								<!--Optional:-->
+								<unis:Alto>1</unis:Alto>
+                           			<!--Optional:-->
+                           			<unis:Ancho>1</unis:Ancho>
+                           			<!--Optional:-->
+                           			<unis:Profundidad>1</unis:Profundidad>
+                           			<!--Optional:-->
+                           			<unis:Apilable>1</unis:Apilable>
+							</unis:Producto>
+					</unis:pOrdenEntregaItem>
+					<unis:pOrdenEntregaItem>
+							<unis:RefDocumento>1234</unis:RefDocumento>
+							<unis:Cantidad>2</unis:Cantidad>
+							<!--Optional:-->
+							<unis:Pallets>1</unis:Pallets>
+							<!--Optional:-->								
+							<unis:Bulto>1</unis:Bulto>
+							<unis:Producto>
+								<unis:RefProducto>1234</unis:RefProducto>
+								<!--Optional:-->
+								<unis:Descripcion>CALOVENTOR FIJO PHILCO</unis:Descripcion>
+								<!--Optional:-->
+								<unis:Volumen>0.00957</unis:Volumen>
+								<!--Optional:-->
+								<unis:Peso>1.1</unis:Peso>
+								<!--Optional:-->
+								<unis:Alto>1</unis:Alto>
+                           			<!--Optional:-->
+                           			<unis:Ancho>1</unis:Ancho>
+                           			<!--Optional:-->
+                           			<unis:Profundidad>1</unis:Profundidad>
+                           			<!--Optional:-->
+                           			<unis:Apilable>1</unis:Apilable>
+							</unis:Producto>
+					</unis:pOrdenEntregaItem>
+				</unis:Items>
+				<unis:ValidarTransicion>1</unis:ValidarTransicion>
+				<unis:CampoDinamico>
+					<unis:CampoValor>
+						<unis:Campo>NroRemitoHD</unis:Campo>
+						<unis:Valor>3001369611</unis:Valor>
+					</unis:CampoValor>
+				</unis:CampoDinamico>
+			</unis:estado>
+		</unis:ModificarEstadoOrdenEntrega>
+	</soapenv:Body>
+ </soapenv:Envelope>
+
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -3134,7 +3690,138 @@ Permite modificar el estado de un pedido (ver el tipo de dato pEstadoOrdenPedido
     * - Estado (*)
       - <pEstadoOrdenPedido>
       - Tipo de dato complejo con lainformación	del	estado del pedido.
-      
+
+Ejemplo:
+
+.. code-block:: xml
+
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <unis:ModificarEstadoOrdenPedido>
+         <unis:estado>
+            <!--Optional:-->
+           <unis:RefDocumento>Ariel1</unis:RefDocumento>
+					<unis:FechaEntrega>2022-05-06T08:00:00</unis:FechaEntrega>
+					<unis:CodigoOperacion>HD</unis:CodigoOperacion>
+					<unis:Descripcion>LOMBARDI NALDO S.A.</unis:Descripcion>
+					<!--Optional:-->
+					<unis:Varchar1>Campos Auxiliares Varchar Hasta varchar4</unis:Varchar1>
+					<unis:Tipo>Delivery</unis:Tipo>
+					<!--Optional:-->
+					<unis:ValorDeclarado>2405217.0</unis:ValorDeclarado>
+					<unis:Estado>Pedido Pickeado</unis:Estado>
+					<unis:ValidarTransicion>1</unis:ValidarTransicion>
+				     <!--Optional:-->
+				     <unis:Observaciones>Onservaciones que precisen</unis:Observaciones>
+					<unis:Cliente>
+						<unis:RefCliente>55556666</unis:RefCliente>
+						<unis:RazonSocial>LOMBARDI NALDO S.A.</unis:RazonSocial>
+     		                     <unis:NumeroDocumento>555566661</unis:NumeroDocumento>
+                               <!--Optional:-->
+                               <unis:TipoDocumento>DNI</unis:TipoDocumento>
+                               <!--Optional:-->
+						<unis:RefDomicilioExterno>11223344</unis:RefDomicilioExterno>
+		                     <!--Optional:-->
+                               <unis:DomicilioDescripcion>CASA 1</unis:DomicilioDescripcion>
+						<unis:Direccion>Laprida 1005, Quilmes</unis:Direccion>
+						<!--Optional:-->
+						<unis:Calle>Laprida</unis:Calle>
+						<!--Optional:-->
+	                          <unis:NumeroPuerta>1005</unis:NumeroPuerta>
+	                          <!--Optional:-->
+	                          <unis:EntreCalle>Andres Baranda y Torcuato de Alvear</unis:EntreCalle>
+                               <!--Optional:-->
+                               <unis:Barrio>Villa Argentina</unis:Barrio>
+	    				     <unis:Localidad>Quilmes</unis:Localidad>
+	    				     <!--Optional:-->
+						<unis:Partido>Quilmes</unis:Partido>
+						<unis:Provincia>Buenos Aires</unis:Provincia>
+						<unis:Pais>AR </unis:Pais>
+						<!--Optional:-->
+						<unis:DomicilioCodigoPostal>6000</unis:DomicilioCodigoPostal>
+						<!--Optional:-->
+						<unis:Telefono>42788574</unis:Telefono>
+						<!--Optional:-->
+						<unis:Telefono2>11324567898</unis:Telefono2>
+						<!--Optional:-->
+						<unis:EMail>a@a.com.ar</unis:EMail>
+						<unis:InicioHorario1>800</unis:InicioHorario1>
+						<unis:FinHorario1>1800</unis:FinHorario1>
+					     <!--Optional:-->
+      	                     <unis:CrearDomicilioOrden>true</unis:CrearDomicilioOrden>
+		                     <!--Optional:-->
+		                     <unis:ActualizarDomicilioOrden>true</unis:ActualizarDomicilioOrden>
+		                     <!--Optional:-->
+		                     <unis:ValidarDomicilioOrden>false</unis:ValidarDomicilioOrden>
+					</unis:Cliente>
+					<unis:depositoSalida>
+						<unis:RefDepositoExterno>E103</unis:RefDepositoExterno>
+					</unis:depositoSalida>
+					<!--Optional:-->
+					<unis:depositoLlegada>
+						<unis:RefDepositoExterno>E104</unis:RefDepositoExterno>
+					</unis:depositoLlegada>
+					<unis:Items>
+						<!--Zero or more repetitions:-->
+						<unis:pOrdenPedidoItem>
+							<unis:RefDocumento>91PHCF20A1P</unis:RefDocumento>
+							<unis:Cantidad>996</unis:Cantidad>
+							<!--Optional:-->
+							<unis:Pallets>1</unis:Pallets>
+							<!--Optional:-->								
+							<unis:Bulto>1</unis:Bulto>
+							<unis:Producto>
+								<unis:RefProducto>91PHCF20A1P</unis:RefProducto>
+								<!--Optional:-->
+								<unis:Descripcion>CALOVENTOR FIJO PHILCO</unis:Descripcion>
+								<!--Optional:-->
+								<unis:Volumen>0.00957</unis:Volumen>
+								<!--Optional:-->
+								<unis:Peso>1.1</unis:Peso>
+								<unis:RazonSocial>EASY</unis:RazonSocial>
+								<!--Optional:-->
+								<unis:Alto>1</unis:Alto>
+                           			<!--Optional:-->
+                           			<unis:Ancho>1</unis:Ancho>
+                           			<!--Optional:-->
+                           			<unis:Profundidad>1</unis:Profundidad>
+                           			<!--Optional:-->
+                           			<unis:Apilable>1</unis:Apilable>
+							</unis:Producto>
+						</unis:pOrdenPedidoItem>
+						<unis:pOrdenPedidoItem>
+							<unis:RefDocumento>ABC1</unis:RefDocumento>
+							<unis:Cantidad>1</unis:Cantidad>
+							<!--Optional:-->
+							<unis:Pallets>1</unis:Pallets>
+							<!--Optional:-->								
+							<unis:Bulto>1</unis:Bulto>
+							<unis:Producto>
+								<unis:RefProducto>ABC1</unis:RefProducto>
+								<!--Optional:-->
+								<unis:Descripcion>CALOVENTOR FIJO PHILCO</unis:Descripcion>
+								<!--Optional:-->
+								<unis:Volumen>0.00957</unis:Volumen>
+								<!--Optional:-->
+								<unis:Peso>1.1</unis:Peso>
+								<unis:RazonSocial>EASY</unis:RazonSocial>
+								<!--Optional:-->
+								<unis:Alto>1</unis:Alto>
+                           			<!--Optional:-->
+                           			<unis:Ancho>1</unis:Ancho>
+                           			<!--Optional:-->
+                           			<unis:Profundidad>1</unis:Profundidad>
+                           			<!--Optional:-->
+                           			<unis:Apilable>1</unis:Apilable>
+							</unis:Producto>
+						</unis:pOrdenPedidoItem>
+					</unis:Items>
+         </unis:estado>
+      </unis:ModificarEstadoOrdenPedido>
+   </soapenv:Body>
+ </soapenv:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1

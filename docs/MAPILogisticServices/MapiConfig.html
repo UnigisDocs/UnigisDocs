@@ -519,6 +519,69 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tbody>
 </table>
 </div>
+<p>Ejemplo:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="w"> </span><span class="na">xmlns:unis=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w"> </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w"> </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">    </span><span class="nt">&lt;AgregarParadaViaje</span><span class="w"> </span><span class="na">xmlns:mime=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/mime/&quot;</span><span class="w"> </span><span class="na">xmlns:jca=</span><span class="s">&quot;http://xmlns.oracle.com/pcbpel/wsdl/jca/&quot;</span><span class="w"> </span><span class="na">xmlns:ns4=</span><span class="s">&quot;http://xmlns.oracle.com/pcbpel/adapter/db/SOA/CrearParadaPRN-UNIGIS/consultarParadaPRN&quot;</span><span class="w"> </span><span class="na">xmlns:soapenc=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="w"> </span><span class="na">xmlns:ns3=</span><span class="s">&quot;http://xmlns.oracle.com/pcbpel/adapter/aq/SOA/CrearParadaPRN-UNIGIS/consultarParadaPRNAQ&quot;</span><span class="w"> </span><span class="na">xmlns:ns5=</span><span class="s">&quot;http://xmlns.oracle.com/pcbpel/adapter/db/SOA/CrearParadaPRN-UNIGIS/consultarParadaUnidadesPRN&quot;</span><span class="w"> </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span><span class="w"> </span><span class="na">xmlns:soap12=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/soap12/&quot;</span><span class="w"> </span><span class="na">xmlns:pc=</span><span class="s">&quot;http://xmlns.oracle.com/pcbpel/&quot;</span><span class="w"> </span><span class="na">xmlns:plt=</span><span class="s">&quot;http://schemas.xmlsoap.org/ws/2003/05/partner-link/&quot;</span><span class="w"> </span><span class="na">xmlns:tm=</span><span class="s">&quot;http://microsoft.com/wsdl/mime/textMatching/&quot;</span><span class="w"> </span><span class="na">xmlns:http=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/http/&quot;</span><span class="w"> </span><span class="na">xmlns:soap=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;</span><span class="w"> </span><span class="na">xmlns:unis=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;unis:ApiKey&gt;</span>85-16-FD-C1-4E-0<span class="nt">&lt;/unis:ApiKey&gt;</span>
+<span class="w">         </span><span class="nt">&lt;unis:idViaje&gt;</span>5950<span class="nt">&lt;/unis:idViaje&gt;</span>
+<span class="w">         </span><span class="nt">&lt;unis:Paradas&gt;</span>
+<span class="w">            </span><span class="nt">&lt;unis:pParada&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Secuencia&gt;</span>1<span class="nt">&lt;/unis:Secuencia&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:RefDocumento&gt;</span>122452<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:RefDocumentoAdicional&gt;</span>NORMAL<span class="nt">&lt;/unis:RefDocumentoAdicional&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:RefDocumentoPedido&gt;</span>354136112<span class="nt">&lt;/unis:RefDocumentoPedido&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Descripcion&gt;</span>FRENO<span class="w"> </span>BENDIX<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Direccion&gt;</span>AVENIDA<span class="w"> </span>44<span class="w"> </span>A<span class="w"> </span>NRO.<span class="w"> </span>59<span class="w"> </span>-<span class="w"> </span>77<span class="nt">&lt;/unis:Direccion&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Localidad&gt;</span>MEDELLÍN<span class="nt">&lt;/unis:Localidad&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Partido&gt;</span>MEDELLÍN<span class="nt">&lt;/unis:Partido&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Provincia&gt;</span>ANTIOQUIA<span class="nt">&lt;/unis:Provincia&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Pais&gt;</span>COL<span class="nt">&lt;/unis:Pais&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:InicioHorarioPlanificado&gt;</span>?<span class="nt">&lt;/unis:InicioHorarioPlanificado&gt;</span>
+<span class="w">             </span><span class="nt">&lt;unis:FinHorarioPlanificado&gt;</span>?<span class="nt">&lt;/unis:FinHorarioPlanificado&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Latitud&gt;</span>0<span class="nt">&lt;/unis:Latitud&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Longitud&gt;</span>0<span class="nt">&lt;/unis:Longitud&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Volumen&gt;</span>11<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Peso&gt;</span>17<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Bulto&gt;</span>1<span class="nt">&lt;/unis:Bulto&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Pallets&gt;</span>0<span class="nt">&lt;/unis:Pallets&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Telefono&gt;</span>45122927<span class="nt">&lt;/unis:Telefono&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Email/&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:TiempoEstadia&gt;</span>1<span class="nt">&lt;/unis:TiempoEstadia&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:InicioHorario1&gt;</span>0800<span class="nt">&lt;/unis:InicioHorario1&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:FinHorario1&gt;</span>2000<span class="nt">&lt;/unis:FinHorario1&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:InicioHorario2&gt;</span>0800<span class="nt">&lt;/unis:InicioHorario2&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:FinHorario2&gt;</span>2000<span class="nt">&lt;/unis:FinHorario2&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Distancia&gt;</span>1<span class="nt">&lt;/unis:Distancia&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:FechaLlegadaCargue&gt;</span>0001-01-01T00:00:00<span class="nt">&lt;/unis:FechaLlegadaCargue&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaEntradaCargue&gt;</span>2024-04-01T00:00:00<span class="nt">&lt;/unis:FechaEntradaCargue&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaSalidaCargue&gt;</span>2024-04-01T00:00:00<span class="nt">&lt;/unis:FechaSalidaCargue&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaLlegadaDescargue&gt;</span>2024-04-01T00:00:00<span class="nt">&lt;/unis:FechaLlegadaDescargue&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaEntradaDescargue&gt;</span>2024-04-01T00:00:00<span class="nt">&lt;/unis:FechaEntradaDescargue&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaSalidaDescargue&gt;</span>2024-04-01T00:00:00<span class="nt">&lt;/unis:FechaSalidaDescargue&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Observaciones&gt;</span>EN<span class="w"> </span>CASO<span class="w"> </span>DE<span class="w"> </span>NOVEDAD<span class="w"> </span>LLAMAR<span class="w"> </span>AL<span class="w"> </span>316-8323894<span class="nt">&lt;/unis:Observaciones&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Varchar1&gt;</span>MEDELLÍN<span class="nt">&lt;/unis:Varchar1&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Varchar2&gt;</span>PAQUETERIA<span class="nt">&lt;/unis:Varchar2&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:RequiereControl&gt;</span>false<span class="nt">&lt;/unis:RequiereControl&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:InicioHorarioPlanificado&gt;</span>0800<span class="nt">&lt;/unis:InicioHorarioPlanificado&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:FinHorarioPlanificado&gt;</span>2000<span class="nt">&lt;/unis:FinHorarioPlanificado&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:Valor_Declarado&gt;</span>796000<span class="nt">&lt;/unis:Valor_Declarado&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:DescripcionMercancia&gt;</span>PRODUCTOS<span class="w"> </span>VARIOS<span class="nt">&lt;/unis:DescripcionMercancia&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:HorasPlanCarga&gt;</span>1<span class="nt">&lt;/unis:HorasPlanCarga&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:MinutosPlanCarga&gt;</span>30<span class="nt">&lt;/unis:MinutosPlanCarga&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:HorasPlanDescarga&gt;</span>1<span class="nt">&lt;/unis:HorasPlanDescarga&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:MinutosPlanDescarga&gt;</span>30<span class="nt">&lt;/unis:MinutosPlanDescarga&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Origen&gt;</span>MEDELLÍN<span class="w"> </span>–<span class="w"> </span>ANTIOQUIA<span class="nt">&lt;/unis:Origen&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Origen&gt;</span>MEDELLÍN<span class="w"> </span>-<span class="w"> </span>ANTIOQUIA<span class="nt">&lt;/unis:Origen&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Destino&gt;</span>MEDELLÍN<span class="w"> </span>–<span class="w"> </span>ANTIOQUIA<span class="nt">&lt;/unis:Destino&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/unis:pParada&gt;</span>
+<span class="w">         </span><span class="nt">&lt;/unis:Paradas&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/AgregarParadaViaje&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+</div>
 <div class="table-wrapper colwidths-given docutils container" id="id17">
 <table class="docutils align-default" id="id17">
 <caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id17" title="Link to this table">#</a></caption>
@@ -1564,6 +1627,133 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<p>Ejemplo:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;soap:Envelope</span><span class="w"> </span><span class="na">xmlns:soap=</span><span class="s">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w"> </span><span class="nt">&lt;soap:Body&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ConsultarOrdenPedidoResponse</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;ConsultarOrdenPedidoResult&gt;</span>
+<span class="w">          </span><span class="nt">&lt;RefDocumento&gt;</span>6406851792<span class="nt">&lt;/RefDocumento&gt;</span>
+<span class="w">          </span><span class="nt">&lt;RefDocumentoAdicional&gt;</span>28703072<span class="nt">&lt;/RefDocumentoAdicional&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Fecha&gt;</span>2020-08-03T00:00:00<span class="nt">&lt;/Fecha&gt;</span>
+<span class="w">          </span><span class="nt">&lt;FechaEntrega&gt;</span>2020-08-05T12:00:00<span class="nt">&lt;/FechaEntrega&gt;</span>
+<span class="w">          </span><span class="nt">&lt;FechaEntregaOriginal</span><span class="w"> </span><span class="na">xsi:nil=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Cliente&gt;</span>
+<span class="w">             </span><span class="nt">&lt;RefCliente&gt;</span>6400001929<span class="nt">&lt;/RefCliente&gt;</span>
+<span class="w">             </span><span class="nt">&lt;RazonSocial&gt;</span>DISTRIBUIDORA<span class="w"> </span>SMART.<span class="w"> </span>S.A.<span class="w"> </span>DE<span class="nt">&lt;/RazonSocial&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Localidad&gt;</span>Tultitlán<span class="nt">&lt;/Localidad&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Latitud&gt;</span>0<span class="nt">&lt;/Latitud&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Longitud&gt;</span>0<span class="nt">&lt;/Longitud&gt;</span>
+<span class="w">             </span><span class="nt">&lt;RefDomicilioExterno&gt;</span>6400000352<span class="nt">&lt;/RefDomicilioExterno&gt;</span>
+<span class="w">             </span><span class="nt">&lt;DomicilioDescripcion&gt;</span>DISTRIBUIDORA<span class="w"> </span>LIVERPOOL.<span class="w"> </span>S.A.<span class="w"> </span>DE<span class="nt">&lt;/DomicilioDescripcion&gt;</span>
+<span class="w">             </span><span class="nt">&lt;InicioHorario1&gt;</span>0<span class="nt">&lt;/InicioHorario1&gt;</span>
+<span class="w">             </span><span class="nt">&lt;InicioHorario2&gt;</span>0<span class="nt">&lt;/InicioHorario2&gt;</span>
+<span class="w">             </span><span class="nt">&lt;FinHorario1&gt;</span>0<span class="nt">&lt;/FinHorario1&gt;</span>
+<span class="w">             </span><span class="nt">&lt;FinHorario2&gt;</span>0<span class="nt">&lt;/FinHorario2&gt;</span>
+<span class="w">             </span><span class="nt">&lt;TiempoEspera&gt;</span>360<span class="nt">&lt;/TiempoEspera&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Varchar1&gt;</span>SUC<span class="w"> </span>170<span class="w"> </span>DISTRIBUIDRA<span class="w"> </span>LIVERPOOL<span class="nt">&lt;/Varchar1&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Varchar2&gt;</span>000212577<span class="nt">&lt;/Varchar2&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Int1&gt;</span>0<span class="nt">&lt;/Int1&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Int2&gt;</span>0<span class="nt">&lt;/Int2&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Float1&gt;</span>0<span class="nt">&lt;/Float1&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Float2&gt;</span>0<span class="nt">&lt;/Float2&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/Cliente&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Descripcion&gt;</span>DISTRIBUIDORA<span class="w"> </span>SMART,<span class="w"> </span>SA<span class="w"> </span>DE<span class="nt">&lt;/Descripcion&gt;</span>
+<span class="w">          </span><span class="nt">&lt;TipoPedido&gt;</span>FTL<span class="nt">&lt;/TipoPedido&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Estado&gt;</span>Planeacion<span class="nt">&lt;/Estado&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Direccion&gt;</span>Avenida<span class="w"> </span>valles<span class="w"> </span>de<span class="w"> </span>las<span class="w"> </span>alamedas<span class="w"> </span>7<span class="w"> </span>y<span class="w"> </span>8.<span class="w"> </span>CP<span class="w"> </span>54940.<span class="w"> </span>Tultitlan<span class="w"> </span>Edo<span class="w"> </span>de<span class="w"> </span>Mexico<span class="nt">&lt;/Direccion&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Calle&gt;</span>Avenida<span class="w"> </span>valles<span class="w"> </span>de<span class="w"> </span>las<span class="w"> </span>alamedas<span class="w"> </span>7<span class="w"> </span>y<span class="w"> </span>8.<span class="w"> </span>CP<span class="w"> </span>54940.<span class="w"> </span>Tultitlan<span class="w"> </span>Edo<span class="w"> </span>de<span class="w"> </span>Mexico<span class="nt">&lt;/Calle&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Partido&gt;</span>Local<span class="nt">&lt;/Partido&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Provincia&gt;</span>México<span class="nt">&lt;/Provincia&gt;</span>
+<span class="w">          </span><span class="nt">&lt;InicioHorario1&gt;</span>700<span class="nt">&lt;/InicioHorario1&gt;</span>
+<span class="w">          </span><span class="nt">&lt;FinHorario1&gt;</span>700<span class="nt">&lt;/FinHorario1&gt;</span>
+<span class="w">          </span><span class="nt">&lt;InicioHorario2&gt;</span>0<span class="nt">&lt;/InicioHorario2&gt;</span>
+<span class="w">          </span><span class="nt">&lt;FinHorario2&gt;</span>0<span class="nt">&lt;/FinHorario2&gt;</span>
+<span class="w">          </span><span class="nt">&lt;TiempoEspera&gt;</span>360<span class="nt">&lt;/TiempoEspera&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Volumen&gt;</span>0.054017664<span class="nt">&lt;/Volumen&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Peso&gt;</span>0<span class="nt">&lt;/Peso&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Bulto&gt;</span>1<span class="nt">&lt;/Bulto&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Pallets&gt;</span>0<span class="nt">&lt;/Pallets&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Distancia&gt;</span>0<span class="nt">&lt;/Distancia&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Latitud&gt;</span>19.5902525<span class="nt">&lt;/Latitud&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Longitud&gt;</span>-99.1813606<span class="nt">&lt;/Longitud&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Observaciones/&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Varchar1&gt;</span>SUC<span class="w"> </span>170<span class="w"> </span>DISTRIBUIDRA<span class="w"> </span>SMART<span class="nt">&lt;/Varchar1&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Varchar2&gt;</span>000212577<span class="nt">&lt;/Varchar2&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Int1&gt;</span>0<span class="nt">&lt;/Int1&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Int2&gt;</span>0<span class="nt">&lt;/Int2&gt;</span>
+<span class="w">          </span><span class="nt">&lt;CodigoPostal&gt;</span>57205<span class="nt">&lt;/CodigoPostal&gt;</span>
+<span class="w">          </span><span class="nt">&lt;UrlB2C&gt;</span>https://cloudmx.unigis.com/ADIDAS/B2C/OrderBase/Details?reference=EAAAAC5nL5Kn0wWeNer+kwWx0LY5YG9ZFsGzaryEAH+EYqEm<span class="ni">&amp;amp;</span>UTC_difference=-1<span class="nt">&lt;/UrlB2C&gt;</span>
+<span class="w">          </span><span class="nt">&lt;EstadoDetalle&gt;</span>
+<span class="w">             </span><span class="nt">&lt;RefDocumento&gt;</span>6406851792<span class="nt">&lt;/RefDocumento&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Estado&gt;</span>Planeacion<span class="nt">&lt;/Estado&gt;</span>
+<span class="w">             </span><span class="nt">&lt;EstadoFecha&gt;</span>2020-08-04T01:57:18.627Z<span class="nt">&lt;/EstadoFecha&gt;</span>
+<span class="w">             </span><span class="nt">&lt;ValidarTransicion</span><span class="w"> </span><span class="na">xsi:nil=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/EstadoDetalle&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Items&gt;</span>
+<span class="w">             </span><span class="nt">&lt;pOrdenPedidoItem&gt;</span>
+<span class="w">                </span><span class="nt">&lt;RefDocumento&gt;</span>00006520010145875327<span class="nt">&lt;/RefDocumento&gt;</span>
+<span class="w">                </span><span class="nt">&lt;RefDocumentoAdicional&gt;</span>G28243569<span class="nt">&lt;/RefDocumentoAdicional&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Producto&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;RefProducto&gt;</span>A3<span class="nt">&lt;/RefProducto&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;Volumen&gt;</span>0<span class="nt">&lt;/Volumen&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;Peso&gt;</span>0<span class="nt">&lt;/Peso&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;Bultos&gt;</span>0<span class="nt">&lt;/Bultos&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;Alto&gt;</span>0<span class="nt">&lt;/Alto&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;Ancho&gt;</span>0<span class="nt">&lt;/Ancho&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;Profundidad&gt;</span>0<span class="nt">&lt;/Profundidad&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;Apilable&gt;</span>0<span class="nt">&lt;/Apilable&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Producto&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Cantidad&gt;</span>1<span class="nt">&lt;/Cantidad&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Volumen&gt;</span>0.054017663999999986<span class="nt">&lt;/Volumen&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Peso&gt;</span>0<span class="nt">&lt;/Peso&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Bulto&gt;</span>1<span class="nt">&lt;/Bulto&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Pallets&gt;</span>0<span class="nt">&lt;/Pallets&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ImporteCosto&gt;</span>0<span class="nt">&lt;/ImporteCosto&gt;</span>
+<span class="w">                </span><span class="nt">&lt;FechaEntrega</span><span class="w"> </span><span class="na">xsi:nil=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Varchar1&gt;</span>APP<span class="nt">&lt;/Varchar1&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Varchar2&gt;</span>7/22/2020<span class="w"> </span>12:25:28<span class="w"> </span>PM<span class="nt">&lt;/Varchar2&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Int1&gt;</span>0<span class="nt">&lt;/Int1&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Int2&gt;</span>0<span class="nt">&lt;/Int2&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Descripcion&gt;</span>A3<span class="nt">&lt;/Descripcion&gt;</span>
+<span class="w">                </span><span class="nt">&lt;IdPedidoItem&gt;</span>3450466<span class="nt">&lt;/IdPedidoItem&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Unidades&gt;</span>3<span class="nt">&lt;/Unidades&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ReferenciaCantidad&gt;</span>0<span class="nt">&lt;/ReferenciaCantidad&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ReferenciaValor&gt;</span>0<span class="nt">&lt;/ReferenciaValor&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ProcesarVolumetria&gt;</span>1<span class="nt">&lt;/ProcesarVolumetria&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Apilable&gt;</span>0<span class="nt">&lt;/Apilable&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Alto&gt;</span>0<span class="nt">&lt;/Alto&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Ancho&gt;</span>0<span class="nt">&lt;/Ancho&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Profundidad&gt;</span>0<span class="nt">&lt;/Profundidad&gt;</span>
+<span class="w">             </span><span class="nt">&lt;/pOrdenPedidoItem&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/Items&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Documentos&gt;</span>
+<span class="w">             </span><span class="nt">&lt;pDocumento&gt;</span>
+<span class="w">                </span><span class="nt">&lt;TipoDocumento&gt;</span>Facturas<span class="nt">&lt;/TipoDocumento&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Referencia&gt;</span>6410696196<span class="nt">&lt;/Referencia&gt;</span>
+<span class="w">                </span><span class="nt">&lt;FechaEmision&gt;</span>2020-08-11T03:00:00<span class="nt">&lt;/FechaEmision&gt;</span>
+<span class="w">                </span><span class="nt">&lt;FechaExpiracion&gt;</span>2090-08-11T03:00:00<span class="nt">&lt;/FechaExpiracion&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Categoria&gt;</span>28703072<span class="nt">&lt;/Categoria&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Clase&gt;</span>26419.47<span class="nt">&lt;/Clase&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Observaciones&gt;</span>6406851792<span class="nt">&lt;/Observaciones&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ForzarActualizacion</span><span class="w"> </span><span class="na">xsi:nil=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">             </span><span class="nt">&lt;/pDocumento&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/Documentos&gt;</span>
+<span class="w">          </span><span class="nt">&lt;IdPedido&gt;</span>607620<span class="nt">&lt;/IdPedido&gt;</span>
+<span class="w">          </span><span class="nt">&lt;GrupoRutas&gt;</span>0<span class="nt">&lt;/GrupoRutas&gt;</span>
+<span class="w">          </span><span class="nt">&lt;InicioHorarioRecoleccion1&gt;</span>0<span class="nt">&lt;/InicioHorarioRecoleccion1&gt;</span>
+<span class="w">          </span><span class="nt">&lt;InicioHorarioRecoleccion2&gt;</span>0<span class="nt">&lt;/InicioHorarioRecoleccion2&gt;</span>
+<span class="w">          </span><span class="nt">&lt;FinHorarioRecoleccion1&gt;</span>0<span class="nt">&lt;/FinHorarioRecoleccion1&gt;</span>
+<span class="w">          </span><span class="nt">&lt;FinHorarioRecoleccion2&gt;</span>0<span class="nt">&lt;/FinHorarioRecoleccion2&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Unidades&gt;</span>0<span class="nt">&lt;/Unidades&gt;</span>
+<span class="w">          </span><span class="nt">&lt;ValorDeclarado&gt;</span>0<span class="nt">&lt;/ValorDeclarado&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Float1&gt;</span>0<span class="nt">&lt;/Float1&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Float2&gt;</span>0<span class="nt">&lt;/Float2&gt;</span>
+<span class="w">       </span><span class="nt">&lt;/ConsultarOrdenPedidoResult&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ConsultarOrdenPedidoResponse&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/soap:Body&gt;</span>
+<span class="nt">&lt;/soap:Envelope&gt;</span>
+</pre></div>
 </div>
 </section>
 <section id="consultarordenpedidoid">
@@ -3096,6 +3286,117 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tbody>
 </table>
 </div>
+<p>Ejemplo:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="w"> </span><span class="na">xmlns:unis=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">  </span><span class="nt">&lt;unis:CrearOrdenesPedido&gt;</span>
+<span class="w">        </span><span class="nt">&lt;unis:apiKey&gt;</span>02-82-B2-FD-84-8<span class="nt">&lt;/unis:apiKey&gt;</span>
+<span class="w">        </span><span class="nt">&lt;unis:pedidos&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:pOrdenPedido&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:RefDocumento&gt;</span>06111117_test<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:RefDocumentoAdicional&gt;</span>46084312611<span class="nt">&lt;/unis:RefDocumentoAdicional&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Fecha&gt;</span>2023-03-15T10:10:10Z<span class="nt">&lt;/unis:Fecha&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:FechaEntrega&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:FechaEntrega&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:FechaEntregaOriginal&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:FechaEntregaOriginal&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Cliente&gt;</span>
+<span class="w">                </span><span class="nt">&lt;unis:RefCliente&gt;</span>1006<span class="nt">&lt;/unis:RefCliente&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:RazonSocial&gt;</span>STO<span class="w"> </span>006<span class="w"> </span>BOSQUE<span class="nt">&lt;/unis:RazonSocial&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:Latitud&gt;</span>10.9459154979<span class="nt">&lt;/unis:Latitud&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:Longitud&gt;</span>-74.8221843130<span class="nt">&lt;/unis:Longitud&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:RefDomicilioExterno&gt;</span>1006<span class="nt">&lt;/unis:RefDomicilioExterno&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:DomicilioDescripcion&gt;</span>STO<span class="w"> </span>006<span class="w"> </span>BOSQUE<span class="nt">&lt;/unis:DomicilioDescripcion&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:InicioHorario1&gt;</span>0<span class="nt">&lt;/unis:InicioHorario1&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:InicioHorario2&gt;</span>0<span class="nt">&lt;/unis:InicioHorario2&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:FinHorario1&gt;</span>0<span class="nt">&lt;/unis:FinHorario1&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:FinHorario2&gt;</span>0<span class="nt">&lt;/unis:FinHorario2&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:TiempoEspera&gt;</span>0<span class="nt">&lt;/unis:TiempoEspera&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:IgnorarOperacion&gt;</span>true<span class="nt">&lt;/unis:IgnorarOperacion&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:IgnorarOperacionDomicilioOrden&gt;</span>true<span class="nt">&lt;/unis:IgnorarOperacionDomicilioOrden&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/unis:Cliente&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Descripcion&gt;</span>STO<span class="w"> </span>006<span class="w"> </span>BOSQUE<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:CodigoSucursal&gt;</span>Centro<span class="w"> </span>Logistico<span class="w"> </span>Bombona<span class="nt">&lt;/unis:CodigoSucursal&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:TipoPedido&gt;</span>GRANOS<span class="nt">&lt;/unis:TipoPedido&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Estado&gt;</span>Confirmado<span class="nt">&lt;/unis:Estado&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:InicioHorario1&gt;</span>500<span class="nt">&lt;/unis:InicioHorario1&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:FinHorario1&gt;</span>1400<span class="nt">&lt;/unis:FinHorario1&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:InicioHorario2&gt;</span>0<span class="nt">&lt;/unis:InicioHorario2&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:FinHorario2&gt;</span>0<span class="nt">&lt;/unis:FinHorario2&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:TiempoEspera&gt;</span>30<span class="nt">&lt;/unis:TiempoEspera&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Volumen&gt;</span>0<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Peso&gt;</span>0<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Bulto&gt;</span>0<span class="nt">&lt;/unis:Bulto&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Pallets&gt;</span>0<span class="nt">&lt;/unis:Pallets&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Distancia&gt;</span>0<span class="nt">&lt;/unis:Distancia&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Latitud&gt;</span>10.9459154979<span class="nt">&lt;/unis:Latitud&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Longitud&gt;</span>-74.8221843130<span class="nt">&lt;/unis:Longitud&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Observaciones&gt;</span>Sin<span class="w"> </span>Observaciones<span class="nt">&lt;/unis:Observaciones&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Varchar1&gt;</span>SAO<span class="nt">&lt;/unis:Varchar1&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Varchar2&gt;</span>No<span class="w"> </span>Contaminante<span class="nt">&lt;/unis:Varchar2&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:B2CPassword&gt;</span>089054929<span class="nt">&lt;/unis:B2CPassword&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Int1&gt;</span>0<span class="nt">&lt;/unis:Int1&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Int2&gt;</span>0<span class="nt">&lt;/unis:Int2&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Tipo&gt;</span>D<span class="nt">&lt;/unis:Tipo&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Categoria&gt;</span>Arrume<span class="w"> </span>negro<span class="nt">&lt;/unis:Categoria&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Prioridad&gt;</span>Z001<span class="nt">&lt;/unis:Prioridad&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:depositoLlegada&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:RefDepositoExterno&gt;</span>GR001<span class="nt">&lt;/unis:RefDepositoExterno&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:Descripcion&gt;</span>Centro<span class="w"> </span>Logistico<span class="w"> </span>Bombona<span class="w"> </span>GR001<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:InicioHorario&gt;</span>0<span class="nt">&lt;/unis:InicioHorario&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:FinHorario&gt;</span>0<span class="nt">&lt;/unis:FinHorario&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:TiempoEspera&gt;</span>0<span class="nt">&lt;/unis:TiempoEspera&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:Latitud&gt;</span>0<span class="nt">&lt;/unis:Latitud&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:Longitud&gt;</span>0<span class="nt">&lt;/unis:Longitud&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:X&gt;</span>0<span class="nt">&lt;/unis:X&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:Y&gt;</span>0<span class="nt">&lt;/unis:Y&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/unis:depositoLlegada&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:CodigoOperacion&gt;</span>8051<span class="nt">&lt;/unis:CodigoOperacion&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Items&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:pOrdenPedidoItem&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:RefDocumento&gt;</span>089054929<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Producto&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:RefProducto&gt;</span>000000000000000027<span class="nt">&lt;/unis:RefProducto&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Descripcion&gt;</span>PAPA<span class="w"> </span>PASTUSA<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Volumen&gt;</span>0.598<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Peso&gt;</span>4500<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Bultos&gt;</span>0<span class="nt">&lt;/unis:Bultos&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Alto&gt;</span>0.000000<span class="nt">&lt;/unis:Alto&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Ancho&gt;</span>0.000000<span class="nt">&lt;/unis:Ancho&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Profundidad&gt;</span>0.000000<span class="nt">&lt;/unis:Profundidad&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:Apilable&gt;</span>0<span class="nt">&lt;/unis:Apilable&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/unis:Producto&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Cantidad&gt;</span>1<span class="nt">&lt;/unis:Cantidad&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Volumen&gt;</span>0.598<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Peso&gt;</span>4500<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Bulto&gt;</span>0<span class="nt">&lt;/unis:Bulto&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Pallets&gt;</span>0<span class="nt">&lt;/unis:Pallets&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:ImporteCosto&gt;</span>0<span class="nt">&lt;/unis:ImporteCosto&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:FechaEntrega&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:FechaEntrega&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Int1&gt;</span>0<span class="nt">&lt;/unis:Int1&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Int2&gt;</span>0<span class="nt">&lt;/unis:Int2&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:Descripcion&gt;</span>PAPA<span class="w"> </span>PASTUSA<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:ReferenciaValor&gt;</span>-1<span class="nt">&lt;/unis:ReferenciaValor&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:VigenciaDesde&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:VigenciaDesde&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:VigenciaHasta&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:VigenciaHasta&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;unis:ProcesarVolumetria&gt;</span>1<span class="nt">&lt;/unis:ProcesarVolumetria&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;/unis:pOrdenPedidoItem&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/unis:Items&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:FechaRecoleccion&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:FechaRecoleccion&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:usarProductos&gt;</span>true<span class="nt">&lt;/unis:usarProductos&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Datetime1&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:Datetime1&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Datetime2&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:Datetime2&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Datetime3&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:Datetime3&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:VigenciaDesde&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:VigenciaDesde&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:VigenciaHasta&gt;</span>2023-03-18T10:10:10Z<span class="nt">&lt;/unis:VigenciaHasta&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:altaProductos&gt;</span>true<span class="nt">&lt;/unis:altaProductos&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:obligarProductoItems&gt;</span>true<span class="nt">&lt;/unis:obligarProductoItems&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/unis:pOrdenPedido&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/unis:pedidos&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/unis:CrearOrdenesPedido&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+</div>
 <div class="table-wrapper colwidths-given docutils container" id="id107">
 <table class="docutils align-default" id="id107">
 <caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id107" title="Link to this table">#</a></caption>
@@ -3610,6 +3911,79 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<p>Ejemplo:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="w"> </span><span class="na">xmlns:unis=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">     </span><span class="nt">&lt;unis:CrearVehiculos&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">        </span><span class="nt">&lt;unis:apiKey&gt;</span>?<span class="nt">&lt;/unis:apiKey&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">        </span><span class="nt">&lt;unis:vehiculos&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Zero or more repetitions:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:pVehiculo&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Dominio&gt;</span>MTJ5229<span class="nt">&lt;/unis:Dominio&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:DominioSemi&gt;</span>MTJ5229<span class="nt">&lt;/unis:DominioSemi&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:ReferenciaExterna&gt;</span>PARTICULAR<span class="nt">&lt;/unis:ReferenciaExterna&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:NroSerie&gt;</span>NVMTJ5229<span class="nt">&lt;/unis:NroSerie&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Prestador&gt;</span>UNIGIS<span class="nt">&lt;/unis:Prestador&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Flota&gt;</span>X<span class="nt">&lt;/unis:Flota&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Chasis&gt;</span>1<span class="nt">&lt;/unis:Chasis&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Volumen&gt;</span>1<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Peso&gt;</span>1<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Ciudad&gt;</span>No<span class="w"> </span>Determinada<span class="nt">&lt;/unis:Ciudad&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Marca&gt;</span>INDEFINIDA<span class="nt">&lt;/unis:Marca&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Modelo&gt;</span>NO<span class="w"> </span>DETERMINADO<span class="nt">&lt;/unis:Modelo&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Combustible&gt;</span>INDEFINIDO<span class="nt">&lt;/unis:Combustible&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:RefTipoVehiculo&gt;</span>?<span class="nt">&lt;/unis:RefTipoVehiculo&gt;</span>
+<span class="w">                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:TipoVehiculo&gt;</span>PARTICULA<span class="nt">&lt;/unis:TipoVehiculo&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:TipoCarroceria&gt;</span>NO<span class="w"> </span>DETERMINADO<span class="nt">&lt;/unis:TipoCarroceria&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Propietario&gt;</span>No<span class="w"> </span>Determinado<span class="nt">&lt;/unis:Propietario&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Conductor&gt;</span>CONDUCTOR<span class="nt">&lt;/unis:Conductor&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:CoConductor&gt;&lt;/unis:CoConductor&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Aseguradora&gt;</span>No<span class="w"> </span>Determinada<span class="nt">&lt;/unis:Aseguradora&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Contrato&gt;</span>1<span class="nt">&lt;/unis:Contrato&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Transporte&gt;</span>No<span class="w"> </span>Determinado<span class="nt">&lt;/unis:Transporte&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Categoria&gt;</span>No<span class="w"> </span>Determinado<span class="nt">&lt;/unis:Categoria&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:TipoCarga&gt;&lt;/unis:TipoCarga&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:Grupos&gt;</span>
+<span class="w">                 </span><span class="cm">&lt;!--Zero or more repetitions:--&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;unis:string&gt;</span>1<span class="nt">&lt;/unis:string&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/unis:Grupos&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:FechaFabricacion&gt;</span>0001-01-01T00:00:00<span class="nt">&lt;/unis:FechaFabricacion&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:IdEstado&gt;</span>-1<span class="nt">&lt;/unis:IdEstado&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/unis:pVehiculo&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/unis:vehiculos&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/unis:CrearVehiculos&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
 </div>
 <div class="table-wrapper colwidths-given docutils container" id="id127">
 <table class="docutils align-default" id="id127">
@@ -4504,6 +4878,100 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tbody>
 </table>
 </div>
+<p>Ejemplo:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="w"> </span><span class="na">xmlns:unis=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">     </span><span class="nt">&lt;unis:CrearViajeCompleto&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">        </span><span class="nt">&lt;unis:crearviaje&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:CrearViajeNumero&gt;</span>6<span class="nt">&lt;/unis:CrearViajeNumero&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:ApiKey&gt;</span>1<span class="nt">&lt;/unis:ApiKey&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Dominio&gt;</span>56AJ6F<span class="nt">&lt;/unis:Dominio&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaViaje&gt;</span>2019-06-06T10:31:00.000Z<span class="nt">&lt;/unis:FechaViaje&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaInicioPlan&gt;</span>2019-06-06T10:31:00.000Z<span class="nt">&lt;/unis:FechaInicioPlan&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaFinPlan&gt;</span>2019-10-16T10:31:00.000Z<span class="nt">&lt;/unis:FechaFinPlan&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaInicioCarga&gt;</span>2019-10-16T10:31:00.000Z<span class="nt">&lt;/unis:FechaInicioCarga&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaFinCarga&gt;</span>2019-10-16T10:31:00.000Z<span class="nt">&lt;/unis:FechaFinCarga&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:FechaArribo&gt;</span>2019-10-16T10:31:00.000Z<span class="nt">&lt;/unis:FechaArribo&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Referencia&gt;</span>na3ssssss<span class="nt">&lt;/unis:Referencia&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Observaciones&gt;</span>nas3ssss<span class="nt">&lt;/unis:Observaciones&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:transporte&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:RazonSocial&gt;</span>No<span class="w"> </span>Determinado<span class="nt">&lt;/unis:RazonSocial&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:NombreFantasia&gt;</span>No<span class="w"> </span>Determinado<span class="nt">&lt;/unis:NombreFantasia&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/unis:transporte&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:cliente&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">              </span><span class="nt">&lt;unis:RefCliente&gt;</span>1002<span class="nt">&lt;/unis:RefCliente&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:RazonSocial&gt;</span>Philips<span class="w"> </span>Lighting<span class="w"> </span>Argentina<span class="w"> </span>S.A<span class="nt">&lt;/unis:RazonSocial&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/unis:cliente&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:depositoSalida&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:RefDepositoExterno&gt;</span>MÉRIDA<span class="nt">&lt;/unis:RefDepositoExterno&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Descripcion&gt;</span>MÉRIDA<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/unis:depositoSalida&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:depositoLlegada&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:RefDepositoExterno&gt;</span>WALMART<span class="nt">&lt;/unis:RefDepositoExterno&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Descripcion&gt;</span>WALMART<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/unis:depositoLlegada&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:conductor&gt;</span>
+<span class="w">              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Login&gt;</span>GJPG01<span class="nt">&lt;/unis:Login&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Nombre&gt;</span>GJPG01<span class="nt">&lt;/unis:Nombre&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Apellido&gt;</span>GJPG01<span class="nt">&lt;/unis:Apellido&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:ReferenciaExterna&gt;</span>GJPG01<span class="nt">&lt;/unis:ReferenciaExterna&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/unis:conductor&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:login&gt;</span>GJPG01<span class="nt">&lt;/unis:login&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:prestador&gt;&lt;/unis:prestador&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:varchar1&gt;&lt;/unis:varchar1&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:varchar2&gt;&lt;/unis:varchar2&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:varchar3&gt;&lt;/unis:varchar3&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Empresa&gt;</span>UNISOLUTIONS<span class="nt">&lt;/unis:Empresa&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Sucursal&gt;</span>UNISOLUTIONS<span class="nt">&lt;/unis:Sucursal&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Operacion&gt;</span>UNISOLUTIONS<span class="nt">&lt;/unis:Operacion&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:TipoOperacion&gt;</span>?<span class="nt">&lt;/unis:TipoOperacion&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Recorrido&gt;&lt;/unis:Recorrido&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:VehiculoSecundario&gt;</span>?<span class="nt">&lt;/unis:VehiculoSecundario&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:Categoria&gt;</span>?<span class="nt">&lt;/unis:Categoria&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:KmsPlan&gt;</span>1<span class="nt">&lt;/unis:KmsPlan&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">           </span><span class="nt">&lt;unis:TipoViaje&gt;</span>?<span class="nt">&lt;/unis:TipoViaje&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/unis:crearviaje&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/unis:CrearViajeCompleto&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+</div>
 <div class="table-wrapper colwidths-given docutils container" id="id141">
 <table class="docutils align-default" id="id141">
 <caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id141" title="Link to this table">#</a></caption>
@@ -5257,6 +5725,80 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tbody>
 </table>
 </div>
+<p>Ejemplo</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="w"> </span><span class="na">xmlns:unis=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w">       </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">               </span><span class="nt">&lt;unis:ModificarEstadoOrdenEntrega&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;unis:estado&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;unis:RefDocumento&gt;</span>p002Raul<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;unis:Estado&gt;</span>Listo<span class="w"> </span>para<span class="w"> </span>Enviar<span class="nt">&lt;/unis:Estado&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;unis:EstadoFecha&gt;</span>2022-06-30T20:27:21<span class="nt">&lt;/unis:EstadoFecha&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;unis:Items&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:pOrdenEntregaItem&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:RefDocumento&gt;</span>91PHCF20A1P<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Cantidad&gt;</span>200<span class="nt">&lt;/unis:Cantidad&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Pallets&gt;</span>1<span class="nt">&lt;/unis:Pallets&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Bulto&gt;</span>1<span class="nt">&lt;/unis:Bulto&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Producto&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:RefProducto&gt;</span>91PHCF20A1P<span class="nt">&lt;/unis:RefProducto&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Descripcion&gt;</span>CALOVENTOR<span class="w"> </span>FIJO<span class="w"> </span>PHILCO<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Volumen&gt;</span>0.00957<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Peso&gt;</span>1.1<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Alto&gt;</span>1<span class="nt">&lt;/unis:Alto&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Ancho&gt;</span>1<span class="nt">&lt;/unis:Ancho&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Profundidad&gt;</span>1<span class="nt">&lt;/unis:Profundidad&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Apilable&gt;</span>1<span class="nt">&lt;/unis:Apilable&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;/unis:Producto&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;/unis:pOrdenEntregaItem&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:pOrdenEntregaItem&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:RefDocumento&gt;</span>1234<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Cantidad&gt;</span>2<span class="nt">&lt;/unis:Cantidad&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Pallets&gt;</span>1<span class="nt">&lt;/unis:Pallets&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Bulto&gt;</span>1<span class="nt">&lt;/unis:Bulto&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Producto&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:RefProducto&gt;</span>1234<span class="nt">&lt;/unis:RefProducto&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Descripcion&gt;</span>CALOVENTOR<span class="w"> </span>FIJO<span class="w"> </span>PHILCO<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Volumen&gt;</span>0.00957<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Peso&gt;</span>1.1<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Alto&gt;</span>1<span class="nt">&lt;/unis:Alto&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Ancho&gt;</span>1<span class="nt">&lt;/unis:Ancho&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Profundidad&gt;</span>1<span class="nt">&lt;/unis:Profundidad&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Apilable&gt;</span>1<span class="nt">&lt;/unis:Apilable&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;/unis:Producto&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;/unis:pOrdenEntregaItem&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;/unis:Items&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;unis:ValidarTransicion&gt;</span>1<span class="nt">&lt;/unis:ValidarTransicion&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;unis:CampoDinamico&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:CampoValor&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Campo&gt;</span>NroRemitoHD<span class="nt">&lt;/unis:Campo&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Valor&gt;</span>3001369611<span class="nt">&lt;/unis:Valor&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;/unis:CampoValor&gt;</span>
+<span class="w">                               </span><span class="nt">&lt;/unis:CampoDinamico&gt;</span>
+<span class="w">                       </span><span class="nt">&lt;/unis:estado&gt;</span>
+<span class="w">               </span><span class="nt">&lt;/unis:ModificarEstadoOrdenEntrega&gt;</span>
+<span class="w">       </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+</div>
 <div class="table-wrapper colwidths-given docutils container" id="id169">
 <table class="docutils align-default" id="id169">
 <caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id169" title="Link to this table">#</a></caption>
@@ -5308,6 +5850,135 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<p>Ejemplo:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="w"> </span><span class="na">xmlns:unis=</span><span class="s">&quot;http://unisolutions.com.ar/&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">     </span><span class="nt">&lt;unis:ModificarEstadoOrdenPedido&gt;</span>
+<span class="w">        </span><span class="nt">&lt;unis:estado&gt;</span>
+<span class="w">           </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">          </span><span class="nt">&lt;unis:RefDocumento&gt;</span>Ariel1<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:FechaEntrega&gt;</span>2022-05-06T08:00:00<span class="nt">&lt;/unis:FechaEntrega&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:CodigoOperacion&gt;</span>HD<span class="nt">&lt;/unis:CodigoOperacion&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:Descripcion&gt;</span>LOMBARDI<span class="w"> </span>NALDO<span class="w"> </span>S.A.<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:Varchar1&gt;</span>Campos<span class="w"> </span>Auxiliares<span class="w"> </span>Varchar<span class="w"> </span>Hasta<span class="w"> </span>varchar4<span class="nt">&lt;/unis:Varchar1&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:Tipo&gt;</span>Delivery<span class="nt">&lt;/unis:Tipo&gt;</span>
+<span class="w">                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:ValorDeclarado&gt;</span>2405217.0<span class="nt">&lt;/unis:ValorDeclarado&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:Estado&gt;</span>Pedido<span class="w"> </span>Pickeado<span class="nt">&lt;/unis:Estado&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:ValidarTransicion&gt;</span>1<span class="nt">&lt;/unis:ValidarTransicion&gt;</span>
+<span class="w">                                    </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;unis:Observaciones&gt;</span>Onservaciones<span class="w"> </span>que<span class="w"> </span>precisen<span class="nt">&lt;/unis:Observaciones&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:Cliente&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:RefCliente&gt;</span>55556666<span class="nt">&lt;/unis:RefCliente&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:RazonSocial&gt;</span>LOMBARDI<span class="w"> </span>NALDO<span class="w"> </span>S.A.<span class="nt">&lt;/unis:RazonSocial&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;unis:NumeroDocumento&gt;</span>555566661<span class="nt">&lt;/unis:NumeroDocumento&gt;</span>
+<span class="w">                              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                              </span><span class="nt">&lt;unis:TipoDocumento&gt;</span>DNI<span class="nt">&lt;/unis:TipoDocumento&gt;</span>
+<span class="w">                              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:RefDomicilioExterno&gt;</span>11223344<span class="nt">&lt;/unis:RefDomicilioExterno&gt;</span>
+<span class="w">                                    </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                              </span><span class="nt">&lt;unis:DomicilioDescripcion&gt;</span>CASA<span class="w"> </span>1<span class="nt">&lt;/unis:DomicilioDescripcion&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Direccion&gt;</span>Laprida<span class="w"> </span>1005,<span class="w"> </span>Quilmes<span class="nt">&lt;/unis:Direccion&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Calle&gt;</span>Laprida<span class="nt">&lt;/unis:Calle&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                 </span><span class="nt">&lt;unis:NumeroPuerta&gt;</span>1005<span class="nt">&lt;/unis:NumeroPuerta&gt;</span>
+<span class="w">                                 </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                 </span><span class="nt">&lt;unis:EntreCalle&gt;</span>Andres<span class="w"> </span>Baranda<span class="w"> </span>y<span class="w"> </span>Torcuato<span class="w"> </span>de<span class="w"> </span>Alvear<span class="nt">&lt;/unis:EntreCalle&gt;</span>
+<span class="w">                              </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                              </span><span class="nt">&lt;unis:Barrio&gt;</span>Villa<span class="w"> </span>Argentina<span class="nt">&lt;/unis:Barrio&gt;</span>
+<span class="w">                                            </span><span class="nt">&lt;unis:Localidad&gt;</span>Quilmes<span class="nt">&lt;/unis:Localidad&gt;</span>
+<span class="w">                                            </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Partido&gt;</span>Quilmes<span class="nt">&lt;/unis:Partido&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Provincia&gt;</span>Buenos<span class="w"> </span>Aires<span class="nt">&lt;/unis:Provincia&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Pais&gt;</span>AR<span class="w"> </span><span class="nt">&lt;/unis:Pais&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:DomicilioCodigoPostal&gt;</span>6000<span class="nt">&lt;/unis:DomicilioCodigoPostal&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Telefono&gt;</span>42788574<span class="nt">&lt;/unis:Telefono&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Telefono2&gt;</span>11324567898<span class="nt">&lt;/unis:Telefono2&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:EMail&gt;</span>a@a.com.ar<span class="nt">&lt;/unis:EMail&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:InicioHorario1&gt;</span>800<span class="nt">&lt;/unis:InicioHorario1&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:FinHorario1&gt;</span>1800<span class="nt">&lt;/unis:FinHorario1&gt;</span>
+<span class="w">                                            </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;unis:CrearDomicilioOrden&gt;</span>true<span class="nt">&lt;/unis:CrearDomicilioOrden&gt;</span>
+<span class="w">                                    </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;unis:ActualizarDomicilioOrden&gt;</span>true<span class="nt">&lt;/unis:ActualizarDomicilioOrden&gt;</span>
+<span class="w">                                    </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;unis:ValidarDomicilioOrden&gt;</span>false<span class="nt">&lt;/unis:ValidarDomicilioOrden&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;/unis:Cliente&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:depositoSalida&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:RefDepositoExterno&gt;</span>E103<span class="nt">&lt;/unis:RefDepositoExterno&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;/unis:depositoSalida&gt;</span>
+<span class="w">                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:depositoLlegada&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:RefDepositoExterno&gt;</span>E104<span class="nt">&lt;/unis:RefDepositoExterno&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;/unis:depositoLlegada&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;unis:Items&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Zero or more repetitions:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:pOrdenPedidoItem&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:RefDocumento&gt;</span>91PHCF20A1P<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Cantidad&gt;</span>996<span class="nt">&lt;/unis:Cantidad&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Pallets&gt;</span>1<span class="nt">&lt;/unis:Pallets&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Bulto&gt;</span>1<span class="nt">&lt;/unis:Bulto&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Producto&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:RefProducto&gt;</span>91PHCF20A1P<span class="nt">&lt;/unis:RefProducto&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Descripcion&gt;</span>CALOVENTOR<span class="w"> </span>FIJO<span class="w"> </span>PHILCO<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Volumen&gt;</span>0.00957<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Peso&gt;</span>1.1<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:RazonSocial&gt;</span>EASY<span class="nt">&lt;/unis:RazonSocial&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Alto&gt;</span>1<span class="nt">&lt;/unis:Alto&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Ancho&gt;</span>1<span class="nt">&lt;/unis:Ancho&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Profundidad&gt;</span>1<span class="nt">&lt;/unis:Profundidad&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Apilable&gt;</span>1<span class="nt">&lt;/unis:Apilable&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;/unis:Producto&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;/unis:pOrdenPedidoItem&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:pOrdenPedidoItem&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:RefDocumento&gt;</span>ABC1<span class="nt">&lt;/unis:RefDocumento&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Cantidad&gt;</span>1<span class="nt">&lt;/unis:Cantidad&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Pallets&gt;</span>1<span class="nt">&lt;/unis:Pallets&gt;</span>
+<span class="w">                                                       </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Bulto&gt;</span>1<span class="nt">&lt;/unis:Bulto&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;unis:Producto&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:RefProducto&gt;</span>ABC1<span class="nt">&lt;/unis:RefProducto&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Descripcion&gt;</span>CALOVENTOR<span class="w"> </span>FIJO<span class="w"> </span>PHILCO<span class="nt">&lt;/unis:Descripcion&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Volumen&gt;</span>0.00957<span class="nt">&lt;/unis:Volumen&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Peso&gt;</span>1.1<span class="nt">&lt;/unis:Peso&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:RazonSocial&gt;</span>EASY<span class="nt">&lt;/unis:RazonSocial&gt;</span>
+<span class="w">                                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                                               </span><span class="nt">&lt;unis:Alto&gt;</span>1<span class="nt">&lt;/unis:Alto&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Ancho&gt;</span>1<span class="nt">&lt;/unis:Ancho&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Profundidad&gt;</span>1<span class="nt">&lt;/unis:Profundidad&gt;</span>
+<span class="w">                                               </span><span class="cm">&lt;!--Optional:--&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;unis:Apilable&gt;</span>1<span class="nt">&lt;/unis:Apilable&gt;</span>
+<span class="w">                                                       </span><span class="nt">&lt;/unis:Producto&gt;</span>
+<span class="w">                                               </span><span class="nt">&lt;/unis:pOrdenPedidoItem&gt;</span>
+<span class="w">                                       </span><span class="nt">&lt;/unis:Items&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/unis:estado&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/unis:ModificarEstadoOrdenPedido&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
 </div>
 <div class="table-wrapper colwidths-given docutils container" id="id171">
 <table class="docutils align-default" id="id171">
