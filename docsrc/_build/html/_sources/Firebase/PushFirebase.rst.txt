@@ -1,6 +1,9 @@
 Notificaciones Push Firebase
 ===============================
 
+Descripción 
+--------------
+
 .. container:: justified-text
 
     El presente documento explica como configurar los servicios de mensajería a través de la tecnología Firebase en el sistema UNIGIS. Parte de la mensajería está destinada a otros servicios, pero en este documento se enfocará a los servicios proporcionados por Firebase.

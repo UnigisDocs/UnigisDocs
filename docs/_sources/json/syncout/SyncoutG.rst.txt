@@ -1,8 +1,9 @@
 Syncout Genérico
 =======================
 
-Configuración y Uso
---------------------------
+Descripción 
+--------------
+
 .. container:: justified-text
 
     JSON Syncout permite realizar el envío de información de los cambios de estado a través de las tablas sistema externo a servicios que no requieran autenticación, esta nueva versión va a permitir la autenticación de diferentes formar como Basic Auth, Bearer Token, OAUTH y con el envío de Json genérico que tiene el actual o diferente según lo requiera el cliente.

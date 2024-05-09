@@ -1,8 +1,8 @@
 MAPI Logistic Services
 =========================
 
-Configuración y Uso
---------------------------
+Descripción 
+--------------
 
 .. container:: justified-text
 

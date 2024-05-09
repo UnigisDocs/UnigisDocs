@@ -1,9 +1,9 @@
 Smart Planning
 ==============================
 
+Descripción 
+--------------
 
-Configuración y Uso
---------------------------
 .. container:: justified-text
 
     El siguiente documento tiene como objetivo proporcionar información técnica, describir la funcionalidad paso a paso, así como ofrecer una descripción detallada y organizada. Esta guía está diseñada para ser comprensible en todos los niveles y tener la información disponible para su uso en cualquier momento que pueda ser de utilidad.

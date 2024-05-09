@@ -1,6 +1,9 @@
 Integrations Center
 =======================
 
+Descripción 
+--------------
+
 .. container:: justified-text
 
     Integrations Center es una sección que centraliza todas las funcionalidades referentes a las integraciones en una nueva pantalla reubicando mucho de los enlaces que se encontraban anteriormente en la pantalla de administrador.

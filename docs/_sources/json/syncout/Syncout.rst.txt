@@ -1,8 +1,8 @@
 Syncout V2
 =======================
 
-Configuración y Uso
---------------------------
+Descripción 
+--------------
 
 .. container:: justified-text
 

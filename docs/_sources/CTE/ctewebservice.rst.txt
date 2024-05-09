@@ -1,6 +1,9 @@
 Web Service CTE 
 ================
 
+Descripción 
+--------------
+
 .. container:: justified-text
 
     Es un servicio que permite registrar los CTE (Conhecimento de Transporte Eletrônico) enviados por los clientes con base a la nueva estructura de datos. Con esto se permite enviar los CTE de una manera más eficiente aceptando el lenguaje XML con estructura en versión 3.0 y 4.0.

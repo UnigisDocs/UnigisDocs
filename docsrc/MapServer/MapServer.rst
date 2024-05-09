@@ -1,6 +1,9 @@
 MapServer X 
 ============
 
+Descripción 
+--------------
+
 .. container:: justified-text
 
     A partir de la versión 10.220.0.0, se suma a la familia de productos Unigis “MapServer X”, sustituyendo a Unigis MapServer. El cual se encarga de realizar las tareas de ruteo, ediciones de rutas y consolidación de órdenes, pero no de geocodificar.
