@@ -699,7 +699,7 @@ Descripción: Tabla que almacenará la información de los detalles del impuesto
       - Mapeo xml atributo “vCred”.
 
 
-Caso de Uso
+Forma de Uso
 --------------
 
 Para acceder a este enlace se deberá ingresar con un usuario que tenga acceso al módulo de “Integrations Center”, posteriormente en el menú de Log Out seleccionar :kbd:`Integrations Center` --> :kbd:`CTE` --> :kbd:`Web Service`.

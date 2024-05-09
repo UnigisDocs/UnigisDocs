@@ -1,0 +1,548 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../genindex.html" /><link rel="search" title="Búsqueda" href="../search.html" /><link rel="prev" title="Courrier Adapter" href="../CAdapter/CourrierAdapter.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Notificaciones Push Firebase - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2966eb94" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GettingStart/Gettingstart.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Ruteo/Ruteo.html">Planeación de Distribución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Yard/Yard.html">Yard Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/B2B/b2b.html">Portal B2B (business-to-business)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Mobile/Deliveries.html">UNIGIS X DELIVERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MAPILogisticServices/MapiConfig.html">MAPI Logistic Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Routing/Routing.html">Smart Planning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../json/Indexsyncout.html">Json Syncout</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Json Syncout</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/SyncoutG.html">Syncout Genérico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/Syncout.html">Syncout V2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MapServer/MapServer.html">MapServer X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CTE/ctewebservice.html">Web Service CTE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Icenter/IntegrationCenter.html">Integrations Center</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CAdapter/CourrierAdapter.html">Courrier Adapter</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Notificaciones Push Firebase</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="notificaciones-push-firebase">
+<h1>Notificaciones Push Firebase<a class="headerlink" href="#notificaciones-push-firebase" title="Link to this heading">#</a></h1>
+<div class="justified-text docutils container">
+<p>El presente documento explica como configurar los servicios de mensajería a través de la tecnología Firebase en el sistema UNIGIS. Parte de la mensajería está destinada a otros servicios, pero en este documento se enfocará a los servicios proporcionados por Firebase.</p>
+<p>El objetivo es aprovechar los servicios proporcionados por el sistema de UNIGIS para notificar por medio de un mensaje a las aplicaciones móviles.</p>
+<ul class="simple">
+<li><p>La plataforma de UNIGIS cuenta con un servicio de mensajería que es configurable a necesidad del cliente.</p></li>
+<li><p>Las notificaciones pueden ser distribuidas o recibidas como email, mensajes de texto o mensajería de terceros.</p></li>
+<li><p>Uno de los beneficios es que el servicio siempre está disponible para todos los usuarios que consuman los servicios de UNIGIS.</p></li>
+</ul>
+</div>
+<section id="parametros">
+<h2>Parámetros<a class="headerlink" href="#parametros" title="Link to this heading">#</a></h2>
+<p>En esta sección se puede editar los parámetros sin embargo se sugiere encarecidamente mantenerlos por defecto, si desea utilizar un servicio propio de Firebase en esta sección podrá modificar esos valores.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Administración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">Sistema</kbd></kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Integration</kbd> <kbd class="kbd docutils literal notranslate">Center</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">Parámetros</kbd></p>
+<div class="table-wrapper colwidths-given docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Parámetros Clave</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 18.2%" />
+<col style="width: 27.3%" />
+<col style="width: 27.3%" />
+<col style="width: 27.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetro Clave</p></th>
+<th class="head"><p>Valor</p></th>
+<th class="head"><p>CategoríA</p></th>
+<th class="head"><p>Descripción del Parametro</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FirebasePush_ApiKey</p></td>
+<td><p>key=AAAAp_yyTt4:APA91bHwrFa1I2E8tbvUFZsa6IaVo8FdEKNR7LM82gycs-f0bHKVbhP_ZS-RcaBU8FsqVe4Stpeegt7YoLkoM9bYrHL7u1Fa_SXLkAQ9GAUVSKNSRnX1uPrQHKduVCY5m7nLWUSXSSQ4</p></td>
+<td><p>FirebasePush</p></td>
+<td><p>ApiKey de Firebase</p></td>
+</tr>
+<tr class="row-odd"><td><p>FirebasePush_Sender</p></td>
+<td><p>721499082462</p></td>
+<td><p>FirebasePush</p></td>
+<td><p>Numero de envío</p></td>
+</tr>
+<tr class="row-even"><td><p>FirebasePush_Url</p></td>
+<td><p><a class="reference external" href="https://fcm.googleapis.com/fcm/send">https://fcm.googleapis.com/fcm/send</a></p></td>
+<td><p>FirebasePush</p></td>
+<td><p>URL Google API</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="configuracion">
+<h2>Configuración<a class="headerlink" href="#configuracion" title="Link to this heading">#</a></h2>
+<p>La sección de configuración se encuentra en:</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Administración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">Sistema</kbd></kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Log</kbd> <kbd class="kbd docutils literal notranslate">/</kbd> <kbd class="kbd docutils literal notranslate">Bitácoras</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">Notificaciones</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Notificaciones</kbd>.</p>
+<img alt="../_images/logs1.png" class="align-center" src="../_images/logs1.png" />
+<p>En la pestaña de configuración, debajo de ella encontrara los distintos tipos de notificación, seleccione Firebase para verificar si tiene los parámetros por defectos como se observa en la imagen.</p>
+<img alt="../_images/firebase.png" class="align-center" src="../_images/firebase.png" />
+</section>
+<section id="forma-de-uso">
+<h2>Forma de Uso<a class="headerlink" href="#forma-de-uso" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>El funcionamiento de este tipo de notificaciones consiste en consumir el servicio de Firebase de envío de notificaciones. Desde las aplicaciones de UNIGIS nos comunicamos con este servicio indicando hacia dónde enviarlas.</p>
+<p>Para ello, necesitaremos generar una petición e indicar hacia dónde deberá enviarse la notificación. Cada dispositivo receptor está identificado por un token Firebase. En nuestro sistema lo almacenamos en la tabla UsuarioTokenExterno.</p>
+<p>Al tener instalado UNIGIS Deliveries X e ingresar en la aplicación, guardamos un registro en dicha tabla. Cuando una acción en particular genere una notificación push, se consultará el token del usuario receptor en dicha tabla para generar la petición, incluyendo el mensaje y otros datos de relevancia para el proceso.</p>
+<p>Luego de realizar las configuraciones de las notificaciones Firebase, es necesario asignarlas. Para ello debe seleccionar un Tipo de Alarma y asociar un Tipo de Notificación. Por lo tanto, cuando debido a alguna acción especificada se gatille la creación de una alarma, si la misma tiene un Tipo de Notificación asociado, generará una Notificación de ese tipo y se enviará a los posibles destinatarios.</p>
+<p>Ingrese a la sección de Alertas en:</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Administración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">Tracking</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Alertas</kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Tipo</kbd> <kbd class="kbd docutils literal notranslate">de</kbd> <kbd class="kbd docutils literal notranslate">Alarmas</kbd></kbd>.</p>
+</div>
+<img alt="../_images/alarmas.png" class="align-center" src="../_images/alarmas.png" />
+<div class="justified-text docutils container">
+<p>Para crear una alarma nueva, es necesario dar clic en el icono <kbd class="kbd docutils literal notranslate">+</kbd>, donde se mostrará la siguiente pantalla para que pueda configurar la Alarma a Crear.</p>
+</div>
+<img alt="../_images/alarmas.png" class="align-center" src="../_images/alarmas.png" />
+<div class="justified-text docutils container">
+<p>Seleccione la pestaña de notificación y configure:</p>
+<ul class="simple">
+<li><p>Tiempo notificable = Configurar según necesidad.</p></li>
+<li><p>Asunto de la notificación = Título de la notificación.</p></li>
+<li><p>Tipo de notificación:</p></li>
+</ul>
+<dl class="simple">
+<dt>FirebasePushNotification:</dt><dd><ul class="simple">
+<li><p>Lanza una notificación en pantalla del dispositivo móvil informando el mensaje si tiene instalado UNIGIS Deliveries X.</p></li>
+<li><p>La petición enviada hacia Firebase no incluye entre los datos un número de celular destino.</p></li>
+<li><p>El token Firebase se obtiene a través de la tabla UsuarioTokenExterno utilizando el Login del conductor involucrado.</p></li>
+<li><p>No puede ser generada a través de un tipo de alarma. Puede generarse a través de procesos que ejecuten el método GenerarNotificaciones.</p></li>
+</ul>
+</dd>
+<dt>SMS Push Notificación:</dt><dd><ul class="simple">
+<li><p>Envía un SMS hacia un destino a través de UNIGIS Messenger. El usuario debe tener instalado UNIGIS Deliveries X, ya que Firebase envía una notificación push hacia esta aplicación, que se va a encargar de procesarla. Si entre los datos incluidos, se encuentra un número de teléfono destino, se enviará la notificación recibida hacia Messenger para que se encargue de enviar el SMS al destinatario.</p></li>
+<li><p>La petición enviada hacia Firebase incluye entre los datos un número de celular destino.</p></li>
+<li><p>Puede ser generada a través de un tipo de alarma.</p></li>
+<li><p>El token Firebase se obtiene a través de la alarma que genera este tipo de notificación en caso de tener información de Seguimiento asociado. En caso de tenerla, obtendrá el Login del conductor asociado al viaje, para poder buscar el token en la tabla UsuarioTokenExterno.</p></li>
+<li><p>El número de teléfono destino se obtiene de acuerdo con los destinatarios que se establezcan por configuración. En la Figura 1 mostrada en la siguiente página se indican los campos que se utilizan para obtenerlo.</p></li>
+</ul>
+</dd>
+</dl>
+<p>ETA – : Configuraciones especiales para dar seguimiento.</p>
+<p>ETA + : Configuraciones especiales para dar seguimiento.</p>
+<p>Mensaje de la notificación: Si lo desea puede utilizar plantillas en formato HTML para estilizar el mensaje y customizar mapeando campos de tablas de base de datos necesarios.</p>
+<p>Vista previa: Obtendrá la vista previa del mensaje a recibir.</p>
+</div>
+<p>Seleccione de la lista a los destinatarios a los que se le notificara por cada alarma que se genere.</p>
+<img alt="../_images/Destinatarios.png" class="align-center" src="../_images/Destinatarios.png" />
+<div class="justified-text docutils container">
+<p>Los diferentes destinatarios de notificación (Prestador, Cliente, Conductor, etc.) son entidades que permiten el manejo de notificaciones. Para obtener número de teléfono para enviar SMS o mail para enviar correo, se generará un listado de destinatarios cuyos datos de envío se obtienen de los siguientes campos dependiendo de la entidad y la alarma generada, como se muestra a continuación:</p>
+</div>
+<p>Descripción de destinatarios:</p>
+<div class="table-wrapper colwidths-given docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Destinatarios</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Destinatario</p></th>
+<th class="head"><p>Email</p></th>
+<th class="head"><p>Teléfono 1</p></th>
+<th class="head"><p>Teléfono 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Destinatario: Cliente Alarma.IdSegumiento &gt; 0 Seguimiento.IdCliente &gt; 0</p></td>
+<td><p>Cliente.eMailGestorDeFlota</p></td>
+<td><p>Cliente.Telefono1</p></td>
+<td><p>Cliente.Telefono2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Cliente Alarma.IdParada &gt; 0 Parada.IdCliente &gt; 0</p></td>
+<td><p>Cliente.eMailGestorDeFlota</p></td>
+<td><p>Cliente.Telefono1</p></td>
+<td><p>Cliente.Telefono2</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Cliente Alarma.IdPedido &gt; 0 Pedido.IdCliente        &gt; 0</p></td>
+<td><p>Cliente.eMailGestorDeFlota</p></td>
+<td><p>Cliente.Telefono1</p></td>
+<td><p>Cliente.Telefono2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Conductor Alarma.IdSeguimiento &gt; 0 Seguimiento.IdViaje &gt; 0 Viaje.IdConductor &gt; 0</p></td>
+<td><p>Conductor.Email</p></td>
+<td><p>Conductor.Telefono1</p></td>
+<td><p>Conductor.Telefono2</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Operación Alarma.IdSegumiento &gt; 0 Seguimiento.IdViaje &gt; 0 Alarma.IdOrden &gt; 0 Alarma.IdPedido &gt; 0</p></td>
+<td><ol class="arabic simple">
+<li><p>Viaje.Jornada.Operacion.Email 2)        Orden.Jornada.Operacion.Email 3)        Pedido.Operacion.Email</p></li>
+</ol>
+</td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Parada o Parada Consolidada por domicilio Alarma.IdParada &gt; 0</p></td>
+<td><p>Parada.Email</p></td>
+<td><p>Parada.Telefono</p></td>
+<td><p>Parada.Telefono2</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Prestador Alarma.IdEvento     &gt; 0 Evento.IdPrestador &gt; 0</p></td>
+<td><p>Prestador.Email</p></td>
+<td><ul class="simple">
+<li><p>N/A</p></li>
+</ul>
+</td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Seguimiento Alarma.IdSeguimiento &gt; 0</p></td>
+<td><p>Seguimiento.MailResponsable</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Sucursal Alarma.IdSegumiento  &gt; 0 Seguimiento.IdViaje     &gt; 0 Alarma.IdOrden            &gt; 0 Alarma.IdPedido          &gt; 0</p></td>
+<td><ol class="arabic simple">
+<li><p>Viaje.Jornada.Operacion.Sucursal.Email 2) Orden.Jornada.Operacion.Sucursal.Email 3) Pedido.Operacion.Sucursal.Email</p></li>
+</ol>
+</td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Transporte Alarma.IdSeguimiento       &gt; 0 Seguimiento.IdTransporte &gt; 0</p></td>
+<td><p>Transporte.Email</p></td>
+<td><p>Transporte.Telefono1</p></td>
+<td><p>Transporte.Telefono2</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Usuario Alarma.IdSeguimiento &gt; 0 Existe UsuarioSeguimiento</p></td>
+<td><p>Usuario.Email</p></td>
+<td><p>Usuario.Telefono1</p></td>
+<td><p>Usuario.Telefono2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Orden Alarma.IdOrden &gt; 0</p></td>
+<td><p>Orden.Email</p></td>
+<td><p>Orden.Telefono</p></td>
+<td><p>Orden.Telefono2</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Pedido Alarma.IdPedido &gt; 0</p></td>
+<td><p>Pedido,Email</p></td>
+<td><p>Pedido.Telefono</p></td>
+<td><p>Pedido.Telefono2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Parada sin visita real Alarma.IdSegumiento  &gt; 0 Seguimiento.IdViaje     &gt; 0 Todas las paradas del viaje en estado no anulado Parada.FechaInicioReal = null Parada.IdDeposito = null</p></td>
+<td><p>Parada.Email</p></td>
+<td><p>Parada.Telefono</p></td>
+<td><p>Parada.Telefono2</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Primera Parada sin visita real Alarma.IdSegumiento  &gt; 0 Seguimiento.IdViaje &gt; 0 Solo la primera parada del viaje en estado no anulado Parada.FechaInicioReal = null Parada.IdDeposito = null</p></td>
+<td><p>Parada.Email</p></td>
+<td><p>Parada.Telefono</p></td>
+<td><p>Parada.Telefono2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Usuarios Asignados Todos los grupos de usuarios relacionados a la alarma en UsuarioAlarma Todos los usuarios de los grupos obtenidos</p></td>
+<td><p>Usuario,Mail</p></td>
+<td><p>Usuario.Telefono1</p></td>
+<td><p>Usuario.Telefono2</p></td>
+</tr>
+<tr class="row-even"><td><p>Destinatario: Domicilio Orden Alarma.IdParada &gt; 0 Alarma.IdOrden  &gt; 0</p></td>
+<td><ol class="arabic simple">
+<li><p>Parada.Email 2) Orden.Email</p></li>
+</ol>
+</td>
+<td><ol class="arabic simple">
+<li><p>Parada.Telefono 2)      Orden.Telefono</p></li>
+</ol>
+</td>
+<td><ol class="arabic simple">
+<li><p>Parada.Telefono2 2)     Orden.Telefono2</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Destinatario: Otros</p></td>
+<td><p>TipoAlarmaDestinatarioEmail.Email</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="justified-text docutils container">
+<p>A los destinatarios, se le agregan como posibles destinos todas las direcciones de mail encontradas en la tabla TipoAlarmaDestinatarioEmail para el tipo de alarma con la que se esté trabajando.</p>
+<p>Por último, accediendo la pestaña <kbd class="kbd docutils literal notranslate">Grupo</kbd>, se podrán seleccionar los grupos de usuario para los que aplique este tipo de notificación. En la imagen puede observar un ejemplo de una lista de grupos a los que puede enviar las notificaciones.</p>
+</div>
+<img alt="../_images/grupo.png" class="align-center" src="../_images/grupo.png" />
+<p>Para guardar sus cambios presione el botón <kbd class="kbd docutils literal notranslate">Guardar</kbd>. Si lo desea puede regresar a la lista de Alarmas y Editar la alarma generada anterior en caso de que requiera realizar algún cambio.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../CAdapter/CourrierAdapter.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Courrier Adapter</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Notificaciones Push Firebase</a><ul>
+<li><a class="reference internal" href="#parametros">Parámetros</a></li>
+<li><a class="reference internal" href="#configuracion">Configuración</a></li>
+<li><a class="reference internal" href="#forma-de-uso">Forma de Uso</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>

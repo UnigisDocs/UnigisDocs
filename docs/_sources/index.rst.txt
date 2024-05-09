@@ -25,6 +25,9 @@ Contenido
    json/Indexsyncout.rst
    MapServer/MapServer.rst
    CTE/ctewebservice.rst
+   Icenter/IntegrationCenter.rst
+   CAdapter/CourrierAdapter.rst
+   Firebase/PushFirebase.rst
    
    
    
