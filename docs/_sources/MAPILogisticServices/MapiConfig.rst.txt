@@ -82,7 +82,7 @@ Web Services
       - Boolean
       - Indica si el resultado de la operación fue exitoso o no.  1: OK ejecución correcta  0: ERROR ocurrió algún problema en la ejecución del servicio.
 
-2.2. ActivarViaje
+1.2. ActivarViaje
 ~~~~~~~~~~~~~~~~~~~
 
 .. container:: justified-text
@@ -132,6 +132,39 @@ Permite agregar encuentas a viajes o paradas.
     * - Encuesta
       - List<pEncuesta>
       - Lista de encuentas.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <AgregarEncuestas xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Login>admin</Login>
+      <Encuestas>
+        <pEncuesta>
+          <IdViaje>12144</IdViaje>
+          <IdParada>297290</IdParada>
+          <Encuesta>SATISFACCION CLIENTE</Encuesta>
+          <Fecha>2022-02-02</Fecha>
+          <Preguntas>
+            <pPregunta>
+              <Pregunta>LA ENTREGA LLEGO PUNTUAL?</Pregunta>
+              <Respuesta>SI</Respuesta>
+              <Observaciones>Observacion 1 MAPI</Observaciones>
+            </pPregunta>
+            <pPregunta>
+              <Pregunta>LA MERCADERIA ESTA EN BUEN ESTADO?</Pregunta>
+              <Respuesta>SI</Respuesta>
+              <Observaciones>Observacion 2 MAPI</Observaciones>
+            </pPregunta>
+          </Preguntas>
+        </pEncuesta>
+      </Encuestas>
+    </AgregarEncuestas>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -328,7 +361,19 @@ Permite validar la ApiKey que será enviada en cada una de las peticiones realiz
     * - ApiKeyValida
       - String
       - Api Key.
-    
+
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+     <ApiKeyValida xmlns="http://unigis.com/">
+       <s>1234</s>
+     </ApiKeyValida>
+   </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -422,6 +467,28 @@ Recibe un vehículo a asignar a una lista de operaciones y sucursales.
     * - CodigosSucursalOperacion
       - List<CodigoSucursalOperación>
       - Objeto complejo.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <AsignarVehiculo xmlns="http://unisolutions.com.ar/">
+      <apiKey>1234</apiKey>
+      <vehiculo>SOP6578</vehiculo>
+      <codigosSucursalOperacion>
+        <codigoSucursalOperacionRequest>
+          <codigoSucursal>T-CABA</codigoSucursal>
+          <codigoOperacion>1</codigoOperacion>
+          <cantidad>10</cantidad>
+          <cantidadMaxima>20</cantidadMaxima>
+        </codigoSucursalOperacionRequest>
+        </codigosSucursalOperacion>
+      <borrarAsignaciones>0</borrarAsignaciones>
+    </AsignarVehiculo>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -524,6 +591,76 @@ Permite realizar el cambio de estado de diferentes entidades.
     * - IdEstado
       - Int
       - Id del estado al que va a cambiar la entidad.
+
+Ejemplo de cambio de entidad Parada:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <cambiarEstado xmlns="http://www.unisolutions.com.ar/UNIGIS/Data/">
+      <IdParada>69525</IdParada>
+      <IdEstado>3</IdEstado>
+      <IdMotivo>1</IdMotivo>
+      <observaciones>Modificado por Servicios</observaciones>
+      <!--<pics>
+        <ParadaItemCantidad>
+          <IdParadaItemCantidad>int</IdParadaItemCantidad>
+          <IdParadaItem>int</IdParadaItem>
+          <Cantidad>double</Cantidad>
+          <FechaCreacion>dateTime</FechaCreacion>
+          <Login>string</Login>
+          <IdMotivo>long</IdMotivo>
+          <IdParada>int</IdParada>
+          <CantidadSecundaria>double</CantidadSecundaria>
+          <IdUnidadMedida>int</IdUnidadMedida>
+          <IdUnidadMedidaSecundaria>int</IdUnidadMedidaSecundaria>
+        </ParadaItemCantidad>
+        <ParadaItemCantidad>
+          <IdParadaItemCantidad>int</IdParadaItemCantidad>
+          <IdParadaItem>int</IdParadaItem>
+          <Cantidad>double</Cantidad>
+          <FechaCreacion>dateTime</FechaCreacion>
+          <Login>string</Login>
+          <IdMotivo>long</IdMotivo>
+          <IdParada>int</IdParada>
+          <CantidadSecundaria>double</CantidadSecundaria>
+          <IdUnidadMedida>int</IdUnidadMedida>
+          <IdUnidadMedidaSecundaria>int</IdUnidadMedidaSecundaria>
+        </ParadaItemCantidad>
+      </pics>-->
+     <!-- <valor_control>string</valor_control>
+      <ticks_utc>long</ticks_utc>
+      <id_encuesta>int</id_encuesta>-->
+      <respuestas>
+        <EncuestaSolucionRespuesta>
+          <IdEncuestaSolucionRespuesta>1</IdEncuestaSolucionRespuesta>
+          <IdEncuestaSolucion>1</IdEncuestaSolucion>
+          <IdEncuestaPregunta>1</IdEncuestaPregunta>
+          <Respuesta>Servivios</Respuesta>
+          <Observaciones>Serviciod</Observaciones>
+          <RespuestaArchivos>
+            <EncuestaSolucionRespuestaArchivo xsi:nil="true" />
+            <EncuestaSolucionRespuestaArchivo xsi:nil="true" />
+          </RespuestaArchivos>
+        </EncuestaSolucionRespuesta>
+        <!--<EncuestaSolucionRespuesta>
+          <IdEncuestaSolucionRespuesta>int</IdEncuestaSolucionRespuesta>
+          <IdEncuestaSolucion>int</IdEncuestaSolucion>
+          <IdEncuestaPregunta>int</IdEncuestaPregunta>
+          <Respuesta>string</Respuesta>
+          <Observaciones>string</Observaciones>
+          <RespuestaArchivos>
+            <EncuestaSolucionRespuestaArchivo xsi:nil="true" />
+            <EncuestaSolucionRespuestaArchivo xsi:nil="true" />
+          </RespuestaArchivos>
+        </EncuestaSolucionRespuesta>-->
+      </respuestas>
+      <!--<latitud>double</latitud>
+      <longitud>double</longitud>-->
+    </cambiarEstado>
+  </soap:Body>
+ </soap:Envelope>}
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -734,6 +871,20 @@ Consulta estados de paradas en viaje.
       - Int
       - Id del viaje UNIGIS.
 
+Ejemplo:
+
+.. code-block:: xml
+  
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <unis:ConsultarEstadosParadasViaje>         
+         <unis:Apikey>1234</unis:Apikey>
+         <unis:IdViaje>{{_IdViaje}}</unis:IdViaje>
+      </unis:ConsultarEstadosParadasViaje>
+   </soapenv:Body>
+ </soapenv:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -854,6 +1005,22 @@ Servicio que retorna un tipo de dato complejo con la información de la orden de
     * - TipoOperación
       - String
       - Referencia externa del tipo de operación.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarOrdenEntrega xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <RefDocumento>941511379</RefDocumento>
+      <Sucursal>T-CABA</Sucursal>
+      <Operacion>DELIV-JUG</Operacion>
+      <TipoOperacion>TDISTR-1</TipoOperacion>
+    </ConsultarOrdenEntrega>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -1044,6 +1211,19 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
       - Int
       - Id de pedido asignado.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarOrdenPedidoId xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdPedido>37516</IdPedido>
+    </ConsultarOrdenPedidoId>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -1084,6 +1264,23 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
     * - Secuencia
       - Integer
       - Indica el número de secuencia de la Parada / Cliente dentro del Viaje.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarParada xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdViaje>20</IdViaje>
+      <Secuencia>1</Secuencia>
+      <RefDocumento>941460149</RefDocumento>
+      <RefDocumentoAdicional>55204780189</RefDocumentoAdicional>
+      <RefCliente>6298</RefCliente>
+    </ConsultarParada>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -1126,6 +1323,19 @@ Servicio que retorna un tipo de dato complejo con la información del pedido.
       - Integer
       - Indica el número de secuencia de la Parada / Cliente dentro del Viaje.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarParadaPorId xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdParada>36</IdParada>
+    </ConsultarParadaPorId>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -1164,6 +1374,24 @@ Permite consultar información de trace de la parada de un estado en especifico.
     * - Fecha
       - DateTime
       - Fecha si quiere consultar.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarParadaTraceEstado xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdParada>30</IdParada>
+      <RefDocumento></RefDocumento>
+      <EstadoParada>5</EstadoParada>
+      <TipoFecha></TipoFecha>
+      <Fecha>2018-08-23</Fecha>
+      <IgnorarEstadoParada>0</IgnorarEstadoParada>
+    </ConsultarParadaTraceEstado>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -1211,6 +1439,27 @@ Permite consultar la información de los recursos.
       - DateTime
       - Rango de fechas fin.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarRecursos xmlns="http://unisolutions.com.ar/">
+      <apiKey>1234</apiKey>
+      <consultarRecursos>
+        <TipoRecurso>Pallets</TipoRecurso>
+        <ReferenciaRecurso>pallets</ReferenciaRecurso>
+       <EstadoRecurso>Disponible</EstadoRecurso>
+        <TipoUbicacion>deposito</TipoUbicacion>
+        <ReferenciaUbicacion>TORTUGUITAS</ReferenciaUbicacion>
+        <FechaDesde>2021-03-01T13:00:00</FechaDesde>
+        <FechaHasta>2021-04-30T13:00:00</FechaHasta>
+      </consultarRecursos>
+    </ConsultarRecursos>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -1256,6 +1505,22 @@ Consulta los recursos del vehículo
       - DateTime
       - Rango de fechas inicio.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarRecursoVehiculo xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Dominio>car15</Dominio>
+      <ReferenciaRecurso></ReferenciaRecurso>
+      <Estado></Estado>
+      <EstadoRecurso></EstadoRecurso>
+      <FechaCreacion>2018-08-21</FechaCreacion>
+    </ConsultarRecursoVehiculo>
+  </soap:Body>
+  </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -1295,6 +1560,24 @@ Regresa la información de todas las transiciones o cambios de estados por los q
     * - TipoFecha
       - String
       - FechaOrigen o FechaCreacion.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarTransicionesEstadoViaje xmlns="http://unisolutions.com.ar/">
+      <Fecha>2021-04-28T13:00:00</Fecha>
+      <ApiKey>1234</ApiKey>
+      <IdViaje>6034</IdViaje>
+      <ReferenciaExterna>SMK-SERV0303-1</ReferenciaExterna>
+      <Operacion>Operacion Default</Operacion>
+      <EstadoViaje>INICIAL</EstadoViaje>
+      <TipoFecha/>
+    </ConsultarTransicionesEstadoViaje>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -1353,6 +1636,19 @@ Regresa la información de todas las transiciones o cambios de estados por los q
     * - IdViaje
       - Integer
       - Identificación del Viaje para consultar su estado. Este número identificador es el retornado al crear un viaje con el método “CrearViaje”.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ConsultarViaje xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdViaje>3252</IdViaje>
+    </ConsultarViaje>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -1606,6 +1902,34 @@ Crea o modifica el maestro de clientes dadores de la carga.
       - List<pClienteDador>
       - Lista de los clientes dadores a crear o modificar.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearClientesDadores xmlns="http://unisolutions.com.ar/">
+      <apiKey>1234</apiKey>
+      <clientes>
+        <pClienteDador>
+          <ReferenciaExterna>Materiales Medicos</ReferenciaExterna>
+          <RazonSocial>Materiales Medicos sa </RazonSocial>
+          <NombreFantasia>FARMA SA</NombreFantasia>
+          <Cuit>FAY0909095TU</Cuit>
+          <Telefono1>558669752</Telefono1>
+          <Telefono2>565887898</Telefono2>
+          <Direccion>Blvd. Miguel de Cervantes Saavedra 259</Direccion>
+          <Localidad>Miguel HIdalgo</Localidad>
+          <eMailGestorDeFlota>mario.urbina@unigis.com</eMailGestorDeFlota>
+          <CentroDeCosto></CentroDeCosto>
+          <IdEstado>1</IdEstado>
+          <IntegrarRNDC>false</IntegrarRNDC>
+        </pClienteDador>
+      </clientes>
+    </CrearClientesDadores>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -1762,6 +2086,22 @@ Crea o modifica documentos
       - List<pDocumento>
       - Lista de los documentos a crear.
 
+Ejemplo:
+
+.. code-block:: xml
+  
+  <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerGuiasLiquidacionPorId xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdsGuias>
+        <int>1391</int>
+        <int>1392</int>
+      </IdsGuias>
+    </ObtenerGuiasLiquidacionPorId>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -1912,6 +2252,113 @@ Permite crear ordenes de trabajo. Aplica para "CrearOrdenesDetrabajo" 2.
     * - Ordenes
       - List<pOrdenEntrega>
       - Lista de Ordenes.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearOrdenesEntrega xmlns="http://unisolutions.com.ar/">
+      <apiKey>1234</apiKey>
+      <entregas>
+        <pOrdenEntrega>
+            <Operacion>DELIV-JUG</Operacion>
+            <RefDocumento>T-CABA</RefDocumento>
+            <RefDocumentoPedido>28072020</RefDocumentoPedido>
+            <Tipo>DISTRIBUCION</Tipo>
+            <TipoOrden>D</TipoOrden>
+            <CategoriaOrden/>
+            <FechaJornada>2020-08-21T00:00:00</FechaJornada>
+            <Cliente>
+                <RefCliente>106607</RefCliente>
+                <RazonSocial>SERVICIOS PARA LA HIGIENE S.A - CA</RazonSocial>
+                <Latitud xsi:nil="true"/>
+                <Longitud xsi:nil="true"/>
+                <RefDomicilioExterno>106607</RefDomicilioExterno>
+                <DomicilioDescripcion>SERVICIOS PARA LA HIGIENE S.A</DomicilioDescripcion>
+                <InicioHorario1 xsi:nil="true"/>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario1 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera xsi:nil="true"/>
+                <Int1>0</Int1>
+                <Int2>0</Int2>
+                <Float1>0</Float1>
+                <Float2>0</Float2>
+            </Cliente>
+            <Descripcion>SERVICIOS PARA LA HIGIENE S.A</Descripcion>
+            <Direccion>Punta Arenas PB 1410</Direccion>
+            <Calle>Punta Arenas</Calle>
+            <NroPuerta>1410</NroPuerta>
+            <Barrio>Paternal</Barrio>
+            <Provincia>Capital Federal</Provincia>
+            <Pais>ARGENTINA</Pais>
+            <InicioHorario1>600</InicioHorario1>
+            <FinHorario1>1200</FinHorario1>
+            <InicioHorario2>0</InicioHorario2>
+            <FinHorario2>1</FinHorario2>
+            <TiempoEspera>60</TiempoEspera>
+            <CrearDomicilio xsi:nil="true"/>
+            <Orden>0</Orden>
+            <InicioHorarioPlanificado>2020-08-21T00:00:00</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>2020-08-21T00:00:00</FinHorarioPlanificado>
+            <Volumen>13</Volumen>
+            <Peso>1543</Peso>
+            <Bulto>0</Bulto>
+            <Pallets>9</Pallets>
+            <Distancia xsi:nil="true"/>
+            <Latitud>-34.5938642619308</Latitud>
+            <Longitud>-58.4700528558757</Longitud>
+            <Varchar1>15/12/2018</Varchar1>
+            <Varchar2>11113634</Varchar2>
+            <Int1>20</Int1>
+            <Int2>0</Int2>
+            <IdRuta>0</IdRuta>
+            <PreOrden xsi:nil="true"/>
+            <GrupoConsolidacion xsi:nil="true"/>
+            <PrioridadAbsoluta xsi:nil="true"/>
+            <GrupoRutas xsi:nil="true"/>
+            <TiempoLatencia xsi:nil="true"/>
+            <TiempoEsperaPromedio xsi:nil="true"/>
+            <Email>{{_email}}</Email>    
+            <Items>
+                <pOrdenEntregaItem>
+                    <IdOrdenItem>0</IdOrdenItem>
+                    <RefDocumento>000020</RefDocumento>
+                    <Producto>
+                        <RefProducto>387818</RefProducto>
+                        <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                        <Volumen>2</Volumen>
+                        <Peso>3</Peso>
+                        <Bultos>0</Bultos>
+                        <Alto>1.02</Alto>
+                        <Ancho>2.04</Ancho>
+                        <Profundidad>3</Profundidad>
+                        <Apilable>0</Apilable>
+                    </Producto>
+                    <Cantidad>3</Cantidad>
+                    <Volumen>2</Volumen>
+                    <Peso>3</Peso>
+                    <Bulto>4</Bulto>
+                    <Pallets>0</Pallets>
+                    <LPN>CA</LPN>
+                    <PrecioUnitario>0</PrecioUnitario>
+                </pOrdenEntregaItem>            
+            </Items>
+            <Servicios/>
+            <Fotos/>
+            <ParadaItems/>
+            <Costo>0</Costo>
+            <InicioVisita>0</InicioVisita>
+            <FinVisita>0</FinVisita>
+            <Unidades>0</Unidades>
+        </pOrdenEntrega>
+      </entregas>
+    </CrearOrdenesEntrega>
+  </soap:Body>
+ </soap:Envelope>
+
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -2111,7 +2558,79 @@ Crea o modifica el catálogo de productos.
     * - Lista de Productos
       - List<pProducto>
       - Lista de los productos a crear.
-    
+
+Ejemplo:
+
+.. code-block:: xml
+
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:unis="http://unisolutions.com.ar/">
+    <soapenv:Header />
+    <soapenv:Body>
+        <unis:CrearProductos>
+            <!--Optional:-->
+            <unis:apiKey>1234</unis:apiKey>
+            <!--Optional:-->
+            <unis:productos>
+                <!--Zero
+                or more repetitions:-->
+                <unis:pProducto>
+                    <!--Optional:-->
+                    <unis:RefProducto>{{_RefProducto}}</unis:RefProducto>
+                    <!--Optional:codigo
+                    producto-->
+                    <unis:Descripcion>Marty McFly A Escala</unis:Descripcion>
+                    <!--Optional:descripcion
+                    producto-->
+                    <unis:Volumen>23</unis:Volumen>
+                    <!--Optional:volumen
+                    total del la unidad, es el resultado de multiplicar largo, ancho y
+                    profundidad-->
+                    <unis:Peso>1.39</unis:Peso>
+                    <!--Optional:peso
+                    producto en kg-->
+                    <unis:Bultos>2</unis:Bultos>
+                    <!--Optional:colocar
+                    uno dado que se esta declarando un solo producto-->
+                    <unis:Alto>11.75</unis:Alto>
+                    <!--Optional:alto
+                    maximo de la unidad-->
+                    <unis:Ancho>28.19</unis:Ancho>
+                    <!--Optional:
+                    ancho maximo de la unidad-->
+                    <unis:Profundidad>47.98</unis:Profundidad>
+                    <!--Optional:profundidad
+                    maxima de la unidad-->
+                    <unis:Apilable>1</unis:Apilable>
+                    <!--Optional:1
+                    si se puede colocar un producto encima de el, 0 lo contrario-->
+                    <unis:Rotacion>true</unis:Rotacion>
+                    <!--Optional:true
+                    si permite rotar el producto, sino false-->
+                    <unis:Codigo>657</unis:Codigo>
+                    <!--Optional:codigo
+                    EAN-->
+                    <unis:RazonSocial>TOYS SA</unis:RazonSocial>
+       
+                    <!--Optional:-->
+                    <unis:Linea>Autos A Escala</unis:Linea>
+                    <!--Optional:-->
+                    <unis:SubLinea>Volver Al Futuro</unis:SubLinea>
+                    <!--Optional:-->
+                    <unis:UnidadMedida>cm</unis:UnidadMedida>
+                    <!--Optional:-->
+                    <unis:TiempoDescarga>2</unis:TiempoDescarga>
+                    <!--Optional:si
+                    hay algun tiempo de descarga por unidad colocarlo, sino colocar 0-->
+                    <unis:Costo>0</unis:Costo>
+                    <!--Optional:si
+                    hay algun costo por unidad colocarlo, sino colocar 0-->
+                </unis:pProducto>
+            </unis:productos>
+        </unis:CrearProductos>
+    </soapenv:Body>
+ </soapenv:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2231,7 +2750,130 @@ Crea una ruta.
     * - Ruta a crear
       - pRuta
       - Información de la ruta a crear.
-    
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearRuta xmlns="http://unisolutions.com.ar/">
+            <apiKey>1234</apiKey>
+       <ruta>    
+	        <IdRuta>0</IdRuta>
+            <FechaHoraSalida>2023-11-09T12:00:00</FechaHoraSalida>
+            <FechaHoraLlegada>2023-11-09T19:00:00</FechaHoraLlegada>
+            <Conductor>DIEGOCATZ</Conductor>
+            <TipoVehiculo>A3</TipoVehiculo>
+            <Ruta>100</Ruta>
+            <Descripcion>HNK - COBRANZAS - ESCENARIO 1</Descripcion>
+            <CantidadOrdenes>1</CantidadOrdenes>
+            <ReferenciaExterna>HNK-R1</ReferenciaExterna>
+            <Sucursal>T-CABA</Sucursal>
+            <Operacion>DELIV-JUG</Operacion> 
+            <Estado>INICIAL</Estado>
+            <EstadoJornada>1</EstadoJornada>
+            <IdJornada>0</IdJornada>
+            <Varchar1>Pruebas Cobranzas HNK Caso 1</Varchar1>
+			<Ordenes>
+				<pOrdenEntrega>
+					<Operacion>DELIV-JUG</Operacion>
+					<RefDocumento>T-CABA</RefDocumento>
+					<RefDocumentoPedido>28072020</RefDocumentoPedido>
+					<Tipo>DISTRIBUCION</Tipo>
+					<TipoOrden>D</TipoOrden>
+					<CategoriaOrden/>
+					<FechaJornada>2023-11-09T00:00:00</FechaJornada>
+					<Cliente>
+						<RefCliente>106607</RefCliente>
+						<RazonSocial>SERVICIOS PARA LA HIGIENE S.A - CA</RazonSocial>
+						<Latitud xsi:nil="true"/>
+						<Longitud xsi:nil="true"/>
+						<RefDomicilioExterno>106607</RefDomicilioExterno>
+						<DomicilioDescripcion>SERVICIOS PARA LA HIGIENE S.A</DomicilioDescripcion>
+						<InicioHorario1 xsi:nil="true"/>
+						<InicioHorario2 xsi:nil="true"/>
+						<FinHorario1 xsi:nil="true"/>
+						<FinHorario2 xsi:nil="true"/>
+						<TiempoEspera xsi:nil="true"/>
+						<Int1>0</Int1>
+						<Int2>0</Int2>
+						<Float1>0</Float1>
+						<Float2>0</Float2>
+					</Cliente>
+					<Descripcion>SERVICIOS PARA LA HIGIENE S.A</Descripcion>
+					<Direccion>Punta Arenas PB 1410</Direccion>
+					<Calle>Punta Arenas</Calle>
+					<NroPuerta>1410</NroPuerta>
+					<Barrio>Paternal</Barrio>
+					<Provincia>Capital Federal</Provincia>
+					<Pais>ARGENTINA</Pais>
+					<InicioHorario1>600</InicioHorario1>
+					<FinHorario1>1200</FinHorario1>
+					<InicioHorario2>0</InicioHorario2>
+					<FinHorario2>1</FinHorario2>
+					<TiempoEspera>60</TiempoEspera>
+					<CrearDomicilio xsi:nil="true"/>
+					<Orden>0</Orden>
+					<InicioHorarioPlanificado>2023-11-09T12:00:00</InicioHorarioPlanificado>
+					<FinHorarioPlanificado>2023-11-09T19:00:00</FinHorarioPlanificado>
+					<Volumen>12.594</Volumen>
+					<Peso>1543.32</Peso>
+					<Bulto>0</Bulto>
+					<Pallets>9</Pallets>
+					<Distancia xsi:nil="true"/>
+					<Latitud>-34.5938642619308</Latitud>
+					<Longitud>-58.4700528558757</Longitud>
+					<Varchar1>15/12/2018</Varchar1>
+					<Varchar2>11113634</Varchar2>
+					<Int1>20</Int1>
+					<Int2>0</Int2>
+					<IdRuta>0</IdRuta>
+					<PreOrden xsi:nil="true"/>
+					<GrupoConsolidacion xsi:nil="true"/>
+					<PrioridadAbsoluta xsi:nil="true"/>
+					<GrupoRutas xsi:nil="true"/>
+					<TiempoLatencia xsi:nil="true"/>
+					<TiempoEsperaPromedio xsi:nil="true"/>
+					<Email>{{_email}}</Email>    
+					<Items>
+						<pOrdenEntregaItem>
+							<IdOrdenItem>0</IdOrdenItem>
+							<RefDocumento>000010</RefDocumento>
+							<Producto>
+								<RefProducto>387818</RefProducto>
+								<Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+								<Volumen>2.0000000000000001E-1</Volumen>
+								<Peso>2.475E1</Peso>
+								<Bultos>0</Bultos>
+								<Alto>0</Alto>
+								<Ancho>0</Ancho>
+								<Profundidad>0</Profundidad>
+								<Apilable>0</Apilable>
+							</Producto>
+							<Cantidad>3.0E0</Cantidad>
+							<Volumen>2.0000000000000001E-1</Volumen>
+							<Peso>2.475E1</Peso>
+							<Bulto>3.0E0</Bulto>
+							<Pallets>0</Pallets>
+							<LPN>CA</LPN>
+							<PrecioUnitario>1.3987E1</PrecioUnitario>
+						</pOrdenEntregaItem>            
+					</Items>
+					<Servicios/>
+					<Fotos/>
+					<ParadaItems/>
+					<Costo>0</Costo>
+					<InicioVisita>0</InicioVisita>
+					<FinVisita>0</FinVisita>
+					<Unidades>0</Unidades>
+				</pOrdenEntrega>
+            </Ordenes>
+       </ruta>
+	</CrearRuta>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2292,7 +2934,48 @@ Crear tipos de vehículo.
     * - Lista de tipos de vehículos
       - List<pTipovehiculo>
       - Información de tipos de vehículo a crear.
-    
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearTipoVehiculo xmlns="http://unisolutions.com.ar/">
+      <ApiKey>string</ApiKey>
+      <TipoVehiculo>
+        <pTipoVehiculo>
+               <Deposito>PILAR</Deposito>
+               <RefVehiculoExterno>{{_RefVehiculo}}</RefVehiculoExterno>
+               <Descripcion>PRUEBA UNIGIS</Descripcion>
+               <PesoMaximo>1</PesoMaximo>
+               <VolumenMaximo>1</VolumenMaximo>
+               <BultosMaximo>1</BultosMaximo>
+               <DistanciaMaxima>9999</DistanciaMaxima>
+               <VelocidadMedia>50</VelocidadMedia>
+               <Cantidad>1</Cantidad>
+               <Ancho>1</Ancho>
+               <Alto>1</Alto>
+               <Profundidad>1</Profundidad>
+               <VelocidadDepositos>50</VelocidadDepositos>
+               <TiempoMaximoJornada>600</TiempoMaximoJornada>
+               <VelocidadDepositoLlegada>50</VelocidadDepositoLlegada>
+               <Primario>true</Primario>
+               <Secundario>false</Secundario>
+               <VehSecObligatorio>false</VehSecObligatorio>
+               <PrimarioRouting>true</PrimarioRouting>
+               <PermiteMultiplesDepositos>false</PermiteMultiplesDepositos>
+               <Custodia>false</Custodia>
+               <Reutilizable>true</Reutilizable>
+               <Color>38823</Color>
+               <TiempoMaximo>600</TiempoMaximo>
+               <TiempoCarga>50</TiempoCarga>
+        </pTipoVehiculo>
+      </TipoVehiculo>
+    </CrearTipoVehiculo>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2431,8 +3114,6 @@ Ejemplo:
    </soapenv:Body>
  </soapenv:Envelope>
 
-
-
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2498,6 +3179,465 @@ Ejemplo:
     * - Login
       - String
       - Usuario que hace el registro del viaje.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearViaje xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Dominio>car15</Dominio>
+      <FechaViaje>{{_fecha}}</FechaViaje>
+      <Referencia>{{_RefAdic}}</Referencia>
+      <Observaciones>creada por servicios</Observaciones>
+      <transporte>
+        <RazonSocial>MT CARGAS SRL</RazonSocial>
+        <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+        <CUIT>404476       </CUIT>
+        <Direccion>Rep??blica Argentina 5292</Direccion>
+        <Localidad>Tortuguitas</Localidad>
+        <!--<Telefono1>string</Telefono1>
+        <Telefono2>string</Telefono2>
+        <EMail>string</EMail>-->
+        <IdEstadoTransporte>1</IdEstadoTransporte>
+        <IdTipoTransporte>1</IdTipoTransporte>
+        <Calificacion xsi:nil="true" />
+        <Contacto1>Carlos Leccadito</Contacto1>
+        <CodigoPostal xsi:nil="true" />
+        <ReferenciaExterna>REF-EXTERNA</ReferenciaExterna>
+        <IdTransporte>2</IdTransporte>
+      </transporte>
+      <cliente>
+        <RefCliente>6288</RefCliente>
+        <RazonSocial>FORD - COMEDOR PLANTA 3 - PTA. 5</RazonSocial>
+        <Telefono/>
+        <Telefono2/>
+        <Telefono3/>
+        <EMail/>
+        <Direccion/>
+        <Calle/>
+        <NumeroPuerta/>
+        <EntreCalle/>
+        <Barrio/>
+        <Localidad>Ciudad Autónoma de Buenos Aires</Localidad>
+        <Partido/>
+        <Provincia/>
+        <Pais>Argentina</Pais>
+        <Latitud>-34.446679</Latitud>
+        <Longitud>-58.698604</Longitud>
+        <RefDomicilioExterno/>
+        <DomicilioDescripcion/>
+        <!--<InicioHorario1/>
+        <InicioHorario2/>
+        <FinHorario1/>
+        <FinHorario2/>
+        <TiempoEspera/>
+        <Varchar1/>
+        <Varchar2/>
+        <Grupo>44</Grupo>
+        <NumeroDocumento/>
+        <TipoDocumento/>
+        <DomicilioCodigoPostal/>-->
+        <!--<DomicilioFiscal>
+          <Direccion>string</Direccion>
+          <Calle>string</Calle>
+          <NumeroPuerta>string</NumeroPuerta>
+          <EntreCalle>string</EntreCalle>
+          <Barrio>string</Barrio>
+          <Localidad>string</Localidad>
+          <Partido>string</Partido>
+          <Provincia>string</Provincia>
+          <Pais>string</Pais>
+          <Latitud>double</Latitud>
+          <Longitud>double</Longitud>
+          <InicioHorario1>int</InicioHorario1>
+          <InicioHorario2>int</InicioHorario2>
+          <FinHorario1>int</FinHorario1>
+          <FinHorario2>int</FinHorario2>
+          <TiempoEspera>int</TiempoEspera>
+          <Int1>int</Int1>
+          <Int2>int</Int2>
+          <Varchar1>string</Varchar1>
+          <Varchar2>string</Varchar2>
+          <Float1>double</Float1>
+          <Float2>double</Float2>
+          <GrupoRutas>int</GrupoRutas>
+          <CargaExclusiva>boolean</CargaExclusiva>
+          <CodigoPostal>string</CodigoPostal>
+          <EMail>string</EMail>
+        </DomicilioFiscal>-->
+        <!--<CampoDinamico>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+        </CampoDinamico>-->
+        <Contacto/>
+        <Int1/>
+        <Int2/>
+        <Float1/>
+        <Float2/>
+        <CargaExclusiva>false</CargaExclusiva>
+        <IgnorarOperacion>true</IgnorarOperacion>
+        <CrearDomicilioOrden>false</CrearDomicilioOrden>
+        <ActualizarDomicilioOrden>false</ActualizarDomicilioOrden>
+        <ValidarDomicilioOrden>false</ValidarDomicilioOrden>
+      </cliente>
+      <depositoSalida>
+            <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+            <InicioHorario>0</InicioHorario>
+            <FinHorario>2359</FinHorario>
+            <TiempoEspera>30</TiempoEspera>
+            <Latitud>-34.4604000534923</Latitud>
+            <Longitud>-58.7155652044021</Longitud>
+            <X xsi:nil="true" />
+            <Y xsi:nil="true" />
+      </depositoSalida>
+      <depositoLlegada>
+            <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+            <InicioHorario>0</InicioHorario>
+            <FinHorario>2359</FinHorario>
+            <TiempoEspera>30</TiempoEspera>
+            <Latitud>-34.4604000534923</Latitud>
+            <Longitud>-58.7155652044021</Longitud>
+            <X xsi:nil="true" />
+            <Y xsi:nil="true" />
+      </depositoLlegada>
+      <conductor>
+        <Login>carlos</Login>
+        <Nombre>carlos                  </Nombre>
+        <Apellido>corona                  </Apellido>
+        <ReferenciaExterna />
+        <NroDocumento>54275427            </NroDocumento>
+        <SincronizarUsuario>true</SincronizarUsuario>
+        <Grupo>admin</Grupo>
+        <Licencia>34523153                </Licencia>
+        <Expedicion>2020-10-29T03:00:00</Expedicion>
+        <Vencimiento>2024-10-29T03:00:00</Vencimiento>
+        <Categoria />
+        <TipoDocumento>DNI</TipoDocumento>
+        <transportes>
+         <pTransporte>
+           <RazonSocial>MT CARGAS SRL</RazonSocial>
+           <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+           <CUIT>404476       </CUIT>
+           <Direccion>Rep??blica Argentina 5292</Direccion>
+           <Localidad>Tortuguitas</Localidad>
+           <!--<Telefono1>string</Telefono1>
+           <Telefono2>string</Telefono2>
+           <EMail>string</EMail>-->
+           <IdEstadoTransporte>1</IdEstadoTransporte>
+           <IdTipoTransporte>1</IdTipoTransporte>
+           <Calificacion xsi:nil="true" />
+           <Contacto1>Carlos Leccadito</Contacto1>
+           <CodigoPostal xsi:nil="true" />
+           <ReferenciaExterna>REF-EXTERNA</ReferenciaExterna>
+           <IdTransporte>2</IdTransporte>
+         </pTransporte>
+        </transportes>
+      </conductor>
+      <login>admin</login>
+      <Paradas>
+        <pParada><!--1-->
+            <Secuencia>1</Secuencia>
+            <RefDocumento>FIAPE</RefDocumento>
+            <Descripcion>FCA FIAT CHRYSLER AUTOM BRASIL LTDA-JEEP</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>117</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>904</InicioHorario1>
+            <FinHorario1>934</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19527</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>false</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>false</IgnorarOperacionDomicilioOrden>
+                <CrearDomicilioOrden>false</CrearDomicilioOrden>
+                <ActualizarDomicilioOrden>false</ActualizarDomicilioOrden>
+                <ValidarDomicilioOrden>false</ValidarDomicilioOrden>
+            </cliente>
+            <Pais>Argentina</Pais>
+            <Orden>
+             <ReferenciaClienteDador>Juguettos</ReferenciaClienteDador>
+             <RazonSocialClienteDador>Juguettos</RazonSocialClienteDador>
+             <NombreFantasiaClienteDador>Juguettos</NombreFantasiaClienteDador>
+             <ReferenciaOrdenCliente>6288</ReferenciaOrdenCliente>
+             <RazonSocialOrdenCliente>FORD - COMEDOR PLANTA 3 - PTA. 5</RazonSocialOrdenCliente>
+             <DescripcionDomicilioOrden/>
+             <DireccionDomicilioOrden>HENRY FORD Y PANAMERICANA S/N</DireccionDomicilioOrden>
+             <ReferenciaExternaOrden>{{_RefAdic}}-1</ReferenciaExternaOrden>
+            </Orden>
+            <!--<Estados>
+             <pEstadoParada xsi:nil="true" />
+             <pEstadoParada xsi:nil="true" />
+            </Estados>
+            <Incidencias>
+             <pIncidencia xsi:nil="true" />
+             <pIncidencia xsi:nil="true" />
+            </Incidencias>
+            <Items>
+             <pParadaItem xsi:nil="true" />
+             <pParadaItem xsi:nil="true" />
+            </Items>
+            <CampoDinamico>
+             <CampoValor xsi:nil="true" />
+             <CampoValor xsi:nil="true" />
+            </CampoDinamico>
+            <Recursos>
+             <pRecursos xsi:nil="true" />
+             <pRecursos xsi:nil="true" />
+            </Recursos>-->
+            <ClienteDador>
+             <ReferenciaExterna>Juguettos</ReferenciaExterna>
+             <RazonSocial>Juguettos</RazonSocial>
+             <NombreFantasia>Juguettos</NombreFantasia>
+             <Cuit>20-2222222-2 </Cuit>
+             <Telefono1/>
+             <Telefono2/>
+             <Direccion>Pellegrini 635</Direccion>
+             <Localidad>Ciudad Autónoma de Buenos Aires</Localidad>
+             <eMailGestorDeFlota/>
+             <CentroDeCosto/>
+             <operaciones xsi:nil="true" />
+             <IdEstado>1</IdEstado>
+            </ClienteDador>
+            <Estado/>
+            <ReferenciaExternaEstado/>
+            <Valor_Declarado/>
+            <_Costo/>
+            <Int_1/>
+            <Int_2/>
+            <Float_1/>
+            <Float_2/>
+            <Inicio_Visita>{{_fechaincio}}</Inicio_Visita>
+            <Fin_Visita/>
+            <Inicio_VisitaReal/>
+            <Fin_VisitaReal/>
+            <Fecha_UltimaModificacion/>
+            <TiempoDetencionMinimo>30</TiempoDetencionMinimo>
+            <IdParada/>
+            <IdOrden/>
+            <sumarizarTotalesDesdeItems>true</sumarizarTotalesDesdeItems>
+        </pParada>
+        <pParada><!--2-->
+            <Secuencia>2</Secuencia>
+            <RefDocumento>800006357</RefDocumento>
+            <Descripcion>PLASCAR INDUSTRIA  DE COMPONENTE</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>1</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>1501</InicioHorario1>
+            <FinHorario1>1601</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud xsi:nil="true"/>
+                <Longitud xsi:nil="true"/>
+                <RefDomicilioExterno>19515</RefDomicilioExterno>
+                <InicioHorario1 xsi:nil="true"/>
+                <FinHorario1 xsi:nil="true"/>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera xsi:nil="true"/>
+            </cliente>
+            <Pais>Argentina</Pais>
+            <Orden>
+             <ReferenciaClienteDador>Juguettos</ReferenciaClienteDador>
+             <RazonSocialClienteDador>Juguettos</RazonSocialClienteDador>
+             <NombreFantasiaClienteDador>Juguettos</NombreFantasiaClienteDador>
+             <ReferenciaOrdenCliente>6288</ReferenciaOrdenCliente>
+             <RazonSocialOrdenCliente>FORD - COMEDOR PLANTA 3 - PTA. 5</RazonSocialOrdenCliente>
+             <DescripcionDomicilioOrden/>
+             <DireccionDomicilioOrden>HENRY FORD Y PANAMERICANA S/N</DireccionDomicilioOrden>
+             <ReferenciaExternaOrden>{{_RefAdic}}-2</ReferenciaExternaOrden>
+            </Orden>
+            <!--<CampoDinamico>
+             <CampoValor xsi:nil="true" />
+             <CampoValor xsi:nil="true" />
+            </CampoDinamico>
+            <Recursos>
+             <pRecursos xsi:nil="true" />
+             <pRecursos xsi:nil="true" />
+            </Recursos>
+            <Estados>
+             <pEstadoParada xsi:nil="true" />
+             <pEstadoParada xsi:nil="true" />
+            </Estados>
+            <Incidencias>
+             <pIncidencia xsi:nil="true" />
+             <pIncidencia xsi:nil="true" />
+            </Incidencias>
+            <Items>
+             <pParadaItem xsi:nil="true" />
+             <pParadaItem xsi:nil="true" />
+            </Items>-->
+            <ClienteDador>
+             <ReferenciaExterna>Juguettos</ReferenciaExterna>
+             <RazonSocial>Juguettos</RazonSocial>
+             <NombreFantasia>Juguettos</NombreFantasia>
+             <Cuit>20-2222222-2 </Cuit>
+             <Telefono1>99999999                </Telefono1>
+             <Telefono2>88888888</Telefono2>
+             <Direccion>Pellegrini 635</Direccion>
+             <Localidad>Ciudad Autónoma de Buenos Aires</Localidad>
+             <eMailGestorDeFlota/>
+             <CentroDeCosto/>
+             <operaciones xsi:nil="true" />
+             <IdEstado>1</IdEstado>
+            </ClienteDador>
+            <Estado/>
+            <ReferenciaExternaEstado>string</ReferenciaExternaEstado>
+            <Valor_Declarado/>
+            <_Costo/>
+            <Int_1/>
+            <Int_2/>
+            <Float_1/>
+            <Float_2/>
+            <Inicio_Visita>{{_fechaincio}}</Inicio_Visita>
+            <Fin_Visita/>
+            <Inicio_VisitaReal/>
+            <Fin_VisitaReal/>
+            <Fecha_UltimaModificacion/>
+            <TiempoDetencionMinimo>30</TiempoDetencionMinimo>
+            <IdParada/>
+            <IdOrden/>
+            <sumarizarTotalesDesdeItems>true</sumarizarTotalesDesdeItems>
+        </pParada>
+        <pParada><!--3-->
+            <Secuencia>3</Secuencia>
+            <RefDocumento>800006214</RefDocumento>
+            <Descripcion>METAGAL INDUSTRIA E COMERCIO LTDA</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>4</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>2000</InicioHorario1>
+            <FinHorario1>2100</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud xsi:nil="true"/>
+                <Longitud xsi:nil="true"/>
+                <RefDomicilioExterno>19527</RefDomicilioExterno>
+                <InicioHorario1 xsi:nil="true"/>
+                <FinHorario1 xsi:nil="true"/>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera xsi:nil="true"/>
+            </cliente>
+            <Pais>Argentina</Pais>
+            <Orden>
+             <ReferenciaClienteDador>Juguettos</ReferenciaClienteDador>
+             <RazonSocialClienteDador>Juguettos</RazonSocialClienteDador>
+             <NombreFantasiaClienteDador>Juguettos</NombreFantasiaClienteDador>
+             <ReferenciaOrdenCliente>6288</ReferenciaOrdenCliente>
+             <RazonSocialOrdenCliente>FORD - COMEDOR PLANTA 3 - PTA. 5</RazonSocialOrdenCliente>
+             <DescripcionDomicilioOrden/>
+             <DireccionDomicilioOrden>HENRY FORD Y PANAMERICANA S/N</DireccionDomicilioOrden>
+             <ReferenciaExternaOrden>{{_RefAdic}}-3</ReferenciaExternaOrden>
+            </Orden>
+            <!--<CampoDinamico>
+             <CampoValor xsi:nil="true" />
+             <CampoValor xsi:nil="true" />
+            </CampoDinamico>
+            <Recursos>
+             <pRecursos xsi:nil="true" />
+             <pRecursos xsi:nil="true" />
+            </Recursos>
+            <Estados>
+             <pEstadoParada xsi:nil="true" />
+             <pEstadoParada xsi:nil="true" />
+            </Estados>
+            <Incidencias>
+             <pIncidencia xsi:nil="true" />
+             <pIncidencia xsi:nil="true" />
+            </Incidencias>
+            <Items>
+             <pParadaItem xsi:nil="true" />
+             <pParadaItem xsi:nil="true" />
+            </Items>-->
+            <ClienteDador>
+             <ReferenciaExterna>Juguettos</ReferenciaExterna>
+             <RazonSocial>Juguettos</RazonSocial>
+             <NombreFantasia>Juguettos</NombreFantasia>
+             <Cuit>20-2222222-2 </Cuit>
+             <Telefono1>99999999                </Telefono1>
+             <Telefono2>88888888</Telefono2>
+             <Direccion>Pellegrini 635</Direccion>
+             <Localidad>Ciudad Autónoma de Buenos Aires</Localidad>
+             <eMailGestorDeFlota/>
+             <CentroDeCosto/>
+             <operaciones xsi:nil="true" />
+             <IdEstado>1</IdEstado>
+            </ClienteDador>
+            <Estado/>
+            <ReferenciaExternaEstado>string</ReferenciaExternaEstado>
+            <Valor_Declarado/>
+            <_Costo/>
+            <Int_1/>
+            <Int_2/>
+            <Float_1/>
+            <Float_2/>
+            <Inicio_Visita>{{_fechaincio}}</Inicio_Visita>
+            <Fin_Visita/>
+            <Inicio_VisitaReal/>
+            <Fin_VisitaReal/>
+            <Fecha_UltimaModificacion/>
+            <TiempoDetencionMinimo>30</TiempoDetencionMinimo>
+            <IdParada/>
+            <IdOrden/>
+            <sumarizarTotalesDesdeItems>true</sumarizarTotalesDesdeItems>
+        </pParada>
+      </Paradas>
+    </CrearViaje>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -2569,6 +3709,525 @@ Ejemplo:
     * - Cliente (*)
       - pCliente
       - Ficha completa del cliente.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearViaje2 xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Dominio>car15</Dominio>
+      <FechaViaje>{{_fecha}}</FechaViaje>
+      <Referencia>{{_RefAdic}}-2</Referencia>
+      <Observaciones>Creado a travez de Servicios</Observaciones>
+      <transporte>
+        <RazonSocial>MT CARGAS SRL</RazonSocial>
+        <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+        <CUIT>404476       </CUIT>
+        <Direccion>Rep??blica Argentina 5292</Direccion>
+        <Localidad>Tortuguitas</Localidad>
+        <!--<Telefono1>string</Telefono1>
+        <Telefono2>string</Telefono2>
+        <EMail>string</EMail>-->
+        <IdEstadoTransporte>1</IdEstadoTransporte>
+        <IdTipoTransporte>1</IdTipoTransporte>
+        <Calificacion xsi:nil="true" />
+        <Contacto1>Carlos Leccadito</Contacto1>
+        <CodigoPostal xsi:nil="true" />
+        <ReferenciaExterna>REF-EXTERNA</ReferenciaExterna>
+        <IdTransporte>2</IdTransporte>
+      </transporte>
+      <cliente>
+        <RefCliente>6271</RefCliente>
+        <RazonSocial>BORCHES JUAN PABLO</RazonSocial>
+        <!--<Telefono>string</Telefono>-->
+        <!--<Direccion>string</Direccion>-->
+        <!--<Calle>string</Calle>
+        <NumeroPuerta>string</NumeroPuerta>
+        <EntreCalle>string</EntreCalle>
+        <Barrio>Almagro</Barrio>
+        <Localidad>Almagro</Localidad>
+        <Partido>string</Partido>
+        <Provincia>CABA</Provincia>
+        <Pais>Argentina</Pais>-->
+        <Latitud>-58.537314</Latitud>
+        <Longitud>-33.00066</Longitud>
+        <!--<RefDomicilioExterno>string</RefDomicilioExterno>
+        <DomicilioDescripcion>string</DomicilioDescripcion>-->
+        <!--<InicioHorario1>int</InicioHorario1>
+        <InicioHorario2>int</InicioHorario2>
+        <FinHorario1>int</FinHorario1>
+        <FinHorario2>int</FinHorario2>
+        <TiempoEspera>int</TiempoEspera>
+        <Varchar1>string</Varchar1>
+        <Varchar2>string</Varchar2>
+        <Grupo>string</Grupo>
+        <NumeroDocumento>string</NumeroDocumento>
+        <TipoDocumento>string</TipoDocumento>
+        <DomicilioCodigoPostal>string</DomicilioCodigoPostal>
+        <DomicilioFiscal>
+          <Direccion>string</Direccion>
+          <Calle>string</Calle>
+          <NumeroPuerta>string</NumeroPuerta>
+          <EntreCalle>string</EntreCalle>
+          <Barrio>string</Barrio>
+          <Localidad>string</Localidad>
+          <Partido>string</Partido>
+          <Provincia>string</Provincia>
+          <Pais>string</Pais>
+          <Latitud>double</Latitud>
+          <Longitud>double</Longitud>
+          <InicioHorario1>int</InicioHorario1>
+          <InicioHorario2>int</InicioHorario2>
+          <FinHorario1>int</FinHorario1>
+          <FinHorario2>int</FinHorario2>
+          <TiempoEspera>int</TiempoEspera>
+          <Int1>int</Int1>
+          <Int2>int</Int2>
+          <Varchar1>string</Varchar1>
+          <Varchar2>string</Varchar2>
+          <Float1>double</Float1>
+          <Float2>double</Float2>
+          <GrupoRutas>int</GrupoRutas>
+          <CargaExclusiva>boolean</CargaExclusiva>
+          <CodigoPostal>string</CodigoPostal>
+          <EMail>string</EMail>
+        </DomicilioFiscal>
+        <CampoDinamico>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+        </CampoDinamico>
+        <Contacto>string</Contacto>
+        <Int1>int</Int1>
+        <Int2>int</Int2>
+        <Float1>double</Float1>
+        <Float2>double</Float2>
+        <CargaExclusiva>boolean</CargaExclusiva>-->
+        <IgnorarOperacion>false</IgnorarOperacion>
+        <IgnorarOperacionDomicilioOrden>false</IgnorarOperacionDomicilioOrden>
+        <!--<CrearDomicilioOrden>boolean</CrearDomicilioOrden>
+        <ActualizarDomicilioOrden>boolean</ActualizarDomicilioOrden>
+        <ValidarDomicilioOrden>boolean</ValidarDomicilioOrden>-->
+      </cliente>
+      <depositoSalida>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoSalida>
+      <depositoLlegada>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoLlegada>
+      <conductor>
+                    <Nombre>carlos                  </Nombre>
+                    <Apellido>corona                  </Apellido>
+                    <ReferenciaExterna />
+                    <NroDocumento>54275427            </NroDocumento>
+                    <SincronizarUsuario xsi:nil="true" />
+                    <Expedicion>0001-01-01T00:00:00</Expedicion>
+                    <Vencimiento>0001-01-01T00:00:00</Vencimiento>
+                    <TipoDocumento>DNI       </TipoDocumento>
+      </conductor>
+      <login>admin</login>
+      <prestador>UNIGIS              </prestador>
+      <Paradas>
+        <pParada><!--1-->
+            <Secuencia>1</Secuencia>
+            <RefDocumento>FIAPE</RefDocumento>
+            <Descripcion>FCA FIAT CHRYSLER AUTOM BRASIL LTDA-JEEP</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>117</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>904</InicioHorario1>
+            <FinHorario1>934</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19515</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--2-->
+            <RefDocumento>800006357</RefDocumento>
+            <Descripcion>PLASCAR INDUSTRIA  DE COMPONENTE</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>1</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>1501</InicioHorario1>
+            <FinHorario1>1601</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19526</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--3-->
+            <Secuencia>3</Secuencia>
+            <RefDocumento>800006214</RefDocumento>
+            <Descripcion>METAGAL INDUSTRIA E COMERCIO LTDA</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>4</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>2000</InicioHorario1>
+            <FinHorario1>2100</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19527</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+      </Paradas>
+    </CrearViaje2>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -2650,6 +4309,532 @@ Ejemplo:
       - pCliente
       - Ficha completa del cliente.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearViaje3 xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Empresa>TOYS SA</Empresa>
+      <Sucursal>TOYS - CABA </Sucursal>
+      <Operacion>DELIVERY DE JUGUETES</Operacion>
+      <Dominio>car15</Dominio>
+      <FechaViaje>{{_fecha}}</FechaViaje>
+      <Referencia>{{_RefAdic}}-3</Referencia>
+      <Observaciones>Creado a travez de Servicios</Observaciones>
+      <transporte>
+        <RazonSocial>MT CARGAS SRL</RazonSocial>
+        <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+        <CUIT>404476       </CUIT>
+        <Direccion>Rep??blica Argentina 5292</Direccion>
+        <Localidad>Tortuguitas</Localidad>
+        <!--<Telefono1>string</Telefono1>
+        <Telefono2>string</Telefono2>
+        <EMail>string</EMail>-->
+        <IdEstadoTransporte>1</IdEstadoTransporte>
+        <IdTipoTransporte>1</IdTipoTransporte>
+        <Calificacion xsi:nil="true" />
+        <Contacto1>Carlos Leccadito</Contacto1>
+        <CodigoPostal xsi:nil="true" />
+        <ReferenciaExterna>REF-EXTERNA</ReferenciaExterna>
+        <IdTransporte>2</IdTransporte>
+      </transporte>
+      <cliente>
+        <RefCliente>6271</RefCliente>
+        <RazonSocial>BORCHES JUAN PABLO</RazonSocial>
+        <!--<Telefono>string</Telefono>-->
+        <!--<Direccion>string</Direccion>-->
+        <!--<Calle>string</Calle>
+        <NumeroPuerta>string</NumeroPuerta>
+        <EntreCalle>string</EntreCalle>
+        <Barrio>Almagro</Barrio>
+        <Localidad>Almagro</Localidad>
+        <Partido>string</Partido>
+        <Provincia>CABA</Provincia>
+        <Pais>Argentina</Pais>-->
+        <Latitud>-58.537314</Latitud>
+        <Longitud>-33.00066</Longitud>
+        <!--<RefDomicilioExterno>string</RefDomicilioExterno>
+        <DomicilioDescripcion>string</DomicilioDescripcion>-->
+        <!--<InicioHorario1>int</InicioHorario1>
+        <InicioHorario2>int</InicioHorario2>
+        <FinHorario1>int</FinHorario1>
+        <FinHorario2>int</FinHorario2>
+        <TiempoEspera>int</TiempoEspera>
+        <Varchar1>string</Varchar1>
+        <Varchar2>string</Varchar2>
+        <Grupo>string</Grupo>
+        <NumeroDocumento>string</NumeroDocumento>
+        <TipoDocumento>string</TipoDocumento>
+        <DomicilioCodigoPostal>string</DomicilioCodigoPostal>
+        <DomicilioFiscal>
+          <Direccion>string</Direccion>
+          <Calle>string</Calle>
+          <NumeroPuerta>string</NumeroPuerta>
+          <EntreCalle>string</EntreCalle>
+          <Barrio>string</Barrio>
+          <Localidad>string</Localidad>
+          <Partido>string</Partido>
+          <Provincia>string</Provincia>
+          <Pais>string</Pais>
+          <Latitud>double</Latitud>
+          <Longitud>double</Longitud>
+          <InicioHorario1>int</InicioHorario1>
+          <InicioHorario2>int</InicioHorario2>
+          <FinHorario1>int</FinHorario1>
+          <FinHorario2>int</FinHorario2>
+          <TiempoEspera>int</TiempoEspera>
+          <Int1>int</Int1>
+          <Int2>int</Int2>
+          <Varchar1>string</Varchar1>
+          <Varchar2>string</Varchar2>
+          <Float1>double</Float1>
+          <Float2>double</Float2>
+          <GrupoRutas>int</GrupoRutas>
+          <CargaExclusiva>boolean</CargaExclusiva>
+          <CodigoPostal>string</CodigoPostal>
+          <EMail>string</EMail>
+        </DomicilioFiscal>
+        <CampoDinamico>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+        </CampoDinamico>
+        <Contacto>string</Contacto>
+        <Int1>int</Int1>
+        <Int2>int</Int2>
+        <Float1>double</Float1>
+        <Float2>double</Float2>
+        <CargaExclusiva>boolean</CargaExclusiva>-->
+        <IgnorarOperacion>false</IgnorarOperacion>
+        <IgnorarOperacionDomicilioOrden>false</IgnorarOperacionDomicilioOrden>
+        <!--<CrearDomicilioOrden>boolean</CrearDomicilioOrden>
+        <ActualizarDomicilioOrden>boolean</ActualizarDomicilioOrden>
+        <ValidarDomicilioOrden>boolean</ValidarDomicilioOrden>-->
+      </cliente>
+      <depositoSalida>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoSalida>
+      <depositoLlegada>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoLlegada>
+      <conductor>
+                    <Nombre>carlos                  </Nombre>
+                    <Apellido>corona                  </Apellido>
+                    <ReferenciaExterna />
+                    <NroDocumento>54275427            </NroDocumento>
+                    <SincronizarUsuario xsi:nil="true" />
+                    <Expedicion>0001-01-01T00:00:00</Expedicion>
+                    <Vencimiento>0001-01-01T00:00:00</Vencimiento>
+                    <TipoDocumento>DNI       </TipoDocumento>
+      </conductor>
+      <login>Admin</login>
+      <prestador>UNIGIS              </prestador>
+      <Paradas>
+        <pParada><!--1-->
+            <Secuencia>1</Secuencia>
+            <RefDocumento>FIAPE</RefDocumento>
+            <Descripcion>FCA FIAT CHRYSLER AUTOM BRASIL LTDA-JEEP</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>117</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>904</InicioHorario1>
+            <FinHorario1>934</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19515</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <CargaExclusiva>false</CargaExclusiva>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+                <CrearDomicilioOrden>false</CrearDomicilioOrden>
+                <ActualizarDomicilioOrden>true</ActualizarDomicilioOrden>
+                <ValidarDomicilioOrden>false</ValidarDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--2-->
+            <RefDocumento>800006357</RefDocumento>
+            <Descripcion>PLASCAR INDUSTRIA  DE COMPONENTE</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>1</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>1501</InicioHorario1>
+            <FinHorario1>1601</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19526</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--3-->
+            <Secuencia>3</Secuencia>
+            <RefDocumento>800006214</RefDocumento>
+            <Descripcion>METAGAL INDUSTRIA E COMERCIO LTDA</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>4</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>2000</InicioHorario1>
+            <FinHorario1>2100</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19527</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+      </Paradas>
+    </CrearViaje3>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2730,6 +4915,404 @@ Ejemplo:
       - pCliente
       - Ficha completa del cliente.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+ <CrearViaje4 xmlns="http://unisolutions.com.ar/">
+         <ApiKey>1234</ApiKey>
+         <Empresa>TOYS SA</Empresa>
+         <Sucursal>TOYS - CABA </Sucursal>
+         <Operacion>DELIVERY DE JUGUETES</Operacion>
+         <Dominio>car15</Dominio>
+         <FechaViaje>{{_fecha}}</FechaViaje>
+         <Referencia>{{_RefAdic}}-4</Referencia>
+         <conductor>
+            <Login>carlos</Login>
+            <SincronizarUsuario>true</SincronizarUsuario>
+         </conductor>
+         <Paradas>
+          <pParada><!--1-->
+            <Secuencia>1</Secuencia>
+            <RefDocumento>FIAPE</RefDocumento>
+            <Descripcion>FCA FIAT CHRYSLER AUTOM BRASIL LTDA-JEEP</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>117</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>904</InicioHorario1>
+            <FinHorario1>934</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19515</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+          <pParada><!--2-->
+            <RefDocumento>800006357</RefDocumento>
+            <Descripcion>PLASCAR INDUSTRIA  DE COMPONENTE</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>1</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>1501</InicioHorario1>
+            <FinHorario1>1601</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19526</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+          <pParada><!--3-->
+            <Secuencia>3</Secuencia>
+            <RefDocumento>800006214</RefDocumento>
+            <Descripcion>METAGAL INDUSTRIA E COMERCIO LTDA</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>4</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>2000</InicioHorario1>
+            <FinHorario1>2100</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19527</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+         </Paradas>
+      </CrearViaje4>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -2797,6 +5380,550 @@ Ejemplo:
     * - Cliente (*)
       - pCliente
       - Ficha completa del cliente.
+
+Ejemplo:
+
+.. code-block:: xml
+   
+   <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+    <CrearViaje5 xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Empresa>TOYS SA</Empresa>
+      <Sucursal>TOYS - CABA </Sucursal>
+      <TipoOperacion>TDISTR-1</TipoOperacion>
+      <Dominio>car15</Dominio>
+      <FechaViaje>{{_fecha}}</FechaViaje>
+      <Referencia>{{_RefAdic}}-5</Referencia>
+      <Observaciones>Creado a travez de servicios</Observaciones>
+      <transporte>
+        <RazonSocial>MT CARGAS SRL</RazonSocial>
+        <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+        <CUIT>404476       </CUIT>
+        <Direccion>Rep??blica Argentina 5292</Direccion>
+        <Localidad>Tortuguitas</Localidad>
+        <!--<Telefono1>string</Telefono1>
+        <Telefono2>string</Telefono2>
+        <EMail>string</EMail>-->
+        <IdEstadoTransporte>1</IdEstadoTransporte>
+        <IdTipoTransporte>1</IdTipoTransporte>
+        <Calificacion xsi:nil="true" />
+        <Contacto1>Carlos Leccadito</Contacto1>
+        <CodigoPostal xsi:nil="true" />
+        <ReferenciaExterna>REF-EXTERNA</ReferenciaExterna>
+        <IdTransporte>2</IdTransporte>
+      </transporte>
+      <cliente>
+        <RefCliente>6271</RefCliente>
+        <RazonSocial>BORCHES JUAN PABLO</RazonSocial>
+        <!--<Telefono>string</Telefono>-->
+        <!--<Direccion>string</Direccion>-->
+        <!--<Calle>string</Calle>
+        <NumeroPuerta>string</NumeroPuerta>
+        <EntreCalle>string</EntreCalle>
+        <Barrio>Almagro</Barrio>
+        <Localidad>Almagro</Localidad>
+        <Partido>string</Partido>
+        <Provincia>CABA</Provincia>
+        <Pais>Argentina</Pais>-->
+        <Latitud>-58.537314</Latitud>
+        <Longitud>-33.00066</Longitud>
+        <!--<RefDomicilioExterno>string</RefDomicilioExterno>
+        <DomicilioDescripcion>string</DomicilioDescripcion>-->
+        <!--<InicioHorario1>int</InicioHorario1>
+        <InicioHorario2>int</InicioHorario2>
+        <FinHorario1>int</FinHorario1>
+        <FinHorario2>int</FinHorario2>
+        <TiempoEspera>int</TiempoEspera>
+        <Varchar1>string</Varchar1>
+        <Varchar2>string</Varchar2>
+        <Grupo>string</Grupo>
+        <NumeroDocumento>string</NumeroDocumento>
+        <TipoDocumento>string</TipoDocumento>
+        <DomicilioCodigoPostal>string</DomicilioCodigoPostal>
+        <DomicilioFiscal>
+          <Direccion>string</Direccion>
+          <Calle>string</Calle>
+          <NumeroPuerta>string</NumeroPuerta>
+          <EntreCalle>string</EntreCalle>
+          <Barrio>string</Barrio>
+          <Localidad>string</Localidad>
+          <Partido>string</Partido>
+          <Provincia>string</Provincia>
+          <Pais>string</Pais>
+          <Latitud>double</Latitud>
+          <Longitud>double</Longitud>
+          <InicioHorario1>int</InicioHorario1>
+          <InicioHorario2>int</InicioHorario2>
+          <FinHorario1>int</FinHorario1>
+          <FinHorario2>int</FinHorario2>
+          <TiempoEspera>int</TiempoEspera>
+          <Int1>int</Int1>
+          <Int2>int</Int2>
+          <Varchar1>string</Varchar1>
+          <Varchar2>string</Varchar2>
+          <Float1>double</Float1>
+          <Float2>double</Float2>
+          <GrupoRutas>int</GrupoRutas>
+          <CargaExclusiva>boolean</CargaExclusiva>
+          <CodigoPostal>string</CodigoPostal>
+          <EMail>string</EMail>
+        </DomicilioFiscal>
+        <CampoDinamico>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+        </CampoDinamico>
+        <Contacto>string</Contacto>
+        <Int1>int</Int1>
+        <Int2>int</Int2>
+        <Float1>double</Float1>
+        <Float2>double</Float2>
+        <CargaExclusiva>boolean</CargaExclusiva>-->
+        <IgnorarOperacion>false</IgnorarOperacion>
+        <IgnorarOperacionDomicilioOrden>false</IgnorarOperacionDomicilioOrden>
+        <!--<CrearDomicilioOrden>boolean</CrearDomicilioOrden>
+        <ActualizarDomicilioOrden>boolean</ActualizarDomicilioOrden>
+        <ValidarDomicilioOrden>boolean</ValidarDomicilioOrden>-->
+      </cliente>
+      <depositoSalida>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoSalida>
+      <depositoLlegada>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoLlegada>
+      <conductor>
+        <Login>carlos</Login>
+        <Nombre>carlos                  </Nombre>
+        <Apellido>corona                  </Apellido>
+        <ReferenciaExterna />
+        <NroDocumento>54275427            </NroDocumento>
+        <SincronizarUsuario>true</SincronizarUsuario>
+        <Grupo>admin</Grupo>
+        <Licencia>34523153                </Licencia>
+        <Expedicion>2020-10-29T03:00:00</Expedicion>
+        <Vencimiento>2024-10-29T03:00:00</Vencimiento>
+        <Categoria />
+        <TipoDocumento>DNI</TipoDocumento>
+        <transportes>
+         <pTransporte>
+           <RazonSocial>MT CARGAS SRL</RazonSocial>
+           <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+           <CUIT>404476       </CUIT>
+           <Direccion>Rep??blica Argentina 5292</Direccion>
+           <Localidad>Tortuguitas</Localidad>
+           <!--<Telefono1>string</Telefono1>
+           <Telefono2>string</Telefono2>
+           <EMail>string</EMail>-->
+           <IdEstadoTransporte>1</IdEstadoTransporte>
+           <IdTipoTransporte>1</IdTipoTransporte>
+           <Calificacion xsi:nil="true" />
+           <Contacto1>Carlos Leccadito</Contacto1>
+           <CodigoPostal xsi:nil="true" />
+           <ReferenciaExterna>REF-EXTERNA</ReferenciaExterna>
+           <IdTransporte>2</IdTransporte>
+         </pTransporte>
+        </transportes>
+      </conductor>
+      <login>admin</login>
+      <Paradas>
+        <pParada><!--1-->
+            <Secuencia>1</Secuencia>
+            <RefDocumento>FIAPE</RefDocumento>
+            <Descripcion>FCA FIAT CHRYSLER AUTOM BRASIL LTDA-JEEP</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>117</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>904</InicioHorario1>
+            <FinHorario1>934</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19515</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--2-->
+            <RefDocumento>800006357</RefDocumento>
+            <Descripcion>PLASCAR INDUSTRIA  DE COMPONENTE</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>1</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>1501</InicioHorario1>
+            <FinHorario1>1601</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19526</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--3-->
+            <Secuencia>3</Secuencia>
+            <RefDocumento>800006214</RefDocumento>
+            <Descripcion>METAGAL INDUSTRIA E COMERCIO LTDA</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>4</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>2000</InicioHorario1>
+            <FinHorario1>2100</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19527</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+      </Paradas>
+    </CrearViaje5>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -2877,6 +6004,529 @@ Ejemplo:
     * - Cliente (*)
       - pCliente
       - Ficha completa del cliente.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CrearViaje6 xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Empresa>TOYS SA</Empresa>
+      <Sucursal>TOYS - CABA </Sucursal>
+      <Operacion>DELIVERY DE JUGUETES</Operacion>
+      <Recorrido>World</Recorrido>
+      <Dominio>car15</Dominio>
+      <FechaViaje>{{_fecha}}</FechaViaje>
+      <Referencia>{{_RefAdic}}-6</Referencia>
+      <Observaciones>Creado a traves de servicios</Observaciones>
+      <transporte>
+        <RazonSocial>MT CARGAS SRL</RazonSocial>
+        <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+        <CUIT>404476       </CUIT>
+        <Direccion>Rep??blica Argentina 5292</Direccion>
+        <Localidad>Tortuguitas</Localidad>
+        <!--<Telefono1>string</Telefono1>
+        <Telefono2>string</Telefono2>
+        <EMail>string</EMail>-->
+        <IdEstadoTransporte>1</IdEstadoTransporte>
+        <IdTipoTransporte>1</IdTipoTransporte>
+        <Calificacion xsi:nil="true" />
+        <Contacto1>Carlos Leccadito</Contacto1>
+        <CodigoPostal xsi:nil="true" />
+        <ReferenciaExterna>REF-EXTERNA</ReferenciaExterna>
+        <IdTransporte>2</IdTransporte>
+      </transporte>
+      <cliente>
+        <RefCliente>6271</RefCliente>
+        <RazonSocial>BORCHES JUAN PABLO</RazonSocial>
+        <!--<Telefono>string</Telefono>-->
+        <!--<Direccion>string</Direccion>-->
+        <!--<Calle>string</Calle>
+        <NumeroPuerta>string</NumeroPuerta>
+        <EntreCalle>string</EntreCalle>
+        <Barrio>Almagro</Barrio>
+        <Localidad>Almagro</Localidad>
+        <Partido>string</Partido>
+        <Provincia>CABA</Provincia>
+        <Pais>Argentina</Pais>-->
+        <Latitud>-58.537314</Latitud>
+        <Longitud>-33.00066</Longitud>
+        <!--<RefDomicilioExterno>string</RefDomicilioExterno>
+        <DomicilioDescripcion>string</DomicilioDescripcion>-->
+        <!--<InicioHorario1>int</InicioHorario1>
+        <InicioHorario2>int</InicioHorario2>
+        <FinHorario1>int</FinHorario1>
+        <FinHorario2>int</FinHorario2>
+        <TiempoEspera>int</TiempoEspera>
+        <Varchar1>string</Varchar1>
+        <Varchar2>string</Varchar2>
+        <Grupo>string</Grupo>
+        <NumeroDocumento>string</NumeroDocumento>
+        <TipoDocumento>string</TipoDocumento>
+        <DomicilioCodigoPostal>string</DomicilioCodigoPostal>
+        <DomicilioFiscal>
+          <Direccion>string</Direccion>
+          <Calle>string</Calle>
+          <NumeroPuerta>string</NumeroPuerta>
+          <EntreCalle>string</EntreCalle>
+          <Barrio>string</Barrio>
+          <Localidad>string</Localidad>
+          <Partido>string</Partido>
+          <Provincia>string</Provincia>
+          <Pais>string</Pais>
+          <Latitud>double</Latitud>
+          <Longitud>double</Longitud>
+          <InicioHorario1>int</InicioHorario1>
+          <InicioHorario2>int</InicioHorario2>
+          <FinHorario1>int</FinHorario1>
+          <FinHorario2>int</FinHorario2>
+          <TiempoEspera>int</TiempoEspera>
+          <Int1>int</Int1>
+          <Int2>int</Int2>
+          <Varchar1>string</Varchar1>
+          <Varchar2>string</Varchar2>
+          <Float1>double</Float1>
+          <Float2>double</Float2>
+          <GrupoRutas>int</GrupoRutas>
+          <CargaExclusiva>boolean</CargaExclusiva>
+          <CodigoPostal>string</CodigoPostal>
+          <EMail>string</EMail>
+        </DomicilioFiscal>
+        <CampoDinamico>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+        </CampoDinamico>
+        <Contacto>string</Contacto>
+        <Int1>int</Int1>
+        <Int2>int</Int2>
+        <Float1>double</Float1>
+        <Float2>double</Float2>
+        <CargaExclusiva>boolean</CargaExclusiva>-->
+        <IgnorarOperacion>false</IgnorarOperacion>
+        <IgnorarOperacionDomicilioOrden>false</IgnorarOperacionDomicilioOrden>
+        <!--<CrearDomicilioOrden>boolean</CrearDomicilioOrden>
+        <ActualizarDomicilioOrden>boolean</ActualizarDomicilioOrden>
+        <ValidarDomicilioOrden>boolean</ValidarDomicilioOrden>-->
+      </cliente>
+      <depositoSalida>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoSalida>
+      <depositoLlegada>
+                    <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+                    <InicioHorario>0</InicioHorario>
+                    <FinHorario>0</FinHorario>
+                    <TiempoEspera>0</TiempoEspera>
+                    <Latitud>0</Latitud>
+                    <Longitud>0</Longitud>
+                    <X xsi:nil="true" />
+                    <Y xsi:nil="true" />
+      </depositoLlegada>
+      <conductor>
+                    <Nombre>carlos                  </Nombre>
+                    <Apellido>corona                  </Apellido>
+                    <ReferenciaExterna />
+                    <NroDocumento>54275427            </NroDocumento>
+                    <SincronizarUsuario xsi:nil="true" />
+                    <Expedicion>0001-01-01T00:00:00</Expedicion>
+                    <Vencimiento>0001-01-01T00:00:00</Vencimiento>
+                    <TipoDocumento>DNI       </TipoDocumento>
+      </conductor>
+      <login>admin</login>
+      <prestador>UNIGIS</prestador>
+      <Paradas>
+        <pParada><!--1-->
+            <Secuencia>1</Secuencia>
+            <RefDocumento>FIAPE</RefDocumento>
+            <Descripcion>FCA FIAT CHRYSLER AUTOM BRASIL LTDA-JEEP</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>117</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>904</InicioHorario1>
+            <FinHorario1>934</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19515</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--2-->
+            <RefDocumento>800006357</RefDocumento>
+            <Descripcion>PLASCAR INDUSTRIA  DE COMPONENTE</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>1</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>1501</InicioHorario1>
+            <FinHorario1>1601</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19526</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+        <pParada><!--3-->
+            <Secuencia>3</Secuencia>
+            <RefDocumento>800006214</RefDocumento>
+            <Descripcion>METAGAL INDUSTRIA E COMERCIO LTDA</Descripcion>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <Volumen>0</Volumen>
+            <Peso>0</Peso>
+            <Bulto>4</Bulto>
+            <Valor>0</Valor>
+            <Pallets>0</Pallets>
+            <TiempoEstadia>60</TiempoEstadia>
+            <InicioHorario1>2000</InicioHorario1>
+            <FinHorario1>2100</FinHorario1>
+            <InicioHorario2 xsi:nil="true" />
+            <FinHorario2 xsi:nil="true" />
+            <Distancia xsi:nil="true" />
+            <Observaciones xsi:nil="true" />
+            <RequiereControl xsi:nil="true" />
+            <InicioHorarioPlanificado>{{_fechaincio}}</InicioHorarioPlanificado>
+            <FinHorarioPlanificado>{{_fechafin}}</FinHorarioPlanificado>
+            <cliente>
+                <RefCliente>6288</RefCliente>
+                <Latitud>-34.446679</Latitud>
+                <Longitud>-58.698604</Longitud>
+                <RefDomicilioExterno>19527</RefDomicilioExterno>
+                <InicioHorario1>600</InicioHorario1>
+                <FinHorario1>1600</FinHorario1>
+                <InicioHorario2 xsi:nil="true"/>
+                <FinHorario2 xsi:nil="true"/>
+                <TiempoEspera>30</TiempoEspera>
+                <IgnorarOperacion>true</IgnorarOperacion>
+                <IgnorarOperacionDomicilioOrden>true</IgnorarOperacionDomicilioOrden>
+            </cliente>
+            <Items>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387818</RefProducto>
+                  <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                  <VolumenProducto>54000</VolumenProducto>
+                  <Peso>0.7</Peso>
+                  <Alto>45</Alto>
+                  <Ancho>60</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>33345678</RefDocumento>
+                <RefDocumentoAdicional>33345678</RefDocumentoAdicional>
+                <Descripcion>LEGO MARVEL THOR XL 15u</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>0.00584</Pallets>
+                <Volumen>10.5125</Volumen>
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem>325303</IdPedidoItem>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <!--<VigenciaDesde>0001-01-01T00:00:00</VigenciaDesde>
+                <VigenciaHasta>0001-01-01T00:00:00</VigenciaHasta>-->
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+              <pParadaItem>
+                <Producto>
+                  <RefProducto>387802</RefProducto>
+                  <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                  <VolumenProducto>20000</VolumenProducto>
+                  <Peso>1</Peso>
+                  <Alto>50</Alto>
+                  <Ancho>20</Ancho>
+                  <Profundidad>20</Profundidad>
+                  <Rotacion>true</Rotacion>
+                  <Codigo>5</Codigo>
+                  <Linea>1</Linea>
+                </Producto>
+                <RefDocumento>TEST1406</RefDocumento>
+                <RefDocumentoAdicional>TEST1406</RefDocumentoAdicional>
+                <Descripcion>VELADORA CITRONELLA ESTRELLA BLANCA1/12U</Descripcion>
+                <Cantidad>20</Cantidad>
+                <Bulto>1</Bulto>
+                <Unidades>1</Unidades>
+                <!--<Peso/>-->
+                <Pallets>1</Pallets>
+                <!--<Volumen>20000</Volumen>-->
+                <Bultos/>
+                <Alto/>
+                <Ancho/>
+                <Profundidad/>
+                <Apilable>1</Apilable>
+                <!--<ImporteCosto/>
+                <FechaEntrega/>-->
+                <LPN>?</LPN>
+                <EstadoPedidoItem/>
+                <Motivo/>
+                <UnidadMedida/>
+                <IdPedidoItem/>
+                <ReferenciaCantidad/>
+                <ReferenciaValor/>
+                <VigenciaDesde>{{_fechaincio}}</VigenciaDesde>
+                <VigenciaHasta>{{_fechafin}}</VigenciaHasta>
+                <ProcesarVolumetria>0</ProcesarVolumetria>
+                <Varchar1>9.1271268</Varchar1>
+                <!--<Varchar2/>
+                <Int1/>
+                <Int2/>-->
+              </pParadaItem>
+            </Items>
+            </pParada>
+      </Paradas>
+    </CrearViaje6>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -3551,7 +7201,26 @@ Modifica el estado de una liquidación.
     * - Estado liquidación
       - <pEstadoLiquidacion>
       - Información de la liquidación a cambiar de estado.
-      
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ModificarEstadoLiquidacion xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <estado>
+        <IdLiquidacion>1</IdLiquidacion>
+        <ReferenciaLiquidacion>29072020</ReferenciaLiquidacion>
+        <Estado>INICIAL</Estado>
+        <Observaciones>Modificacion por Servicios</Observaciones>
+        <ActualizarReferencia>false</ActualizarReferencia>
+      </estado>
+    </ModificarEstadoLiquidacion>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -3588,7 +7257,7 @@ Ejemplo
 
 .. code-block:: xml
 
-    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:unis="http://unisolutions.com.ar/">
 	<soapenv:Header/>
 	<soapenv:Body>
 		<unis:ModificarEstadoOrdenEntrega>
@@ -3851,7 +7520,32 @@ Permite modificar el estado de una parada. El nuevo estado debe estar dentro de 
     * - Estado (*)
       - <pEstadoParada>
       - Tipo de dato complejo que incluye la referencia para la búsqueda de la parada (ver detalle en tipo de dato pEstadoParada), el nuevo estado, el motivo del cambio (puede ser nulo) e información adicional. También se incluye la lista de Ítems (Solo para entregas parciales) y la latitud y longitud donde se realizó el cambio.
-      
+  
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ModificarEstadoParada xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <estado>
+        <!-->RefDocumento = RefExterna.Parada
+        esta Ref pertenece a la parada 941460923 de el viaje 36
+        <-->
+        <RefDocumento>{{_RefExternaParada}}</RefDocumento>
+        <Estado>ENTREGADO</Estado>
+        <Motivo>CLIENTE CERRADO</Motivo>
+        <EstadoFecha>{{_fecha}}</EstadoFecha>
+        <IdViaje>19578</IdViaje>
+        <Login>Admin</Login>
+        <MismoEstado>true</MismoEstado>
+        <ValidarTransicion>true</ValidarTransicion>
+      </estado>
+    </ModificarEstadoParada>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -3891,7 +7585,24 @@ Permite modificar el estado de una parada. El nuevo estado debe estar dentro de 
     * - Observaciones
       - String
       - Texto libre.
-      
+
+Ejemplo:
+
+.. code-block:: xml
+ 
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ModificarEstadoRuta xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdRuta>{{_IdRuta}}</IdRuta>
+      <Estado>INICIAL</Estado>
+      <EstadoFecha>{{_fecha}}</EstadoFecha>
+      <Login>Admin</Login>
+      <ValidarTransicion>false</ValidarTransicion>
+    </ModificarEstadoRuta>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -3933,7 +7644,37 @@ Modifica el estado de un viaje.
     * - FechaCambioEstado
       - DateTime
       - Fecha que se realiza cambio.
-      
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ModificarEstadoViaje xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdViaje>{{_IdViaje}}</IdViaje>
+      <Estado>2</Estado>
+      <Login>Admin</Login>
+      <ValidarTransicion>true</ValidarTransicion>
+      <FechaCambioEstado>{{_fecha}}</FechaCambioEstado>
+    </ModificarEstadoViaje>
+  </soap:Body>
+ </soap:Envelope>
+ <!--
+ INICIAL
+ ACTIVO (En Viaje)
+ FINALIZADO
+ ANULADO
+ RENDIDO
+ LIQUIDADO
+ PUBLICADO TENDERING
+ ASIGNADO A TRANSPORTE
+ EN MUELLE
+ EN CARGA 
+ FIN DE CARGA
+ -->
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4035,6 +7776,101 @@ Modificar el ítem de una parada utilizando la fecha de la jornada para búsqued
     * - Operacion
       - String
       - Operación asociada a la parada y al viaje.
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ModificarParadaItem xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <ReferenciaExternaParada>941449204</ReferenciaExternaParada>
+      <Item>
+        <RefDocumento>6310</RefDocumento>
+        <RefDocumentoAdicional/>
+        <Descripcion>TO ELITE NON TOUCH EXCELLLENCE 150MTS x2</Descripcion>
+        <Cantidad>200</Cantidad>
+        <Volumen>1.05</Volumen>
+        <Peso>334.05</Peso>
+        <Bulto>0</Bulto>
+        <Pallets>0</Pallets>
+        <MotivoEntrega/>
+        <TipoRotacionPermitida/>
+        <Estado>PENDIENTE</Estado>
+        <ReferenciaExternaEstado/>
+        <Valor_Corte>0</Valor_Corte>
+        <Apilable_Permitido>0</Apilable_Permitido>
+        <CantidadEntregada>0</CantidadEntregada>
+        <!--<Varchar1>string</Varchar1>
+        <Varchar2>string</Varchar2>
+        <Varchar3>string</Varchar3>-->
+        <!--<Producto>
+          <RefProducto>string</RefProducto>
+          <Descripcion>string</Descripcion>
+          <Volumen>double</Volumen>
+          <Peso>double</Peso>
+          <Bultos>double</Bultos>
+          <Alto>double</Alto>
+          <Ancho>double</Ancho>
+          <Profundidad>double</Profundidad>
+          <Apilable>int</Apilable>
+          <Rotacion>string</Rotacion>
+          <Codigo>string</Codigo>
+          <RazonSocial>string</RazonSocial>
+          <RotacionesPermitidas>string</RotacionesPermitidas>
+          <Linea>string</Linea>
+          <SubLinea>string</SubLinea>
+          <UnidadMedida>string</UnidadMedida>
+          <ClienteDador>
+            <ReferenciaExterna>string</ReferenciaExterna>
+            <RazonSocial>string</RazonSocial>
+            <NombreFantasia>string</NombreFantasia>
+            <Cuit>string</Cuit>
+            <Telefono1>string</Telefono1>
+            <Telefono2>string</Telefono2>
+            <Direccion>string</Direccion>
+            <Localidad>string</Localidad>
+            <eMailGestorDeFlota>string</eMailGestorDeFlota>
+            <CentroDeCosto>string</CentroDeCosto>
+            <operaciones xsi:nil="true" />
+            <IdEstado>int</IdEstado>
+          </ClienteDador>
+          <CampoDinamico>
+            <CampoValor xsi:nil="true" />
+            <CampoValor xsi:nil="true" />
+          </CampoDinamico>
+          <TiempoDescarga>double</TiempoDescarga>
+          <Costo>double</Costo>
+          <Ordenamiento>double</Ordenamiento>
+        </Producto>
+        <Etiquetas>
+          <pEtiqueta>
+            <Etiqueta>string</Etiqueta>
+            <Cantidad>int</Cantidad>
+          </pEtiqueta>
+          <pEtiqueta>
+            <Etiqueta>string</Etiqueta>
+            <Cantidad>int</Cantidad>
+          </pEtiqueta>
+        </Etiquetas>
+        <CampoDinamico>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+          <CampoValor>
+            <Campo>string</Campo>
+            <Valor>string</Valor>
+          </CampoValor>
+        </CampoDinamico>-->
+      </Item>
+      <Fecha>{{_fecha}}</Fecha>
+      <Sucursal>T-CABA</Sucursal>
+      <Operacion>DELIV-JUG</Operacion>
+    </ModificarParadaItem>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -4273,6 +8109,41 @@ Modifica los datos de un viaje.
       - DateTime
       - Fecha del cambio.
 
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ModificarViaje xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <viaje>
+        <IdViaje>10285</IdViaje>
+        <!--<Referencia>NO</Referencia>-->
+        <!--<Estado>inicial</Estado>-->
+        <Categoria>categoria B</Categoria>
+        <!--<KmsPlanificados>NO</KmsPlanificados>-->
+        <IdDibujoZona>1</IdDibujoZona>
+        <FechaInicio>2020-11-27T15:00:00.000</FechaInicio>
+        <FechaFin>2020-11-30T15:00:00.000</FechaFin>
+        <Operacion><!--Para modificar la operacion el viaje no debe estar en estado Finalizado-->
+          <Descripcion>DELIVERY DE JUGUETES</Descripcion>
+          <IdOperacion>2</IdOperacion>
+          <Referencia>DELIV-JUG</Referencia>
+          <Sucursal>TOYS - CABA</Sucursal>
+          <ReferenciaExterna>DELIV-JUG</ReferenciaExterna>
+        </Operacion>
+        <Descripcion>SERV001</Descripcion>
+        <!--<FechaCreacion>dateTime</FechaCreacion>-->
+        <Observaciones>modificado por servicios</Observaciones>
+        <!--<FechaInicioCarga>dateTime</FechaInicioCarga>
+        <FechaFinCarga>dateTime</FechaFinCarga>-->
+      </viaje>
+      <FechaCambioEstado>2020-08-21T15:01:00</FechaCambioEstado>
+    </ModificarViaje>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4305,6 +8176,287 @@ Modifica los datos de un viaje. Incluye la modificación de los productos en los
     * - FechaCambioEstado.
       - DateTime
       - Fecha del cambio.
+
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ModificarViajeConParadas xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <viaje>
+        <IdViaje>10282</IdViaje>
+        <Referencia>REGRE1017001</Referencia>
+        <Estado>INICIAL</Estado>
+        <Tipo>Viaje Individual</Tipo>
+        <Categoria>Categoria A</Categoria>
+        <KmsPlanificados>100.0</KmsPlanificados>
+        <!--<IdDibujoZona>int</IdDibujoZona>
+        <DescripcionZona>string</DescripcionZona>-->
+        <FechaInicio>2020-12-10T19:58:00</FechaInicio>
+        <FechaFin>2020-12-11T19:58:00</FechaFin>
+        <Operacion>
+          <Descripcion>DELIVERY DE JUGUETES</Descripcion>
+          <IdOperacion>2</IdOperacion>
+          <!--<Referencia>DELIV-JUG</Referencia>-->
+          <!--<Sucursal>string</Sucursal>-->
+          <ReferenciaExterna>DELIV-JUG</ReferenciaExterna>
+        </Operacion>
+        <!--<Empresa>
+          <RazonSocial>string</RazonSocial>
+        </Empresa>-->
+        <!--<Sucursal>
+          <Referencia>string</Referencia>
+          <Descripcion>string</Descripcion>
+        </Sucursal>-->
+        <Vehiculo>
+           <Dominio>LBH958                                            </Dominio>
+           <Flota>2</Flota>
+           <Volumen xsi:nil="true" />
+           <Peso xsi:nil="true" />
+           <TipoVehiculo>A7</TipoVehiculo>
+           <ReferenciaExterna>T-MT CARGAS_MRH144                                </ReferenciaExterna>
+           <IdEstado>0</IdEstado>
+        </Vehiculo>
+        <Conductor>
+          <Nombre>DIEGO                  </Nombre>
+          <Apellido>CATZ                  </Apellido>
+          <NroDocumento>                    </NroDocumento>
+          <SincronizarUsuario xsi:nil="true" />
+          <Expedicion>0001-01-01T00:00:00</Expedicion>
+          <Vencimiento>0001-01-01T00:00:00</Vencimiento>
+          <TipoDocumento>DNI       </TipoDocumento>
+          <transportes>
+            <pTransporte xsi:nil="true" />
+            <pTransporte xsi:nil="true" />
+          </transportes>
+        </Conductor>
+        <DepositoSalida>
+            <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+            <InicioHorario>0</InicioHorario>
+            <FinHorario>0</FinHorario>
+            <TiempoEspera>0</TiempoEspera>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <X xsi:nil="true" />
+            <Y xsi:nil="true" />
+        </DepositoSalida>
+        <DepositoLlegada>
+            <RefDepositoExterno>TORTUGUITAS</RefDepositoExterno>
+            <InicioHorario>0</InicioHorario>
+            <FinHorario>0</FinHorario>
+            <TiempoEspera>0</TiempoEspera>
+            <Latitud>0</Latitud>
+            <Longitud>0</Longitud>
+            <X xsi:nil="true" />
+            <Y xsi:nil="true" />
+        </DepositoLlegada>
+        <Transporte>
+            <Referencia>REF-EXTERNA</Referencia>
+            <ReferenciaAdicional>T-MT CARGAS</ReferenciaAdicional>
+            <Cuit>404476       </Cuit>
+            <Direccion>República Argentina 5292</Direccion>
+            <Telefono1>1168393618              </Telefono1>
+            <Telefono2>+54 03327-444 979</Telefono2>
+            <HabilitadoAdministrativo>true</HabilitadoAdministrativo>
+            <HabilitadoOperativo>true</HabilitadoOperativo>
+            <RazonSocial>MT CARGAS SRL</RazonSocial>
+            <NombreFantasia>MT CARGAS SRL</NombreFantasia>
+            <Email>trafico@mtcargas.com.ar</Email>
+            <TipoTransporte>Transporte Ciudad</TipoTransporte>
+            <Localidad>Tortuguitas</Localidad>
+            <Calificacion>1</Calificacion>
+            <Contacto>Carlos Leccadito</Contacto>
+            <CodigoPostal />
+            <HabilitadoTendering>true</HabilitadoTendering>
+            <HorarioDesdeTendering>0</HorarioDesdeTendering>
+            <HorarioHastaTendering>2359</HorarioHastaTendering>
+            <PrioridadTendering>80</PrioridadTendering>
+            <HorarioPublicacionDesdeTendering>0</HorarioPublicacionDesdeTendering>
+            <HorarioPublicacionHastaTendering>2359</HorarioPublicacionHastaTendering>
+            <IdEstado>0</IdEstado>
+        </Transporte>
+        <Descripcion>BF13209</Descripcion>
+        <!--<FechaCreacion>dateTime</FechaCreacion>-->
+        <TipoViaje>Viaje Individual</TipoViaje>
+        <!--<Varchar1>string</Varchar1>
+        <Varchar2>string</Varchar2>
+        <Varchar3>string</Varchar3>
+        <VehiculoSecundario>string</VehiculoSecundario>
+        <VehiculoTerciario>string</VehiculoTerciario>-->
+        <Recorrido>World</Recorrido>
+        <Observaciones>Modificado a travez de servicios </Observaciones>
+        <Recursos>
+            <pRecurso>
+                <ReferenciaExterna />
+                <Tipo>Vehículo</Tipo>
+                <Descripcion>MRH144</Descripcion>
+                <Calificacion xsi:nil="true" />
+                <Prioridad xsi:nil="true" />
+            </pRecurso>
+            <pRecurso>
+                <ReferenciaExterna />
+                <Tipo>Conductor</Tipo>
+                <Descripcion>MRH144 MRH144</Descripcion>
+                <Calificacion xsi:nil="true" />
+                <Prioridad xsi:nil="true" />
+            </pRecurso>
+        </Recursos>
+        <!--<PreImporte>decimal</PreImporte>
+        <PreCosto>decimal</PreCosto>
+        <Importe>decimal</Importe>
+        <Varchar4>string</Varchar4>
+        <Varchar5>string</Varchar5>
+        <Varchar6>string</Varchar6>
+        <Float1>float</Float1>
+        <Float2>float</Float2>-->
+        <Entregas>
+          <pOrdenEntrega />
+          <pOrdenEntrega />
+        </Entregas>
+        <!--<VehiculosAdicionales>
+          <pVehiculo>
+            <Dominio>string</Dominio>
+            <DominioSemi>string</DominioSemi>
+            <NroSerie>string</NroSerie>
+            <Prestador>string</Prestador>
+            <Flota>string</Flota>
+            <Chasis>string</Chasis>
+            <Volumen>double</Volumen>
+            <Peso>double</Peso>
+            <Ciudad>string</Ciudad>
+            <Marca>string</Marca>
+            <Modelo>string</Modelo>
+            <Combustible>string</Combustible>
+            <TipoVehiculo>string</TipoVehiculo>
+            <TipoCarroceria>string</TipoCarroceria>
+            <Propietario>string</Propietario>
+            <Conductor>string</Conductor>
+            <CoConductor>string</CoConductor>
+            <Aseguradora>string</Aseguradora>
+            <Transporte>string</Transporte>
+            <Categoria>string</Categoria>
+            <Grupos xsi:nil="true" />
+            <ReferenciaExterna>string</ReferenciaExterna>
+            <Contrato>string</Contrato>
+            <TipoCarga>string</TipoCarga>
+            <RefTipoVehiculo>string</RefTipoVehiculo>
+            <FechaFabricacion>dateTime</FechaFabricacion>
+            <IdEstado>int</IdEstado>
+          </pVehiculo>
+          <pVehiculo>
+            <Dominio>string</Dominio>
+            <DominioSemi>string</DominioSemi>
+            <NroSerie>string</NroSerie>
+            <Prestador>string</Prestador>
+            <Flota>string</Flota>
+            <Chasis>string</Chasis>
+            <Volumen>double</Volumen>
+            <Peso>double</Peso>
+            <Ciudad>string</Ciudad>
+            <Marca>string</Marca>
+            <Modelo>string</Modelo>
+            <Combustible>string</Combustible>
+            <TipoVehiculo>string</TipoVehiculo>
+            <TipoCarroceria>string</TipoCarroceria>
+            <Propietario>string</Propietario>
+            <Conductor>string</Conductor>
+            <CoConductor>string</CoConductor>
+            <Aseguradora>string</Aseguradora>
+            <Transporte>string</Transporte>
+            <Categoria>string</Categoria>
+            <Grupos xsi:nil="true" />
+            <ReferenciaExterna>string</ReferenciaExterna>
+            <Contrato>string</Contrato>
+            <TipoCarga>string</TipoCarga>
+            <RefTipoVehiculo>string</RefTipoVehiculo>
+            <FechaFabricacion>dateTime</FechaFabricacion>
+            <IdEstado>int</IdEstado>
+          </pVehiculo>
+        </VehiculosAdicionales>-->
+        <Paradas>
+        <pParada>
+                                <Secuencia>1</Secuencia>
+                                <TipoParada>No Determinado</TipoParada>
+                                <Latitud>0</Latitud>
+                                <Longitud>0</Longitud>
+                                <Volumen>800</Volumen>
+                                <Peso>850</Peso>
+                                <Bulto>851</Bulto>
+                                <Valor>852</Valor>
+                                <Pallets>853</Pallets>
+                                <TiempoEstadia>30</TiempoEstadia>
+                                <InicioHorario1>0</InicioHorario1>
+                                <FinHorario1>2359</FinHorario1>
+                                <InicioHorario2>0</InicioHorario2>
+                                <FinHorario2>0</FinHorario2>
+                                <Distancia>0</Distancia>
+                                <RequiereControl>false</RequiereControl>
+                                <InicioHorarioPlanificado>2020-12-10T03:00:00</InicioHorarioPlanificado>
+                                <FinHorarioPlanificado>2020-12-10T03:30:00</FinHorarioPlanificado>
+                                <Estados />
+                                <Incidencias />
+                                <Items />
+                                <Estado>PENDIENTE</Estado>
+                                <ReferenciaExternaEstado />
+                                <Valor_Declarado>0</Valor_Declarado>
+                                <_Costo>0</_Costo>
+                                <Int_1>0</Int_1>
+                                <Int_2>0</Int_2>
+                                <Float_1>0</Float_1>
+                                <Float_2>0</Float_2>
+                                <TiempoDetencionMinimo>0</TiempoDetencionMinimo>
+                                <IdParada>229462</IdParada>
+                                <RefDocumento>229462</RefDocumento>
+                                <IdOrden>0</IdOrden>
+                    </pParada>           
+                    <pParada>
+                                <Secuencia>2</Secuencia>
+                                <TipoParada>No Determinado</TipoParada>
+                                <Latitud>0</Latitud>
+                                <Longitud>0</Longitud>
+                                <Volumen>100</Volumen>
+                                <Peso>101</Peso>
+                                <Bulto>102</Bulto>
+                                <Valor>103</Valor>
+                                <Pallets>104</Pallets>
+                                <TiempoEstadia>30</TiempoEstadia>
+                                <InicioHorario1>0</InicioHorario1>
+                                <FinHorario1>2359</FinHorario1>
+                                <InicioHorario2>0</InicioHorario2>
+                                <FinHorario2>0</FinHorario2>
+                                <Distancia>0</Distancia>
+                                <RequiereControl>false</RequiereControl>
+                                <InicioHorarioPlanificado>2020-12-10T03:00:00</InicioHorarioPlanificado>
+                                <FinHorarioPlanificado>2020-12-10T03:30:00</FinHorarioPlanificado>
+                                <Estados />
+                                <Incidencias />
+                                <Items />
+                                <Estado>PENDIENTE</Estado>
+                                <ReferenciaExternaEstado />
+                                <Valor_Declarado>0</Valor_Declarado>
+                                <_Costo>0</_Costo>
+                                <Int_1>0</Int_1>
+                                <Int_2>0</Int_2>
+                                <Float_1>0</Float_1>
+                                <Float_2>0</Float_2>
+                                <TiempoDetencionMinimo>0</TiempoDetencionMinimo>
+                                <RefDocumento>229463</RefDocumento>
+                                <IdParada>229463</IdParada>                        
+                                <IdOrden>0</IdOrden>
+                    </pParada>         
+        </Paradas>
+        <!--<IdRuta>int</IdRuta>
+        <FechaInicioCarga>dateTime</FechaInicioCarga>
+        <FechaFinCarga>dateTime</FechaFinCarga>
+        <FechaHoraAtraque>dateTime</FechaHoraAtraque>
+        <FechaHoraArribo>dateTime</FechaHoraArribo>-->
+      </viaje>
+      <!--<FechaCambioEstado>dateTime</FechaCambioEstado>-->
+    </ModificarViajeConParadas>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -4402,6 +8554,21 @@ Obtiene un listado de estadias en un rango de fechas.
       - String
       - Zona - opcional.
 
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerEstadias xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <desde>2020-12-01T00:00:00</desde>
+      <hasta>2021-01-31T23:00:00</hasta>    
+      <TimeZone></TimeZone> 
+    </ObtenerEstadias>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4455,6 +8622,20 @@ Retorna las guías de liquidación filtrando por los datos ingresados, como mín
     * - CodigoOperacion
       - String 
       - Código de operación asignada. 
+
+Ejemplo:
+
+.. code-block:: xml
+
+   <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+    <ObtenerGuiasLiquidacion xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <FechaDesde>2021-03-04</FechaDesde>
+      <FechaHasta>2021-03-04</FechaHasta>
+    </ObtenerGuiasLiquidacion>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -4633,6 +8814,20 @@ Retorna la liquidación con el detalle de sus guías.
       - String
       - Referencia externa de la liquidación.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerLiquidacion xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdLiquidacion>9</IdLiquidacion>
+      <ReferenciaLiquidacion></ReferenciaLiquidacion>
+    </ObtenerLiquidacion>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4659,6 +8854,18 @@ Retorna las liquidaciones en estados configurados por Action.
     * - Apikey
       - String
       - ApiKey.
+
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerLiquidaciones xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+    </ObtenerLiquidaciones>
+  </soap:Body>
+ </soap:Envelope>
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -4699,6 +8906,22 @@ Recupera las paradas de un viaje en una fecha específica o de un viaje.
       - String 
       - Sucursal descripción.
 
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerParadas xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <Fecha>2021-09-30</Fecha><!--Fecha creacion-->
+      <IdViaje>6691</IdViaje>
+      <EstadoViaje>FINALIZADO</EstadoViaje>
+      <CodigoSucursal>T-CABA</CodigoSucursal>
+    </ObtenerParadas>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4731,7 +8954,21 @@ Devuelve las ordenes asociadas a una ruta y a una jornada.
     * - IdRuta 
       - Int 
       - Identificador de la ruta.
-  
+
+Ejemplo:
+
+.. code-block:: xml
+
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerRuta xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdJornada>10512</IdJornada>
+      <IdRuta>2</IdRuta>
+    </ObtenerRuta>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4765,6 +9002,20 @@ Obtiene la información de la ruta y ordenes.
       - Int 
       - Identificador de la ruta.
   
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerRutaCompleta xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <IdJornada>3</IdJornada>
+      <IdRuta>2854</IdRuta>
+    </ObtenerRutaCompleta>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4795,6 +9046,20 @@ Retorna las rutas asociadas a los viajes presentes en la jornada indicada en la 
       - String 
       - Filtro de código de sucursal, en el caso de ser nulo o vacío se devolverán las rutas de todas las sucursales.
   
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerRutas xmlns="http://unisolutions.com.ar/">
+      <apiKey>1234</apiKey>
+      <fecha>2020-07-20</fecha>
+      <CodigoSucursal>T-CABA</CodigoSucursal>
+    </ObtenerRutas>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -4899,6 +9164,22 @@ Obtiene los viajes en una fecha determinada con la opción de filtrar por sucurs
       - String 
       - Filtro de código de operación, en el caso de ser nulo o vacío se devolverán las rutas de todas las operaciones.
   
+  
+Ejemplo:
+
+.. code-block:: xml
+  
+ <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ObtenerViajes xmlns="http://unisolutions.com.ar/">
+      <ApiKey>1234</ApiKey>
+      <fecha>2018-08-24T00:00:00.000</fecha>
+      <CodigoOperacion>2</CodigoOperacion>
+      <CodigoSucursal>T-CABA</CodigoSucursal><!--Ref.Externa sucursal-->
+    </ObtenerViajes>
+  </soap:Body>
+ </soap:Envelope>
+
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
