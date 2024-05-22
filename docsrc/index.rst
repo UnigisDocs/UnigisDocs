@@ -28,6 +28,8 @@ Contenido
    Icenter/IntegrationCenter.rst
    CAdapter/CourrierAdapter.rst
    Firebase/PushFirebase.rst
+   Standard/StandardHDVHDR.rst
+   RNDC/RNDC.rst
    
    
    
