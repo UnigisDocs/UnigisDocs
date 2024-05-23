@@ -45,7 +45,41 @@ https://www.postman.com/downloads/
 .. note::
     
     El dominio cambia de acuerdo con el ambiente ya sea de pruebas o producción.
+    
     En la sección de cliente, va el nombre de quien usará la MAPI.
+
+Forma de Uso 
+-----------------
+
+.. container:: justified-tex
+
+  Para poder utilizar la MAPI, es necesario contar con un ambiente de pruebas o de producción dependiendo el caso. 
+
+  Si tiene la aplicación se SOAP UI, Postman o similares, deberá solicitar a UNIGIS las ligas correspondientes para poder utilizar el servicio.
+
+  Una vez que tenga instalada cualquier aplicación podrá facilitarse una liga que contiene todos los servicios que opera actualmente UNIGIS; a continuación se agrega una liga de ejemplo funcional:
+
+  https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx
+
+  Al ingresar podrá visualizar un listado de los servicios:
+
+.. image:: Mapi.png
+   :align: center
+
+.. container:: justified-tex
+
+  Dentro de cada servicio se pueden visualizar los nodos con una breve descripción del servicio, que son requeridos para poder realizar una petición:
+
+.. image:: Mapiejemplo.png
+   :align: center
+
+Podrá copiar y pegar y reemplazar los nodos con información del cliente en cada petición se cuenta con caso exitoso o fallido.
+
+.. note:: 
+  
+  Para un caso exitoso recibiremos una respuesta 200 OK.
+
+  Para el caso fallido solo se recibirá una respuesta -99 de error y deberá revisar la información de los nodos o realizar una revisión más a detalle para identificar si alguna variable se encuentra activa.
 
 Web Services
 -----------------
@@ -197,7 +231,7 @@ Agregar Ítems a una parada a partir del IdViaje y la ReferenciaExterna.
       - Referencia que se asigna a la parada que se le agregaran ítems.
     * - Encuesta
       - List<ParadaItem>
-      - Lista de ítemas.
+      - Lista de ítems.
 
 .. list-table:: Retorno
     :widths: 10 10 45
@@ -228,7 +262,7 @@ Agregar Ítems a una parada a partir del IdViaje y la ReferenciaExterna.
       - Descripción 
     * - ApiKey
       - String
-      - Apy Key.
+      - Api Key.
     * - IdViaje
       - Integer
       - IdViaje Unigis al cual agregarle la/s paradas.
@@ -331,10 +365,16 @@ Ejemplo:
     * - Parámetros Entrada
       - Tipo de Dato
       - Descripción
-    * - IdViaje
-      - Integer
-      - Identificación de Viaje para anular en la plataforma UNIGIS. Este número identificador es el retornado por la interfaz al crear un Viaje con el método “CrearViaje”.
-    
+    * - ApiKey	
+      - String	
+      - Token de autorización asignado al cliente.
+    * - IdViaje	
+      - Integer	
+      - Identificación del Viaje para consultar su estado.
+    * - FechaCambioEstado		
+      - 
+      - Permite informar la fecha de cambio de estado 0001-01-01T00:00:00.
+  
 .. list-table:: Retorno
     :widths: 10 10 45
     :header-rows: 1
@@ -360,7 +400,7 @@ Permite validar la ApiKey que será enviada en cada una de las peticiones realiz
       - Descripción
     * - ApiKeyValida
       - String
-      - Api Key.
+      - Token de autorización.
 
 Ejemplo:
 
@@ -431,7 +471,7 @@ Recibe una lista de tipos de vehículos para asignar a múltiples operaciones y 
       - Bool
       - Ingresar en true si se quiere borrar las asignaciones previas del tipo vehículo.
     * - pTipoVehiculo
-      - Int
+      - pTipoVehiculo
       - Lista de tipos de vehículo.
 
 .. list-table:: Retorno
@@ -1083,13 +1123,13 @@ Ejemplo:
                <Latitud>0</Latitud>
                <Longitud>0</Longitud>
                <RefDomicilioExterno>6400000352</RefDomicilioExterno>
-               <DomicilioDescripcion>DISTRIBUIDORA LIVERPOOL. S.A. DE</DomicilioDescripcion>
+               <DomicilioDescripcion>DISTRIBUIDORA  S.A. DE</DomicilioDescripcion>
                <InicioHorario1>0</InicioHorario1>
                <InicioHorario2>0</InicioHorario2>
                <FinHorario1>0</FinHorario1>
                <FinHorario2>0</FinHorario2>
                <TiempoEspera>360</TiempoEspera>
-               <Varchar1>SUC 170 DISTRIBUIDRA LIVERPOOL</Varchar1>
+               <Varchar1>SUC 170 DISTRIBUIDRA </Varchar1>
                <Varchar2>000212577</Varchar2>
                <Int1>0</Int1>
                <Int2>0</Int2>
@@ -1121,7 +1161,7 @@ Ejemplo:
             <Int1>0</Int1>
             <Int2>0</Int2>
             <CodigoPostal>57205</CodigoPostal>
-            <UrlB2C>https://cloudmx.unigis.com/ADIDAS/B2C/OrderBase/Details?reference=EAAAAC5nL5Kn0wWeNer+kwWx0LY5YG9ZFsGzaryEAH+EYqEm&amp;UTC_difference=-1</UrlB2C>
+            <UrlB2C>https://cloudmx.unigis.com/EJEMPLO/B2C/OrderBase/Details?reference=EAAAAC5nL5Kn0wWeNer+kwWx0LY5YG9ZFsGzaryEAH+EYqEm&amp;UTC_difference=-1</UrlB2C>
             <EstadoDetalle>
                <RefDocumento>6406851792</RefDocumento>
                <Estado>Planeacion</Estado>
@@ -1530,8 +1570,8 @@ Ejemplo:
       - Tipo de Dato
       - Descripción
     * - Resultado (*)
-      - pRecursoExtended
-      - Objeto con los trace del recurso.
+      - pRecursoVehiculo
+      - Objeto complejo.
 
 1.31. ConsultarTransicionesEstadoViaje
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3022,11 +3062,11 @@ Crea o modifica líneas transportistas.
 
 Permite sincronizar los vehículos. Valida la existencia y realiza las actualizaciones evitando duplicados.
 
-El método CrearVehiculos no valida existencia 
+El método CrearVehiculos no valida existencia.
 
-El método CrearVehiculos_ValidarExistencia si valida existencia 
+El método CrearVehiculos_ValidarExistencia si valida existencia. 
 
-Aplica para CrearVehiculos_ValidarExistencia
+Aplica para CrearVehiculos_ValidarExistencia.
 
 .. list-table:: Entrada
     :widths: 10 10 45
@@ -3655,7 +3695,7 @@ Ejemplo:
 
 .. container:: justified-tex
 
-    Este servicio está basado en CrearViaje anexando la funcionalidad de sincronización de vehículos al realizar una búsqueda por dominio. De no existir el vehículo en cuestión, se sincronizará el prestador (si el mismo no es encontrado se producirá un error) y se creará el vehículo con los datos provistos en la entidad vehículo. A su vez se hacen accesibles los campos “varchar1”, “varchar2” y “varchar3” para la carga de datos extra por parte del cliente.
+  Este servicio está basado en CrearViaje anexando la funcionalidad de sincronización de vehículos al realizar una búsqueda por dominio. De no existir el vehículo en cuestión, se sincronizará el prestador (si el mismo no es encontrado se producirá un error) y se creará el vehículo con los datos provistos en la entidad vehículo. A su vez se hacen accesibles los campos “varchar1”, “varchar2” y “varchar3” para la carga de datos extra por parte del cliente.
 
 .. list-table:: Entrada
     :widths: 10 10 45
@@ -3674,16 +3714,16 @@ Ejemplo:
       - String
       - Referencia de dato externo en el sistema que utiliza la interfaz.
     * - Transporte (*)
-      - Transporte
+      - pTransporte
       - Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).
     * - DepositoSalida
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - DepositoLlegada
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - Conductor (*)
-      - Conductor
+      - pConductor
       - Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).
     * - Login
       - String
@@ -4273,16 +4313,16 @@ Ejemplo:
       - String
       - Referencia de dato externo en el sistema que utiliza la interfaz.
     * - Transporte (*)
-      - Transporte
+      - pTransporte
       - Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).
     * - DepositoSalida
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - DepositoLlegada
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - Conductor (*)
-      - Conductor
+      - pConductor
       - Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).
     * - Login
       - String
@@ -4870,7 +4910,7 @@ Ejemplo:
       - String 
       - Referencia externa/decripción de la sucursal. 
     * - Operación 
-      - String
+      - 
       - Operación del viaje.
     * - FechaViaje
       - DateTime
@@ -4879,16 +4919,16 @@ Ejemplo:
       - String
       - Referencia de dato externo en el sistema que utiliza la interfaz.
     * - Transporte (*)
-      - Transporte
+      - pTransporte
       - Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).
     * - DepositoSalida
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - DepositoLlegada
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - Conductor (*)
-      - Conductor
+      - pConductor
       - Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).
     * - Login
       - String
@@ -5357,16 +5397,16 @@ Ejemplo:
       - String
       - Referencia de dato externo en el sistema que utiliza la interfaz.
     * - Transporte (*)
-      - Transporte
+      - pTransporte
       - Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).
     * - DepositoSalida
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - DepositoLlegada
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - Conductor (*)
-      - Conductor
+      - pConductor
       - Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).
     * - Login
       - String
@@ -5969,16 +6009,16 @@ Ejemplo:
       - String
       - Referencia de dato externo en el sistema que utiliza la interfaz.
     * - Transporte (*)
-      - Transporte
+      - pTransporte
       - Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).
     * - DepositoSalida
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - DepositoLlegada
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - Conductor (*)
-      - Conductor
+      - pConductor
       - Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).
     * - Login
       - String
@@ -6587,16 +6627,16 @@ Ejemplo:
       - String
       - Observaciones del viaje.
     * - Transporte (*)
-      - Transporte
+      - pTransporte
       - Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).
     * - DepositoSalida
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - DepositoLlegada
-      - Deposito
+      - pDeposito
       - Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).
     * - Conductor (*)
-      - Conductor
+      - pConductor
       - Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).
     * - Login
       - String
@@ -9115,6 +9155,9 @@ Retorna las órdenes de las rutas solicitadas. Aplica para ObtenerRutas_Ruta0Req
     * - Parámetros Entrada
       - Tipo de Dato
       - Descripción
+    * - ApiKey	
+      - String	
+      - Api Key.
     * - Fecha
       - DateTime
       - Fecha de consulta. 
@@ -9233,8 +9276,8 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - Boolean 
       - Respuesta del servicio.
 
-1.115. RelacionarViajes 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.115. ReordenarViajeTransito 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: justified-text
 
@@ -9264,6 +9307,190 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
     * - Resultado
       - Boolean 
       - Respuesta del servicio.
+
+1.116. CrearProveedoresOrden 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Permite guardar la información de proveedores, altas y modificaciones. 
+
+.. list-table:: Entrada
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Entrada
+      - Tipo de Dato
+      - Descripción
+    * - ApiKey	
+      - String	
+      - Token asignado al cliente
+    * - proveedoresOrden	
+      - List<ProveedoresOrden>	
+      - ObjetoComplejo
+  
+.. list-table:: Retorno
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Retorno
+      - Tipo de Dato
+      - Descripción 
+    * - Resultado
+      - Int
+      - 
+
+1.117.  ModificarEstadoOrdenTrabajo 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Permite modificar el estado de la orden de trabajo por medio del objeto pEstadoOrdenTrabajo.
+
+.. list-table:: Entrada
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Entrada
+      - Tipo de Dato
+      - Descripción
+    * - ApiKey	
+      - String	
+      - Token asignado al cliente
+    * - Estado	
+      - pEstadoOrdenTrabajo	
+      - ObjetoComplejo
+
+  
+.. list-table:: Retorno
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Retorno
+      - Tipo de Dato
+      - Descripción 
+    * - Resultado
+      - Int
+      - 
+
+1.118. ModificarEstadoCita 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Permite modificar el estado de una cita.
+
+.. list-table:: Entrada
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Entrada
+      - Tipo de Dato
+      - Descripción
+    * - ApiKey	
+      - String	
+      - Token asignado al cliente
+    * - Estado	
+      - pEstadoCita	
+      - ObjetoComplejo
+  
+.. list-table:: Retorno
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Retorno
+      - Tipo de Dato
+      - Descripción 
+    * - Resultado
+      - Int
+      - 
+
+1.119. ModificarCita 
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Permite modificar los datos de la cita.
+
+.. list-table:: Entrada
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Entrada
+      - Tipo de Dato
+      - Descripción
+    * - ApiKey	
+      - String	
+      - Token asignado al cliente
+    * - Cita	
+      - pCitaModificar	
+      - ObjetoComplejo
+
+.. list-table:: Retorno
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Retorno
+      - Tipo de Dato
+      - Descripción 
+    * - Resultado
+      - Int
+      - 
+
+1.120. CrearDepositoProducto 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Crea o modificar la relación de depósitos y productos.
+
+.. list-table:: Entrada
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Entrada
+      - Tipo de Dato
+      - Descripción
+    * - ApiKey	
+      - String	
+      - Token asignado al cliente
+    * - DepositoProductos	
+      - List<pDepositoProducto>	
+      - ObjetoComplejo
+
+.. list-table:: Retorno
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Retorno
+      - Tipo de Dato
+      - Descripción 
+    * - Resultado
+      - Int
+      - 
+
+1.121. MoficarEstadoRecurso 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Modificar el estado del recurso indicado el en Request.
+
+.. list-table:: Entrada
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Entrada
+      - Tipo de Dato
+      - Descripción
+    * - ApiKey	
+      - String	
+      - Token asignado al cliente
+    * - Estado	
+      - pEstadoRecurso	
+      - ObjetoComplejo
+
+
+.. list-table:: Retorno
+    :widths: 10 10 45
+    :header-rows: 1
+
+    * - Parámetros Retorno
+      - Tipo de Dato
+      - Descripción 
+    * - Resultado
+      - Int
+      - 
+
+
 
 2. Objetos Complejos
 -----------------------
@@ -12803,3 +13030,372 @@ Método que permite relacionar viajes considerando el tipo de relación y lapso 
       - List<CampoValor>	
       - Lista de datos complejos para los campos adicionales para la entidad Orden_Dyn.	
       - NO
+
+
+2.51.	pTipoPack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - ReferenciaExterna	
+      - String	
+      - Referencia para identificar el tipo pack.
+    * - Deposito	
+      - String	
+      - Referencia del deposito.
+    * - ProveedorOrden	
+      - String	
+      - Relación de proveedor orden.
+    * - TipoPack	
+      - String	
+      - Descripción del tipo pack.
+    * - CajasPorCapa	
+      - Integer	
+      - Total de cajas.
+    * - CapasAltura	
+      - Integer	
+      - Numero de capas altura.
+    * - UnidadesPorCaja	
+      - Double	
+      - 
+    * - UnidadesTotales	
+      - Double
+      - 
+    * - Alto	
+      - Double	
+      - 
+    * - Ancho	
+      - Double
+      - 
+    * - Profundidad	
+      - Double	
+      - 
+    * - IdEstado	
+      - Integer	
+      - Estado que se asigna al tipo pack.
+
+
+2.52.	pOrdenModificar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - RefDocumento	
+      - String	
+      - Referencia de la orden
+    * - Items	
+      - List<pOrdenItemModificar>	
+      - Objeto Complejo
+
+2.53.	pOrdenItemModificar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - RefDocumento	
+      - String	
+      - Referencia de la orden.
+    * - CantidadRecibida	
+      - Double	
+      - Cantidad a registrar.
+    * - ReferenciaCita	
+      - String	
+      - Número, referencia o descripción de la cita.
+    * - FechaRecibido	
+      - Datetime	
+      - Fecha en la que se realizó la entrega.
+    * - IdCita	
+      - Int	
+      - Identificador de la cita.
+
+2.54.	pEstadoOrdenTrabajo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - IdOrden	
+      - Long	
+      - Identificador de la orden si se cuenta con ella. 
+    * - RefDocumento	
+      - String	
+      - Referencia de la orden para modificar el estado.
+    * - Estado	
+      - String	
+      - Referencia del estado al que se cambia la OT.
+    * - Motivo	
+      - String	
+      - En caso de incidencia agregar el motivo.
+    * - EstadoFecha	
+      - Datetime	
+      - Fecha en la que se realiza el evento.
+    * - Observaciones	
+      - String	
+      - Si existe algún comentario agregarlo.
+    * - ValidarTransicion	
+      - Bool	
+      - Indica si debe validar que el cambio de estado está configurado en el workflow.
+    * - Login	
+      - String	
+      - Usuario con el que va a registrar el cambio de estado.
+
+2.55.	pDepositoProducto
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - Deposito	
+      - String	
+      - Referencia del deposito.
+    * - Producto	
+      - String	
+      - Referencia del producto.
+    * - TipoProducto	
+      - String	
+      - Tipo del producto.
+    * - FormaEntrega	
+      - String	
+      - Descripción de la forma de entrega previamente cargada.
+
+2.56.	pConversionUnidadMedidaProducto
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Atributos
+    :widths: 10 10 45 
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - UnidadMedidaCompra	
+      - String
+      - 
+    * - UnidadMedidaAlmacenamiento	
+      - String	
+      - 
+    * - UnidadMedidaExpedicion	
+      - String	
+      - 
+    * - FactorConversionCompraAAlmacenamiento	
+      - Double	
+      - 
+    * - FactorConversionAlmacenamientoAExpedicion	
+      - Double	
+      - 
+    * - FactorConversionCompraAExpedicion	
+      - Double	
+      - 
+
+2.57.	pProveedorOrden
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. list-table:: Atributos
+    :widths: 10 10 45 
+    :header-rows: 1
+
+    * - Atributos 
+      - Tipo
+      - Descripción
+    * - ReferenciaExterna	
+      - String	
+      - Referencia para identificar el proveedor.
+    * - RazonSocial	
+      - String	
+      - Nombre o razón social del proveedor.
+    * - Operacion	
+      - String	
+      - Referencia de la operación a la que pertenece el proveedor.
+    * - Telefono	
+      - String	
+      - Contacto principal. 
+    * - Telefono2	
+      - String	
+      - Contacto secundario.
+    * - Telefono3	
+      - String	
+      - Contacto adicional.
+    * - EMail	
+      - String	
+      - Correo electrónico del proveedor.
+    * - RazonSocialFiscal	
+      - String	
+      - Razón registrada
+    * - IdentificadorFiscal	
+      - String	
+      - RFC/CUIT del proveedor.
+    * - Contacto	
+      - String	
+      - 
+    * - Direccion	
+      - String	
+      - 
+    * - Calle
+      - String
+      - 
+    * - NumeroPuerta	
+      - String	
+      - 
+    * - EntreCalle	
+      - String	
+      - 
+    * - Barrio	
+      - String	
+      - 
+    * - Localidad	
+      - String
+      - 
+    * - Partido	
+      - String	
+      - 
+    * - Provincia	
+      - String	
+      - 
+    * - Pais	
+      - String
+      - 
+    * - CodigoPostal	
+      - String	
+      - 
+    * - Varchar1	
+      - String	
+      - Campos adicionales de cadena.
+    * - Varchar2	
+      - String	
+      - Campos adicionales de cadena.
+    * - Varchar3	
+      - String	
+      - Campos adicionales de cadena.
+    * - Login	
+      - String	
+      - Usuario con el que se registra el proveedor.
+    * - SincronizarUsuario	
+      - Bool	
+      - Indica si debe sincronizar con el usuario asignado. 
+    * - Grupo	
+      - String	
+      - Grupo al que corresponde el proveedor. 
+    * - Depositos	
+      - List<pProveedorOrdenDeposito>	
+      - Lista de depósitos a los que tendra relación el proveedor.
+    * - DepositosReset	
+      - Bool	
+      - Indica si debe eliminar la relación de depósitos.
+    * - CantidadMaximaCitasPorDia	
+      - Integer	
+      - Indicar si existe un máximo de citas que se pueden relacionar al proveedor.
+    * - Int1	
+      - Integer	
+      - Campo tipo entero para utilizar de forma dinámica.
+    * - Int2	
+      - Integer	
+      - Campo tipo entero para utilizar de forma dinámica.
+    * - Int3	
+      - Integer	
+      - Campo tipo entero para utilizar de forma dinámica.
+    * - Float1	
+      - Double	
+      - Campo tipo decimal para utilizar de forma dinámica.
+    * - Float2	
+      - Double	
+      - Campo tipo decimal para utilizar de forma dinámica.
+    * - Float3	
+      - Double	
+      - Campo tipo decimal para utilizar de forma dinámica.
+    * - InicioHorario1	
+      - Integer	
+      - Inicio de la primera ventana horaria en HHMM.
+    * - FinHorario1	
+      - Integer	
+      - Fin de la primera ventana horaria en HHMM.
+    * - InicioHorario2	
+      - Integer	
+      - Inicio de la primera ventana horaria en HHMM.
+    * - FinHorario2	
+      - Integer	
+      - Fin de la primera ventana horaria en HHMM.
+    * - HabilitadoCitas	
+      - Bool 	
+      - Permite que el proveedor pueda generar citas.
+    * - Longitud	
+      - Double	
+      - Coordenadas geográficas de la orden.
+    * - Latitud	
+      - Double	
+      - Coordenadas geográficas de la orden.
+    * - CalleNormalizada	
+      - String
+      - 	
+    * - EntreCalleNormalizada	
+      - String	
+      - 
+    * - NumeroPuertaNormalizado	
+      - Integer	
+      - 
+    * - BarrioNormalizado	
+      - String	
+      - 
+    * - LocalidadNormalizada	
+      - String	
+      - 
+    * - PartidoNormalizado	
+      - String	
+      - 
+    * - ProvinciaNormalizada	
+      - String	
+      - 
+    * - PaisNormalizado	
+      - String	
+      - 
+    * - CodigoPostalNormalizado	
+      - String	
+      - 
+    * - EstadoCitaSlotAgrupacionInicial	
+      - String	
+      - 
+    * - EstadoCitaSlotInicial	
+      - String	
+      - 
+    * - CitaUnica	
+      - Bool	
+      - 
+    * - CitaPorOrdenOT	
+      - Bool	
+      - 
+    * - RecibeNotificaciones	
+      - Bool	
+      - 
+    * - ProveedorOrdenPadre	
+      - String 	
+      - 
+    * - Domicilios	
+      - List<pDomicilio>	
+      - Objeto complejo.
+    * - CampoDinamico	
+      - List<CampoValor>	
+      - Objeto Complejo.
+

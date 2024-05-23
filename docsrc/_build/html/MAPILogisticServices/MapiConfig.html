@@ -267,8 +267,29 @@
 <p><a class="reference external" href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a></p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>El dominio cambia de acuerdo con el ambiente ya sea de pruebas o producción.
-En la sección de cliente, va el nombre de quien usará la MAPI.</p>
+<p>El dominio cambia de acuerdo con el ambiente ya sea de pruebas o producción.</p>
+<p>En la sección de cliente, va el nombre de quien usará la MAPI.</p>
+</div>
+</section>
+<section id="forma-de-uso">
+<h2>Forma de Uso<a class="headerlink" href="#forma-de-uso" title="Link to this heading">#</a></h2>
+<div class="justified-tex docutils container">
+<p>Para poder utilizar la MAPI, es necesario contar con un ambiente de pruebas o de producción dependiendo el caso.</p>
+<p>Si tiene la aplicación se SOAP UI, Postman o similares, deberá solicitar a UNIGIS las ligas correspondientes para poder utilizar el servicio.</p>
+<p>Una vez que tenga instalada cualquier aplicación podrá facilitarse una liga que contiene todos los servicios que opera actualmente UNIGIS; a continuación se agrega una liga de ejemplo funcional:</p>
+<p><a class="reference external" href="https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx">https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx</a></p>
+<p>Al ingresar podrá visualizar un listado de los servicios:</p>
+</div>
+<img alt="../_images/Mapi.png" class="align-center" src="../_images/Mapi.png" />
+<div class="justified-tex docutils container">
+<p>Dentro de cada servicio se pueden visualizar los nodos con una breve descripción del servicio, que son requeridos para poder realizar una petición:</p>
+</div>
+<img alt="../_images/Mapiejemplo.png" class="align-center" src="../_images/Mapiejemplo.png" />
+<p>Podrá copiar y pegar y reemplazar los nodos con información del cliente en cada petición se cuenta con caso exitoso o fallido.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para un caso exitoso recibiremos una respuesta 200 OK.</p>
+<p>Para el caso fallido solo se recibirá una respuesta -99 de error y deberá revisar la información de los nodos o realizar una revisión más a detalle para identificar si alguna variable se encuentra activa.</p>
 </div>
 </section>
 <section id="web-services">
@@ -492,7 +513,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tr>
 <tr class="row-even"><td><p>Encuesta</p></td>
 <td><p>List&lt;ParadaItem&gt;</p></td>
-<td><p>Lista de ítemas.</p></td>
+<td><p>Lista de ítems.</p></td>
 </tr>
 </tbody>
 </table>
@@ -543,7 +564,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <tbody>
 <tr class="row-even"><td><p>ApiKey</p></td>
 <td><p>String</p></td>
-<td><p>Apy Key.</p></td>
+<td><p>Api Key.</p></td>
 </tr>
 <tr class="row-odd"><td><p>IdViaje</p></td>
 <td><p>Integer</p></td>
@@ -666,9 +687,17 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>IdViaje</p></td>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Token de autorización asignado al cliente.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IdViaje</p></td>
 <td><p>Integer</p></td>
-<td><p>Identificación de Viaje para anular en la plataforma UNIGIS. Este número identificador es el retornado por la interfaz al crear un Viaje con el método “CrearViaje”.</p></td>
+<td><p>Identificación del Viaje para consultar su estado.</p></td>
+</tr>
+<tr class="row-even"><td><p>FechaCambioEstado</p></td>
+<td></td>
+<td><p>Permite informar la fecha de cambio de estado 0001-01-01T00:00:00.</p></td>
 </tr>
 </tbody>
 </table>
@@ -716,7 +745,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <tbody>
 <tr class="row-even"><td><p>ApiKeyValida</p></td>
 <td><p>String</p></td>
-<td><p>Api Key.</p></td>
+<td><p>Token de autorización.</p></td>
 </tr>
 </tbody>
 </table>
@@ -829,7 +858,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Ingresar en true si se quiere borrar las asignaciones previas del tipo vehículo.</p></td>
 </tr>
 <tr class="row-odd"><td><p>pTipoVehiculo</p></td>
-<td><p>Int</p></td>
+<td><p>pTipoVehiculo</p></td>
 <td><p>Lista de tipos de vehículo.</p></td>
 </tr>
 </tbody>
@@ -1806,13 +1835,13 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <span class="w">             </span><span class="nt">&lt;Latitud&gt;</span>0<span class="nt">&lt;/Latitud&gt;</span>
 <span class="w">             </span><span class="nt">&lt;Longitud&gt;</span>0<span class="nt">&lt;/Longitud&gt;</span>
 <span class="w">             </span><span class="nt">&lt;RefDomicilioExterno&gt;</span>6400000352<span class="nt">&lt;/RefDomicilioExterno&gt;</span>
-<span class="w">             </span><span class="nt">&lt;DomicilioDescripcion&gt;</span>DISTRIBUIDORA<span class="w"> </span>LIVERPOOL.<span class="w"> </span>S.A.<span class="w"> </span>DE<span class="nt">&lt;/DomicilioDescripcion&gt;</span>
+<span class="w">             </span><span class="nt">&lt;DomicilioDescripcion&gt;</span>DISTRIBUIDORA<span class="w">  </span>S.A.<span class="w"> </span>DE<span class="nt">&lt;/DomicilioDescripcion&gt;</span>
 <span class="w">             </span><span class="nt">&lt;InicioHorario1&gt;</span>0<span class="nt">&lt;/InicioHorario1&gt;</span>
 <span class="w">             </span><span class="nt">&lt;InicioHorario2&gt;</span>0<span class="nt">&lt;/InicioHorario2&gt;</span>
 <span class="w">             </span><span class="nt">&lt;FinHorario1&gt;</span>0<span class="nt">&lt;/FinHorario1&gt;</span>
 <span class="w">             </span><span class="nt">&lt;FinHorario2&gt;</span>0<span class="nt">&lt;/FinHorario2&gt;</span>
 <span class="w">             </span><span class="nt">&lt;TiempoEspera&gt;</span>360<span class="nt">&lt;/TiempoEspera&gt;</span>
-<span class="w">             </span><span class="nt">&lt;Varchar1&gt;</span>SUC<span class="w"> </span>170<span class="w"> </span>DISTRIBUIDRA<span class="w"> </span>LIVERPOOL<span class="nt">&lt;/Varchar1&gt;</span>
+<span class="w">             </span><span class="nt">&lt;Varchar1&gt;</span>SUC<span class="w"> </span>170<span class="w"> </span>DISTRIBUIDRA<span class="w"> </span><span class="nt">&lt;/Varchar1&gt;</span>
 <span class="w">             </span><span class="nt">&lt;Varchar2&gt;</span>000212577<span class="nt">&lt;/Varchar2&gt;</span>
 <span class="w">             </span><span class="nt">&lt;Int1&gt;</span>0<span class="nt">&lt;/Int1&gt;</span>
 <span class="w">             </span><span class="nt">&lt;Int2&gt;</span>0<span class="nt">&lt;/Int2&gt;</span>
@@ -1844,7 +1873,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <span class="w">          </span><span class="nt">&lt;Int1&gt;</span>0<span class="nt">&lt;/Int1&gt;</span>
 <span class="w">          </span><span class="nt">&lt;Int2&gt;</span>0<span class="nt">&lt;/Int2&gt;</span>
 <span class="w">          </span><span class="nt">&lt;CodigoPostal&gt;</span>57205<span class="nt">&lt;/CodigoPostal&gt;</span>
-<span class="w">          </span><span class="nt">&lt;UrlB2C&gt;</span>https://cloudmx.unigis.com/ADIDAS/B2C/OrderBase/Details?reference=EAAAAC5nL5Kn0wWeNer+kwWx0LY5YG9ZFsGzaryEAH+EYqEm<span class="ni">&amp;amp;</span>UTC_difference=-1<span class="nt">&lt;/UrlB2C&gt;</span>
+<span class="w">          </span><span class="nt">&lt;UrlB2C&gt;</span>https://cloudmx.unigis.com/EJEMPLO/B2C/OrderBase/Details?reference=EAAAAC5nL5Kn0wWeNer+kwWx0LY5YG9ZFsGzaryEAH+EYqEm<span class="ni">&amp;amp;</span>UTC_difference=-1<span class="nt">&lt;/UrlB2C&gt;</span>
 <span class="w">          </span><span class="nt">&lt;EstadoDetalle&gt;</span>
 <span class="w">             </span><span class="nt">&lt;RefDocumento&gt;</span>6406851792<span class="nt">&lt;/RefDocumento&gt;</span>
 <span class="w">             </span><span class="nt">&lt;Estado&gt;</span>Planeacion<span class="nt">&lt;/Estado&gt;</span>
@@ -2389,8 +2418,8 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Resultado (*)</p></td>
-<td><p>pRecursoExtended</p></td>
-<td><p>Objeto con los trace del recurso.</p></td>
+<td><p>pRecursoVehiculo</p></td>
+<td><p>Objeto complejo.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4536,9 +4565,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <section id="crearvehiculos">
 <h3>1.61. CrearVehiculos<a class="headerlink" href="#crearvehiculos" title="Link to this heading">#</a></h3>
 <p>Permite sincronizar los vehículos. Valida la existencia y realiza las actualizaciones evitando duplicados.</p>
-<p>El método CrearVehiculos no valida existencia</p>
-<p>El método CrearVehiculos_ValidarExistencia si valida existencia</p>
-<p>Aplica para CrearVehiculos_ValidarExistencia</p>
+<p>El método CrearVehiculos no valida existencia.</p>
+<p>El método CrearVehiculos_ValidarExistencia si valida existencia.</p>
+<p>Aplica para CrearVehiculos_ValidarExistencia.</p>
 <div class="table-wrapper colwidths-given docutils container" id="id126">
 <table class="docutils align-default" id="id126">
 <caption><span class="caption-text">Entrada</span><a class="headerlink" href="#id126" title="Link to this table">#</a></caption>
@@ -5240,19 +5269,19 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Referencia de dato externo en el sistema que utiliza la interfaz.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Transporte (*)</p></td>
-<td><p>Transporte</p></td>
+<td><p>pTransporte</p></td>
 <td><p>Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>DepositoSalida</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>DepositoLlegada</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>Conductor (*)</p></td>
-<td><p>Conductor</p></td>
+<td><p>pConductor</p></td>
 <td><p>Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>Login</p></td>
@@ -5875,19 +5904,19 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Referencia de dato externo en el sistema que utiliza la interfaz.</p></td>
 </tr>
 <tr class="row-even"><td><p>Transporte (*)</p></td>
-<td><p>Transporte</p></td>
+<td><p>pTransporte</p></td>
 <td><p>Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>DepositoSalida</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>DepositoLlegada</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>Conductor (*)</p></td>
-<td><p>Conductor</p></td>
+<td><p>pConductor</p></td>
 <td><p>Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>Login</p></td>
@@ -6505,7 +6534,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Referencia externa/decripción de la sucursal.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Operación</p></td>
-<td><p>String</p></td>
+<td></td>
 <td><p>Operación del viaje.</p></td>
 </tr>
 <tr class="row-even"><td><p>FechaViaje</p></td>
@@ -6517,19 +6546,19 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Referencia de dato externo en el sistema que utiliza la interfaz.</p></td>
 </tr>
 <tr class="row-even"><td><p>Transporte (*)</p></td>
-<td><p>Transporte</p></td>
+<td><p>pTransporte</p></td>
 <td><p>Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>DepositoSalida</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>DepositoLlegada</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>Conductor (*)</p></td>
-<td><p>Conductor</p></td>
+<td><p>pConductor</p></td>
 <td><p>Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>Login</p></td>
@@ -7031,19 +7060,19 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Referencia de dato externo en el sistema que utiliza la interfaz.</p></td>
 </tr>
 <tr class="row-even"><td><p>Transporte (*)</p></td>
-<td><p>Transporte</p></td>
+<td><p>pTransporte</p></td>
 <td><p>Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>DepositoSalida</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>DepositoLlegada</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>Conductor (*)</p></td>
-<td><p>Conductor</p></td>
+<td><p>pConductor</p></td>
 <td><p>Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>Login</p></td>
@@ -7675,19 +7704,19 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Referencia de dato externo en el sistema que utiliza la interfaz.</p></td>
 </tr>
 <tr class="row-even"><td><p>Transporte (*)</p></td>
-<td><p>Transporte</p></td>
+<td><p>pTransporte</p></td>
 <td><p>Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>DepositoSalida</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>DepositoLlegada</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>Conductor (*)</p></td>
-<td><p>Conductor</p></td>
+<td><p>pConductor</p></td>
 <td><p>Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>Login</p></td>
@@ -8334,19 +8363,19 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <td><p>Observaciones del viaje.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Transporte (*)</p></td>
-<td><p>Transporte</p></td>
+<td><p>pTransporte</p></td>
 <td><p>Ficha completa de la empresa de Transporte que realiza el Viaje (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>DepositoSalida</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega de donde parte el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>DepositoLlegada</p></td>
-<td><p>Deposito</p></td>
+<td><p>pDeposito</p></td>
 <td><p>Ficha completa del depósito/bodega a donde llega el vehículo. (Ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-even"><td><p>Conductor (*)</p></td>
-<td><p>Conductor</p></td>
+<td><p>pConductor</p></td>
 <td><p>Ficha completa del conductor (ver datos completos de la ficha detallados más adelante).</p></td>
 </tr>
 <tr class="row-odd"><td><p>Login</p></td>
@@ -11887,19 +11916,23 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Fecha</p></td>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Api Key.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fecha</p></td>
 <td><p>DateTime</p></td>
 <td><p>Fecha de consulta.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Codigo Sucursal</p></td>
+<tr class="row-even"><td><p>Codigo Sucursal</p></td>
 <td><p>String</p></td>
 <td><p>Filtro de código de sucursal, en el caso de ser nulo o vacío se devolverán las rutas de todas las sucursales.</p></td>
 </tr>
-<tr class="row-even"><td><p>CodigoOperacion</p></td>
+<tr class="row-odd"><td><p>CodigoOperacion</p></td>
 <td><p>String</p></td>
 <td><p>Filtro de código de operación, en el caso de ser nulo o vacío se devolverán las rutas de todas las operaciones.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Jornada (*)</p></td>
+<tr class="row-even"><td><p>Jornada (*)</p></td>
 <td><p>pJornada</p></td>
 <td><p>Tipo de dato complejo con los datos del vehículo.</p></td>
 </tr>
@@ -12070,8 +12103,8 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
-<section id="id1">
-<h3>1.115. RelacionarViajes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="reordenarviajetransito">
+<h3>1.115. ReordenarViajeTransito<a class="headerlink" href="#reordenarviajetransito" title="Link to this heading">#</a></h3>
 <div class="justified-text docutils container">
 <p>Reordena un viaje utilizando transito Opt_size: Cantidad de locations a optimizar (seria la ventana de inspección). La idea es que tienda a respetar la secuencia planificada.</p>
 </div>
@@ -12124,6 +12157,318 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
+<section id="crearproveedoresorden">
+<h3>1.116. CrearProveedoresOrden<a class="headerlink" href="#crearproveedoresorden" title="Link to this heading">#</a></h3>
+<p>Permite guardar la información de proveedores, altas y modificaciones.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id236">
+<table class="docutils align-default" id="id236">
+<caption><span class="caption-text">Entrada</span><a class="headerlink" href="#id236" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Entrada</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Token asignado al cliente</p></td>
+</tr>
+<tr class="row-odd"><td><p>proveedoresOrden</p></td>
+<td><p>List&lt;ProveedoresOrden&gt;</p></td>
+<td><p>ObjetoComplejo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper colwidths-given docutils container" id="id237">
+<table class="docutils align-default" id="id237">
+<caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id237" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Retorno</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resultado</p></td>
+<td><p>Int</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="modificarestadoordentrabajo">
+<h3>1.117.  ModificarEstadoOrdenTrabajo<a class="headerlink" href="#modificarestadoordentrabajo" title="Link to this heading">#</a></h3>
+<p>Permite modificar el estado de la orden de trabajo por medio del objeto pEstadoOrdenTrabajo.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id238">
+<table class="docutils align-default" id="id238">
+<caption><span class="caption-text">Entrada</span><a class="headerlink" href="#id238" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Entrada</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Token asignado al cliente</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estado</p></td>
+<td><p>pEstadoOrdenTrabajo</p></td>
+<td><p>ObjetoComplejo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper colwidths-given docutils container" id="id239">
+<table class="docutils align-default" id="id239">
+<caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id239" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Retorno</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resultado</p></td>
+<td><p>Int</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="modificarestadocita">
+<h3>1.118. ModificarEstadoCita<a class="headerlink" href="#modificarestadocita" title="Link to this heading">#</a></h3>
+<p>Permite modificar el estado de una cita.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id240">
+<table class="docutils align-default" id="id240">
+<caption><span class="caption-text">Entrada</span><a class="headerlink" href="#id240" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Entrada</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Token asignado al cliente</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estado</p></td>
+<td><p>pEstadoCita</p></td>
+<td><p>ObjetoComplejo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper colwidths-given docutils container" id="id241">
+<table class="docutils align-default" id="id241">
+<caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id241" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Retorno</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resultado</p></td>
+<td><p>Int</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="modificarcita">
+<h3>1.119. ModificarCita<a class="headerlink" href="#modificarcita" title="Link to this heading">#</a></h3>
+<p>Permite modificar los datos de la cita.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id242">
+<table class="docutils align-default" id="id242">
+<caption><span class="caption-text">Entrada</span><a class="headerlink" href="#id242" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Entrada</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Token asignado al cliente</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cita</p></td>
+<td><p>pCitaModificar</p></td>
+<td><p>ObjetoComplejo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper colwidths-given docutils container" id="id243">
+<table class="docutils align-default" id="id243">
+<caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id243" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Retorno</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resultado</p></td>
+<td><p>Int</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="creardepositoproducto">
+<h3>1.120. CrearDepositoProducto<a class="headerlink" href="#creardepositoproducto" title="Link to this heading">#</a></h3>
+<p>Crea o modificar la relación de depósitos y productos.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id244">
+<table class="docutils align-default" id="id244">
+<caption><span class="caption-text">Entrada</span><a class="headerlink" href="#id244" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Entrada</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Token asignado al cliente</p></td>
+</tr>
+<tr class="row-odd"><td><p>DepositoProductos</p></td>
+<td><p>List&lt;pDepositoProducto&gt;</p></td>
+<td><p>ObjetoComplejo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper colwidths-given docutils container" id="id245">
+<table class="docutils align-default" id="id245">
+<caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id245" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Retorno</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resultado</p></td>
+<td><p>Int</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="moficarestadorecurso">
+<h3>1.121. MoficarEstadoRecurso<a class="headerlink" href="#moficarestadorecurso" title="Link to this heading">#</a></h3>
+<p>Modificar el estado del recurso indicado el en Request.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id246">
+<table class="docutils align-default" id="id246">
+<caption><span class="caption-text">Entrada</span><a class="headerlink" href="#id246" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Entrada</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ApiKey</p></td>
+<td><p>String</p></td>
+<td><p>Token asignado al cliente</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estado</p></td>
+<td><p>pEstadoRecurso</p></td>
+<td><p>ObjetoComplejo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper colwidths-given docutils container" id="id247">
+<table class="docutils align-default" id="id247">
+<caption><span class="caption-text">Retorno</span><a class="headerlink" href="#id247" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetros Retorno</p></th>
+<th class="head"><p>Tipo de Dato</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resultado</p></td>
+<td><p>Int</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <section id="objetos-complejos">
 <h2>2. Objetos Complejos<a class="headerlink" href="#objetos-complejos" title="Link to this heading">#</a></h2>
@@ -12132,9 +12477,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </div>
 <section id="pvehiculo">
 <h3>2.1. pVehiculo<a class="headerlink" href="#pvehiculo" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id236">
-<table class="docutils align-default" id="id236">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id236" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id248">
+<table class="docutils align-default" id="id248">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id248" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -12301,9 +12646,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pvehiculoxtended">
 <h3>2.2. pVehiculoxtended<a class="headerlink" href="#pvehiculoxtended" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id237">
-<table class="docutils align-default" id="id237">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id237" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id249">
+<table class="docutils align-default" id="id249">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id249" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -12366,9 +12711,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pencuesta">
 <h3>2.3. pEncuesta<a class="headerlink" href="#pencuesta" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id238">
-<table class="docutils align-default" id="id238">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id238" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id250">
+<table class="docutils align-default" id="id250">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id250" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -12407,9 +12752,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="ppregunta">
 <h3>2.4. pPregunta<a class="headerlink" href="#ppregunta" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id239">
-<table class="docutils align-default" id="id239">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id239" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id251">
+<table class="docutils align-default" id="id251">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id251" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -12444,9 +12789,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="parchivo">
 <h3>2.5. pArchivo<a class="headerlink" href="#parchivo" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id240">
-<table class="docutils align-default" id="id240">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id240" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id252">
+<table class="docutils align-default" id="id252">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id252" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -12481,9 +12826,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pparadaitem">
 <h3>2.6. pParadaItem<a class="headerlink" href="#pparadaitem" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id241">
-<table class="docutils align-default" id="id241">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id241" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id253">
+<table class="docutils align-default" id="id253">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id253" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 13.3%" />
 <col style="width: 13.3%" />
@@ -12629,9 +12974,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pestadodocumento">
 <h3>2.7. pEstadoDocumento<a class="headerlink" href="#pestadodocumento" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id242">
-<table class="docutils align-default" id="id242">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id242" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id254">
+<table class="docutils align-default" id="id254">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id254" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -12670,9 +13015,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="agregarparadaresponse">
 <h3>2.8. AgregarParadaResponse<a class="headerlink" href="#agregarparadaresponse" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id243">
-<table class="docutils align-default" id="id243">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id243" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id255">
+<table class="docutils align-default" id="id255">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id255" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -12703,9 +13048,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pparada">
 <h3>2.9. pParada<a class="headerlink" href="#pparada" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id244">
-<table class="docutils align-default" id="id244">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id244" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id256">
+<table class="docutils align-default" id="id256">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id256" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 13.3%" />
 <col style="width: 13.3%" />
@@ -12971,9 +13316,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pconductor">
 <h3>2.10. pConductor<a class="headerlink" href="#pconductor" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id245">
-<table class="docutils align-default" id="id245">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id245" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id257">
+<table class="docutils align-default" id="id257">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id257" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13072,9 +13417,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pestadoguia">
 <h3>2.11. pEstadoGuia<a class="headerlink" href="#pestadoguia" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id246">
-<table class="docutils align-default" id="id246">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id246" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id258">
+<table class="docutils align-default" id="id258">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id258" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13109,9 +13454,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pestadoliquidacion">
 <h3>2.12. pEstadoLiquidacion<a class="headerlink" href="#pestadoliquidacion" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id247">
-<table class="docutils align-default" id="id247">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id247" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id259">
+<table class="docutils align-default" id="id259">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id259" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13150,9 +13495,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pestadoviaje">
 <h3>2.13. pEstadoViaje<a class="headerlink" href="#pestadoviaje" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id248">
-<table class="docutils align-default" id="id248">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id248" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id260">
+<table class="docutils align-default" id="id260">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id260" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13203,9 +13548,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pdeposito">
 <h3>2.14. pDeposito<a class="headerlink" href="#pdeposito" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id249">
-<table class="docutils align-default" id="id249">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id249" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id261">
+<table class="docutils align-default" id="id261">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id261" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13316,9 +13661,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="premito">
 <h3>2.15. pRemito<a class="headerlink" href="#premito" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id250">
-<table class="docutils align-default" id="id250">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id250" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id262">
+<table class="docutils align-default" id="id262">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id262" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13409,9 +13754,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="codigosucursaloperacionrequest">
 <h3>2.16. CodigoSucursalOperacionRequest<a class="headerlink" href="#codigosucursaloperacionrequest" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id251">
-<table class="docutils align-default" id="id251">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id251" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id263">
+<table class="docutils align-default" id="id263">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id263" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13446,9 +13791,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="precursoextended">
 <h3>2.17. pRecursoExtended<a class="headerlink" href="#precursoextended" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id252">
-<table class="docutils align-default" id="id252">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id252" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id264">
+<table class="docutils align-default" id="id264">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id264" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13487,9 +13832,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="precursovehiculo">
 <h3>2.18. pRecursoVehiculo<a class="headerlink" href="#precursovehiculo" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id253">
-<table class="docutils align-default" id="id253">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id253" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id265">
+<table class="docutils align-default" id="id265">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id265" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13524,9 +13869,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pclientedador">
 <h3>2.19. pClienteDador<a class="headerlink" href="#pclientedador" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id254">
-<table class="docutils align-default" id="id254">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id254" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id266">
+<table class="docutils align-default" id="id266">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id266" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13597,9 +13942,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pbeneficiario">
 <h3>2.20. pBeneficiario<a class="headerlink" href="#pbeneficiario" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id255">
-<table class="docutils align-default" id="id255">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id255" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id267">
+<table class="docutils align-default" id="id267">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id267" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13634,9 +13979,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pcliente">
 <h3>2.21. pCliente<a class="headerlink" href="#pcliente" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id256">
-<table class="docutils align-default" id="id256">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id256" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id268">
+<table class="docutils align-default" id="id268">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id268" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 13.3%" />
 <col style="width: 13.3%" />
@@ -13917,9 +14262,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pcustodio">
 <h3>2.22. pCustodio<a class="headerlink" href="#pcustodio" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id257">
-<table class="docutils align-default" id="id257">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id257" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id269">
+<table class="docutils align-default" id="id269">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id269" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -13978,9 +14323,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="consultarparadaresultado">
 <h3>2.23. ConsultarParadaResultado<a class="headerlink" href="#consultarparadaresultado" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id258">
-<table class="docutils align-default" id="id258">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id258" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id270">
+<table class="docutils align-default" id="id270">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id270" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14183,9 +14528,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="consultarparadaestadosresultado">
 <h3>2.24. ConsultarParadaEstadosResultado<a class="headerlink" href="#consultarparadaestadosresultado" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id259">
-<table class="docutils align-default" id="id259">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id259" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id271">
+<table class="docutils align-default" id="id271">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id271" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14212,9 +14557,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="consultarviajeresultadobasic">
 <h3>2.25. ConsultarViajeResultadoBasic<a class="headerlink" href="#consultarviajeresultadobasic" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id260">
-<table class="docutils align-default" id="id260">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id260" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id272">
+<table class="docutils align-default" id="id272">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id272" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14243,11 +14588,11 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
-<section id="id2">
-<h3>2.26. pVehiculo<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id261">
-<table class="docutils align-default" id="id261">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id261" title="Link to this table">#</a></caption>
+<section id="id1">
+<h3>2.26. pVehiculo<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id273">
+<table class="docutils align-default" id="id273">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id273" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14522,9 +14867,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="ppropietario">
 <h3>2.27. pPropietario<a class="headerlink" href="#ppropietario" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id262">
-<table class="docutils align-default" id="id262">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id262" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id274">
+<table class="docutils align-default" id="id274">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id274" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14611,9 +14956,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="precurso">
 <h3>2.28. pRecurso<a class="headerlink" href="#precurso" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id263">
-<table class="docutils align-default" id="id263">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id263" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id275">
+<table class="docutils align-default" id="id275">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id275" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14652,9 +14997,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pclientetipoimpuesto">
 <h3>2.29. pClienteTipoImpuesto<a class="headerlink" href="#pclientetipoimpuesto" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id264">
-<table class="docutils align-default" id="id264">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id264" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id276">
+<table class="docutils align-default" id="id276">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id276" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14693,9 +15038,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="ptransporte">
 <h3>2.30. pTransporte<a class="headerlink" href="#ptransporte" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id265">
-<table class="docutils align-default" id="id265">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id265" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id277">
+<table class="docutils align-default" id="id277">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id277" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -14846,9 +15191,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pruta">
 <h3>2.31. pRuta<a class="headerlink" href="#pruta" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id266">
-<table class="docutils align-default" id="id266">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id266" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id278">
+<table class="docutils align-default" id="id278">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id278" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15047,9 +15392,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pproducto">
 <h3>2.32. pProducto<a class="headerlink" href="#pproducto" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id267">
-<table class="docutils align-default" id="id267">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id267" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id279">
+<table class="docutils align-default" id="id279">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id279" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15156,9 +15501,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pestadoordenentrega">
 <h3>2.33. pEstadoOrdenEntrega<a class="headerlink" href="#pestadoordenentrega" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id268">
-<table class="docutils align-default" id="id268">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id268" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id280">
+<table class="docutils align-default" id="id280">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id280" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15233,9 +15578,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pestadoordenpedido">
 <h3>2.34. pEstadoOrdenPedido<a class="headerlink" href="#pestadoordenpedido" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id269">
-<table class="docutils align-default" id="id269">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id269" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id281">
+<table class="docutils align-default" id="id281">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id281" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15302,9 +15647,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="ptipovehiculo">
 <h3>2.35. pTipoVehiculo<a class="headerlink" href="#ptipovehiculo" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id270">
-<table class="docutils align-default" id="id270">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id270" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id282">
+<table class="docutils align-default" id="id282">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id282" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15497,11 +15842,11 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
-<section id="id3">
-<h3>2.36. CodigoSucursalOperacionRequest<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id271">
-<table class="docutils align-default" id="id271">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id271" title="Link to this table">#</a></caption>
+<section id="id2">
+<h3>2.36. CodigoSucursalOperacionRequest<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id283">
+<table class="docutils align-default" id="id283">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id283" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15528,9 +15873,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pestadosviaje">
 <h3>2.37. pEstadosViaje<a class="headerlink" href="#pestadosviaje" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id272">
-<table class="docutils align-default" id="id272">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id272" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id284">
+<table class="docutils align-default" id="id284">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id284" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15615,11 +15960,11 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
-<section id="id4">
-<h3>2.38. pCustodio<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id273">
-<table class="docutils align-default" id="id273">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id273" title="Link to this table">#</a></caption>
+<section id="id3">
+<h3>2.38. pCustodio<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id285">
+<table class="docutils align-default" id="id285">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id285" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15678,9 +16023,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pordenmodificar">
 <h3>2.39. pOrdenModificar<a class="headerlink" href="#pordenmodificar" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id274">
-<table class="docutils align-default" id="id274">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id274" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id286">
+<table class="docutils align-default" id="id286">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id286" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15701,11 +16046,11 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
-<section id="id5">
-<h3>2.40. pOrdenModificar<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id275">
-<table class="docutils align-default" id="id275">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id275" title="Link to this table">#</a></caption>
+<section id="id4">
+<h3>2.40. pOrdenModificar<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id287">
+<table class="docutils align-default" id="id287">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id287" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15726,11 +16071,11 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
-<section id="id6">
-<h3>2.41. pParadaItem<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id276">
-<table class="docutils align-default" id="id276">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id276" title="Link to this table">#</a></caption>
+<section id="id5">
+<h3>2.41. pParadaItem<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id288">
+<table class="docutils align-default" id="id288">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id288" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15821,9 +16166,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="ptarifa">
 <h3>2.42. pTarifa<a class="headerlink" href="#ptarifa" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id277">
-<table class="docutils align-default" id="id277">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id277" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id289">
+<table class="docutils align-default" id="id289">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id289" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15854,9 +16199,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pmoverparadas">
 <h3>2.43. pMoverParadas<a class="headerlink" href="#pmoverparadas" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id278">
-<table class="docutils align-default" id="id278">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id278" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id290">
+<table class="docutils align-default" id="id290">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id290" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15895,9 +16240,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pempresacustodia">
 <h3>2.44. pEmpresaCustodia<a class="headerlink" href="#pempresacustodia" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id279">
-<table class="docutils align-default" id="id279">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id279" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id291">
+<table class="docutils align-default" id="id291">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id291" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -15940,9 +16285,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pdocumento">
 <h3>2.45. pDocumento<a class="headerlink" href="#pdocumento" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id280">
-<table class="docutils align-default" id="id280">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id280" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id292">
+<table class="docutils align-default" id="id292">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id292" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -16003,11 +16348,11 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
-<section id="id7">
-<h3>2.46. pDocumento<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id281">
-<table class="docutils align-default" id="id281">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id281" title="Link to this table">#</a></caption>
+<section id="id6">
+<h3>2.46. pDocumento<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id293">
+<table class="docutils align-default" id="id293">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id293" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -16098,9 +16443,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pguialiquidacion">
 <h3>2.47.   pGuiaLiquidacion<a class="headerlink" href="#pguialiquidacion" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id282">
-<table class="docutils align-default" id="id282">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id282" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id294">
+<table class="docutils align-default" id="id294">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id294" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -16227,9 +16572,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="ppack">
 <h3>2.48.   pPack<a class="headerlink" href="#ppack" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id283">
-<table class="docutils align-default" id="id283">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id283" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id295">
+<table class="docutils align-default" id="id295">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id295" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 15.4%" />
 <col style="width: 15.4%" />
@@ -16364,9 +16709,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pordenentrega">
 <h3>2.49.   pOrdenEntrega<a class="headerlink" href="#pordenentrega" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id284">
-<table class="docutils align-default" id="id284">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id284" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id296">
+<table class="docutils align-default" id="id296">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id296" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 13.3%" />
 <col style="width: 13.3%" />
@@ -16772,9 +17117,9 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </section>
 <section id="pordentrabajo">
 <h3>2.50.   pOrdenTrabajo<a class="headerlink" href="#pordentrabajo" title="Link to this heading">#</a></h3>
-<div class="table-wrapper colwidths-given docutils container" id="id285">
-<table class="docutils align-default" id="id285">
-<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id285" title="Link to this table">#</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id297">
+<table class="docutils align-default" id="id297">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id297" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 13.3%" />
 <col style="width: 13.3%" />
@@ -17073,6 +17418,537 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 </table>
 </div>
 </section>
+<section id="ptipopack">
+<h3>2.51.   pTipoPack<a class="headerlink" href="#ptipopack" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id298">
+<table class="docutils align-default" id="id298">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id298" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atributos</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ReferenciaExterna</p></td>
+<td><p>String</p></td>
+<td><p>Referencia para identificar el tipo pack.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Deposito</p></td>
+<td><p>String</p></td>
+<td><p>Referencia del deposito.</p></td>
+</tr>
+<tr class="row-even"><td><p>ProveedorOrden</p></td>
+<td><p>String</p></td>
+<td><p>Relación de proveedor orden.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TipoPack</p></td>
+<td><p>String</p></td>
+<td><p>Descripción del tipo pack.</p></td>
+</tr>
+<tr class="row-even"><td><p>CajasPorCapa</p></td>
+<td><p>Integer</p></td>
+<td><p>Total de cajas.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CapasAltura</p></td>
+<td><p>Integer</p></td>
+<td><p>Numero de capas altura.</p></td>
+</tr>
+<tr class="row-even"><td><p>UnidadesPorCaja</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UnidadesTotales</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Alto</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Ancho</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Profundidad</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>IdEstado</p></td>
+<td><p>Integer</p></td>
+<td><p>Estado que se asigna al tipo pack.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id7">
+<h3>2.52.   pOrdenModificar<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id299">
+<table class="docutils align-default" id="id299">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id299" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atributos</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RefDocumento</p></td>
+<td><p>String</p></td>
+<td><p>Referencia de la orden</p></td>
+</tr>
+<tr class="row-odd"><td><p>Items</p></td>
+<td><p>List&lt;pOrdenItemModificar&gt;</p></td>
+<td><p>Objeto Complejo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pordenitemmodificar">
+<h3>2.53.   pOrdenItemModificar<a class="headerlink" href="#pordenitemmodificar" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id300">
+<table class="docutils align-default" id="id300">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id300" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atributos</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RefDocumento</p></td>
+<td><p>String</p></td>
+<td><p>Referencia de la orden.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CantidadRecibida</p></td>
+<td><p>Double</p></td>
+<td><p>Cantidad a registrar.</p></td>
+</tr>
+<tr class="row-even"><td><p>ReferenciaCita</p></td>
+<td><p>String</p></td>
+<td><p>Número, referencia o descripción de la cita.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FechaRecibido</p></td>
+<td><p>Datetime</p></td>
+<td><p>Fecha en la que se realizó la entrega.</p></td>
+</tr>
+<tr class="row-even"><td><p>IdCita</p></td>
+<td><p>Int</p></td>
+<td><p>Identificador de la cita.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pestadoordentrabajo">
+<h3>2.54.   pEstadoOrdenTrabajo<a class="headerlink" href="#pestadoordentrabajo" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id301">
+<table class="docutils align-default" id="id301">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id301" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atributos</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IdOrden</p></td>
+<td><p>Long</p></td>
+<td><p>Identificador de la orden si se cuenta con ella.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RefDocumento</p></td>
+<td><p>String</p></td>
+<td><p>Referencia de la orden para modificar el estado.</p></td>
+</tr>
+<tr class="row-even"><td><p>Estado</p></td>
+<td><p>String</p></td>
+<td><p>Referencia del estado al que se cambia la OT.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Motivo</p></td>
+<td><p>String</p></td>
+<td><p>En caso de incidencia agregar el motivo.</p></td>
+</tr>
+<tr class="row-even"><td><p>EstadoFecha</p></td>
+<td><p>Datetime</p></td>
+<td><p>Fecha en la que se realiza el evento.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Observaciones</p></td>
+<td><p>String</p></td>
+<td><p>Si existe algún comentario agregarlo.</p></td>
+</tr>
+<tr class="row-even"><td><p>ValidarTransicion</p></td>
+<td><p>Bool</p></td>
+<td><p>Indica si debe validar que el cambio de estado está configurado en el workflow.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Login</p></td>
+<td><p>String</p></td>
+<td><p>Usuario con el que va a registrar el cambio de estado.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pdepositoproducto">
+<h3>2.55.   pDepositoProducto<a class="headerlink" href="#pdepositoproducto" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id302">
+<table class="docutils align-default" id="id302">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id302" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atributos</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Deposito</p></td>
+<td><p>String</p></td>
+<td><p>Referencia del deposito.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Producto</p></td>
+<td><p>String</p></td>
+<td><p>Referencia del producto.</p></td>
+</tr>
+<tr class="row-even"><td><p>TipoProducto</p></td>
+<td><p>String</p></td>
+<td><p>Tipo del producto.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FormaEntrega</p></td>
+<td><p>String</p></td>
+<td><p>Descripción de la forma de entrega previamente cargada.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pconversionunidadmedidaproducto">
+<h3>2.56.   pConversionUnidadMedidaProducto<a class="headerlink" href="#pconversionunidadmedidaproducto" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id303">
+<table class="docutils align-default" id="id303">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id303" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atributos</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UnidadMedidaCompra</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UnidadMedidaAlmacenamiento</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>UnidadMedidaExpedicion</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>FactorConversionCompraAAlmacenamiento</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>FactorConversionAlmacenamientoAExpedicion</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>FactorConversionCompraAExpedicion</p></td>
+<td><p>Double</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pproveedororden">
+<h3>2.57.   pProveedorOrden<a class="headerlink" href="#pproveedororden" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id304">
+<table class="docutils align-default" id="id304">
+<caption><span class="caption-text">Atributos</span><a class="headerlink" href="#id304" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 15.4%" />
+<col style="width: 69.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atributos</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ReferenciaExterna</p></td>
+<td><p>String</p></td>
+<td><p>Referencia para identificar el proveedor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RazonSocial</p></td>
+<td><p>String</p></td>
+<td><p>Nombre o razón social del proveedor.</p></td>
+</tr>
+<tr class="row-even"><td><p>Operacion</p></td>
+<td><p>String</p></td>
+<td><p>Referencia de la operación a la que pertenece el proveedor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Telefono</p></td>
+<td><p>String</p></td>
+<td><p>Contacto principal.</p></td>
+</tr>
+<tr class="row-even"><td><p>Telefono2</p></td>
+<td><p>String</p></td>
+<td><p>Contacto secundario.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Telefono3</p></td>
+<td><p>String</p></td>
+<td><p>Contacto adicional.</p></td>
+</tr>
+<tr class="row-even"><td><p>EMail</p></td>
+<td><p>String</p></td>
+<td><p>Correo electrónico del proveedor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RazonSocialFiscal</p></td>
+<td><p>String</p></td>
+<td><p>Razón registrada</p></td>
+</tr>
+<tr class="row-even"><td><p>IdentificadorFiscal</p></td>
+<td><p>String</p></td>
+<td><p>RFC/CUIT del proveedor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contacto</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Direccion</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Calle</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>NumeroPuerta</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EntreCalle</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Barrio</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Localidad</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Partido</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Provincia</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Pais</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CodigoPostal</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Varchar1</p></td>
+<td><p>String</p></td>
+<td><p>Campos adicionales de cadena.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Varchar2</p></td>
+<td><p>String</p></td>
+<td><p>Campos adicionales de cadena.</p></td>
+</tr>
+<tr class="row-even"><td><p>Varchar3</p></td>
+<td><p>String</p></td>
+<td><p>Campos adicionales de cadena.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Login</p></td>
+<td><p>String</p></td>
+<td><p>Usuario con el que se registra el proveedor.</p></td>
+</tr>
+<tr class="row-even"><td><p>SincronizarUsuario</p></td>
+<td><p>Bool</p></td>
+<td><p>Indica si debe sincronizar con el usuario asignado.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Grupo</p></td>
+<td><p>String</p></td>
+<td><p>Grupo al que corresponde el proveedor.</p></td>
+</tr>
+<tr class="row-even"><td><p>Depositos</p></td>
+<td><p>List&lt;pProveedorOrdenDeposito&gt;</p></td>
+<td><p>Lista de depósitos a los que tendra relación el proveedor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DepositosReset</p></td>
+<td><p>Bool</p></td>
+<td><p>Indica si debe eliminar la relación de depósitos.</p></td>
+</tr>
+<tr class="row-even"><td><p>CantidadMaximaCitasPorDia</p></td>
+<td><p>Integer</p></td>
+<td><p>Indicar si existe un máximo de citas que se pueden relacionar al proveedor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Int1</p></td>
+<td><p>Integer</p></td>
+<td><p>Campo tipo entero para utilizar de forma dinámica.</p></td>
+</tr>
+<tr class="row-even"><td><p>Int2</p></td>
+<td><p>Integer</p></td>
+<td><p>Campo tipo entero para utilizar de forma dinámica.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Int3</p></td>
+<td><p>Integer</p></td>
+<td><p>Campo tipo entero para utilizar de forma dinámica.</p></td>
+</tr>
+<tr class="row-even"><td><p>Float1</p></td>
+<td><p>Double</p></td>
+<td><p>Campo tipo decimal para utilizar de forma dinámica.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Float2</p></td>
+<td><p>Double</p></td>
+<td><p>Campo tipo decimal para utilizar de forma dinámica.</p></td>
+</tr>
+<tr class="row-even"><td><p>Float3</p></td>
+<td><p>Double</p></td>
+<td><p>Campo tipo decimal para utilizar de forma dinámica.</p></td>
+</tr>
+<tr class="row-odd"><td><p>InicioHorario1</p></td>
+<td><p>Integer</p></td>
+<td><p>Inicio de la primera ventana horaria en HHMM.</p></td>
+</tr>
+<tr class="row-even"><td><p>FinHorario1</p></td>
+<td><p>Integer</p></td>
+<td><p>Fin de la primera ventana horaria en HHMM.</p></td>
+</tr>
+<tr class="row-odd"><td><p>InicioHorario2</p></td>
+<td><p>Integer</p></td>
+<td><p>Inicio de la primera ventana horaria en HHMM.</p></td>
+</tr>
+<tr class="row-even"><td><p>FinHorario2</p></td>
+<td><p>Integer</p></td>
+<td><p>Fin de la primera ventana horaria en HHMM.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HabilitadoCitas</p></td>
+<td><p>Bool</p></td>
+<td><p>Permite que el proveedor pueda generar citas.</p></td>
+</tr>
+<tr class="row-even"><td><p>Longitud</p></td>
+<td><p>Double</p></td>
+<td><p>Coordenadas geográficas de la orden.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Latitud</p></td>
+<td><p>Double</p></td>
+<td><p>Coordenadas geográficas de la orden.</p></td>
+</tr>
+<tr class="row-even"><td><p>CalleNormalizada</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EntreCalleNormalizada</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>NumeroPuertaNormalizado</p></td>
+<td><p>Integer</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BarrioNormalizado</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LocalidadNormalizada</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PartidoNormalizado</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ProvinciaNormalizada</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PaisNormalizado</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CodigoPostalNormalizado</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EstadoCitaSlotAgrupacionInicial</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EstadoCitaSlotInicial</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CitaUnica</p></td>
+<td><p>Bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CitaPorOrdenOT</p></td>
+<td><p>Bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RecibeNotificaciones</p></td>
+<td><p>Bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ProveedorOrdenPadre</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Domicilios</p></td>
+<td><p>List&lt;pDomicilio&gt;</p></td>
+<td><p>Objeto complejo.</p></td>
+</tr>
+<tr class="row-even"><td><p>CampoDinamico</p></td>
+<td><p>List&lt;CampoValor&gt;</p></td>
+<td><p>Objeto Complejo.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 </section>
 
@@ -17134,6 +18010,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <li><a class="reference internal" href="#descripcion">Descripción</a></li>
 <li><a class="reference internal" href="#caracteristicas">Características</a></li>
 <li><a class="reference internal" href="#pre-requisitos">Pre Requisitos</a></li>
+<li><a class="reference internal" href="#forma-de-uso">Forma de Uso</a></li>
 <li><a class="reference internal" href="#web-services">Web Services</a><ul>
 <li><a class="reference internal" href="#activarvehiculos">1.1. ActivarVehículos</a></li>
 <li><a class="reference internal" href="#activarviaje">1.2. ActivarViaje</a></li>
@@ -17249,7 +18126,13 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <li><a class="reference internal" href="#obtenerrutasrequest">1.112. ObtenerRutasRequest</a></li>
 <li><a class="reference internal" href="#obtieneviajes">1.113. ObtieneViajes</a></li>
 <li><a class="reference internal" href="#relacionarviajes">1.114. RelacionarViajes</a></li>
-<li><a class="reference internal" href="#id1">1.115. RelacionarViajes</a></li>
+<li><a class="reference internal" href="#reordenarviajetransito">1.115. ReordenarViajeTransito</a></li>
+<li><a class="reference internal" href="#crearproveedoresorden">1.116. CrearProveedoresOrden</a></li>
+<li><a class="reference internal" href="#modificarestadoordentrabajo">1.117.  ModificarEstadoOrdenTrabajo</a></li>
+<li><a class="reference internal" href="#modificarestadocita">1.118. ModificarEstadoCita</a></li>
+<li><a class="reference internal" href="#modificarcita">1.119. ModificarCita</a></li>
+<li><a class="reference internal" href="#creardepositoproducto">1.120. CrearDepositoProducto</a></li>
+<li><a class="reference internal" href="#moficarestadorecurso">1.121. MoficarEstadoRecurso</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#objetos-complejos">2. Objetos Complejos</a><ul>
@@ -17278,7 +18161,7 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <li><a class="reference internal" href="#consultarparadaresultado">2.23. ConsultarParadaResultado</a></li>
 <li><a class="reference internal" href="#consultarparadaestadosresultado">2.24. ConsultarParadaEstadosResultado</a></li>
 <li><a class="reference internal" href="#consultarviajeresultadobasic">2.25. ConsultarViajeResultadoBasic</a></li>
-<li><a class="reference internal" href="#id2">2.26. pVehiculo</a></li>
+<li><a class="reference internal" href="#id1">2.26. pVehiculo</a></li>
 <li><a class="reference internal" href="#ppropietario">2.27. pPropietario</a></li>
 <li><a class="reference internal" href="#precurso">2.28. pRecurso</a></li>
 <li><a class="reference internal" href="#pclientetipoimpuesto">2.29. pClienteTipoImpuesto</a></li>
@@ -17288,21 +18171,28 @@ En la sección de cliente, va el nombre de quien usará la MAPI.</p>
 <li><a class="reference internal" href="#pestadoordenentrega">2.33. pEstadoOrdenEntrega</a></li>
 <li><a class="reference internal" href="#pestadoordenpedido">2.34. pEstadoOrdenPedido</a></li>
 <li><a class="reference internal" href="#ptipovehiculo">2.35. pTipoVehiculo</a></li>
-<li><a class="reference internal" href="#id3">2.36. CodigoSucursalOperacionRequest</a></li>
+<li><a class="reference internal" href="#id2">2.36. CodigoSucursalOperacionRequest</a></li>
 <li><a class="reference internal" href="#pestadosviaje">2.37. pEstadosViaje</a></li>
-<li><a class="reference internal" href="#id4">2.38. pCustodio</a></li>
+<li><a class="reference internal" href="#id3">2.38. pCustodio</a></li>
 <li><a class="reference internal" href="#pordenmodificar">2.39. pOrdenModificar</a></li>
-<li><a class="reference internal" href="#id5">2.40. pOrdenModificar</a></li>
-<li><a class="reference internal" href="#id6">2.41. pParadaItem</a></li>
+<li><a class="reference internal" href="#id4">2.40. pOrdenModificar</a></li>
+<li><a class="reference internal" href="#id5">2.41. pParadaItem</a></li>
 <li><a class="reference internal" href="#ptarifa">2.42. pTarifa</a></li>
 <li><a class="reference internal" href="#pmoverparadas">2.43. pMoverParadas</a></li>
 <li><a class="reference internal" href="#pempresacustodia">2.44. pEmpresaCustodia</a></li>
 <li><a class="reference internal" href="#pdocumento">2.45. pDocumento</a></li>
-<li><a class="reference internal" href="#id7">2.46. pDocumento</a></li>
+<li><a class="reference internal" href="#id6">2.46. pDocumento</a></li>
 <li><a class="reference internal" href="#pguialiquidacion">2.47.   pGuiaLiquidacion</a></li>
 <li><a class="reference internal" href="#ppack">2.48.   pPack</a></li>
 <li><a class="reference internal" href="#pordenentrega">2.49.   pOrdenEntrega</a></li>
 <li><a class="reference internal" href="#pordentrabajo">2.50.   pOrdenTrabajo</a></li>
+<li><a class="reference internal" href="#ptipopack">2.51.   pTipoPack</a></li>
+<li><a class="reference internal" href="#id7">2.52.   pOrdenModificar</a></li>
+<li><a class="reference internal" href="#pordenitemmodificar">2.53.   pOrdenItemModificar</a></li>
+<li><a class="reference internal" href="#pestadoordentrabajo">2.54.   pEstadoOrdenTrabajo</a></li>
+<li><a class="reference internal" href="#pdepositoproducto">2.55.   pDepositoProducto</a></li>
+<li><a class="reference internal" href="#pconversionunidadmedidaproducto">2.56.   pConversionUnidadMedidaProducto</a></li>
+<li><a class="reference internal" href="#pproveedororden">2.57.   pProveedorOrden</a></li>
 </ul>
 </li>
 </ul>

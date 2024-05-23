@@ -335,16 +335,16 @@ Creación de Estados de Documento.
     Esta configuración se realiza para tener los estados que permitan controlar los documentos de integración al RNDC, Se debe ingresar al :kbd:`administrador Unigis` --> :kbd:`SCE` --> :kbd:`Flujos de Trabajo` --> :kbd:`Estado Documento`, los estados mínimos requeridos para la integración son:
 
     -	Cumplido Suspensión
-    -	Cumplido Suspensión Error
-    -	Inicial
-    -	Integrado
-    -	Integrado Error
-    -	Cumplido
-    -	Cumplido Error
-    -	Anulado
-    -	Anulado Error
-    -	Anulado Cumplido
-    -	Anulado Cumplido Error
+    -	Cumplido Suspensión Error.
+    -	Inicial.
+    -	Integrado.
+    -	Integrado Error.
+    -	Cumplido.
+    -	Cumplido Error.
+    -	Anulado.
+    -	Anulado Error.
+    -	Anulado Cumplido.
+    -	Anulado Cumplido Error.
 
 .. image:: estadodocumento.png
    :align: center
@@ -389,35 +389,35 @@ Se debe ingresar al :kbd:`administrador del Sistema` :kbd:`Recursos` :kbd:`Catá
 
 Para crear un nuevo tipo de documento se debe dar clic en el botón :kbd:`+` se deben completar los campos:
 
--	ID*
+-	ID*.
 
--	Descripción* 
+-	Descripción*.
 
--	Entidad Aplicable
+-	Entidad Aplicable.
 
--	Días Preaviso Vencimiento
+-	Días Preaviso Vencimiento.
 
--	Validar
+-	Validar.
 
--	Hora Vencimiento
+-	Hora Vencimiento.
 
--	Zona Horaria
+-	Zona Horaria.
 
--	Categoría Licencia
+-	Categoría Licencia.
 
--	Máximo
+-	Máximo.
 
--	Grupo
+-	Grupo.
 
--	Check “Permite Creación Automática”
+-	Check “Permite Creación Automática”.
 
--	Check “Abstract”
+-	Check “Abstract”.
 
--	Check “Mobile Notification”
+-	Check “Mobile Notification”.
 
--	Check “Requerido por Domicilio Orden”
+-	Check “Requerido por Domicilio Orden”.
 
--	Cantidad Mínima de Archivos
+-	Cantidad Mínima de Archivos.
 
 -	Check “Recrear Viaje”.
 
@@ -623,7 +623,7 @@ Creación de Documento Integración
 
     Esta configuración se realiza para hacer el mapeo de los tipos de documento UNIGIS contra los datos a enviar al ministerio, se debe realizar mediante captura en ABM de UNIGIS en la siguiente ruta:
 
-    :kbd:`Administración del Sistema` --> :kbd:`Integrations Center` --> :kbd:`RNDC` --> :kbd:`Documento Integración`
+    :kbd:`Administración del Sistema` --> :kbd:`Integrations Center` --> :kbd:`RNDC` --> :kbd:`Documento Integración`.
 
 .. image:: documentointegracion.png
    :align: center
@@ -815,7 +815,7 @@ Creación de Formato de Carga
 
     Esta configuración se realiza para identificar los Formatos de Carga a reportar ante el ministerio, se debe realizar mediante captura en ABM de UNIGIS en la siguiente ruta:
     
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Viajes` --> :kbd:`Formato Carga`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Viajes` --> :kbd:`Formato Carga`.
 
 .. image:: carga.png
    :align: center
@@ -849,7 +849,7 @@ Parámetros
 
     Permiten activar la ejecución del proceso municipal dentro de los procesos nacionales. Es decir, que al tener activos entraran a los procesos de manifiesto nacional (cumplido/integración) y ejecutaran el proceso municipal según corresponda y al terminar continuara con el proceso nacional.
 
-    :kbd:`Administración del Sistema` --> :kbd:`Sistema` --> :kbd:`Parámetros`
+    :kbd:`Administración del Sistema` --> :kbd:`Sistema` --> :kbd:`Parámetros`.
 
 .. list-table:: 
     :widths: 15 10 15 25
@@ -913,7 +913,7 @@ Procesos
 
     - **(ID 3)** Creación de remesa terrestre de carga: Es un proceso obligatorio que envía al RNDC toda la información correspondiente a la carga y descarga de la mercancía en cada uno de los puntos origen-destino-cliente. Se informan también los tiempos pactados de descargue, los tiempos reales de cargue y los datos de la póliza de la mercancía. También se ingresa información del remitente, destinatario y propietario de la carga a transportar. Es primordial que cuente con un consecutivo único para la empresa de transporte.
 	
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -933,7 +933,7 @@ Procesos
 
     - **(ID 4)** Creación de manifiesto: Es un proceso obligatorio hacia el RNDC que envía información del conductor, vehículo, remolque o semirremolque, origen y destino del viaje, además de todos los consecutivos de las remesas terrestres de carga que están contenidas en dicho manifiesto. También es primordial que cuente con un consecutivo único para la empresa de transporte. El proceso de creación/integración del manifiesto genera un código de seguridad que debe ser representado en la impresión del manifiesto mediante un código QR que se plasma en el mismo en conjunto con otros datos propios del viaje integrado. 
     
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -953,7 +953,7 @@ Procesos
 
     - **(ID 5)** Cumplido de remesa de carga: Es un proceso obligatorio que permite al RNDC conocer cómo y cuándo se realizó la entrega de la mercancía contenida en la remesa, ya sea parcial o totalmente, además de los tiempos logísticos de cargue y descargue. Para poder realizar este proceso, es importante que la remesa terrestre de carga haya sido creada/integrada exitosamente con anterioridad y que haya sido asociada correctamente a un manifiesto de carga. 
 
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -981,7 +981,7 @@ Procesos
 
     - **(ID 6)** Cumplido de manifiesto de viaje: Es un proceso obligatorio hacia el RNDC que debe ser utilizado una vez que todas las remesas contenidas en él han sido cumplidas exitosamente. Contiene información acerca de cómo fue ejecutado el viaje además de pagos adicionales o descuentos y el valor real del flete. También contiene información de más tiempos logísticos. 
 
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -1005,7 +1005,7 @@ Procesos
 
     - **(ID 9)** Anulación de remesa terrestre de carga: Este proceso opcional permite eliminar/borrar una creación de remesa terrestre de carga que haya sido generada exitosamente en el RNDC ya sea para crearla nuevamente con datos corregidos o porque ya no será parte de un manifiesto de viaje. Para poder utilizar este proceso, es necesario que las remesas que se pretenden anular no estén CUMPLIDAS ni tampoco asociadas a un manifiesto de viaje. 
 
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -1038,7 +1038,7 @@ Procesos
 
     - **(ID 28)** Anulación de cumplido de remesa de carga: Proceso que revierte el cumplido de una remesa terrestre de carga informando siempre el motivo.
 
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -1055,7 +1055,7 @@ Procesos
 
     - **(ID 29)** Anulación de cumplido de manifiesto de viaje: Proceso que revierte el cumplido de un manifiesto de viaje informando siempre el motivo. 
 
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -1072,7 +1072,7 @@ Procesos
 
     - **(ID 32)** Anulación de manifiesto de viaje: Este proceso opcional permite eliminar/borrar la creación de un manifiesto de viaje que previamente ha sido creado exitosamente en RNDC ya sea para crearlo de nuevo con datos corregidos o porque el viaje ya no será ejecutado. Este proceso “libera” aquellas remesas asociadas a un manifiesto para poder anularlas también o asociarlas a otro manifiesto de viaje. 
 
-    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`
+    :kbd:`Administración del Sistema` --> :kbd:`SCE` --> :kbd:`Procesos`.
 
 .. list-table:: 
     :widths: 15 15 15
@@ -1232,11 +1232,1518 @@ Integración de Terceros (Proceso Manual)
     Cada que se cree una nueva integración de las anteriormente mencionadas o se realice una edición y se guarde, de manera automática correrá el proceso de integración en caso de fallar se puede realizar de manera manual como se describe en puntos anteriores.
 
 
+.. list-table:: Configuración Entidad Integración
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Entidad
+      - Descripción
+      - Configuración
+    * - AceptacionElectronica	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - AgrupadorManifiestoViajeNacional	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - AgrupadorRegistroViajeMunicipal	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CampoSedeDeposito	
+      - Campo donde se toma el valor de  Sede del depósito	
+      - IdEntidad = 0 CodigoIntegracion = [Deposito.RefDepositoExterno]
+    * - CantidadEntregada	
+      - Cantidad enviada como entregada o cálculo de la cantidad real entregada	
+      - IdEntidad = 0 CodigoIntegracion = CantidadCalculada
+    * - CodCategoriaLicenciaConduccionCliente	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CodCategoriaLicenciaConduccionClienteOrden	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CodCategoriaLicenciaConduccionDeposito	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CodCategoriaLicenciaConduccionDomicilioOrden	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CodCategoriaLicenciaConduccionPropietario	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CodResponsablePagoCargue	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CodResponsablePagoDescargue	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - CodTipoIdTercero	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - Color	
+      - Mapeo de colores UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGISb CodigoIntegracion = Código del ministerio
+    * - Combustible	
+      - Mapeo de combustibles UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - ConceptoAdicionalFlete	
+      - Id del concepto UNIGIS donde se sumarizará el valor a indicar como adicional Flete	
+      - IdEntidad = 0 CodigoIntegracion = IdConcepto UNIGIS
+    * - ConceptoAnticipoFlete	
+      - Id del concepto UNIGIS donde se sumarizará el valor a indicar como Anticipo Flete	
+      - IdEntidad = 0 CodigoIntegracion = IdConcepto UNIGIS
+    * - ConceptoValorFlete	
+      - Id del concepto UNIGIS donde se sumarizará el valor a indicar como Valor Flete	
+      - IdEntidad = 0 CodigoIntegracion = IdConcepto UNIGIS
+    * - ConceptoValorFuente	
+      - Id del concepto UNIGIS donde se sumarizará el valor a indicar como Valor Flete	
+      - IdEntidad = 0 CodigoIntegracion = IdConcepto UNIGIS
+    * - ConceptoValorICA	
+      - Id del concepto UNIGIS donde se sumarizará el valor a indicar como Valor ICA	
+      - IdEntidad = 0 CodigoIntegracion = IdConcepto UNIGIS
+    * - ConceptoValorPactado 
+      - Id del concepto UNIGIS donde se sumarizará el valor a indicar como Valor pactado	
+      - IdEntidad = 0 CodigoIntegracion = IdConcepto UNIGIS
+    * - ConsecutivoCargaDividida	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ConsecutivoInformacionCarga	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ConsecutivoInformacionViaje	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ConsolidaRemesasRNDC	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ConsolidaRemesasRNDC_Municipal	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - DuenoPoliza	
+      - Valor que indica quien es el dueño de la póliza de carga, valor default E	
+      - IdEntidad = 0 CodigoIntegracion = Valor a reportar
+    * - EstadoParadaAnulaCumplido	
+      - ID's de los estados de parada permitidos para anulación de cumplido	
+      - IdEntidad = 0 CodigoIntegracion = ID's estados de parada separados por coma
+    * - EstadoParadaAnulado	
+      - ID's de los estados de parada permitidos para anulación de remesa	
+      - IdEntidad = 0 CodigoIntegracion = ID's estados de parada separados por coma
+    * - EstadoRemesaCumplido	
+      - ID's de los estados de parada permitidos para cumplir la remesa	
+      - IdEntidad = 0 CodigoIntegracion = ID's estados de parada separados por coma
+    * - EstadoViajeAnulaCumplido	
+      - ID's de los estados de viaje permitidos para anulación de cumplido de manifiesto	
+      - IdEntidad = 0 CodigoIntegracion = ID's estados de viaje separados por coma
+    * - EstadoViajeCumplido	
+      - ID's de los estados de viaje permitidos para cumplir el manifiesto	
+      - IdEntidad = 0 CodigoIntegracion = ID's estados de viaje separados por coma
+    * - FechaEntradaCargue	
+      - Nombre del campo donde se toma el dato	
+      - IdEntidad = 0 CodigoIntegracion = Nombre del campo entre corchetes
+    * - FechaEntradaDescargue	
+      - Nombre del campo donde se toma el dato	
+      - IdEntidad = 0 CodigoIntegracion = Nombre del campo entre corchetes
+    * - FechaLlegadaCargue	
+      - Nombre del campo donde se toma el dato	
+      - IdEntidad = 0 CodigoIntegracion = Nombre del campo entre corchetes
+    * - FechaLlegadaDescargue	
+      - Nombre del campo donde se toma el dato	
+      - IdEntidad = 0 CodigoIntegracion = Nombre del campo entre corchetes
+    * - FechaManifiesto	
+      - Nombre del estado del que se tomará la transición que indica la fecha del manifiesto	
+      - IdEntidad = 0 CodigoIntegracion = nombre del estado del que se contemplará la fecha de la transición para reportar en el manifiesto, debe estar entre comillas simples.
+    * - FechaSalidaCargue	
+      - Nombre del campo donde se toma el dato	
+      - IdEntidad = 0 CodigoIntegracion = Nombre del campo entre corchetes
+    * - FechaSalidaDescargue	
+      - Nombre del campo donde se toma el dato	
+      - IdEntidad = 0 CodigoIntegracion = Nombre del campo entre corchetes
+    * - FechaVencimientoLicenciaCliente	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - FechaVencimientoLicenciaClienteOrden	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - FechaVencimientoLicenciaDeposito	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - FechaVencimientoLicenciaDomicilioOrden	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - FechaVencimientoLicenciaPropietario	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - FormatoCargaManifiesto	
+      - Mapeo de formatos de carga UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - FormatoCargaRemesa	
+      - Mapeo de formatos de carga UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - HM_TipoDocumentoFirmaConductor	
+      - Código del tipo de documento utilizado para la firma del conductor	
+      - IdEntidad = 0 CodigoIntegracion = Tipo de documento aplicado a la firma
+    * - HM_TipoDocumentoFirmaEmpresa	
+      - Código del tipo de documento utilizado para la firma de la empresa	
+      - IdEntidad = 0 CodigoIntegracion = Tipo de documento aplicado a la firma
+    * - HM_TipoDocumentoFirmaTitular	
+      - Código del tipo de documento utilizado para la firma del transporte	
+      - IdEntidad = 0 CodigoIntegracion = Tipo de documento aplicado a la firma
+    * - IdTipoAlarmaErrorIntegracion	
+      - ID del tipo de alarma a notificar en caso de error en la integración	
+      - IdEntidad = 0 CodigoIntegracion = ID del Tipo Alarma UNIGIS
+    * - Linea 
+      - Mapeo de línea UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - MarcaCamion	
+      - Mapeo de marca UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - MarcaRemolque	
+      - Mapeo de marca UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - Mercancia	
+      - Mapeo de mercancía UNIGIS vs RNDC	
+      - IdEntidad = Nombre de la mercancía a reportar ante el ministerio CodigoIntegracion = Código del ministerio
+    * - MotivoAdicional	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - MotivoReversaRemesa	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - MotivoValorAdicional	
+      - Motivo del valor adicional a reportar en el manifiesto	
+      - IdEntidad = 0 CodigoIntegracion = Valor default O
+    * - MotivoValorDescuento	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - MotivoValorDescuentoManifiesto	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - Municipio	
+      - Mapeo de departamentos y municipios UNIGIS vs RNDC	
+      - IdEntidad = División política Nivel 2 + División Política Nivel 1 CodigoIntegracion = Código del ministerio
+    * - NaturalezaCarga	
+      - Mapeo de Naturaleza de Carga UNIGIS vs RNDC	
+      - IdEntidad = Nombre de la naturaleza de carga de la mercancía a reportar ante el ministerio CodigoIntegracion = Código del ministerio
+    * - NumeroCaracteresSedeDeposito	
+      - Número de caracteres contemplado como Codigo de Tercero del depósito	
+      - IdEntidad = 0 CodigoIntegracion = Número de caracteres a contemplar en el depósito
+    * - NumLicenciaConduccionCliente	
+      - Entidad default, no se utiliza, no se debe eliminar
+      - 
+    * - NumLicenciaConduccionClienteOrden	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - NumLicenciaConduccionDeposito	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - NumLicenciaConduccionDomicilioOrden	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - NumLicenciaConduccionPropietario	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - OperacionNoRNDC	
+      - Operaciones no contempladas para emisión de manifiestos	
+      - IdEntidad = 0 CodigoIntegracion = ID's de las operaciones no contempladas para emisión de manifiestos separadas por comas o una a una
+    * - OperacionNoRNDC_Municipal	
+      - Operaciones no contempladas para emisión de manifiestos municipales	
+      - IdEntidad = 0 CodigoIntegracion = ID's de las operaciones no contempladas para emisión de manifiestos separadas por comas o una a una
+    * - PrimerApellidoIdTerceroDeposito	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ReemplazoTransporte	
+      - Regla para reemplazar al transporte basad en un dato de la entidad	
+      - IdEntidad = Id de transporte con el que se reemplazará en caso de cumplir la regla CodigoIntegracion =Regla a cumplir de la entidad de transporte
+    * - SegundoApellidoIdTerceroCliente	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - SegundoApellidoIdTerceroClienteOrden	
+      - Entidad default, no se utiliza, no se debe eliminar
+      - 
+    * - SegundoApellidoIdTerceroConductor	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - SegundoApellidoIdTerceroDeposito	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - SegundoApellidoIdTerceroDomicilioOrden	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - SegundoApellidoIdTerceroPropietario	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - TipoCarroceria	
+      - Mapeo de Tipo Carrocería UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - TipoCumplido	
+      - Código de integración para el tipo de cumplido basado en el estado del viaje	
+      - IdEntidad = Id del estado del viaje que aplica al Código CodigoIntegracion = Código del ministerio
+    * - TipoDocumentoConductor	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - TipoDocumentoPropietario	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - TipoDocumentoVehiculo	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - TipoEjes	
+      - Mapeo de Tipo Ejes UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - TipoEmpaque	
+      - Mapeo de Tipo Empaque UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - TipoGuiaFlete	
+      - Tipos de guía que aplican para contemplar en los conceptos valorizados	
+      - IdEntidad = 0 CodigoIntegracion = ID's de los tipos de guía separados por comas
+    * - TiposDocumentoConductorManifiesto	
+      - Tipos de documento que aplican para conductor del manifiesto	
+      - IdEntidad = 0 CodigoIntegracion = Nombres de los tipos de documento que aplican entre comillas simples y separados por comas
+    * - TiposParadaNoRNDC_Municipal	
+      - Tipos de parada que no aplican para generación de manifiestos	
+      - IdEntidad= 0 CodigoIntegracion= IdTipoParada que no aplican para RNDC, en caso ser mas de uno separado por comas. 
+    * - TiposRecursosPrecintos	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - UnidadCapacidad	
+      - Mapeo de Unidad de Medida Capacidad UNIGIS vs RNDC	
+      - IdEntidad = Id UNIGIS CodigoIntegracion = Código del ministerio
+    * - ValorAdicional	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - ValorAdicionalCargue	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ValorAdicionalDesCargue	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ValorAdicionalFlete	
+      - Id del concepto UNIGIS donde se sumarizará el valor a indicar como Adicional al Flete	
+      - IdEntidad = 0 CodigoIntegracion = IdConcepto UNIGIS
+    * - ValorAdicionalHorasCargue	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - ValorAdicionalHorasDescargue	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      - 
+    * - ValorDescuento	
+      - Entidad default, no se utiliza, no se debe eliminar	
+      - 
+    * - ViajesDia	
+      - Entidad default, no se utiliza, no se debe eliminar	 
+      -  
+
+Mapeo de XML Enviado al Ministerio con Datos UNIGIS vs Datos RNDC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: justified-text
+
+    Para realizar un correcto mapeo de campos de UNIGIS vs RNDC, es necesario contar con el paso anterior, y saber por parte de RNDC que campos utilizará e ir cargándolos en el administrador para que se tenga la relación entre ellos, a continuación se describen las entidades junto con sus respectivos campos mapeados. 
+
+.. list-table:: Entidad: ClienteOrden / DomicilioOrden:
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario	 
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password	 
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 11	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - CODTIPOIDTERCERO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al cliente 
+    * - NUMIDTERCERO	
+      - Documento.Referencia
+      - 
+    * - NOMIDTERCERO	
+      - ClienteOrden.RazonSocial
+      - 
+    * - PRIMERAPELLIDOTERCERO	
+      - 
+      - 
+    * - SEGUNDOAPELLIDOTERCERO	 
+      - 
+      - 
+    * - NUMTELEFONOCONTACTO	
+      - ClienteOrden.Telefono 	
+      - Debe ser de 7 caracteres
+    * - NUMCELULARPERSONA	
+      - ClienteOrden.Telefono2	
+      - Debe ser de 10 caracteres
+    * - NOMENCLATURADIRECCION	
+      - DomicilioOrden.Direccion + Barrio + Localidad + Partido o DomicilioOrden.Calle + Puerta + Barrio + Localidad + Partido	 
+      - 
+    * - CODMUNICIPIORNDC	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca en la tabla EntidadIntegracionRNDC con Entidad = "Municipio", IdEntidad = DomicilioOrden.Localidad + “ - ” + Provincia
+    * - CODSEDETERCERO	
+      - DomicilioOrden.Numerador	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NOMSEDETERCERO	
+      - DomicilioOrden.Numerador	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NUMLICENCIACONDUCCION	 
+      - 
+      - 
+    * - CODCATEGORIALICENCIACONDUCCION	
+      - 
+      - 
+    * - FECHAVENCIMIENTOLICENCIA	 
+      - 
+      - 
+    * - LATITUD
+      - DomicilioOrden.Latitud	 
+      - 
+    * - LONGITUD	
+      - DomicilioOrden.Longitud	 
+      - 
+
+
+.. list-table:: Entidad: Depósito
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario	
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password	
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 11	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - CODTIPOIDTERCERO	
+      - N	 
+      - 
+    * - NUMIDTERCERO	
+      - Empresa.CUIT	
+      - 
+    * - NOMIDTERCERO	
+      - Empresa.RazonSocial
+      - 
+    * - PRIMERAPELLIDOTERCERO
+      - 
+      - 
+    * - SEGUNDOAPELLIDOTERCERO	
+      - 
+      - 
+    * - NUMTELEFONOCONTACTO	
+      - Empresa.Telefono	
+      - Debe ser de 7 caracteres
+    * - NUMCELULARPERSONA	
+      - 
+      - 
+    * - NOMENCLATURADIRECCION	
+      - Deposito.Direccion + Barrio + Localidad + Partido o Deposito.Calle + Puerta + Barrio + Localidad + Partido
+      -       
+    * - CODMUNICIPIORNDC	
+      - EntidadIntegracionRNDC.CodigoIntegracion	Se busca en la tabla EntidadIntegracionRNDC con Entidad = "Municipio", IdEntidad = Deposito.Localidad + “ - ” + Provincia
+      - 
+    * - CODSEDETERCERO	
+      - Deposito.ReferenciaExterna	
+      - Se busca campo en EntidadIntegracionRNDC CampoSedeDeposito y lo completa con 0 de acuerdo con la entidad NumeroCaracteresSedeDeposito 
+    * - NOMSEDETERCERO	
+      - Deposito.ReferenciaExterna	
+      - Se busca campo en EntidadIntegracionRNDC CampoSedeDeposito y lo completa con 0 de acuerdo con la entidad NumeroCaracteresSedeDeposito 
+    * - NUMLICENCIACONDUCCION
+      - 
+      - 
+    * - CODCATEGORIALICENCIACONDUCCION
+      - 
+      - 
+    * - FECHAVENCIMIENTOLICENCIA	 
+      - 
+      - 
+    * - LATITUD	
+      - Deposito.Latitud	
+      - 
+    * - LONGITUD	
+      - Deposito.Longitud	 
+      - 
+
+.. list-table:: Entidad: Propietario 
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario	 
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password	 
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 11	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - CODTIPOIDTERCERO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al propietario
+    * - NUMIDTERCERO	
+      - Documento.Referencia
+      - 	 
+    * - NOMIDTERCERO	
+      - Propietario.Nombre
+      - 	 
+    * - PRIMERAPELLIDOTERCERO	
+      - Propietario. Apellido
+      - 	 
+    * - SEGUNDOAPELLIDOTERCERO	 	 
+      - 
+      - 
+    * - NUMTELEFONOCONTACTO	
+      - Propietario.Telefono1 o Propietario.Telefono2	
+      - Debe ser de 7 caracteres
+    * - NUMCELULARPERSONA	
+      - Propietario.Telefono1 o Propietario.Telefono2	
+      - Debe ser de 10 caracteres
+    * - NOMENCLATURADIRECCION	
+      - Propietario.Calle + Numero + Barrio + Localidad + Partido	 
+      - 
+    * - CODMUNICIPIORNDC	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca en la tabla EntidadIntegracionRNDC con Entidad = "Municipio", IdEntidad = Propietario.Localidad + “ - ” + Provincia
+    * - CODSEDETERCERO	
+      - Propietario.IdPropietario	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NOMSEDETERCERO	
+      - Propietario.IdPropietario	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NUMLICENCIACONDUCCION	 	
+      - 
+      -  
+    * - CODCATEGORIALICENCIACONDUCCION
+      - 
+      - 	 	 
+    * - FECHAVENCIMIENTOLICENCIA
+      - 
+      - 	 	 
+    * - LATITUD	
+      - DivisionPoliticaNivel2.Latitud	
+      - Se busca con País Propietario.Localidad + Propietario.Provincia  
+    * - LONGITUD	
+      - DivisionPoliticaNivel2.Longitud	
+      - Se busca con País Propietario.Localidad + Propietario.Provincia  
+
+
+.. list-table:: Entidad: Transporte 
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario	 
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 11	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - CODTIPOIDTERCERO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al transporte 
+    * - NUMIDTERCERO	
+      - Documento.Referencia	
+      - 
+    * - NOMIDTERCERO	
+      - Transporte.RazonSocial
+      - 
+    * - PRIMERAPELLIDOTERCERO	
+      - Transporte.NombreFantasia	 
+      - 
+    * - SEGUNDOAPELLIDOTERCERO	 
+      - 
+      - 
+    * - NUMTELEFONOCONTACTO	
+      - Transporte.Telefono1 o Transporte.Telefono2	
+      - Debe ser de 7 caracteres
+    * - NUMCELULARPERSONA	
+      - Transporte.Telefono1 o Transporte.Telefono2	
+      - Debe ser de 10 caracteres 
+    * - NOMENCLATURADIRECCION	
+      - Transporte.Direccion + Localidad
+      - 
+    * - CODMUNICIPIORNDC	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca en la tabla EntidadIntegracionRNDC con Entidad = "Municipio", IdEntidad = Transporte.Localidad + “ - ” + Provincia
+    * - CODSEDETERCERO	
+      - Transporte.IdTransporte	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NOMSEDETERCERO	
+      - Transporte.IdTransporte	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NUMLICENCIACONDUCCION	 	 
+      - 
+      - 
+    * - CODCATEGORIALICENCIACONDUCCION	
+      - 
+      - 
+    * - FECHAVENCIMIENTOLICENCIA	
+      - 
+      - 
+    * - LATITUD	
+      - DivisionPoliticaNivel2.Latitud	
+      - Se busca con País Transporte.Localidad + Transporte.Provincia 
+    * - LONGITUD	
+      - DivisionPoliticaNivel2.Longitud	
+      - Se busca con País Transporte.Localidad + Transporte.Provincia   
+
+
+.. list-table:: Entidad: Conductor
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password	
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 11	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - CODTIPOIDTERCERO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al conductor
+    * - NUMIDTERCERO	
+      - Documento.Referencia
+      - 
+    * - NOMIDTERCERO	
+      - Conductor.Nombre	 
+      - 
+    * - PRIMERAPELLIDOTERCERO	
+      - Conductor.Apellido	 
+      - 
+    * - SEGUNDOAPELLIDOTERCERO
+      - 
+      - 
+    * - NUMTELEFONOCONTACTO	
+      - Conductor.Telefono1 o Conductor.Telefono2	
+      - Debe ser de 7 caracteres
+    * - NUMCELULARPERSONA	
+      - Conductor.Telefono1 o Conductor.Telefono2	
+      - Debe ser de 10 caracteres
+    * - NOMENCLATURADIRECCION	
+      - Conductor.Calle + Localidad	
+      - 
+    * - CODMUNICIPIORNDC	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca en la tabla EntidadIntegracionRNDC con Entidad = "Municipio", IdEntidad = Conductor.Localidad + “ - ” + Provincia
+    * - CODSEDETERCERO	
+      - Conductor.IdConductor	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NOMSEDETERCERO	
+      - Conductor.IdConductor	
+      - Solo es enviado cuando se identifica como NIT y se completa con ceros a la izquierda para una longitud de 4 caracteres
+    * - NUMLICENCIACONDUCCION	
+      - Documento.Referencia	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de licencia vigente asociado al conductor
+    * - CODCATEGORIALICENCIACONDUCCION	
+      - Documento.Categoria	 
+      - 
+    * - FECHAVENCIMIENTOLICENCIA	
+      - Documento.FechaExpiracion	
+      -  
+    * - LATITUD	
+      - DivisionPoliticaNivel2.Latitud	
+      - Se busca con País Conductor.Localidad + Conductor.Provincia  
+    * - LONGITUD	
+      - DivisionPoliticaNivel2.Longitud	
+      - Se busca con País Conductor.Localidad + Conductor.Provincia  
+
+
+.. list-table:: Entidad: Vehículo o Semirremolque 
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario	 
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password	
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 12	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - NUMPLACA	
+      - Vehiculo.Dominio	
+      - 
+    * - CODCONFIGURACIONUNIDADCARGA	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “TipoEjes”, IdEntidad = Vehiculo.IdTipoEjes
+    * - CODMARCAVEHICULOCARGA	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Si es Remolque se busca Entidad = “MarcaRemolque” o si no “MarcaCamion”, para ambos casos IdEntidad = Vehiculo.IdMarca
+    * - CODLINEAVEHICULOCARGA	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “Linea”, IdEntidad = Vehiculo.IdLinea
+    * - CAPACIDADUNIDADCARGA	
+      - Vehiculo.Peso	
+      - Campo únicamente para Remolque
+    * - ANOFABRICACIONVEHICULOCARGA	
+      - Modelo.Descripcion	 
+      - 
+    * - CODTIPOIDPROPIETARIO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al cliente del propietario
+    * - NUMIDPROPIETARIO	
+      - Documento.Referencia	 
+      - 
+    * - CODTIPOIDTENEDOR	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al transporte 
+    * - NUMIDTENEDOR	
+      - Documento.Referencia
+      - 
+    * - CODTIPOCOMBUSTIBLE	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “Combustible”, IdEntidad = Vehiculo.IdCombustible
+    * - PESOVEHICULOVACIO	
+      - Vehiculo.Tara	 
+      - 
+    * - CODCOLORVEHICULOCARGA	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “Color”, IdEntidad = Vehiculo.IdColor
+    * - CODTIPOCARROCERIA	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “TipoCarroceria”, IdEntidad = Vehiculo.IdTipoCarroceria
+    * - NUMNITASEGURADORASOAT	
+      - EmisorDocumento.CUIT	
+      - Sólo para vehículos no remolques, se obtiene el primer documento asociado al vehículo de las diferentes opciones configuradas en la tabla DocumentoIntegracionRNDC buscando en el campo ReferenciaDocumento = “SOAT”
+    * - FECHAVENCIMIENTOSOAT	
+      - Documento.FechaExpiracion	
+      - Sólo para vehículos no remolques
+    * - NUMSEGUROSOAT	
+      - Documento.Referencia
+      - 
+    * - UNIDADMEDIDACAPACIDAD	
+      - 1	 
+      - 
+    * - NUMEJES	
+      - 6	
+      - Se busca Entidad = “NumEjes”, IdEntidad = Vehiculo.IdTipoEjes
+
+
+.. list-table:: Entidad: Parada 
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario	
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password	
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 3	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - CONSECUTIVOREMESA	
+      - Documento.Referencia	 
+      - 
+    * - CONSECUTIVOINFORMACIONCARGA	
+      - 
+      - 
+    * - CONSECUTIVOCARGADIVIDIDA	
+      - 
+      - 
+    * - CODOPERACIONTRANSPORTE	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “FormatoCargaRemesa”, IdEntidad = Viaje.IdFormatoCarga
+    * - CODNATURALEZACARGA	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “NaturalezaCarga”, IdEntidad = Parada.DescripcionMercancia
+    * - CANTIDADCARGADA	
+      - Sumatoria(ParadaItem.Peso)	
+      - Suma del peso de todos los ítems de la parada
+    * - UNIDADMEDIDACAPACIDAD	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “UnidadCapacidad”, IdEntidad = Viaje.IdUnidadMedidaCapacidad
+    * - PESOCONTENEDORVACIO	
+      - TipoEmpaque.PesoVacio	
+      - Viaje.IdTipoEmpaque
+    * - CODTIPOEMPAQUE	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “TipoEmpaque”, IdEntidad = Viaje.IdTipoEmpaque
+    * - MERCANCIAREMESA	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “Mercancia”, IdEntidad = Parada.DescripcionMercancia
+    * - DESCRIPCIONCORTAPRODUCTO	
+      - Parada.DescripcionMercancia	
+      - 
+    * - CODTIPOIDREMITENTE	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Si la empresa es dueña de la carga, se toma también como remitente de esta, por lo que los datos de remitente son datos de la empresa y del depósito de salida. Es decir: Si el campo IdCliente de la parada es Null, se toma el dato del depósito. Si el dueño de la carga es el cliente, entonces se busca el documento de identidad asociado a ese cliente. Sí el campo IdCliente < > de Null, se toma el dato del Cliente
+    * - NUMIDREMITENTE	
+      - Empresa.CUIT o Documento.Referencia	
+      - El valor depende de si la empresa es dueña de la carga o lo es el cliente.
+    * - CODSEDEREMITENTE	
+      - Viaje.IdDepositoSalida o Domicilio.Numerador	
+      - El valor depende de si la empresa es dueña de la carga o lo es el cliente. Si el documento de identidad del remitente es N se coloca el dato, si no, se envía en blanco.
+    * - CODTIPOIDDESTINATARIO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al cliente del cliente orden
+    * - NUMIDDESTINATARIO	
+      - Documento.Referencia	
+      - 
+    * - CODSEDEDESTINATARIO	
+      - DomicilioOrden.Numerador	
+      - Si el documento de identidad del destinatario es N se coloca el dato, si no, se envía en blanco.
+    * - CODTIPOIDPROPIETARIO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se valida nuevamente si le empresa se define como dueña de la carga o el cliente lo es. Los datos del propietario son los de la empresa o del Cliente de la carga depende del formato de carga.
+    * - NUMIDPROPIETARIO	
+      - Empresa.CUIT o Documento.Referencia	 
+      - 
+    * - CODSEDEPROPIETARIO	
+      - Viaje.IdDepositoSalida o Cliente.IdCliente	
+      - Si el documento de identidad del propietario es N se coloca el dato, si no, se envía en blanco.
+    * - DUENOPOLIZA	
+      - E	
+      - Se busca Entidad = “DuenoPoliza”
+    * - NUMPOLIZATRANSPORTE	
+      - Documento.Referencia	 
+      - 
+    * - FECHAVENCIMIENTOPOLIZACARGA	
+      - Documento.FechaExpiracion	 
+      - 
+    * - COMPANIASEGURO	
+      - EmisorDocumento.CUIT	 
+      - 
+    * - HORASPACTOCARGA	
+      - Parada.HorasPlanCarga	 
+      - 
+    * - MINUTOSPACTOCARGA	
+      - Parada.MinutosPlanCarga	 
+      - 
+    * - HORASPACTODESCARGUE	
+      - Parada.HorasPlanDescarga
+      - 
+    * - MINUTOSPACTODESCARGUE	
+      - Parada.MinutosPlanDescarga	 
+      - 
+    * - FECHALLEGADACARGUE	
+      - ParadaTraceEstado.FechaOrigen o Valor de Entidad
+      - Se busca Entidad = “FechaLlegadaCargue”
+    * - HORALLEGADACARGUEREMESA	
+      - ParadaTraceEstado.FechaOrigen o Valor de Entidad
+      - Se busca Entidad = “FechaLlegadaCargue”
+    * - FECHAENTRADACARGUE	
+      - ParadaTraceEstado.FechaOrigen o Valor de Entidad
+      - Se busca Entidad = “FechaEntradaCargue”
+    * - HORAENTRADACARGUEREMESA	
+      - ParadaTraceEstado.FechaOrigen o Valor de Entidad
+      - Se busca Entidad = “FechaEntradaCargue”
+    * - FECHASALIDACARGUE	
+      - ParadaTraceEstado.FechaOrigen o Valor de Entidad
+      - Se busca Entidad = “FechaSalidaCargue”
+    * - HORASALIDACARGUEREMESA	
+      - ParadaTraceEstado.FechaOrigen o Valor de Entidad
+      - Se busca Entidad = “FechaSalidaCargue”
+    * - FECHACITAPACTADACARGUE	
+      - Parada.InicioVisitaPlanificado	
+      - Fecha en formato dd/mm/yyyy
+    * - HORACITAPACTADACARGUE	
+      - Parada.FinVisitaPlanificado	
+      - Hora en formato HH:mm
+    * - FECHACITAPACTADADESCARGUE	
+      - Parada.FinVisitaPlanificado	
+      - Fecha en formato dd/mm/yyyy
+    * - HORACITAPACTADADESCARGUEREMESA	
+      - Parada.FinVisitaPlanificado	
+      - Hora en formato HH:mm
+
+.. list-table:: Entidad: Viaje
+    :widths: 15 15 15
+    :header-rows: 1
+
+    * - Nodo XML RNDC
+      - Campo UNIGIS
+      - Observaciones
+    * - USERNAME	
+      - ConfiguracionIntegracionRNDC.Usuario	
+      - 
+    * - PASSWORD	
+      - ConfiguracionIntegracionRNDC.Password	 
+      - 
+    * - TIPO	
+      - 1	 
+      - 
+    * - PROCESOID	
+      - 4	 
+      - 
+    * - NUMNITEMPRESATRANSPORTE	
+      - Empresa.CUIT	 
+      - 
+    * - NUMMANIFIESTOCARGA	
+      - Documento.Referencia
+      - 
+    * - CONSECUTIVOINFORMACIONVIAJE	 
+      - 
+      - 
+    * - MANNROMANIFIESTOTRANSBORDO	
+      - 
+      - 
+    * - CODOPERACIONTRANSPORTE	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “FormatoCargaManifiesto”, IdEntidad = Viaje.IdFormatoCarga
+    * - FECHAEXPEDICIONMANIFIESTO	
+      - EstadoViajeTraceEstado.Fecha o Now()	
+      - Se busca en EntidadIntegracionRNDC con Entidad = “FechaManifiesto” el estado del viaje que será tomado para enviar como dato de fecha de manifiesto, si el estado no existe o la configuración no está especificada, se toma el Now() en horario local.
+    * - CODMUNICIPIOORIGENMANIFIESTO	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “Municipio”, IdEntidad = Viaje.Origen
+    * - CODMUNICIOIODESTINOMANIFIESTO	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “Municipio”, IdEntidad = UltimaParadaConsolidada.Destino CODIDTITULARMANIFIESTO DocumentoIntegracionRNDC.CodigoIntegracion
+    * - CODIDTITULARMANIFIESTO	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al transporte 
+    * - NUMIDTITULARMANIFIESTO	
+      - Documento.Referencia	 
+      - 
+    * - NUMPLACA	
+      - Vehiculo.Dominio	 
+      - 
+    * - NUMPLACAREMOLQUE	
+      - VehiculoSecundario.Dominio	
+      - Se envía si Viaje.IdVehiculoSecundario = null
+    * - CODIDCONDUCTOR	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al conductor
+    * - NUMIDCONDUCTOR	
+      - Documento.Referencia	
+      - 
+    * - CODIDCONDUCTOR2	
+      - DocumentoIntegracionRNDC.CodigoIntegracion	
+      - Se toma el valor de acuerdo con el tipo de documento y el primer documento de identidad vigente asociado al coconductor
+    * - NUMIDCONDUCTOR2	
+      - Documento.Referencia
+      - 
+    * - VALORFLETEPACTADOVIAJE	
+      - Sumatoria de ConceptoValorizadoGuia.Importe	Sumatoria de los ConceptosValorizadosGuia que se configuran en EntidadIntegracionRNDC con Entidad = “ConceptoValorFlete”
+      - 
+    * - RETENCIONFUENTEMANIFIESTO	
+      - Sumatoria de ConceptoValorizadoGuia.Importe	Sumatoria de los ConceptosValorizadosGuia que se configuran en EntidadIntegracionRNDC con Entidad = “ConceptoValorFuente”
+      - 
+    * - RETENCIONICAMANIFIESTOCARGA	
+      - Sumatoria de ConceptoValorizadoGuia.Importe	Sumatoria de los ConceptosValorizadosGuia que se configuran en EntidadIntegracionRNDC con Entidad = “ConceptoValorICA”
+      - 
+    * - VALORANTICIPOMANIFIESTO	
+      - Sumatoria de ConceptoValorizadoGuia.Importe	Sumatoria de los ConceptosValorizadosGuia que se configuran en EntidadIntegracionRNDC con Entidad = “ConceptoAnticipoFlete”
+      - 
+    * - CODMUNICIPIOPAGOSALDO	
+      - EntidadIntegracionRNDC.CodigoIntegracion	
+      - Se busca Entidad = “Municipio”, IdEntidad = Viaje.Origen
+    * - CODRESPONSABLEPAGOCARGUE	
+      - R	 
+      - 
+    * - CODRESPONSABLEPAGODESCARGUE	
+      - R	 
+      - 
+    * - FECHAPAGOSALDOMANIFIESTO	
+      - FechaExpedicionManifiesto + 30 días
+      - 
+    * - ACEPTACIONELECTRONICA	 
+      - 
+      - 
+    * - OBSERVACIONES	
+      - Viaje.Observaciones	 
+      - 
+
+.. container:: justified-text
+
+    Entidades para la integración de Terceros:
+
+    - Entidad para determinar la búsqueda de los documentos del conductor para la integración del manifiesto, la nueva entidad es: 
+     
+    - TiposDocumentoConductorManifiesto”: se pueden especificar que documentos buscar. ejemplo:
+
+.. image:: ejemplo.png
+   :align: center
+
+.. note::
+
+    De no tener la entidad o no tener CodigoIntegracion se utilizará el funcionamiento normal. Se muestra el listado de los documentos solicitados para la búsqueda del conductor: 
+
+    - 'CEDULA CONDUCTOR'
+    
+    - 'NIT CONDUCTOR'
+    
+    - 'PASAPORTE CONDUCTOR'
+    
+    - 'EXTRANJERIA CONDUCTOR'
+    
+    -'IDENTIDAD CONDUCTOR'
+    
+    - 'NUIP CONDUCTOR'
+
+Fecha Pago Saldo Manifiesto 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: justified-text
+
+    Dentro de las integraciones se contempla ahora el parámetro de DíasExpediciónManifiesto, donde se tomará el día 0 y por default quedarán 30 días como máximo.
+
+.. image:: ejemplo2.png
+   :align: center
+
+Cambios de Reemplazo para Integración de Terceros Domicilio Orden 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: justified-text
+
+    Se agrego el campo IntegrarRNDC en el resto de las entidades de tercero, excepto Deposito. Estos serán los parámetros con lo que se guardarán los reemplazos:
+
+.. note:: 
+
+    Para integración de terceros se consideran todos, para manifiesto y remesa solo cliente, transporte, domicilio, deposito.
+
+Creación de Terceros Mediante MAPI / WS 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: justified-text
+
+    También se puede utilizar la MAPI / WS para poder creación de terceros, datos relacionados a los terceros y sus documentos:
+
+    Creación de Conductor:  Se explico en el anexo “Mapeo de XML Enviado al Ministerio con Datos UNIGIS vs Datos RNDC.” 
+
+    https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx?op=CrearConductores
+
+    Creación de Documentos: Se explico en el anexo “Mapeo de XML Enviado al Ministerio con Datos UNIGIS vs Datos RNDC.” 
+
+    https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx?op=CrearDocumentos 
+         
+    CrearVehículos: Se explico en el anexo “Mapeo de XML Enviado al Ministerio con Datos UNIGIS vs Datos RNDC.” 
+ 
+    https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx?op=CrearVehiculos 
+
+    Crear Tipo de vehículos: Se explico en el anexo “Mapeo de XML Enviado al Ministerio con Datos UNIGIS vs Datos RNDC.” 
+
+    https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx?op=CrearTipoVehiculo 
+
+.. note::
+    
+    Existe una división en el ministerio donde se integran los camiones y los remolques y semirremolques,  en la cual los datos enviados en el XML son distintos, para definir si aplica uno u otro se tiene el check de “VehículoSecundario”. Aplica como remolque o semirremolque si se tiene activo.
+
+CrearViajeCompleto
+~~~~~~~~~~~~~~~~~~~~~~
+
+En este servicio es importante considerar los campos adicionales utilizados para la creación de Manifiestos y Remesas con el Ministerio de Transporte de Colombia
+
+- Origen: DivisionPoliticaNivel2 – DivisionPolitiaNivel1 Origen del Viaje. 
+
+- Destino: DivisionPoliticaNivel2 – DivisionPolitiaNivel1 Destino del Viaje. 
+
+- FormatoCarga (Se explica en el Anexo “Datos Maestros”).                   
+
+- UnidadMedidaCapacidad  (Se explica en el Anexo “Datos Maestros”).                   
+
+- TipoEmpaque (Se explica en el Anexo “Datos Maestros”).                 
+
+AgregarParadaViaje
+~~~~~~~~~~~~~~~~~~~~~
+
+En este servicio es importante considerar los campos adicionales utilizados para la creación de Manifiestos y Remesas con el Ministerio de Transporte de Colombia
+ 
+- Origen: DivisionPoliticaNivel2 – DivisionPolitiaNivel1 Origen de la parada. 
+
+- Destino: DivisionPoliticaNivel2 – DivisionPolitiaNivel1 Destino de la parada.
+
+- DescripcionMercancia: se envía el dato de la codificación del producto al ministerio. 
+
+- HorasPlanCarga: Número de horas que toma realizar la carga.
+
+- MinutosPlanCarga: Número de minutos que toma realizar la carga.
+
+- HorasPlanDescarga: Número de horas que toma realizar la descarga.
+
+- MinutosPlanDescarga: Número de minutos que toma realizar la descarga.
+
+CrearTransporte 
+~~~~~~~~~~~~~~~~~~~~
+
+https://cloud.unigis.com/TCC/Mapi/SOAP/Logistic/Service.asmx?op=CrearTransportes 
+
+.. note::
+
+    Adicional para el tema de integraciones a RNDC dentro de todo el servicio de WS, se agregó el nodo Integrar RNDC, para definir si el conductor se integra con el ministerio o no.
+
+Mejoras en Creación de Viaje Individual 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cuando un usuario de tracking cree un viaje nuevo, en el paso 2 donde se ingresa la información de:
+
+- Seguimiento de viaje
+- Recorrido 
+- Mercadería de Viaje
+- Opciones
+- Información adicional 
+
+Ahora se mostrarán tres campos adicionales para que el usuario pueda elegir la información de la cual constará el viaje nuevo, esta nueva sección donde se mostrarán los campos tendrá como nombre “ Información de Carga” donde se deberán mostrar los siguientes campos de elección:
+
+-	Formato Carga 
+-	Unidad de Medida Capacidad
+-	Tipo de Empaque
+ 
+.. image:: viajeactual.png
+   :align: center
+
+Monitor RNDC Uso
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+En esta sección se mostrará la pantalla de configuración una breve descripción y los permisos necesarios para ejecutarla:
+
+Funcionalidad:
+
+1. En la columna de “Estado Integración” se reemplaza el texto y ahora se muestra un icono para identificar si el estado fue exitoso o fallido.
+
+.. image:: monitor.png
+   :align: center
+
+2. Visualización de XML para revisar y editar información.
+
+.. image:: xmlrndc.png
+   :align: center
+
+.. important::
+
+  Es necesario contar con permisos para poder editar el XML, el permiso es el siguiente “ReintentoPorXML”, se aplica por grupo de usuario.
+
+3. Se agregaron filtros en el monitor de RNDC. La funcionalidad de los filtros es realizar un filtrado de todas las entidades correspondientes al viaje (Remesas, Vehículos, Terceros y más).
+
+4. Edición de un viaje filtrado.
+
+5. Se agrega la funcionalidad que permite identificar en caso de que falle una integración mediante un icono de campana en donde fallo la integración ya sea en vehículos, terceros, manifiesto y remesas.
+
+Es importante aclarar que el icono solo se mostrará cuando se encuentre la información filtrada por viaje. 
+
+.. image:: viajefiltrado.png
+   :align: center
+
+.. container:: justified-text
+
+  6. Se agrega funcionalidad de Bitácora.
+
+  Esta funcionalidad es una visualización en la bitácora al momento que se encuentre un error causado por fallos, intermitencias y cualquier otra que afecte la adecuada integración de vehículos, terceros, manifiesto y remesas.
+
+  7. TAB RNDC en el Smart page del viaje con el historial de ejecuciones, visualización de XML y acceso al monitor.
+
+.. image:: tab.png
+   :align: center
+
+Proceso para Utilizar ContinueWith en Condición Dinámica
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: justified-text
+
+  Se tiene la opción de ContinueWith, donde su funcionalidad es de acuerdo con el proceso creado, se puede asignar el paso a seguir con lo que muestra el catálogo:
+  
+  La mejora es que si se configura al principio de la condición dinámica la palabra “ContinueWith“ se va a ejecutar el siguiente proceso aún si no cumple la condición dinámica.
+
+  Ejemplo: “continuewith: [Jornada.IdEstadoJornada == 2]“. Es importante aclarar que va con los dos puntos, tal y como va en el ejemplo.
+
+.. image:: proceso.png
+   :align: center
+
+Formatos de impresión Nacionales y Urbanos 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: justified-text
+
+  Los formatos de impresión de RNDC en UNIGIS se encuentran de forma estandarizada y es un formato por cada uno:
+
+  -	Manifiesto Nacional.
+  
+  -	Remesa Nacional.
+  
+  -	Manifiesto (registro) Municipal. 
+  
+  -	Remesa Municipal.
+
+  Estos se configuran como reportes externos, a continuación, el ejemplo solo se debe reemplazar la palabra CLIENTE por el que corresponde 
+
+
+.. list-table:: 
+    :widths: 15 15 
+    :header-rows: 1
+
+    * - Nombre 
+      - URL 
+    * - Hoja Manifiesto	
+      - https://cloud-test.unigis.com/CLIENTE/Apps/Tracking/Reportes/RNDC/HojaManifiesto.aspx
+    * - Hoja De Remesas
+      - https://cloud-test.unigis.com/CLIENTE/Apps/Tracking/Reportes/RNDC/HojaRemesa.aspx
+    * - Hoja Manifiesto Municipal	
+      - https://cloud-test.unigis.com/CLIENTE/Apps/Tracking/Reportes/RNDC/HojaRegistroMunicipal.aspx
+    * - Hoja De Remesas Municipal	
+      - https://cloud-test.unigis.com/CLIENTE/Apps/Tracking/Reportes/RNDC/HojaRemesaMunicipal.aspx
+
+En detalle del  viaje se tiene la opción de reporte externo al dar clic en los tres puntos de lado del estado del Viaje:
+
+.. image:: reporteexterno.png
+   :align: center 
+
+Las hojas se pueden ver con el nombre con el que se guardan en reporte externo  
+
+.. image:: reporteexterno2.png
+   :align: center 
+
+.. note:: 
+
+  Para que los usuarios puedan ver las diferentes hojas a imprimir es necesario dar los permisos por grupo, esto en el admin usuario – grupo, y se deberá seleccionar aquellos que se van a mostrar en el viaje.
+
+Logos 
+^^^^^^^^^^^^^
+
+Los formatos cuentan con 3 logos que se pueden configurar según el cliente:
+
+-	logoPrimarioRNDC     : Logo del Cliente                                   
+-	logoSecundarioRNDC   :Logo del Transporte 
+-	logoTerciarioRNDC    : Logo del Ministerio 
+
+Estos con los nombres que se mencionan se encuentran en la tabla parámetro y en valor se debe guardar el nombre con el que subirán las imágenes. 
+
+La carga de imágenes se puede hace en el módulo de configuración de hojas en el :kbd:`Administración del Sistema` --> :kbd:`Sistema` --> :kbd:`Hoja Ruta/Viaje`
+
+
+Agregar comentarios a errores de integración
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: justified-text
+
+  Se agrega la funcionalidad de poder agregar comentarios en el caso de que en una integración existan más de un error, donde tendrá la vista del error y así vez un campo de texto donde podrá describir la posible solución y guardarla, para que el área de soporte pueda revisar las mismas posibles.
+
+:kbd:`Integrations Center` --> :kbd:`RNDC` --> :kbd:`Monitor RNDC`
+
+.. image:: monitorrndc.png
+   :align: center 
+
+Motivos por los que un viaje se suspende
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Como primera instancia es necesario ingresar al apartado de Fleet, para ello debemos ubicar la siguiente ruta :kbd:`Fleet` --> :kbd:`Viajes` al dar clic se visualiza un listado con los viajes que se tienen.
+
+.. image:: viajes.png
+   :align: center 
+
+Seleccionar el viaje al cual queremos realizar algún cambio o transición daremos clic derecho, y dentro de las opciones deberá visualizarse la opción de “Acciones RNDC”, las cuales son procesos previamente dados de alta y configurados.
+
+.. image:: alta.png
+   :align: center 
+
+Puede existir el caso en donde se pueda visualizar el proceso a seleccionar pero si este no se encuentra activo arrojara un error, este mismo puede ser un error genérico o bien por algún caso en específico. En caso de que todo surja de manera exitosa se notificará.
+
+.. note:: 
+
+  Los motivos serán obtenidos mediante el viaje a través del BackEnd a continuación se deja una breve explicación en la consulta de las tablas “ProcesoRNDC” y “EstadoDocumento”.
+
+No integración a RNDC 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: justified-text
+
+  Al momento de registrar un vehículo a través de TMS UNIGIS con usuario Administrador, con el fin de seleccionar si este vehículo creado será integrado al ministerio de transporte o no.
+
+  Ingresamos a la siguiente ruta:
+
+  :kbd:`Adminitración del Sistema` --> :kbd:`Planeación` --> :kbd:`Catálogos` --> :kbd:`Tipo de Vehículo`
+
+  Se visualizará un listado de los vehículos creados, y en la parte superior derecha podremos ver dos botones :kbd:`+` y :kbd:`Buscar`, daremos clic en la opción Agregar.
+
+  Al crear o Editar algún tipo de vehículo desde la planeación tendremos la opción de Integración RNDC, donde por default tendremos la opción sin selección y se integra a RNDC. Para este caso de NO Integrar este tipo de vehículo a RNDC deberá estar seleccionada.
+
+.. image:: crear.png
+   :align: center 
+
+Al querer crear a través del Web Services TipoDeVehiculo deberá seleccionar en el nodo de: </unis:IntegrarRNDC>false</unis:IntegrarRNDC>.
+
+Viaje Tipo Multiparada
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: justified-text
+
+  Algunos viajes se tienen reconocidos para el ministerio de transporte con casos donde se cuenten con dos o más Municipios distintos al origen, estos deben ser  agrupados a un mismo manifiesto y considerado como Manifiesto Multiparada.
+
+  En el caso de que se cuenten con los mismos destinos igual al origen se deberá crear un manifiesto adicional de tipo Municipal General.
+
+Múltiples Manifiesto 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: justified-text
+
+  Debido a la operación diaria que conlleva un servicio de paquetería (dinámica), se necesitan agregar paradas a viajes ya activos lo cual afecta a los manifiestos que ya se encuentran creados.
+
+  Se pueden agregar dichas paradas creando manifiestos nacionales de viaje utilizando la información de Origen y Destino del viaje para poder crear un nuevo manifiesto (N) junto con su respectiva remesa.
+
+  Lo mismo sucederá para aquellos viajes municipales, agregando paradas y validando si esta contiene el mismo Origen – Destino, en caso de que no, se creará un manifiesto municipal con su respectiva remesa
+
+  El proceso por utilizar: RNDC_ProcesoNuevoManifiestoAgregarParada.
+
+Transbordos
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. container:: justified-text
+
+  1. Para estado documento: es necesario habilitar los campos:
+
+       - Permite Recrear viaje Manifiesto
+       - Permite Recrear Viaje Remesa
+
+  2. Proceso RNDC: Mapear el campo ID estado documento con la tabla estado documento
+
+  3. Estado documento transición: Es necesario dar de alta la transición para la recreación sobre el estado documento.
+
+  Lo primordial es poder generar un cumplimiento con suspensión, lo cual ya se menciona en este documento, de igual manera se describe que los campos a capturar son:
+
+  -	Origen: Son de texto libre pero su puede utilizar la opción de llenarlos por las tablas de división política. 
+
+  -	Destino: Son de texto libre pero su puede utilizar la opción de llenarlos por las tablas de división política.
+
+  -	Estado Inicial: permite seleccionar el estado de viaje inicial para el nuevo viaje.
+
+  -	Motivo: los motivos a seleccionar para genera el cumplimiento con suspensión se toman de la tabla “MotivoProcesoRNDC” la cual va relacionada a la tabla “ProcesoRNDC” y de esa manera cada proceso puede tener sus propios motivos.
+
+  -	Consecuencia Remesa / Manifiesto: Las consecuencias para generar un cumplimiento con suspensión se toman de la tabla “ConsecuenciaProcesoRNDC” relacionada a la tabla “ProcesoRNDC”
+
+  -	Observaciones: para generar un cumplimiento con suspensión se agregó el Tab Observaciones.
+
+  -	Motivo Remesa: los motivos remesa al igual de los motivos para genera el cumplimiento con suspensión se toman de la tabla “MotivoProcesoRNDC” la cual va relacionada a la tabla “ProcesoRNDC” y de esa manera cada proceso puede tener sus propios motivos por proceso.
+
+  -	Proceso RNDC: este combo permite seleccionar que tipo de proceso se puede aplicar. por default aplica cumplido con suspensión.
+
+  Posteriormente debe ingresar a la recreación de un viaje, donde se mostrará la opción de anular remesas y será permitido si estas mismas ya se encuentran integradas y con el mismo EstadoParada.
+
+  En la pestaña de paradas, se tiene la opción de seleccionar la(s) parada (s) que se moverá al nuevo viaje.
+
+  En la pestaña de control documentación, se mostrará un listado de los documentos que tenía el viaje anterior, con la opción de poder elegir los documentos que se moverán al nuevo viaje. 
+
+  En la pestaña recursos, se enlistarán los recursos del viaje suspendido para que puedan ser seleccionados y moverlos al nuevo viaje. 
+
+
+Ejemplos Caso de Uso
+----------------------
+
+Caso 1: Cumplimiento de documentos RNDC 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. container:: justified-text
+
+  Para poder realizar una configuración exitosa en RNDC en los métodos de Cumplimiento de documentos, se deberá desactivar el parámetro previamente configurado.
+
+  **PARADA: FIN DE DESCARGA -> CARGADO**
+  
+  Método Cumplir Remesa Nacional
+  
+  Método Integrar Remesa Municipal
+
+  **VIAJE: DOCUMENTO RENDIDO -> LIQUIDABLE**
+  
+  Método Cumplir Manifiesto Municipal
+  
+  Método Cumplir Remesa Municipal
+
+  Se deberá Modificar el proceso 112 – ProcesoEnviarManifiesto desde el administrador en la sección de Proceso buscando y modificando los campos correspondientes, sin embargo los más importantes son los siguientes:
+
+  -	Método a ejecutar    = ProcesoEnviarManifiesto
+  
+  -	ID Transición            = 159| EN CARGA -> CARGADO
+  
+  -	Condición Dinámica = [Viaje.IdTipoViaje]<>6
+
+.. image:: procesocompleto.png
+   :align: center 
+
+.. container:: justified-text
+
+  De igual manera se deberá cambiar la condición dinámica del proceso 467 – RNDC_ProcesoEnviarRegistroViajeMunicipal, con la finalidad de que se realice una validación usando la siguiente expresión [Viaje.IdTipoViaje] = 6 && [Viaje.IdCategoriaViaje] = 538
+
+.. note::
+
+  -	Con el nuevo proceso 474 – Procesamiento Completo RNDC (Nacional) el cual ejecuta la integración de documentos nacionales RNDC (mencionado anteriormente), será necesario desactivar el proceso 468 – RNDC Inserta Transición CARGADO Viajes PK DL
+  
+  -	El proceso 337 – Elimina guías Anticipo ya no realizará un ContinueWith al 468, ahora lo realizará directamente al proceso 467 – Procesamiento Completo RNDC (Municipal).
+  
+Creación proceso 474 – Procesamiento Completo RNDC (Nacional):
+
+.. image:: nacional.png
+   :align: center 
+
+Desactivación del proceso 468 – RNDC Inserta Transición CARGADO Viajes PK DL. El proceso 337 ya no realizará un ContinueWith al 468 sino directamente al proceso 467 – Procesamiento Completo RNDC (Municipal):
+
+.. image:: desactivar.png
+   :align: center 
+
+Para el cumplido del manifiesto PK, Se modifica el proceso 378 – Cumplido Manifiesto RNDC – VIAJE PK DL (Municipal) luego un ContinueWith se invoca el proceso 435 – Cumplido Manifiesto RNDC – VIAJE PK DL (Nacional)
+
+.. image:: pk.png
+   :align: center 
+
+Para ello se modifica el proceso 435 – Cumplido Manifiesto RNDC – VIAJE PK DL (Nacional)
+
+.. image:: nacional2.png
+   :align: center 
+
+Se configura el viaje_smart como un proceso PRE ACTION para el flujo de PK DEL INICIAL PROGRAMADO
+
+
+Caso 2: Configuración Operación de Transporte en Puerto (Configuración Externa a UNIGIS)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configuración Portal de Pedidos
+
+.. container:: justified-text
+
+  -	Se realiza la configuración de la nueva operación.
+
+  Configuración del nuevo Workflow en Cartagena
+
+  -	se ingresa al portal de RANSA Colombia, posteriormente se selecciona el apartado de asignar accesos.
+  
+  -	Se mostrará el paso 1 “ Cliente Orden” en donde es necesario ubicar la casilla de selección de Cartagena, en caso de que no esté seleccionada, la seleccionamos y damos clic en el botón siguiente: 
+
+.. image:: asignaraccesos.png
+   :align: center 
+
+-	En el paso 2 de “Sucursal”, buscar el transporte de “ANCLA Y VIENTO SA CONS – CARTAGENA, posteriormente se dará clic en el botón siguiente:
+
+.. image:: asignaraccesos2.png
+   :align: center 
+
+-	En el paso 3 “Tipo Servicio” se deberá buscar al transporte y seleccionar la opción de “Exclusivo” y posteriormente dar clic en el botón siguiente:
+
+.. image:: asignaraccesos3.png
+   :align: center 
+
+-	En el paso 4 de “Servicio Producto”, se buscará el Transporte de Cartagena  y deberá seleccionar la opción de FRIO / MULTI-TEMPERATURA y posteriormente dar clic en el botón siguiente:
+
+.. image:: asignaraccesos4.png
+   :align: center 
+
+-	En el paso 5 “Tipo de Carga”, nuevamente buscaremos el transporte de Cartagena y dentro de las opciones que aparecen solo se seleccionará la opción de “PUERTO”, y se dará clic al botón siguiente:
+
+.. image:: asignaraccesos5.png
+   :align: center 
+
+En el paso 6 “Operación” se deberá buscar al transporte de Cartagena y de las 4 operaciones que se muestran se deberá seleccionar la opción de “RECOGIDA Y ENTREGA”, posteriormente se da clic al botón siguiente:
+
+.. image:: asignaraccesos6.png
+   :align: center 
 
 
 Glosario
 -------------
 
+
+.. list-table:: Glosario
+    :widths: 15 15
+    :header-rows: 1
+
+    * - Concepto
+      - Descripción
+    * - RNDC	
+      - Registro Nacional Despachos de Carga.
+    * - RUNT	
+      - Registro Único Nacional de Tránsito.
+    * - RUT	
+      - Registro Único Tributario.
+    * - ProcesoRNDC	
+      - Son las acciones disponibles para ejecutar a los viajes tales como Expedir Manifiesto de Carga, Cumplir Manifiesto de Carga, Anular Cumplido de Manifiesto, etc.
+    * - Manifiesto de carga	
+      - Hoja de Viaje (toda la información del viaje, paradas, carga, ítems, detalle ítems)
+    * - Remesas	
+      - Cantidad de paradas que conlleva un viaje.
+    * - Registro de Transporte Municipal	
+      - Es la remesa que conglomera varias paradas en un municipio en especifico.
+    * - CC	
+      - Cédula de Ciudadanía.
+    * - Cumplido de Remesa Terrestre de Carga
+      - Quinto paso del proceso de registro. Contiene información que identifica la Remesa que se cumple, los tiempos pactados y ejecutados de cargue y descargue de la mercancía. Permite a la Empresa de Transporte obtener la información necesaria para generar la factura a cobrar al Generador de Carga.
+    * - Cumplido del Manifiesto de Carga	
+      - Sexto paso del proceso de registro. Contiene información que identifica el Manifiesto de Carga que se cumple y el Valor a Pagar por el viaje al Titular del Manifiesto. También incluye los tiempos totales pactados y ejecutados de cargue y descargue de todas las Remesas asociadas al Manifiesto de Carga. Permite a la empresa de Transporte obtener la información necesaria para generar el pago por el viaje al Titular del Manifiesto. Remesa Terrestre de Carga	Su nueva función en el RNDC es la de registrar los tiempos pactados de cargue y descargue. También sirve para registrar los tiempos ejecutados de cargue, si el cargue ya se hizo efectivo.
+    * - DANE	
+      - Departamento Administrativo Nacional de Estadística.
+    * - DIAN	
+      - Dirección de Impuestos y Aduanas Nacionales.
+    * - ICA	
+      - Impuesto de Industria, Comercio, Avisos y Tableros. Gravamen, considerado impuesto directo, de carácter municipal que grava toda actividad industrial, comercial o de servicios que se realice en su jurisdicción.
+    * - NIT	
+      - Número de Identificación Tributario.
+    * - NUIP	
+      - Número Único Identificación Personal.
+    * - PBV	
+      - Peso Bruto Vehicular.
+    * - SICE	
+      - Sistema de Información de Costos Eficientes.
+    * - SOAT	
+      - Seguro Obligatorio de Accidentes de Tránsito.
+    * - Tara	
+      - Peso de un vehículo desprovisto de carga, con su equipo auxiliar habitual y dotación completa de agua, combustible y lubricantes.
+    * - UIAF	
+      - Unidad de Información y Análisis Financiero.
 
 
 
