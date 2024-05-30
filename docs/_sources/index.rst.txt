@@ -30,6 +30,7 @@ Contenido
    Firebase/PushFirebase.rst
    Standard/StandardHDVHDR.rst
    RNDC/RNDC.rst
+   Tarifas/ConfigTarifas.rst
    
    
    

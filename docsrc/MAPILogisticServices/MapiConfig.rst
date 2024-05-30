@@ -63,7 +63,7 @@ Forma de Uso
 
   Al ingresar podrá visualizar un listado de los servicios:
 
-.. image:: Mapi.png
+.. image:: Mapi1.png
    :align: center
 
 .. container:: justified-tex

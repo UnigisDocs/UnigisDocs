@@ -1,0 +1,482 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../genindex.html" /><link rel="search" title="Búsqueda" href="../search.html" /><link rel="prev" title="Registro Nacional Despachos de Carga (RNDC)" href="../RNDC/RNDC.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Configuración y Gestión de Tarifas - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2966eb94" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GettingStart/Gettingstart.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Ruteo/Ruteo.html">Planeación de Distribución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Yard/Yard.html">Yard Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/B2B/b2b.html">Portal B2B (business-to-business)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Mobile/Deliveries.html">UNIGIS X DELIVERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MAPILogisticServices/MapiConfig.html">MAPI Logistic Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Routing/Routing.html">Smart Planning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../json/Indexsyncout.html">Json Syncout</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Json Syncout</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/SyncoutG.html">Syncout Genérico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/Syncout.html">Syncout V2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MapServer/MapServer.html">MapServer X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CTE/ctewebservice.html">Web Service CTE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Icenter/IntegrationCenter.html">Integrations Center</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CAdapter/CourrierAdapter.html">Courrier Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Firebase/PushFirebase.html">Notificaciones Push Firebase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Standard/StandardHDVHDR.html">Standard HDV &amp; HDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RNDC/RNDC.html">Registro Nacional Despachos de Carga (RNDC)</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Configuración y Gestión de Tarifas</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="configuracion-y-gestion-de-tarifas">
+<h1>Configuración y Gestión de Tarifas<a class="headerlink" href="#configuracion-y-gestion-de-tarifas" title="Link to this heading">#</a></h1>
+<div class="justified-text docutils container">
+<p>El objetivo es construir tarifas y pensar en la mejor estrategia para su creación. A lo largo del documento, veremos ejemplos, tanto de cálculos simples como complejos, así como las variables y fórmulas básicas involucradas. Conoceremos las entidades implicadas en una tarifa, el concepto de base de cálculo, y exploraremos el universo que se desprende en la configuración de tarifas en UNIGIS.</p>
+</div>
+<section id="entidades">
+<h2>Entidades<a class="headerlink" href="#entidades" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>La entidad principal en el modelo de tarifación es la guía, la cual proporciona información detallada sobre los conceptos obtenidos antes, durante y después de un viaje. Las entidades típicas que pueden estar presentes en una guía incluyen:</p>
+<p>Información sobre las áreas y funciones que abarca la operación en un viaje, como la planificación de rutas, la gestión de carga, la optimización de la carga, la asignación de recursos, etc.
+Una lista detallada de las características y funcionalidades clave proporcionadas por la operación, como la planificación de rutas, la asignación de recursos, el seguimiento en tiempo real, la generación de informes, la gestión de excepciones, etc.
+Estas son algunas de las entidades comunes que se pueden encontrar en una guía en UNIGIS TMS, pero la estructura y el contenido exactos pueden variar según las necesidades y requisitos específicos de una operación.</p>
+</div>
+<ul class="simple">
+<li><p>Parada Item. Artículos transportados hacia la parada.</p></li>
+<li><p>Parada. Punto de PickUp o Delivery del viaje.</p></li>
+<li><p>Guía. Valor total del viaje con ajustes e incidencias. Se recomienda unicamente incluir un único viaje por guía.</p></li>
+<li><p>Viaje. Ejección de la ruta, se comprende desde el origen hasta el último destino en la ruta, incluyendo todas las paradas intermedias.</p></li>
+<li><p>Recorrido. Parte del viaje comprendido entre dos paradas. Se compone de un origen y un destino.</p></li>
+<li><p>Incidencias. Evento que se da en el transcurso de una viaje/parada.</p></li>
+<li><p>Liquidación.</p></li>
+</ul>
+<img alt="../_images/modolulight.png" class="only-light align-center" src="../_images/modolulight.png" />
+<img alt="../_images/moduloblack.png" class="only-dark align-center" src="../_images/moduloblack.png" />
+</section>
+<section id="configuracion">
+<h2>Configuración<a class="headerlink" href="#configuracion" title="Link to this heading">#</a></h2>
+<div class="justified-text docutils container">
+<p>Antes de continuar con la configuración de tarifas, es esencial comprender el cuadro general de las mismas para evitar errores y retrabajos. Es fundamental tener una definición concreta del cuadro tarifario que aplica el cliente. Esto permitirá comenzar la configuración de manera adecuada y saber, al probar estas tarifas, si es necesario realizar alguna corrección.</p>
+</div>
+<section id="guias">
+<h3>Guías<a class="headerlink" href="#guias" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>La guía es el lugar donde se encuentran los conceptos valorizados con su string para envío al ERP. La vista de la guía se puede configurar según los permisos de usuario.</p>
+<p>La guía es el sumatorio de todos los conceptos tarifables de cada viaje incluido en una guía. Existen dos tipos de guías: de cobro y de pago. Cada tipo de guía posee distintas tarifas. En esta configuración, se define cómo se agruparán los viajes dentro de las guías para tarifarse. Se pueden agrupar las siguientes entidades:</p>
+<ul class="simple">
+<li><p>Sucursal.</p></li>
+<li><p>Operación.</p></li>
+<li><p>Jornada.</p></li>
+<li><p>Transporte.</p></li>
+<li><p>Cliente.</p></li>
+<li><p>Vehículo.</p></li>
+<li><p>Conductor.</p></li>
+</ul>
+</div>
+<img alt="../_images/crearguia.png" class="align-center" src="../_images/crearguia.png" />
+<div class="justified-text docutils container">
+<p>Dentro de un viaje, se generan guías de costos por cada proveedor involucrado y una guía de venta por cada cliente. El objetivo es asegurar que se generen correctamente estas guías. Las guías sirven para diferentes propósitos dentro del proceso de implementación y uso del sistema. A continuación, se detallan las principales diferencias entre los tipos de guía existentes:</p>
+<ul class="simple">
+<li><p>Guía de venta</p></li>
+</ul>
+<p>Su propósito principal es proporcionar información detallada sobre los conceptos valorizados para los clientes, es decir, el cobro de los servicios. Cada guía de venta tarifa todos los conceptos de un viaje, con una guía por cada cliente.</p>
+<p>¿Qué contiene una guía de venta?</p>
+<p>Contiene agrupadores de conceptos valorizados de uno o varios viajes por el rango de fechas definido. Su contenido se centra en características, beneficios, casos de uso, estrategias de venta, diferenciadores competitivos, proceso de implementación, servicios de soporte, entre otros, generando un importe específico por cada caso de uso. Todos los importes generados en un viaje se pueden vincular con un sistema ERP externo. Las guías también contienen un flujo de estados de trabajo y conceptos según las necesidades y características de la operación, además de la información detallada por cada concepto valorizado generado por cada viaje para su tarifación.</p>
+<ul class="simple">
+<li><p>Guía de costos</p></li>
+</ul>
+<p>Una guía de costos busca proporcionar información detallada sobre los costos asociados con la implementación, operación y mantenimiento de toda la operación. Se centra en aspectos financieros y económicos, incluyendo costos iniciales, costos recurrentes, costos operativos, como costo de flete, retenciones, incidencias, parqueo, casetas de peaje, entre otras. Con la misma lógica, genera los importes para vincularlos a sistemas de ERP externos.</p>
+<p>¿Qué contiene una guía de costos?</p>
+<p>Su propósito principal es ser una herramienta que proporciona información para genstionar y optimizar los costos financieros y económicos, como costos de implementación, costos recurrentes, costos operativos, beneficios y ahorros potenciales, análisis de ROI y consideraciones adicionales relacionadas con los costos, con el objetivo de tomar decisiones informadas sobre la inversión de la operación.</p>
+</div>
+</section>
+<section id="generar-guias">
+<h3>Generar Guías<a class="headerlink" href="#generar-guias" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>En UNIGIS TMS, se permite generar guías de dos formas: manualmente o automáticamente. La creación de una guía puede ocurrir de dos maneras:</p>
+<p>Manual: La guía se genera de manera manual por un usuario desde un viaje.</p>
+</div>
+<p><kbd class="kbd docutils literal notranslate">Fleet</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Viajes</kbd></p>
+<img alt="../_images/guiadesdeviaje.png" class="align-center" src="../_images/guiadesdeviaje.png" />
+<div class="justified-text docutils container">
+<p>Automática: La guía se crea automáticamente durante la transición de estados de un viaje.</p>
+<p>Durante cualquier fase de un viaje, ya sea al inicio, durante su ejecución o al finalizarlo, es posible generar las guías o documentación necesaria. Esto se logra configurando el proceso para que se ejecute de acuerdo a las necesidades específicas desde <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">administrador</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">SCE</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Procesos</kbd>.</p>
+<p>Este enfoque automatizado simplifica el proceso al integrar la generación de guías en las etapas clave de un viaje, lo que garantiza una documentación completa y oportuna en cada paso del proceso logístico.</p>
+</div>
+<img alt="../_images/guiasautomatico.png" class="align-center" src="../_images/guiasautomatico.png" />
+</section>
+<section id="tarifacion">
+<h3>Tarifación<a class="headerlink" href="#tarifacion" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>La tarifación es el proceso de determinación y establecimiento de los costos asociados con el uso o venta del servicio, la tarifación puede variar significativamente según el modelo de negocio, los factores considerados y la personalización de las tarifas. Es fundamental que los clientes comprendan claramente los factores que influyen en los costos.</p>
+<p>Cada viaje en el sistema contiene guías que operan con tarifación y fórmulas que, mediante flujos de trabajo específicos, generan un importe según sea su venta o costo. Estas son listas de precios que valorizan todos los conceptos que se cruzan contra los viajes. Las tarifas se componen de valores, filtros, tipos de guía y conceptos, incluyendo:</p>
+<ul class="simple">
+<li><p>Entidad: La entidad a la cual se aplica la tarifa, ya sea en un viaje, parada, parada item, tramo, entre otros.</p></li>
+<li><p>Fórmula: El valor o expresión que genera el cálculo.</p></li>
+<li><p>Base de Cálculo: Si se llena, se guardará en una variable el valor calculado del campo fórmula.</p></li>
+<li><p>Entidad Atributo Salida: Si se llena, se guardará en un campo de la entidad el valor calculado del campo fórmula.</p></li>
+<li><p>Concepto: Si tiene, genera un Concepto Valorizado Guía, creando una línea de concepto al mostrar el cálculo de la tarifa.</p></li>
+<li><p>Fecha de Vigencia: Vigencia de la tarifa; si se actualiza, esta se vence creando una línea nueva.</p></li>
+<li><p>Filtros: Definen hacia dónde apunta el valor o fórmula de la tarifa. Si no se seleccionan campos, será aplicable de manera general.</p></li>
+</ul>
+<p>Las tarifas se aplican a un tipo de guía y tienen un plazo de vigencia definido. Pueden contener parámetros para aplicarse a viajes, depósitos, transportes, cargas, distancias, entre otros, según su categoría. La tarifación se establece considerando diversos factores, como el tipo de parada, cliente, volumen, peso, horario, distancia, vehículos, operación, sucursal y productos.</p>
+<p>Estas configuraciones permiten a los clientes personalizar las tarifas según sus necesidades específicas y garantizar una comprensión clara de cómo se determinan los costos en el sistema UNIGIS TMS.</p>
+</div>
+<img alt="../_images/tarifas.png" class="align-center" src="../_images/tarifas.png" />
+</section>
+<section id="proceso-tarifacion">
+<h3>Proceso Tarifación<a class="headerlink" href="#proceso-tarifacion" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Las tarifas se aplican por tipo de guía, ya sea de costo o de venta, y son aplicables al valor del viaje. El valor se suma por variable y puede aplicarse a diferentes entidades como un viaje, un vehículo, o cualquier otra entidad específica indicada. Si no se selecciona ninguna entidad específica, se aplica como una regla general.</p>
+<p>Cada registro representa una tarifa y valida las entidades de la tarifación, filtrando las coincidencias con ese viaje. Las tarifas pueden seleccionarse para una entidad individual o para entidades agrupables, lo que permite una mayor flexibilidad en la aplicación de los costos.</p>
+<p>La tarifación en UNIGIS TMS puede realizarse de manera automatizada o manual, dependiendo de las necesidades y preferencias del usuario. Este proceso implica calcular los costos o ventas asociados con un viaje específico, considerando diversos factores y parámetros.</p>
+<ul class="simple">
+<li><p>Viaje = Guías generadas de costo y venta.</p></li>
+</ul>
+<p>Manual: Sobre un viaje seleccionar tarifar, manualmente. la tarifación manual ofrece flexibilidad al usuario para modificar o crear nuevas tarifas según sea necesario, llenando los campos requeridos en el formulario de creación de tarifas.</p>
+<p><kbd class="kbd docutils literal notranslate">Fleet</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Viajes</kbd></p>
+</div>
+<img alt="../_images/tarifarmanual.png" class="align-center" src="../_images/tarifarmanual.png" />
+<div class="justified-text docutils container">
+<p>Automática: La tarifación por cambio de estado se realiza de forma automática, por ejemplo, cuando se cambia el estado de un viaje de «inicial» a «programado». Durante este cambio de estado, se generan automáticamente las guías de costos y de venta acumulando los importes para cada estado y permitiendo previsualizar la rentabilidad de cada viaje. El proceso de tarifación se ejecuta en el momento en que ocurre el cambio de estado dentro del viaje.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">administrador</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">SCE</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Procesos</kbd>.</p>
+</div>
+<img alt="../_images/tarifarauto.png" class="align-center" src="../_images/tarifarauto.png" />
+</section>
+<section id="formulas">
+<h3>Fórmulas<a class="headerlink" href="#formulas" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Estas fórmulas pueden incluir una variedad de variables y parámetros, como tarifas por kilómetro recorrido, tiempo de espera, tipo de carga, condiciones climáticas, entre otros. Esta capacidad de personalización permite a las empresas ajustar la tarifación según su modelo de negocio, políticas internas y requisitos del cliente.</p>
+</div>
+<img alt="../_images/formula.png" class="align-center" src="../_images/formula.png" />
+<div class="justified-text docutils container">
+<p>Valor/Formula: En una tarifa, se asigna un valor numérico representando el valor de la tarifa. En el caso de que sea una fórmula, aquí se describe el cálculo que debe realizar, utlizando las expresiones matemáticas <strong>nCalc</strong>. Ejemplo: [Valor.Incidencia] * 10.</p>
+<p>Base de cálculo: Se define una base de cálculo, que funciona como una variable en la que se guardar el valor o dato calculado.</p>
+<p>Dentro de una fórmula, se puede utilizar la misma funcionalidad que las tarifas por filtro, y los valores indicados estarán relacionados con un concepto.</p>
+<p>La fórmula proporciona el importe de la base de cálculo. En la tabla de bases de cálculo, se define el nombre de la variable y se asigna una consulta SQL (query) para ejecutar. Cuando se llama a la variable en una fórmula, se utiliza el resultado de esta consulta y se guarda.</p>
+</div>
+</section>
+<section id="incidencias">
+<h3>Incidencias<a class="headerlink" href="#incidencias" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>Para facilitar la gestión de incidencias, UNIGIS TMS ofrece herramientas que permiten registrarlas fácilmente, ya sea a través de la aplicación móvil o directamente desde el registro del viaje. Una vez registradas, las incidencias pueden seguir un flujo de trabajo estructurado, con diferentes estados que indican su validación y resolución.</p>
+<p>Crear incidencia: <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Administración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">Sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">SCE</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Catálogos</kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Tipo</kbd> <kbd class="kbd docutils literal notranslate">de</kbd> <kbd class="kbd docutils literal notranslate">Incidencia</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">+</kbd></p>
+</div>
+<img alt="../_images/crearincidencia.png" class="align-center" src="../_images/crearincidencia.png" />
+<p>Aplicar incidencia: <kbd class="kbd docutils literal notranslate">Fleet</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Viajes</kbd> –&gt; Seleccionar viaje con clic derecho + <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Cargar</kbd> <kbd class="kbd docutils literal notranslate">Incidencia</kbd></kbd>.</p>
+<img alt="../_images/incidencia.png" class="align-center" src="../_images/incidencia.png" />
+<div class="justified-text docutils container">
+<p>Además, algunas incidencias pueden ser gestionadas de forma automatizada, lo que agiliza su resolución y reduce la intervención manual. Esto garantiza una respuesta rápida a los problemas que surjan durante los viajes, mejorando la eficiencia operativa y la calidad del servicio.</p>
+</div>
+</section>
+<section id="liquidacion">
+<h3>Liquidación<a class="headerlink" href="#liquidacion" title="Link to this heading">#</a></h3>
+<div class="justified-text docutils container">
+<p>El proceso de liquidación corresponde a un tipo de guía siguiendo un flujo de trabajo propio, con diferentes estados que reflejan el progreso y la validación de la liquidación. Este flujo de trabajo puede ser configurado según las necesidades específicas de la operación, lo que garantiza una gestión eficiente y transparente del proceso.</p>
+<p>Estos estados pueden disponer de uno o varios métodos que se accionan dependiendo del flujo de trabajo establecido.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Adminitración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">Sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">SCE</kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Flujos</kbd> <kbd class="kbd docutils literal notranslate">de</kbd> <kbd class="kbd docutils literal notranslate">Trabajo</kbd></kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Estado</kbd> <kbd class="kbd docutils literal notranslate">Liquidación</kbd></kbd>.</p>
+</div>
+<img alt="../_images/estadoliquidacion.png" class="align-center" src="../_images/estadoliquidacion.png" />
+<div class="justified-text docutils container">
+<ul class="simple">
+<li><p>Periodo Liquidación:</p></li>
+</ul>
+<p>Los periodo de liquidación se establecen para organizar y procesar los costos y ventas asociados a los viajes y operaciones. Aquí se detalla su funcionamiento y configuración:</p>
+<p>Se debe disponer de periodos a liquidar, ya sea por periodo fijo o por periodo dinámico. Los periodos pueden comprender tipos de operación, vigencia, cliente, transporte, y tipos de guía. Si no se seleccionan los campos, se podrán aplicar de manera general.</p>
+<p>Las guías listas para liquidar se pueden enviar a un ERP para la liquidación por un lapso establecido esto de manera automática o manual, ya sea semanal, quincenal o mensualmente.</p>
+<p>En un caso particular, una guía puede asociarse a varios viajes por un valor fijo. Puede ocurrir por mes, conectando los viajes del mes al costo de esa misma guía, dependiendo del arreglo o acuerdo con el cliente.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Adminitración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">Sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">Tarifas</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Catálogos</kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Periodo</kbd> <kbd class="kbd docutils literal notranslate">Liquidación</kbd></kbd>.</p>
+</div>
+<img alt="../_images/periodoliquidacion.png" class="align-center" src="../_images/periodoliquidacion.png" />
+<div class="justified-text docutils container">
+<ul class="simple">
+<li><p>Tipo Liquidación:</p></li>
+</ul>
+<p>Cada tipo de liquidación está asociado a un tipo de guía y representa los datos necesarios al momento de la carga para generar la liquidación correspondiente.</p>
+<p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Adminitración</kbd> <kbd class="kbd docutils literal notranslate">del</kbd> <kbd class="kbd docutils literal notranslate">Sistema</kbd></kbd> –&gt; <kbd class="kbd docutils literal notranslate">Tarifas</kbd> –&gt; <kbd class="kbd docutils literal notranslate">Catálogos</kbd> –&gt; <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Tipo</kbd> <kbd class="kbd docutils literal notranslate">Liquidación</kbd></kbd>.</p>
+</div>
+<img alt="../_images/tipoliquidacion.png" class="align-center" src="../_images/tipoliquidacion.png" />
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../RNDC/RNDC.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Registro Nacional Despachos de Carga (RNDC)</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Configuración y Gestión de Tarifas</a><ul>
+<li><a class="reference internal" href="#entidades">Entidades</a></li>
+<li><a class="reference internal" href="#configuracion">Configuración</a><ul>
+<li><a class="reference internal" href="#guias">Guías</a></li>
+<li><a class="reference internal" href="#generar-guias">Generar Guías</a></li>
+<li><a class="reference internal" href="#tarifacion">Tarifación</a></li>
+<li><a class="reference internal" href="#proceso-tarifacion">Proceso Tarifación</a></li>
+<li><a class="reference internal" href="#formulas">Fórmulas</a></li>
+<li><a class="reference internal" href="#incidencias">Incidencias</a></li>
+<li><a class="reference internal" href="#liquidacion">Liquidación</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>
