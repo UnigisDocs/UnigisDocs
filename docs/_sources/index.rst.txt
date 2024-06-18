@@ -31,6 +31,15 @@ Contenido
    Standard/StandardHDVHDR.rst
    RNDC/RNDC.rst
    Tarifas/ConfigTarifas.rst
+
+
+Ayuda
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   FAQ/PreguntasFrecuentes.rst
    
    
    

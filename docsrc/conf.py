@@ -51,3 +51,4 @@ html_theme_options = {
 html_title = 'UNIGIS | DOCUMENTACIÓN'
 html_favicon = ''
 html_show_sphinx = False
+html_search_language = 'es'

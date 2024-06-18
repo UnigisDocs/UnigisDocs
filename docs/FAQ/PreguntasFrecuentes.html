@@ -1,0 +1,618 @@
+<!doctype html>
+<html class="no-js" lang="es" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Índice" href="../genindex.html" /><link rel="search" title="Búsqueda" href="../search.html" /><link rel="prev" title="Configuración y Gestión de Tarifas" href="../Tarifas/ConfigTarifas.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>FAQs - UNIGIS | DOCUMENTACIÓN</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css?v=45cf7dbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2ce97633" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #343434;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #d0d0d0;
+  --color-brand-secundary: #343434;
+  --color-brand-content: #00979b;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">UNIGIS | DOCUMENTACIÓN</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/Logolight.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logodark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Búsqueda" name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GettingStart/Gettingstart.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Introducci%C3%B3n/intro.html">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/CircuitoOp/Circuito.html">Circuito Operativo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Metodolog%C3%ADa/Met.html">Metodología de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Arq/Arq.html">Arquitectura Funcional y Técnica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Admpedidos/Adminp.html">Administración de Pedidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Ruteo/Ruteo.html">Planeación de Distribución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Gesti%C3%B3nviajes/Gviajes.html">Gestión de Viajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Yard/Yard.html">Yard Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tracking/Tracking.html">Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/B2B/b2b.html">Portal B2B (business-to-business)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Mobile/Deliveries.html">UNIGIS X DELIVERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GettingStart/Tarifaci%C3%B3n/Tarifa.html">Finalización de Viajes y Tarifación</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MAPILogisticServices/MapiConfig.html">MAPI Logistic Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Routing/Routing.html">Smart Planning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../json/Indexsyncout.html">Json Syncout</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Json Syncout</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/SyncoutG.html">Syncout Genérico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/syncout/Syncout.html">Syncout V2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MapServer/MapServer.html">MapServer X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CTE/ctewebservice.html">Web Service CTE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Icenter/IntegrationCenter.html">Integrations Center</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CAdapter/CourrierAdapter.html">Courrier Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Firebase/PushFirebase.html">Notificaciones Push Firebase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Standard/StandardHDVHDR.html">Standard HDV &amp; HDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RNDC/RNDC.html">Registro Nacional Despachos de Carga (RNDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tarifas/ConfigTarifas.html">Configuración y Gestión de Tarifas</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">FAQs</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="faqs">
+<h1>FAQs<a class="headerlink" href="#faqs" title="Link to this heading">#</a></h1>
+<p>Aquí presentamos las respuestas a algunas de las preguntas frecuentes sobre nuestro producto UNIGIS TMS.</p>
+<input type="text" id="searchInput" onkeyup="filterQuestions()" placeholder="Buscar preguntas..." style="width: 100%; padding: 10px; margin-bottom: 20px;"><style>
+ ul {
+   list-style-type: none;
+   padding: 0;
+ }
+ ul li {
+   display: inline;
+   margin-right: 10px;
+ }
+</style>
+
+<ul>
+ <li><a href="#mapi" class="special-link">MAPI</a></li>
+ <li><a href="#alarmas" class="special-link">Alarmas</a></li>
+ <li><a href="#tracking" class="special-link">Tracking</a></li>
+ <li><a href="#planning" class="special-link">Planning</a></li>
+ <li><a href="#mobile" class="special-link">Mobile</a></li>
+ <li><a href="#setup" class="special-link">SetUp</a></li>
+</ul><section id="mapi">
+<h2>MAPI<a class="headerlink" href="#mapi" title="Link to this heading">#</a></h2>
+<!-- Pregunta 1 -->
+<details class="question">
+    <summary class="card-header">¿Cómo se Configura "ApiKey" para WebService de MAPI?</summary>
+    <p>La ApiKey por default es la misma que MAPI TOKEN (Ver "Estado Del Sistema").</p>
+    <p>Por defecto UNIGIS NO la valida, para activar la validación se debe configurar en App.Config de UNIGIS Web el siguiente paramatro en True: "ValidarApiKey". (add key="ValidarApiKey" value="true")</p>
+</details>
+
+<!-- Pregunta 2 -->
+<details class="question">
+    <summary class="card-header">¿Cómo generar una alarma cuando se va llegar tarde a una parada?</summary>
+    <p>Es necesaria una alarma que evaluara si se llega a tiempo a la fecha planificada y que si este viaje no llega lanzaba una alarma.</p>
+    <p>Este control lo realiza el modulo de Control de Viajes de Control console.</p>
+    <p>El control analiza los viajes en estado de seguimiento activo cuyo donde las paradas tengan una diferencia entre la fecha Estimada y la Fecha Planificada mayor (en minutos) al parametro DesvioMaximoParadaDesvio (15 minutos default) O el campo DesvioMaximo de la tabla parada.</p>
+</details>
+
+<!-- Pregunta 3 -->
+<details class="question">
+    <summary class="card-header">¿Existe algún WebService para obtener Distancias por calles?</summary>
+    <p>Si, se debe utilizar el método "BuscarTrayecto" de MAPI GeoGraphic.</p>
+    <p>El método recibe Origen y Destino.</p>
+    <p>Retorna el Tiempo en Minutos considerando la velocidad por tipo de vial (Según el perfil de Routed), Distancia y una Lista de Puntos que es el recorrido visual para desplegar en un mapa.</p>
+</details>
+
+<!-- Pregunta 4 -->
+<details class="question">
+    <summary class="card-header">¿Cómo notificar Alarmas por Email o SMS?</summary>
+    <p>Se debe configurar dentro del Administración del Sistema -> Alertas -> Tipo Alarmas. Se debe marcar el tipo de alarma como "Notificable" y luego entrar al modulo de notificaciones, configurar el tipo de gateway (SMS o Email ), destinatarios y contenido de correo.</p>
+    <p>El módulo Control Console debe estar activo con el parámetro en App.Config de notificaciones activo.</p>
+</details>
+
+<!-- Pregunta 5 -->
+<details class="question">
+    <summary class="card-header">¿Cómo subir archivos relacionadas a una Parada mediante POST?</summary>
+    <p>Upload = "1"</p>
+    <p>IdParada = “IdParada”</p>
+    <p>Token = Token de acceso a UNIGIS.</p>
+    <p>Para obtener el token de un usuario, se puede usar el Servicio MAPI/Soap/Auth/Service.asmx método Login.</p>
+</details>
+
+<!-- Pregunta 6 -->
+<details class="question">
+    <summary class="card-header">¿Por qué luego de modificar un valor por base de datos, el sistema sigue mostrando un dato antiguo?</summary>
+    <p>UNIGIS mantiene un cache para muchas entidades (Parámetro, EstadoParada, EstadoViaje, TipoVehiculo), generalmente aquellas con muchas operaciones de lectura (READ) y no una cantidad enorme de registros (tablas maestras, de workflow o parámetros). Este cache se utiliza para evitar leer constantemente la base de datos.</p>
+    <p>El cache está en memoria en el servidor web, por lo que si se modifica el valor directamente en la base de datos, la aplicación web no tiene forma de saberlo. Sin embargo, si una de estas entidades se modifica a través de la interfaz de usuario (UI), el cache se regenera.</p>
+    <p>En caso de dudas, NO REINICIAR IIS. En su lugar, ingresa a "Estado del Sistema" en /UNIGIS/Status (debes hacerlo localmente o con el usuario System) y haz clic en "Vaciar Cache".</p>
+</details>
+
+<!-- Pregunta 7 -->
+<details class="question">
+    <summary class="card-header">¿Cuál es la forma de poder ver los mensajes XML que se reciben vía MAPI?</summary>
+    <p>En UNIGIS, existe un parámetro de configuración llamado LogRequestsLogistic el cual, al estar en estado "Verdadero" (True) logueara los requests recibidos por el servidor (siempre que el método consumido implemente esta opción).</p>
+    <p>El registro se guarda en dos ubicaciones: Tabla LogMapi y en un XML que sera generado en la ruta por defecto de unigis en la sub carpeta \MAPI\Requests</p>
+</details></section>
+<section id="alarmas">
+<h2>Alarmas<a class="headerlink" href="#alarmas" title="Link to this heading">#</a></h2>
+<details class="question">
+  <summary class="card-header">¿Cómo clasificar los conductores y vehículos en primarios y secundarios?</summary>
+  <p>Para ello existen los atributos en las entidades Conductor y vehículo. Los atributos son primario y secundario.</p>
+  <p>El valor por defecto en vehículo es 1 en ambos casos.</p>
+  <p>Dentro de Administración del Sistema -> Planeación -> Catálogos se puede modificar los valores de categoría para cada vehículo y conductor, el formulario de asignación manual.</p>
+</details>
+
+<details class="question">
+  <summary class="card-header">¿En qué momentos se recalcula los tiempos estimados de llegada de un viaje?</summary>
+  <p>En cambio de Estado de Parada cuando el estado destino es del tipo anulacion ( EstadoParada.Anulacion = 1).</p>
+  <p>Al momento de Activar el viaje.</p>
+  <p>En el servicio CalcularViaje de MAPI Logistic.</p>
+  <p>Al momento de agregar o eliminar una parada de forma manual al viaje desde Tracking.</p>
+  <p>Luego de reordenar el viaje desde Tracking o Mobile.</p>
+  <p>Luego de cambiar una parada de un viaje a otro desde Tracking.</p>
+</details></section>
+<section id="tracking">
+<h2>Tracking<a class="headerlink" href="#tracking" title="Link to this heading">#</a></h2>
+<details class="question">
+  <summary class="card-header">¿Cómo funciona la Criticidad, TimeOut y nivel de alarmas acumuladas en Tracking?</summary>
+  <p>La criticidad está asociada al tipo de alarma y sirve para clasificar la importancia o urgencia en función de cada tipo de alarma. Se configura en la tabla Criticidad y se apunta en TipoAlarma.IdCriticidad. Es fija por tipo de alarma; nunca una alarma cambia de criticidad.</p>
+  <p>El timeout se configura en TipoAlarma y representa el tiempo que tiene cada alarma, según su tipo, para ser tratada. Las alarmas no escalan; simplemente, en tracking, el campo TimeOut cambia de color si se supera ese tiempo en minutos desde su creación hasta que es tratada.</p>
+  <p>El campo CantidadAlarmasNoTratadas en la tabla Vehículo se incrementa con cada nueva alarma no tratada automáticamente (TipoAlarma.TratamientoAutomatico). Este valor se decrementa cuando una alarma es tratada. En tracking, se muestra en dos momentos: </p>
+  <p>Cantidad total de alarmas no tratadas: Se visualiza al hacer clic en "Alarmas" en el panel superior, en la pestaña "Vehículos". Es el acumulado total en la base de datos (Vehículo.CantidadAlarmasNoTratadas).</p>
+  <p>Cantidad de alarmas no tratadas desde el inicio: Se muestra desde que el usuario abre UNIGIS Tracking.</p>
+  <p>Estos valores pueden cambiar de color según su importancia, definido en la tabla NivelAlarmasAcumuladas, donde se establece el color por cada rango.</p>
+    </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo se desactiva los PopUps de alarmas en Tracking?</summary>
+  <p>Para desactivarlo globalmente existe el parámetro (Tabla Parámetros) "IdTipoAlarma_PopUp".</p>
+  <p>En dicho parámetro se pueden configurar que tipos de alarmas son los habilitados para el pop up. En el caso que este vacío entonces TODOS los tipos de alarma generar el PopUp al usuario.</p>
+  <p>Se debe completar con una lista separada por "," de los ID de tipo alarma que se quieran notificar via popup. Ejemplo: </p>
+  <pre><code>&lt;system.net&gt;
+  &lt;defaultProxy&gt;
+  &lt;proxy proxyaddress="http://220.26.11.3:3128" bypassonlocal="true" /&gt;
+  &lt;/defaultProxy&gt;
+  &lt;/system.net&gt;</code></pre>
+    </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo subir un archivo para que sea procesado por un Adapter de viajes?</summary>
+  <p>Se puede utilizar el uploader dentro de la aplicación web de UNIGIS en la ruta /UNIGIS/Apps/Viajes/UploadFile.aspx</p>
+  <p>El archivo será subido al directorio /UNIGIS/Uploads/Shipments/, luego se deberá pedir configurar el Adapter de viajes para que procese desde ese directorio.</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo configurar que un usuario pueda asignar vehículos y conductores a una ruta no asignados a la operación en planificación de recursos?</summary>
+  <p>Se debe Establecer el permiso via Action "IgnorarOperacion" del form "Fleet_Rutas"</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo configurar UNIGIS Web a través de un proxy?</summary>
+  <p>Se debe establecer en <code>web.config</code> lo siguiente. Debe estar dentro de <code>Configuration</code> y NO en otro nodo interior. Ejemplo con proxy <code>220.26.11.3:3128</code>:</p>
+  <pre><code>&lt;system.net&gt;
+  &lt;defaultProxy&gt;
+  &lt;proxy proxyaddress="http://220.26.11.3:3128" bypassonlocal="true" /&gt;
+  &lt;/defaultProxy&gt;
+  &lt;/system.net&gt;</code></pre>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo configurar que un usuario pueda asignar vehículos y conductores a una ruta no asignados a la operación en planificación de recursos?</summary>
+  <p>Se debe Establecer el permiso via Action "IgnorarOperacion" del form "Fleet_Rutas"</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Por qué no se puede visualizar el módulo de rutas en Tracking?</summary>
+  <p>Se debe validar los permisos para la visualización del módulo de rutas, en caso de disponer con los permisos y aún no es visible, se debe validar que el parámetro (Tabla parámetro) con clave = "cfg0" tenga el valor (1). En caso de modificar ese valor por base de datos y no por administración del sistema se debe reiniciar el cache del servidor web.</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">No inicia UNIGIS Tracking con error "The type initializer for..."</summary>
+  <p>Para aquellos servidores donde existen mas sitios Web, se recomienda reciclar el pool de aplicaciones utilizados por UNIGIS, asi no se ven afectados todos los sitios por causa del restart del IIS.</p>
+  </details>
+
+
+<details class="question">
+  <summary class="card-header">¿Cuál es la diferencia entre FechaHoraEvento, FechaHoraRecepcion, FechaHoraReportado y FechaHoraCalculada?</summary>
+  <p>Respecto a las posiciones GPS recibidas desde los prestadores, a continuación se describen detalles de los campos de fecha de la tabla EVENTO:</p>
+  <p>FECHAHORAEVENTO. Dato reportado por el GPS y corresponde al valor informado directamente a través del web método responsable de insertar los eventos. Este el valor desplegado en aplicación Tracking.</p>
+  <p>FECHAHORARECEPCION. Teóricamente es la fecha de cuando el prestador proceso el dato informado por el GPS. Este valor es entregado por el prestador a través de web método que procesa las transmisiones, se identifica que en algunos casos informan el mismo valor de FECHAHORAEVENTO.</p>
+  <p>FECHAHORAREPORTADO. Fecha y hora de cuando se procesó el dato en base de datos de UNISOLUTIONS.</p>
+  <p>FECHAHORACALCULADA. Corresponde al dato reportado por el GPS calculado en base la huso horario configurado para el prestador.</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Como se configura el flujo de Paradas para cambiar el estado cuando un vehículo visita una parada?</summary>
+  <p>En configuración del console poner el parametro "ControlEstadiaParada" = true y configurar la transicion de pendiente a visitado en el flujo de cambios de estados de paradas</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo se calcula el desvío de un viaje?</summary>
+  <p>Se calcula en función de la próxima parada de un viaje ( Viaje.IdParadaSiguiente )</p>
+  <p>Si la próxima parada de un viaje tiene FinVisitaReal, se calcula la diferencia entre el horario real y el planificado ( FinVisitaPlanificado )</p>
+  <p>Si no tiene horario planificado se utiliza el horario estimado ( Parada.FinVisita )</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo se configura una alarma cuando se supera el desvío de un viaje?</summary>
+  <p>Este control lo realiza el modulo de Control de Viajes de Control console.</p>
+  <p>El control analiza los viajes en estado de seguimiento activo cuyo Viaje.Desvio sea mayor a su desvío máximo ( Viaje.Seguimiento.DesvioMaximo )</p>
+  <p>Viaje.Desvio > Viaje.Seguimiento.DesvioMaximo</p>
+  <p>Se debe configurar el parámetro IdTipoAlarmaDesvio en la entidad parámetro indicando el id de tipo de alarma a generarse cuando se genere la detección.</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Como se activa un viaje de forma automática?</summary>
+  <p>Los viajes podrán activarse automáticamente usando ControlConsole. Para tal fin se deberá contar con el parámetro ControlGeneral y ControlActivacionViajes en True.</p>
+  <p>•        Criterio activación: se activará un viaje al salir de un deposito (en otras palabras, un dibujo con condición 10 o 4, "inicio fin de viaje" o "inicio viaje" ). A su vez dicho seguimiento tiene que estar en estado inactivo.</p>
+  <p>•        Criterio desactivación de viajes: entrada a un deposito (dibujo con condición 10 o 6,  "inicio fin de viaje" o "fin de viaje"). A su vez se valida que el seguimiento este activo, adicionalmente se valida lo siguiente:</p>
+  <p>- Si el viaje tiene paradas, y todas están pendientes no lo cierro. </p>
+  <p> - Si no tiene paradas me fijo la fecha de inicio real. Le doy 30' mins de gracia.</p>
+  </details></section>
+<section id="planning">
+<h2>Planning<a class="headerlink" href="#planning" title="Link to this heading">#</a></h2>
+<details class="question">
+  <summary class="card-header">¿Como funciona el geotipo Grupo de Rutas y cuál es la diferencia con Grupo de Rutas Inclusivo?</summary>
+  <p>Al tener asignado el geotipo Grupo de Rutas, cada una de las rutas que se obtengan solo tendrán ordenes pertenecientes a un mismo grupo. De esta forma, ordenes con valor de grupo 1, por ejemplo, no podrán ser ruteadas con otras ordenes cuyo valor de grupo sea distinto, obteniendo como resultado rutas que pertenecen a distintos grupos.</p>
+  <p>En caso de que el valor de este geotipo sea 0 para una orden, la misma será ignorada a la hora de rutear, ya que se entiende que no pertenece a ningún grupo.</p>
+  <p>Por otro lado, el geotipo Grupo de Rutas Inclusivo tiene el mismo comportamiento que el geotipo anterior, pero difiere en su forma de tratar a las ordenes que tengan valor 0. Las mismas pueden ser incorporadas en cualquier ruta. Es decir, es posible obtener rutas con ordenes pertenecientes al grupo 1 y al grupo 0.</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Como funciona el tiempo de Inactividad en tipos de vehículos?</summary>
+  <p>El tiempo de inactividad está compuesto por cuatro geotipos:</p>
+  <p>1. Inicio de Inactividad: Indica el inicio de la ventana horaria en la cual se puede asignar el tiempo de inactividad.</p>
+  <p>2. Fin de Inactividad: Indica el fin de la ventana horaria en la cual se puede asignar el tiempo de inactividad.</p>
+  <p>3. Tiempo Mínimo de Inactividad: si el conductor va a tomarse un descanso, el mismo debe estar justificado. Con este valor, uno indica cual es el tiempo mínimo que debe durar una ruta para validar la asignación de un descanso..</p>
+  <p>4. Tiempo de Inactividad: Es el tiempo de descanso del vehículo que debe esperar para retomar sus tareas.</p>
+  <p>Si alguno de estos cuatro valores llegara a ser negativo, se considera que el tipo de vehículo no tiene inactividad asignada.Siguiendo con la idea de tiempo mínimo de inactividad, no se va a asignar un descanso para un vehículo si este ya se lo tomó de alguna otra forma: </p>
+  <p>•        Si dentro de una ruta se detecta una orden con un tiempo muerto igual o superior al tiempo de inactividad se considera que el descanso ya fue tomado y no se asignará.</p>
+  <p>•        En el caso de haber segundas vueltas, si la diferencia entre el tiempo de llegada de una vuelta y el tiempo de salida de la siguiente es mayor o igual al tiempo de inactividad se considera que el descanso ya fue tomado y no se asignará en ninguna de las vueltas.</p>
+  <p>•        Si el tiempo de inactividad fue asignado en la última vuelta de un vehículo y se encuentra al final de la ruta, el mismo será removido de la planificación, ya que se considera que el conductor puede descansar una vez finalizadas sus tareas. En caso de que la inactividad sea removida y la llegada al depósito ocurriera en un horario posterior al Fin de Inactividad se volverá a agregar ya que el conductor no se estaría tomando un descanso dentro de la ventana indicada.</p>
+  <p>Estos geotipos únicamente se tienen en cuenta al realizar ruteos de deliveries o de recolecciones.</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Como funciona el reordenamiento automático de Rutas?</summary>
+  <p>Al reordenar automáticamente una ruta se corre sobre la misma, en una primera instancia, los optimizadores de Secuencia y Distancia, este último dos veces consecutivas. Al finalizar, intenta incorporar ordenes que hayan quedado sin rutear en la jornada.</p>
+  <p>Como se pueden llegar a incorporar nuevas ordenes y el optimizador de Distancias se corre dos veces solamente, es posible encontrar mejores resultados si se corre nuevamente el reordenamiento.</p>
+  <p>Los parámetros que se utilizan al reordenar son los que se encuentren cargados en el escenario de ruteo en ese momento, los cuales pueden llegar a diferir con los parámetros utilizados en el ruteo original por cambios realizados por el usuario.</p>
+  </details></section>
+<section id="mobile">
+<h2>Mobile<a class="headerlink" href="#mobile" title="Link to this heading">#</a></h2>
+<details class="question">
+  <summary class="card-header">¿Cómo funciona Unigis Mobile Offline?</summary>
+  <p>Al perder la conexión se muestra la leyenda "Sin conexión - Intente más tarde".</p>
+  <p>En caso de perder la conexión, todos los elementos relacionados con la entrega serán guardados. Las paradas confirmadas sin conexión, serán resaltadas en colo amarillo.</p>
+  <p>Cuando el dispositivo vuelva a tener conexión, se sincroniza de manera automatica las paradas almacenadas. En caso de que haya quedado almacenada se puede utilizar el botón para actualizar.</p>
+  </details></section>
+<section id="setup">
+<h2>SetUp<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<details class="question">
+  <summary class="card-header">¿Qué es un changescript?</summary>
+  <p>Un "changescript" es un conjunto de instrucciones utilizadas en el desarrollo de software y administración de bases de datos para describir y aplicar cambios específicos, como modificaciones en el esquema de la base de datos, actualizaciones de datos, o alteraciones en el código fuente de una aplicación. Estos scripts son esenciales para gestionar versiones, implementar actualizaciones, corregir errores y mejorar funcionalidades, permitiendo una aplicación controlada y ordenada de cambios en sistemas de software y bases de datos.</p>
+  <p>Archivo del tipo .SQL, que contiene un conjunto de sentencias SQL que aplican en una actualización de versión de UNIGIS (a nivel de base de datos).</p>
+  <p>Se define el siguiente formato estantar de nombre ChangeScript_VERSION_ORIGEN a VERSION_DESTINO. Ejemplo: ChangeScript_5.12.0.0 a 5.13.0.0</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo se instala/actualiza un mapa en UNIGIS MapServer?</summary>
+  <p>DEFINICIONES</p>
+  <p>"...\UNIGIS MapServer\mapas\mapas.ini" ==> es el archivo de configuración donde se indica el nombre del mapa mediante el Id y su ruta de acceso donde se encuentra el MAPA.INI de cada mapa.</p>
+  <p>"...\UNIGIS MapServer\mapas\mi_mapa\MAPA.INI" ==> archivo de configuración del mapa donde se indica el Id o Nombre con sus respectivas características.</p>
+  <p>"...\UNIGIS MapServer\mapas\mi_mapa\mi_mapa.AVF" ==> archivo de vista para el mapa que sirve para especificar como veremos nuestro mapa. En ella se especifica el Id del mapa, el zoom máximo y mínimo,la extensión del mapa y el estilo de cada layers.</p>
+  <p>"...\UNIGIS MapServer\mapas\mi_mapa\mi_mapa_Routing.AVF" ==> archivo de vista del mapa para ruteo que sirve para especificar como veremos nuestro mapa (con menor detalles en zoom lejanos que el anterior). En ella se especifica el Id del mapa, el zoom máximo y mínimo,la extensión del mapa y el estilo de cada layers.</p>
+  <p>Al momento de actualizar el mapa se debe descargar el archivo comprimido de la consultora correspondiente. </p>
+  <p>Pasos</p>
+  <p>1. Descargar mapa en "...\UNIGIS MapServer\mapas" y descomprimir. Si existe ya el mapa reemplazarlo.</p>
+  <p>2. Frenar el servicio/proceso de UNIGIS MapServer que vamos a actualizar el mapa.</p>
+  <p>3. Borrar el archivo "árbol_mapas.ini". Lo que hace el "mapas.ini" es buscar la conexión con nuestros mapas. En el Id se indica el nombre de nuestro mapa, que lo encontramos en el archivo "MAPA.INI", sobre la linea "Id_mapa=". El path es la ruta de acceso donde se encuentra nuestro "MAPA.INI" y debe ser indicado como ".\mi_mapa". Tanto el Id_0 y Path_0 deben ser incrementado cada vez que se agregue un nuevo mapa.</p>
+  <p>4. Seleccionamos nuestras vistas ubicadas en "...\UNIGIS MapServer\mapas\mi_mapa\" y lo copiamos a nuestra carpeta de "...\UNIGIS MapServer\usu\INTERNET\PORTALES\Vistas".</p>
+  <p>5. Es necesario actualizar la vista ya que la información puede ser modificada, esto es, que se haya agregado o quitado información y por ende, el mapa y el orden de layers se modifica, por lo que nuestro mapa podría no verse de la manera correcta.</p>
+  <p>En caso de actualizar el mapa, si la configuración es correcta, lo único que hay que hacer es reemplazar el mapa por la nueva versión, y su vista correspondiente.</p>
+    </details>
+
+<details class="question">
+  <summary class="card-header">¿Donde se encuentran los entregables de Producto, Instaladores, Customs y Cartografia?</summary>
+  <p>Los entregables pueden encontrarse en los siguientes directorios:</p>
+  <p>•        Producto: \\fs01\UNIGIS\Producto\Entregables</p>
+  <p>•        Cartografia: \\fs01\UNIGIS\Cartografia\Finales</p>
+  <p>•        Changescripts: \\fs01\UNIGIS\Producto\ChangeScripts</p>
+  <p>•        Customs: \\fs01\UNIGIS\Customs</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Como se relaciona un Viaje con una Ruta a nivel Base de Datos?</summary>
+  <p>La relación Viaje con Ruta es a través de los campos ( Viaje.IdRuta = Ruta.Ruta Y Viaje.IdJornada = Ruta.IdJornada  )</p>
+  </details>
+
+<details class="question">
+  <summary class="card-header">¿Cómo se configuran los parámetros de App.config de Control Console?</summary>
+  <p>- name="EntityFrameworkContext" -> Conexión a la base de datos.</p>
+  <p>- name="ConnectionString" -> Conexión a la base de datos.</p>
+  <p>- name="Usuario" -> se debera registrar un usuario administrador de la base de datos. (Tipicamente "Admin").</p>
+  <p>- name="Delay" -> valor que determina un sleep en la operatoria del proceso. Se recomienda no modificar el valor.</p>
+  <p>- name="SleepKmsVuelta" -> Valor en minutos que determina el tiempo para realizar la suma de kilómetros por vuelta.</p>
+  <p>- name="ControlGeneral" -> booleano que enciende o apaga el control de vehículos (estadías en zona, activación automática, detenciones, distancia recorrida, punto cercano).</p>
+  <p>- name="ControlNotificacion" -> enciende o apaga el envío de notificaciones.</p>
+  <p>- name="ControlEstadiaParada" -> enciende o apaga el control de estadías.</p>
+  <p>- name="ControlViajes" -> enciende o apaga el control de viajes (eta, desvío superado, arribo próximo, detención).</p>
+  <p>- name="ControlActivacionViajes" -> enciende o apaga la activación automática de viajes.</p>
+  <p>- Configuración de mapServer.</p>
+  <p><!-- Map Server --></p>
+  <p>(< add key="map_server_host" value="localhost" /> --> URL)</p>
+  <p>(< add key="map_server_port" value="15000" /> --> Puerto)</p>
+  </details><script>
+function filterQuestions() {
+  // Declare variables
+  var input, filter, details, i, txtValue, keywords;
+  input = document.getElementById('searchInput');
+  filter = input.value.toUpperCase();
+  keywords = filter.split(' ').filter(word => word.length > 0); // Split search input into keywords
+
+  details = document.getElementsByClassName('question');
+
+  // Loop through all FAQ sections
+  for (i = 0; i < details.length; i++) {
+      // Check if the current question matches any keyword
+      txtValue = details[i].textContent || details[i].innerText;
+      var matchesKeyword = keywords.every(keyword => txtValue.toUpperCase().includes(keyword));
+
+      if (matchesKeyword) {
+          details[i].style.display = '';
+      } else {
+          details[i].style.display = 'none';
+      }
+  }
+}
+</script></section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../Tarifas/ConfigTarifas.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Configuración y Gestión de Tarifas</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, UNIGIS TMS
+            
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">FAQs</a><ul>
+<li><a class="reference internal" href="#mapi">MAPI</a></li>
+<li><a class="reference internal" href="#alarmas">Alarmas</a></li>
+<li><a class="reference internal" href="#tracking">Tracking</a></li>
+<li><a class="reference internal" href="#planning">Planning</a></li>
+<li><a class="reference internal" href="#mobile">Mobile</a></li>
+<li><a class="reference internal" href="#setup">SetUp</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/translations.js?v=efdbd0b9"></script>
+    </body>
+</html>
