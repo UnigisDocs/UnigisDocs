@@ -31,6 +31,7 @@ Contenido
    Standard/StandardHDVHDR.rst
    RNDC/RNDC.rst
    Tarifas/ConfigTarifas.rst
+   OM/FuncionalidadOM.rst
 
 
 Ayuda

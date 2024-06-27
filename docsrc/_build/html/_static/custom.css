@@ -1,4 +1,3 @@
-/* estilos.css */
 .titulo-nivel-1 {
     font-weight: 400; /* Peso de fuente normal */
 }
@@ -89,9 +88,47 @@ a.reference.internal {
     align-items: center;
     gap: 15px;
 }
+.inline-list li {
+    display: inline;
+    margin-right: 10px; 
+}
 .special-link {
-    /* Define tus estilos específicos aquí */
-    color: red; /* Ejemplo de estilo */
-    text-decoration: none; /* Ejemplo de estilo */
-  }
-  
+    color: #3572b0; /* Letra azul */
+    background-color: #F2F2F2; /* Fondo blanco */
+    border: 1px solid gray; /* Contorno gris */
+    padding: 1px 10px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+}
+.special-link:hover {
+    background-color: lightgray; /* Fondo gris claro al pasar el cursor */
+}
+details {
+ position: relative;
+}
+
+summary {+
+ cursor: pointer;
+ list-style: none;
+ padding-left: 1.5em; /* Ajusta el espaciado según sea necesario */
+ position: relative;
+ -webkit-appearance: none; /* Desactivar la flecha predeterminada en navegadores WebKit */
+ -moz-appearance: none; /* Desactivar la flecha predeterminada en navegadores Mozilla */
+ appearance: none; /* Desactivar la flecha predeterminada en otros navegadores */
+ outline: none; /* Eliminar cualquier contorno */
+}
+summary::before {
+  content: "▶"; 
+  font-size: 1em;
+  color: #3572b0;
+  margin-right: 0.5em;
+  transition: transform 0.3s ease;
+}
+details[open] summary::before {
+  content: "▼"; 
+  color: #3572b0; 
+  transform: rotate(90deg);
+}
+.card-header {
+    list-style: none;
+}
