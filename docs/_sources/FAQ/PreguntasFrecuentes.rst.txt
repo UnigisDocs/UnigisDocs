@@ -7,123 +7,169 @@ Aquí presentamos las respuestas a algunas de las preguntas frecuentes sobre nue
 
  <html>
  <head>
-   <style>
-       .inline-list li { display: inline; }
-       .special-link { cursor: pointer; }
-       #searchInput {
-           width: 100%;
-           padding: 10px;
-           margin-bottom: 20px;
-           background-color: white;
-           color: black;
-           border: 1px solid #ccc;
-           border-radius: 4px;
-       }
-   </style>
+    <style>
+        .inline-list li { display: inline; }
+        .special-link { cursor: pointer; }
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
  </head>
  <body>
-   <input type="text" id="searchInput" onkeyup="filterQuestions()" placeholder="Búsqueda">
+    <input type="text" id="searchInput" oninput="filterQuestions()" placeholder="Búsqueda">
 
-   <script>
-       function filterQuestions() {
-           var input = document.getElementById('searchInput');
-           var filter = input.value.toLowerCase();
-           var questions = document.querySelectorAll('.question');
-           var sectionTitles = document.querySelectorAll('.section-title');
+    <script>
+        function filterQuestions() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.trim().toLowerCase();
+            var questions = document.querySelectorAll('.question');
+            var sectionTitles = document.querySelectorAll('.section-title');
 
-           questions.forEach(function(question) {
-               var text = question.textContent || question.innerText;
-               if (text.toLowerCase().indexOf(filter) > -1) {
-                   question.style.display = '';
-               } else {
-                   question.style.display = 'none';
-               }
-           });
+            questions.forEach(function(question) {
+                var text = question.textContent || question.innerText;
+                if (filter === '' || text.toLowerCase().indexOf(filter) > -1) {
+                    question.style.display = 'block';
+                    question.parentElement.style.display = 'block'; // Mostrar la sección que contiene la pregunta
+                } else {
+                    question.style.display = 'none';
+                }
+            });
 
-           sectionTitles.forEach(function(title) {
-               var section = title.nextElementSibling;
-               var visibleQuestions = section.querySelectorAll('.question:not([style*="display: none"])');
-               if (visibleQuestions.length > 0) {
-                   title.style.display = 'block';
-               } else {
-                   title.style.display = 'none';
-               }
-           });
-       }
+            sectionTitles.forEach(function(title) {
+                var section = title.nextElementSibling;
+                var visibleQuestions = section.querySelectorAll('.question:not([style*="display: none"])');
+                var hasVisibleQuestions = false;
 
-       document.addEventListener('DOMContentLoaded', function() {
-           var specialLinks = document.querySelectorAll('.special-link');
-           specialLinks.forEach(function(link) {
-               link.addEventListener('click', function(event) {
-                   var tag = event.target.getAttribute('data-tag');
-                   var questions = document.querySelectorAll('.question');
-                   questions.forEach(function(question) {
-                       question.style.display = 'none';
-                   });
-                   var taggedQuestions = document.querySelectorAll('.question.' + tag);
-                   taggedQuestions.forEach(function(question) {
-                       question.style.display = 'block';
-                   });
-               });
-           });
-           var questions = document.querySelectorAll('.question');
-           questions.forEach(function(question) {
-               question.style.display = 'block';
-           });
-       });
-   </script>
+                visibleQuestions.forEach(function(question) {
+                    var text = question.textContent || question.innerText;
+                    if (filter === '' || text.toLowerCase().indexOf(filter) > -1) {
+                        hasVisibleQuestions = true;
+                    }
+                });
 
-.. raw:: html
+                if (hasVisibleQuestions) {
+                    section.style.display = 'block';
+                    title.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                    title.style.display = 'none';
+                }
+            });
+        }
 
-   <h2 class="section-title">MAPI</h2>
-   <div class="section-content">
-       <details class="question mapi apikey webservice">
-           <summary class="card-header">¿Cómo se Configura "ApiKey" para WebService de MAPI?</summary>
-          <ul class="inline-list">
-          <li><a href="javascript:void(0)" class="special-link" data-tag="mapi">MAPI</a></li>
-          <li><a href="javascript:void(0)" class="special-link" data-tag="apikey">ApiKey</a></li>
-          <li><a href="javascript:void(0)" class="special-link" data-tag="webservice">WebService</a></li>
-          </ul>
-           <p>La ApiKey por default es la misma que MAPI TOKEN (Ver "Estado Del Sistema").</p>
-           <p>Por defecto UNIGIS NO la valida, para activar la validación se debe configurar en App.Config de UNIGIS Web el siguiente paramatro en True: "ValidarApiKey". (add key="ValidarApiKey" value="true")</p>
-       </details>
+        document.addEventListener('DOMContentLoaded', function() {
+            var specialLinks = document.querySelectorAll('.special-link');
+            specialLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    var tag = event.target.getAttribute('data-tag');
+                    var questions = document.querySelectorAll('.question');
+                    var sectionTitles = document.querySelectorAll('.section-title');
 
-       <details class="question mapi webservice">
-           <summary class="card-header">¿Existe algún WebService para obtener Distancias por calles?</summary>
-           <ul class="inline-list">
-           <li><a href="javascript:void(0)" class="special-link" data-tag="mapi">MAPI</a></li>
-           <li><a href="javascript:void(0)" class="special-link" data-tag="webservice">WebService</a></li>
-           </ul>
-           <p>Si, se debe utilizar el método "BuscarTrayecto" de MAPI GeoGraphic.</p>
-           <p>El método recibe Origen y Destino.</p>
-           <p>Retorna el Tiempo en Minutos considerando la velocidad por tipo de vial (Según el perfil de Routed), Distancia y una Lista de Puntos que es el recorrido visual para desplegar en un mapa.</p>
-       </details>
-   </div>
+                    questions.forEach(function(question) {
+                        var tags = question.querySelectorAll('.special-link');
+                        var shouldDisplay = false;
 
-   <h2 class="section-title">Tracking</h2>
-   <div class="section-content">
-       <details class="question tracking alarmas">
-           <summary class="card-header">¿Cómo generar una alarma cuando se va llegar tarde a una parada?</summary>
-           <ul class="inline-list">
-           <li><a href="javascript:void(0)" class="special-link" data-tag="tracking">Tracking</a></li>
-           <li><a href="javascript:void(0)" class="special-link" data-tag="alarmas">Alarmas</a></li>
-           </ul>
-           <p>Es necesaria una alarma que evaluara si se llega a tiempo a la fecha planificada y que si este viaje no llega lanzaba una alarma.</p>
-           <p>Este control lo realiza el modulo de Control de Viajes de Control console.</p>
-           <p>El control analiza los viajes en estado de seguimiento activo cuyo donde las paradas tengan una diferencia entre la fecha Estimada y la Fecha Planificada mayor (en minutos) al parametro DesvioMaximoParadaDesvio (15 minutos default) O el campo DesvioMaximo de la tabla parada.</p>
-       </details>
+                        tags.forEach(function(tagElement) {
+                            if (tagElement.getAttribute('data-tag') === tag) {
+                                shouldDisplay = true;
+                            }
+                        });
 
-       <details class="question tracking archivos">
-           <summary class="card-header">¿Cómo subir archivos relacionadas a una Parada mediante POST?</summary>
-           <ul class="inline-list">
-           <li><a href="javascript:void(0)" class="special-link" data-tag="tracking">Tracking</a></li>
-           <li><a href="javascript:void(0)" class="special-link" data-tag="archivos">Archivos</a></li>
-           </ul>
-           <p>Upload = "1"</p>
-           <p>IdParada = “IdParada”</p>
-           <p>Token = Token de acceso a UNIGIS.</p>
-           <p>Para obtener el token de un usuario, se puede usar el Servicio MAPI/Soap/Auth/Service.asmx método Login.</p>
-       </details>
+                        if (shouldDisplay) {
+                            question.style.display = 'block';
+                            question.parentElement.style.display = 'block'; // Mostrar la sección que contiene la pregunta
+                        } else {
+                            question.style.display = 'none';
+                        }
+                    });
+
+                    sectionTitles.forEach(function(title) {
+                        var section = title.nextElementSibling;
+                        var visibleQuestions = section.querySelectorAll('.question:not([style*="display: none"])');
+                        var hasVisibleQuestions = false;
+
+                        visibleQuestions.forEach(function(question) {
+                            var tags = question.querySelectorAll('.special-link');
+                            tags.forEach(function(tagElement) {
+                                if (tagElement.getAttribute('data-tag') === tag) {
+                                    hasVisibleQuestions = true;
+                                }
+                            });
+                        });
+
+                        if (hasVisibleQuestions) {
+                            section.style.display = 'block';
+                            title.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                            title.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            var questions = document.querySelectorAll('.question');
+            questions.forEach(function(question) {
+                question.style.display = 'block';
+            });
+        });
+    </script>
+
+    <h2 class="section-title">MAPI</h2>
+    <div class="section-content">
+    <details class="question mapi apikey webservice">
+        <summary class="card-header">¿Cómo se Configura "ApiKey" para WebService de MAPI?</summary>
+        <ul class="inline-list">
+        <li><a href="javascript:void(0)" class="special-link" data-tag="mapi">MAPI</a></li>
+        <li><a href="javascript:void(0)" class="special-link" data-tag="apikey">ApiKey</a></li>
+        <li><a href="javascript:void(0)" class="special-link" data-tag="webservice">WebService</a></li>
+        </ul>
+        <p>La ApiKey por default es la misma que MAPI TOKEN (Ver "Estado Del Sistema").</p>
+        <p>Por defecto UNIGIS NO la valida, para activar la validación se debe configurar en App.Config de UNIGIS Web el siguiente paramatro en True: "ValidarApiKey". (add key="ValidarApiKey" value="true")</p>
+    </details>
+
+    <details class="question mapi webservice">
+        <summary class="card-header">¿Existe algún WebService para obtener Distancias por calles?</summary>
+        <ul class="inline-list">
+        <li><a href="javascript:void(0)" class="special-link" data-tag="mapi">MAPI</a></li>
+        <li><a href="javascript:void(0)" class="special-link" data-tag="webservice">WebService</a></li>
+        </ul>
+        <p>Si, se debe utilizar el método "BuscarTrayecto" de MAPI GeoGraphic.</p>
+        <p>El método recibe Origen y Destino.</p>
+        <p>Retorna el Tiempo en Minutos considerando la velocidad por tipo de vial (Según el perfil de Routed), Distancia y una Lista de Puntos que es el recorrido visual para desplegar en un mapa.</p>
+    </details>
+    </div>
+
+    <h2 class="section-title">Tracking</h2>
+    <div class="section-content">
+    <details class="question tracking alarmas">
+        <summary class="card-header">¿Cómo generar una alarma cuando se va llegar tarde a una parada?</summary>
+        <ul class="inline-list">
+        <li><a href="javascript:void(0)" class="special-link" data-tag="tracking">Tracking</a></li>
+        <li><a href="javascript:void(0)" class="special-link" data-tag="alarmas">Alarmas</a></li>
+        </ul>
+        <p>Es necesaria una alarma que evaluara si se llega a tiempo a la fecha planificada y que si este viaje no llega lanzaba una alarma.</p>
+        <p>Este control lo realiza el modulo de Control de Viajes de Control console.</p>
+        <p>El control analiza los viajes en estado de seguimiento activo cuyo donde las paradas tengan una diferencia entre la fecha Estimada y la Fecha Planificada mayor (en minutos) al parametro DesvioMaximoParadaDesvio (15 minutos default) O el campo DesvioMaximo de la tabla parada.</p>
+    </details>
+
+    <details class="question tracking archivos">
+        <summary class="card-header">¿Cómo subir archivos relacionadas a una Parada mediante POST?</summary>
+        <ul class="inline-list">
+        <li><a href="javascript:void(0)" class="special-link" data-tag="tracking">Tracking</a></li>
+        <li><a href="javascript:void(0)" class="special-link" data-tag="archivos">Archivos</a></li>
+        </ul>
+        <p>Upload = "1"</p>
+        <p>IdParada = “IdParada”</p>
+        <p>Token = Token de acceso a UNIGIS.</p>
+        <p>Para obtener el token de un usuario, se puede usar el Servicio MAPI/Soap/Auth/Service.asmx método Login.</p>
+    </details>
 
    <details class="question tracking">
     <summary class="card-header">¿En qué momentos se recalcula los tiempos estimados de llegada de un viaje?</summary>
@@ -233,7 +279,7 @@ Aquí presentamos las respuestas a algunas de las preguntas frecuentes sobre nue
     </details>
 
    <details class="question tracking paradas">
-    <summary class="card-header">¿Como se configura el flujo de Paradas para cambiar el estado cuando un vehículo visita una parada?</summary>
+    <summary class="card-header">¿Cómo se configura el flujo de Paradas para cambiar el estado cuando un vehículo visita una parada?</summary>
            <ul class="inline-list">
        <li><a href="javascript:void(0)" class="special-link" data-tag="tracking">Tracking</a></li>
        <li><a href="javascript:void(0)" class="special-link" data-tag="paradas">Paradas</a></li>
@@ -291,7 +337,7 @@ Aquí presentamos las respuestas a algunas de las preguntas frecuentes sobre nue
     </details>
    
       <details class="question database viajes">
-    <summary class="card-header">¿Como se relaciona un Viaje con una Ruta a nivel Base de Datos?</summary> 
+    <summary class="card-header">¿Cómo se relaciona un Viaje con una Ruta a nivel Base de Datos?</summary> 
        <ul class="inline-list">
        <li><a href="javascript:void(0)" class="special-link" data-tag="database">DataBase</a></li>
        <li><a href="javascript:void(0)" class="special-link" data-tag="viajes">Viajes</a></li>
@@ -352,7 +398,7 @@ Aquí presentamos las respuestas a algunas de las preguntas frecuentes sobre nue
    <h2 class="section-title">Routing</h2>
    <div class="section-content">
    <details class="question routing varonet">
-    <summary class="card-header">¿Como funciona el tiempo de Inactividad en tipos de vehículos?</summary>
+    <summary class="card-header">¿Cómo funciona el tiempo de Inactividad en tipos de vehículos?</summary>
        <ul class="inline-list">
        <li><a href="javascript:void(0)" class="special-link" data-tag="routing">Routing</a></li>
        <li><a href="javascript:void(0)" class="special-link" data-tag="varonet">Varonet</a></li>
@@ -433,7 +479,7 @@ Aquí presentamos las respuestas a algunas de las preguntas frecuentes sobre nue
    <h2 class="section-title">Deploy</h2>
    <div class="section-content">
    <details class="question deploy">
-    <summary class="card-header">¿Donde se encuentran los entregables de Producto, Instaladores, Customs y Cartografia?</summary>
+    <summary class="card-header">¿Dónde se encuentran los entregables de Producto, Instaladores, Customs y Cartografia?</summary>
        <ul class="inline-list">
        <li><a href="javascript:void(0)" class="special-link" data-tag="deploy">Deploy</a></li>
        </ul> 
